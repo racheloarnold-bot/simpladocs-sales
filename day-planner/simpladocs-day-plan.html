@@ -1189,6 +1189,9 @@
           <span class="notes1on1-cadence">anything, anywhere — sort it later</span>
         </div>
         <textarea class="notes1on1-area" id="notes-general" placeholder="Drop anything here. Thoughts, follow-ups, things you don&#39;t want to forget, random ideas. Nothing needs a home yet." oninput="saveNotes()" style="min-height:160px"></textarea>
+        <div style="margin-top:8px;text-align:right">
+          <button id="copy-capture-btn" onclick="copyCaptureNotes()" style="font-size:12px;padding:5px 12px;border-radius:6px;border:1.5px solid rgba(124,58,237,0.35);background:rgba(168,85,247,0.07);color:#7c3aed;cursor:pointer;font-weight:600;transition:all 0.2s">Copy capture notes</button>
+        </div>
       </div>
 
       <div class="notes1on1-section" style="opacity:0.85">
@@ -2014,6 +2017,28 @@ function saveNotes() {
     if (el) data[k] = el.value;
   });
   localStorage.setItem(KEYS.notes1on1, JSON.stringify(data));
+}
+
+function copyCaptureNotes() {
+  const el = document.getElementById('notes-general');
+  const text = el ? el.value.trim() : '';
+  if (!text) {
+    const btn = document.getElementById('copy-capture-btn');
+    btn.textContent = 'Nothing to copy';
+    setTimeout(() => { btn.textContent = 'Copy capture notes'; }, 1500);
+    return;
+  }
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.getElementById('copy-capture-btn');
+    btn.textContent = 'Copied! \u2713';
+    btn.style.background = 'rgba(74,222,128,0.15)';
+    btn.style.borderColor = 'rgba(74,222,128,0.5)';
+    setTimeout(() => {
+      btn.textContent = 'Copy capture notes';
+      btn.style.background = '';
+      btn.style.borderColor = '';
+    }, 2000);
+  });
 }
 
 // ─── Tabs ───────────────────────────────────────────
