@@ -852,7 +852,7 @@
 <div class="tab-bar">
   <button class="tab-btn active" onclick="switchTab(&#39;today&#39;,this)">Today</button>
   <button class="tab-btn" onclick="switchTab(&#39;tasks&#39;,this)">
-    HubSpot Tasks <span class="tab-count" id="tasks-count">2</span>
+    HubSpot Tasks <span class="tab-count" id="tasks-count">6</span>
   </button>
   <button class="tab-btn" onclick="switchTab(&#39;rocks&#39;,this)">
     Q2 Rocks <span class="tab-count" id="rocks-count">26</span>
@@ -968,33 +968,33 @@
   <!-- ═══════════════ TAB: HUBSPOT TASKS ═══════════════ -->
   <div class="tab-panel" id="tab-tasks">
 
-    <div class="section-hdr">Due today — April 8</div>
+    <div class="section-hdr">Today / Overdue</div>
     <div class="hs-card" id="hs-today-card">
-      <div class="hs-task-row" data-hsid="hs-sandbox-checkin">
-        <div class="cb" onclick="toggleHs('hs-sandbox-checkin',this)"></div>
+      <div class="hs-task-row" data-hsid="hs-az-onepager">
+        <div class="cb" onclick="toggleHs('hs-az-onepager',this)"></div>
         <div class="hs-content">
-          <div class="hs-text">Check in on sandbox environment — 1 week from access given</div>
+          <div class="hs-text">Build internal business case one-pager for Pedro to share with Gary</div>
           <div class="hs-meta">
-            <span class="b-badge badge-hs">&#128203; To-do</span>
-            <a href="https://app.hubspot.com/tasks/245482189/view/all/task/362428110584" target="_blank" style="font-size:11px;color:var(--teal-mid);">View in HubSpot &#8599;</a>
+            <span class="b-badge badge-hi">overdue</span>
+            <span style="font-size:11px;color:var(--text-3);">Due Apr 10 &middot; AstraZeneca</span>
+            <a href="https://app.hubspot.com/tasks/245482189/view/all/task/363629385412" target="_blank" style="font-size:11px;color:var(--teal-mid);">View in HubSpot &#8599;</a>
           </div>
         </div>
       </div>
-      <div class="hs-task-row" data-hsid="hs-luke-fu">
-        <div class="cb" onclick="toggleHs('hs-luke-fu',this)"></div>
+      <div class="hs-task-row" data-hsid="hs-reschedule-checkin">
+        <div class="cb" onclick="toggleHs('hs-reschedule-checkin',this)"></div>
         <div class="hs-content">
-          <div class="hs-text">Send follow-up email if they don't respond to Luke</div>
+          <div class="hs-text">Check back in &mdash; good to reschedule our next steps call?</div>
           <div class="hs-meta">
-            <span class="b-badge badge-hi">high</span>
-            <span class="b-badge badge-hs">&#9993; Email</span>
-            <span style="font-size:11px;color:var(--text-3);">due 2:00 PM</span>
-            <a href="https://app.hubspot.com/tasks/245482189/view/all/task/362976920297" target="_blank" style="font-size:11px;color:var(--teal-mid);">View in HubSpot &#8599;</a>
+            <span class="b-badge badge-hi">due today</span>
+            <span style="font-size:11px;color:var(--text-3);">Apr 13</span>
+            <a href="https://app.hubspot.com/tasks/245482189/view/all/task/362976926441" target="_blank" style="font-size:11px;color:var(--teal-mid);">View in HubSpot &#8599;</a>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="section-hdr">Coming up</div>
+    <div class="section-hdr">Upcoming this week</div>
     <div class="hs-card" id="hs-upcoming-card">
       <div class="hs-task-row" data-hsid="hs-gong-review">
         <div class="cb" onclick="toggleHs('hs-gong-review',this)"></div>
@@ -1002,31 +1002,45 @@
           <div class="hs-text">Review Gong call</div>
           <div class="hs-meta">
             <span class="b-badge badge-hs">&#128203; To-do</span>
-            <span style="font-size:11px;color:var(--text-3);">Apr 9 — pushed from today</span>
+            <span style="font-size:11px;color:var(--text-3);">Apr 15</span>
             <a href="https://app.hubspot.com/tasks/245482189/view/all/task/361411800815" target="_blank" style="font-size:11px;color:var(--teal-mid);">View in HubSpot &#8599;</a>
           </div>
         </div>
       </div>
-      <div class="hs-task-row" data-hsid="hs-reschedule-checkin">
-        <div class="cb" onclick="toggleHs('hs-reschedule-checkin',this)"></div>
+      <div class="hs-task-row" data-hsid="hs-jocio-metrics">
+        <div class="cb" onclick="toggleHs('hs-jocio-metrics',this)"></div>
         <div class="hs-content">
-          <div class="hs-text">Check back in — good to reschedule our next steps call?</div>
+          <div class="hs-text">Confirm metrics with Jocio async</div>
           <div class="hs-meta">
-            <span class="b-badge badge-hi">high</span>
-            <span class="b-badge badge-hs">&#9993; Email</span>
-            <span style="font-size:11px;color:var(--text-3);">Apr 13</span>
-            <a href="https://app.hubspot.com/tasks/245482189/view/all/task/362976926441" target="_blank" style="font-size:11px;color:var(--teal-mid);">View in HubSpot &#8599;</a>
+            <span class="b-badge badge-hs">&#128203; To-do</span>
+            <span style="font-size:11px;color:var(--text-3);">Apr 16 &middot; AstraZeneca</span>
+            <a href="https://app.hubspot.com/tasks/245482189/view/all/task/363670629088" target="_blank" style="font-size:11px;color:var(--teal-mid);">View in HubSpot &#8599;</a>
           </div>
         </div>
       </div>
-      <div class="hs-task-row" data-hsid="hs-paige-timeline">
-        <div class="cb" onclick="toggleHs('hs-paige-timeline',this)"></div>
+    </div>
+
+    <div class="section-hdr">Next week</div>
+    <div class="hs-card" id="hs-nextweek-card">
+      <div class="hs-task-row" data-hsid="hs-paige-timeline-1">
+        <div class="cb" onclick="toggleHs('hs-paige-timeline-1',this)"></div>
         <div class="hs-content">
-          <div class="hs-text">Check on timeline — ask Paige</div>
+          <div class="hs-text">Check on timeline &mdash; ask Paige (#1)</div>
           <div class="hs-meta">
             <span class="b-badge badge-hs">&#128203; To-do</span>
             <span style="font-size:11px;color:var(--text-3);">Apr 20</span>
             <a href="https://app.hubspot.com/tasks/245482189/view/all/task/362936195772" target="_blank" style="font-size:11px;color:var(--teal-mid);">View in HubSpot &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="hs-task-row" data-hsid="hs-paige-timeline-2">
+        <div class="cb" onclick="toggleHs('hs-paige-timeline-2',this)"></div>
+        <div class="hs-content">
+          <div class="hs-text">Check on timeline &mdash; ask Paige (#2)</div>
+          <div class="hs-meta">
+            <span class="b-badge badge-hs">&#128203; To-do</span>
+            <span style="font-size:11px;color:var(--text-3);">Apr 20</span>
+            <a href="https://app.hubspot.com/tasks/245482189/view/all/task/362936195773" target="_blank" style="font-size:11px;color:var(--teal-mid);">View in HubSpot &#8599;</a>
           </div>
         </div>
       </div>
@@ -1047,12 +1061,13 @@
             <div class="rock-subtitle">Pitch deck · one-pagers · value prop</div>
           </div>
         </div>
-        <span class="rock-badge" id="rock1-badge">6 left</span>
+        <span class="rock-badge" id="rock1-badge">7 left</span>
       </div>
       <div id="rock1-body">
         <div class="rock-items">
           <div class="rock-group-hdr">Core</div>
           <div class="rock-row"><div class="cb" onclick="toggleRock1(&#39;r1-pp&#39;,this)"></div><div class="rock-content"><div class="rock-text" id="r1-pp-t">Partner-facing one-pager (PDF)</div><div class="rock-note">Existing but may need refresh — TBD</div></div></div>
+          <div class="rock-row"><div class="cb" onclick="toggleRock1(&#39;r1-dealroom&#39;,this)"></div><div class="rock-content"><div class="rock-text" id="r1-dealroom-t">Deal rooms</div><div class="rock-note">Built over weekend &middot; final edits in progress &middot; showing Scott today</div></div></div>
           <div class="rock-row"><div class="cb" onclick="toggleRock1(&#39;r1-scope-proj&#39;,this)"></div><div class="rock-content"><div class="rock-text" id="r1-scope-proj-t">Project Scope of Services Generator</div><div class="rock-note">Coda template + HTML page · estimates ranges/hours/pricing · Vercel link embeds in proposal</div></div></div>
           <div class="rock-row"><div class="cb" onclick="toggleRock1(&#39;r1-scope-ret&#39;,this)"></div><div class="rock-content"><div class="rock-text" id="r1-scope-ret-t">Retainer Scope of Services Generator</div><div class="rock-note">Coda template + HTML page · phases/hours/timeline/pricing · Vercel link embeds in proposal</div></div></div>
           <div class="rock-group-hdr">Tier 2</div>
@@ -1116,13 +1131,13 @@
             <div class="rock-subtitle">MEDDPICC · proposal framework · objection handling</div>
           </div>
         </div>
-        <span class="rock-badge" id="rock3-badge">5 left</span>
+        <span class="rock-badge" id="rock3-badge">4 left</span>
       </div>
       <div id="rock3-body">
         <div class="rock-items">
           <div class="rock-row"><div class="cb" onclick="toggleRock3(&#39;r3-criteria&#39;,this)"></div><div class="rock-content"><div class="rock-text" id="r3-criteria-t">Deal entrance / exit criteria documented for all stages in Coda Sales HQ</div></div></div>
           <div class="rock-row"><div class="cb" onclick="toggleRock3(&#39;r3-med&#39;,this)"></div><div class="rock-content"><div class="rock-text" id="r3-med-t">MEDDPICC qualification framework documented in Coda Sales HQ</div></div></div>
-          <div class="rock-row"><div class="cb" onclick="toggleRock3(&#39;r3-prop&#39;,this)"></div><div class="rock-content"><div class="rock-text" id="r3-prop-t">Proposal and pricing call framework documented</div></div></div>
+          <div class="rock-row"><div class="cb checked" onclick="toggleRock3(&#39;r3-prop&#39;,this)"></div><div class="rock-content"><div class="rock-text done" id="r3-prop-t">Proposal and pricing call framework documented</div></div></div>
           <div class="rock-row"><div class="cb" onclick="toggleRock3(&#39;r3-obj&#39;,this)"></div><div class="rock-content"><div class="rock-text" id="r3-obj-t">Objection handling guide documented</div></div></div>
           <div class="rock-row"><div class="cb" onclick="toggleRock3(&#39;r3-mig&#39;,this)"></div><div class="rock-content"><div class="rock-text" id="r3-mig-t">All playbook content migrated to Coda Sales HQ</div></div></div>
         </div>
@@ -1171,7 +1186,7 @@
       </div>
       <div id="rock5-body">
         <div class="rock-items">
-          <div class="rock-row"><div class="cb" onclick="toggleRock5(&#39;r5-ct&#39;,this)"></div><div class="rock-content"><div class="rock-text" id="r5-ct-t">Define Q2 close target with Scott</div><div class="rock-note">Blocker — waiting on Scott</div></div></div>
+          <div class="rock-row"><div class="cb checked" onclick="toggleRock5(&#39;r5-ct&#39;,this)"></div><div class="rock-content"><div class="rock-text done" id="r5-ct-t">Define Q2 close target with Scott</div><div class="rock-note">$262.5k Q2 — waiting on Scott</div></div></div>
         </div>
         <a class="coda-link" href="https://coda.io/d/_dQ72iJKwaV4/Q2-Rocks_suD6yqPW" target="_blank">↗ View in Coda</a>
       </div>
@@ -1257,7 +1272,7 @@ e.g. Closed Won Slack notification — where does this stand?" oninput="saveNote
 // ─── Storage ───────────────────────────────────────
 const KEYS = {
   notes1on1: 'sd-1on1-notes-v1',
-  today: 'sd-today-apr8-v1',
+  today: 'sd-today-apr13-v1',
   tasks: 'sd-tasks-q2-v1',
   rocks: 'sd-rocks-q2-v1',
   water: 'sd-water-apr8-v1',
@@ -1277,57 +1292,33 @@ function load(k) { try { return JSON.parse(localStorage.getItem(k)) || {}; } cat
 function save(k,v) { localStorage.setItem(k, JSON.stringify(v)); }
 
 let todayState = { checked: {}, added: {}, edited: {}, deleted: {}, ...load(KEYS.today) };
-  ['t-briefing','t-talking-pts'].forEach(id => { if (!(id in todayState.checked)) todayState.checked[id] = true; });
+  // no pre-checks for today
 let tasksState = { checked: {}, ...load(KEYS.tasks) };
 let rocksState = { checked: {}, ...load(KEYS.rocks) };
 
 // ─── Today blocks ───────────────────────────────────
 const BLOCKS = [
-  { id:'prep', title:'Prep for day', start:7.0, end:8.0, tasks:[
-    { id:'t-briefing',       text:'Morning briefing',               note:'Posted to #daily-slay ✓' },
-    { id:'t-coffee',         text:'Check for coffee — run if needed ☕' },
-    { id:'t-sellerx-agenda', text:'Send SellerX agenda',            note:'Quick — call is tomorrow 4/9' },
+  { id:'prescott', title:'Pre-Scott Block', start:12.0, end:13.0, tasks:[
+    { id:'t-dealroom', hi:true, text:'Finish deal room edits', note:'Quick pass \u2014 5 min \u00b7 show Scott at 1pm' },
+    { id:'t-1on1-prep', hi:true, text:'Run 1:1 prep + think through action items', note:'Initiatives only \u2014 NO deal talk \u00b7 Rock progress, Robinhood decision, coverage gap' },
   ]},
-  { id:'premeet', title:'Pre-meeting window', start:8.0, end:9.0, tasks:[
-    { id:'t-meds', text:'💊 Take meds', note:'Reminder: 8:00–8:30 AM · won’t be fully up til pipeline call', meds:true },
+  { id:'scott', title:'Scott / Rachel Weekly', start:13.0, end:13.5, tasks:[
+    { id:'t-scott-call', text:'1:1 with Scott', note:'Initiatives \u00b7 deal rooms walkthrough \u00b7 Rock progress \u00b7 Robinhood decision' },
   ]},
-  { id:'piperev', title:'Pipeline Review — Scott', start:9.0, end:9.75, tasks:[
-    { id:'t-robinhood',    text:'Robinhood — re-engage or close?' },
-    { id:'t-coverage',     text:'Coverage gap — $340k vs $406k needed post-close', note:'TSS + Spring Health about to close → raise this today' },
-    { id:'t-teladoc-rate', text:'Teladoc rate — confirm $250/hr when scoping wraps' },
+  { id:'deepwork', title:'AZ Business Case One-Pager', start:13.5, end:14.5, tasks:[
+    { id:'t-az-onepager', hi:true, text:'Build/refresh AstraZeneca business case for Pedro', note:'OVERDUE (4/10) \u00b7 Risk-framed: Coda scaling risk, single-person dependency, Snowflake complexity' },
   ]},
-  { id:'followup', title:'Post-call follow-up', start:9.75, end:10.0, tasks:[
-    { id:'t-fu-q2target', text:'Log Q2 close target + next steps in HubSpot', note:'Whatever gets decided on the call' },
-    { id:'t-fu-actions',  text:'Capture any other action items from pipeline review' },
+  { id:'tasks', title:'Deal Follow-Ups & HubSpot Tasks', start:14.5, end:16.5, tasks:[
+    { id:'t-scott-actions', text:'Action items from Scott call', note:'Capture and execute anything from the 1:1' },
+    { id:'t-checkin', text:'Check back in \u2014 reschedule next steps call?', note:'DUE TODAY 4/13 \u00b7 HubSpot task' },
+    { id:'t-jocio', text:'Confirm metrics with Jocio \u2014 async message', note:'Due 4/16 \u00b7 Quick fire: lock in success metrics before regroup' },
+    { id:'t-deal-followups', text:'Deal follow-up emails', note:'Catch up on any outstanding outreach' },
+    { id:'t-hs-admin', text:'HubSpot admin / deal progression', note:'Update stages, next steps, general hygiene' },
   ]},
-  { id:'plants', title:'Water the plants 🌿', start:10.0, end:10.25, tasks:[
-    { id:'t-plants', text:'Water the plants 🌿', note:"While it's still cool · skipped yesterday · ~15 min" },
+  { id:'wrapup', title:'Done for the day', start:16.5, end:17.0, tasks:[
+    { id:'t-wrapup', text:'Daily wrap-up', note:'Close out, prep for tomorrow' },
   ]},
-  { id:'postcall', title:'Post-call admin', start:10.25, end:11.0, tasks:[
-    { id:'t-hs-admin', text:'HubSpot admin tasks', note:'Sandbox check-in · proposal agenda · Luke follow-up — all quick, see HubSpot tab' },
-  ]},
-  { id:'cowork', title:'Coworking session 💻', start:11.0, end:13.0, tasks:[
-    { id:'t-sellerx-edit', hi:true, text:'SellerX proposal — editing session', note:'Active now · in cowork with Dani + Bhavya' },
-    { id:'t-emdashes-cw', hi:true, text:'Remove em-dashes while you’re in the doc', note:'Done · ✓' },
-  ]},
-  { id:'lunch', title:'Lunch 🍜', start:13.0, end:13.5, tasks:[
-    { id:'t-lunch', text:'Actually eat something 🍜', note:'STILL haven’t eaten · not optional · step away from the laptop' },
-  ]},
-  { id:'deepwork', title:'Deep work — proposal call prep', start:13.5, end:15.0, tasks:[
-    { id:'t-framework',    hi:true, text:'Build proposal call talk track framework', note:'Reusable walk-through structure — the template that runs both calls' },
-    { id:'t-astra-prep',  hi:true, text:'Plug AstraZeneca into the framework', note:'$120k · EB focus · call tomorrow 4/9' },
-    { id:'t-sellerx-prep', hi:true, text:'Plug SellerX into the framework', note:'Call tomorrow 4/9 · incorporate any Cresta feedback from today' },
-  ]},
-  { id:'wrapup', title:'Wrap-up / DNB', start:15.0, end:16.0, tasks:[
-    { id:'t-hs-hygiene', text:'HubSpot hygiene',                 note:'Update next steps · clean up stale records' },
-    { id:'t-github',     text:'Push GitHub repos — pitch deck, one-pager, SOW templates' },
-  ]},
-  { id:'dogs', title:'Dogs to the beach 🐕', start:16.0, end:17.5, tasks:[
-    { id:'t-dogs', text:'Beach walk with the dogs 🐕', note:'~1.5 hrs total · 15 min drive each way · 1 mi walk' },
-  ]},
-  { id:'gym', title:'Gym', start:17.5, end:18.5, tasks:[
-    { id:'t-gym', text:'Workout 🏋️', note:'You earned it' },
-  ]},
+  { id:'gym', title:'Gym', start:17.0, end:18.5, tasks:[], isBreak:true },
 ];
 
 function getOrderedBlocks() {
