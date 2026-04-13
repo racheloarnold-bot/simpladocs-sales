@@ -1608,6 +1608,7 @@ function removeWater() {
 function toggleToday(id,el) {
   todayState.checked[id]=!todayState.checked[id];
   save(KEYS.today,todayState);
+  syncCheckbox(id, todayState.checked[id]);
   if(todayState.checked[id]) sparkle(el);
   renderToday(); if(typeof initBacklog==='function') initBacklog();
 }
@@ -1615,6 +1616,7 @@ function toggleToday(id,el) {
 function toggleHs(id,el) {
   tasksState.checked[id]=!tasksState.checked[id];
   save(KEYS.tasks,tasksState);
+  syncCheckbox(id, tasksState.checked[id]);
   if(tasksState.checked[id]) sparkle(el);
   el.classList.toggle('checked', !!tasksState.checked[id]);
   const row=el.closest('.hs-task-row');
@@ -1683,6 +1685,7 @@ function toggleBl(id) {
 function toggleBl2(id, el) {
   todayState.checked[id]=!todayState.checked[id];
   save(KEYS.today,todayState);
+  syncCheckbox(id, todayState.checked[id]);
   const cb=el; cb.classList.toggle('checked',todayState.checked[id]);
   const txt=document.getElementById(id+'-t');
   if(txt) txt.classList.toggle('done',todayState.checked[id]);
@@ -1714,6 +1717,38 @@ function copyNotes(id) {
     const btn=el.parentElement.querySelector('button');
     if(btn){const o=btn.textContent;btn.textContent='Copied!';setTimeout(()=>btn.textContent=o,1500);}
   });
+}
+
+// -- Cross-tab checkbox sync --
+const SYNC = {};
+function addSync(a,b) {
+  if(!SYNC[a]) SYNC[a]=new Set();
+  if(!SYNC[b]) SYNC[b]=new Set();
+  SYNC[a].add(b); SYNC[b].add(a);
+}
+addSync('t-checkin','hs-reschedule-checkin');
+addSync('t-jocio','hs-jocio-metrics');
+addSync('t-az-onepager','hs-az-onepager');
+addSync('t-msg-jordan','bl-jordan');
+addSync('t-msg-steven','bl-steven-msg');
+
+function syncCheckbox(id, checked) {
+  const linked = SYNC[id];
+  if(!linked) return;
+  linked.forEach(function(lid) {
+    todayState.checked[lid] = checked;
+    if(lid.startsWith('hs-')) {
+      tasksState.checked[lid] = checked;
+      save(KEYS.tasks, tasksState);
+    }
+    var cb = document.querySelector("[onclick*=\"'" + lid + "'\"");
+    if(cb) cb.classList.toggle('checked', checked);
+    var txt = document.getElementById('tt-' + lid) || document.getElementById(lid + '-t');
+    if(txt) txt.classList.toggle('done', checked);
+  });
+  save(KEYS.today, todayState);
+  updateBlCounts();
+  updateTasksCount();
 }
 function initBacklog() {
   const allIds=['bl-jordan','bl-steven-msg','bl-steven-meet','bl-ai-onepager','bl-sequences','bl-prospecting','bl-closedlost','bl-closedlost-data','bl-campaign-plan','bl-roi-templates','bl-closedwon-bot'];
