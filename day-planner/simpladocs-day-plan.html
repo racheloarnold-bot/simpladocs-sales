@@ -894,7 +894,7 @@
   <button class="tab-btn active" onclick="switchTab(&#39;today&#39;,this)">Today</button>
   <button class="tab-btn" onclick="switchTab(&#39;tasks&#39;,this)">
     HubSpot Tasks <span class="tab-count" id="tasks-count">6</span>
-    </button><button class="tab-btn" data-tab="backlog">
+    </button><button class="tab-btn" onclick="switchTab(&#39;backlog&#39;,this)">
     Backlog <span class="tab-count" id="backlog-count">8</span>
   </button>
   <button class="tab-btn" onclick="switchTab(&#39;rocks&#39;,this)">
@@ -1118,7 +1118,7 @@
           <div class="bl-num">W</div>
           <div class="bl-title">This Week</div>
         </div>
-        <span class="bl-badge" id="bl-week-badge">6 tasks</span>
+        <span class="bl-badge" id="bl-week-badge">7 tasks</span>
       </div>
       <div id="bl-week-body">
         <div class="bl-items">
@@ -1127,7 +1127,25 @@
           <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-sequences',this)"></div><div class="bl-content"><div class="bl-text" id="bl-sequences-t">Build outbound sequences &mdash; personalized past clients, generic partnerships, client upsell</div><div class="bl-meta"><span class="bl-pill bl-pill-medium">Medium</span><span class="bl-source">Scott 1:1 4/13</span></div></div></div>
           <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-prospecting',this)"></div><div class="bl-content"><div class="bl-text" id="bl-prospecting-t">Build prospecting lists &mdash; HubSpot agent + Clay enrichment, define ICP</div><div class="bl-meta"><span class="bl-pill bl-pill-medium">Medium</span><span class="bl-source">Scott 1:1 4/13</span></div></div></div>
           <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-closedlost',this)"></div><div class="bl-content"><div class="bl-text" id="bl-closedlost-t">Start working through closed-lost list (need context from Scott &mdash; Wed earliest)</div><div class="bl-meta"><span class="bl-pill bl-pill-medium">Medium</span><span class="bl-source">Scott 1:1 4/13</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-closedlost-data',this)"></div><div class="bl-content"><div class="bl-text" id="bl-closedlost-data-t">Find less manual way to pull closed-lost data for outreach lists</div><div class="bl-meta"><span class="bl-pill bl-pill-medium">Medium</span><span class="bl-source">Notes 4/8</span></div></div></div>
           <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-campaign-plan',this)"></div><div class="bl-content"><div class="bl-text" id="bl-campaign-plan-t">Have AI outreach campaign plan ready by EOW</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">Scott 1:1 4/13</span></div></div></div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="bl-section">
+      <div class="bl-header" onclick="toggleBl('bl-later-body')">
+        <div class="bl-header-left">
+          <div class="bl-num">L</div>
+          <div class="bl-title">Later</div>
+        </div>
+        <span class="bl-badge" id="bl-later-badge">2 tasks</span>
+      </div>
+      <div id="bl-later-body">
+        <div class="bl-items">
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-roi-templates',this)"></div><div class="bl-content"><div class="bl-text" id="bl-roi-templates-t">Make ROI card and engagement timeline templates/prompts in Claude</div><div class="bl-meta"><span class="bl-pill bl-pill-low">Low</span><span class="bl-source">Notes 4/7</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-closedwon-bot',this)"></div><div class="bl-content"><div class="bl-text" id="bl-closedwon-bot-t">Fix Closed Won Slack notification &mdash; rebuild as Claude bot</div><div class="bl-meta"><span class="bl-pill bl-pill-low">Low</span><span class="bl-source">Notes 4/8</span></div></div></div>
         </div>
       </div>
     </div>
@@ -1305,6 +1323,9 @@
         <textarea class="notes1on1-area" id="notes-scott" placeholder="e.g. Need Scott&#39;s call on Robinhood — re-engage or close out
 e.g. Teladoc rate still unresolved, blocking quote
 e.g. Finished intro email template, live in HubSpot" oninput="saveNotes()"></textarea>
+        <div style="margin-top:8px;text-align:right">
+          <button onclick="copyNotes('notes-scott')" style="font-size:12px;padding:5px 12px;border-radius:6px;border:1.5px solid rgba(124,58,237,0.35);background:rgba(168,85,247,0.07);color:#7c3aed;cursor:pointer;font-weight:600;transition:all 0.2s">Copy notes</button>
+        </div>
       </div>
 
       <div class="notes1on1-section">
@@ -1318,6 +1339,9 @@ e.g. Finished intro email template, live in HubSpot" oninput="saveNotes()"></tex
         <textarea class="notes1on1-area" id="notes-jordyn" placeholder="e.g. Need Jordyn&#39;s sign-off on project complexity definitions
 e.g. IHH deal incoming — heads up on delivery capacity
 e.g. Closed Won Slack notification — where does this stand?" oninput="saveNotes()"></textarea>
+        <div style="margin-top:8px;text-align:right">
+          <button onclick="copyNotes('notes-jordyn')" style="font-size:12px;padding:5px 12px;border-radius:6px;border:1.5px solid rgba(124,58,237,0.35);background:rgba(168,85,247,0.07);color:#7c3aed;cursor:pointer;font-weight:600;transition:all 0.2s">Copy notes</button>
+        </div>
       </div>
 
       <div class="notes1on1-section">
@@ -1669,7 +1693,8 @@ function toggleBl2(id, el) {
 function updateBlCounts() {
   const groups = {
     'bl-today': ['bl-jordan','bl-steven-msg'],
-    'bl-week': ['bl-steven-meet','bl-ai-onepager','bl-sequences','bl-prospecting','bl-closedlost','bl-campaign-plan']
+    'bl-week': ['bl-steven-meet','bl-ai-onepager','bl-sequences','bl-prospecting','bl-closedlost','bl-closedlost-data','bl-campaign-plan'],
+    'bl-later': ['bl-roi-templates','bl-closedwon-bot']
   };
   let total=0;
   for(const [prefix, ids] of Object.entries(groups)) {
@@ -1681,8 +1706,17 @@ function updateBlCounts() {
   const el=document.getElementById('backlog-count');
   if(el) el.textContent=total;
 }
+
+function copyNotes(id) {
+  const el=document.getElementById(id);
+  if(!el||!el.value.trim()) return;
+  navigator.clipboard.writeText(el.value).then(()=>{
+    const btn=el.parentElement.querySelector('button');
+    if(btn){const o=btn.textContent;btn.textContent='Copied!';setTimeout(()=>btn.textContent=o,1500);}
+  });
+}
 function initBacklog() {
-  const allIds=['bl-jordan','bl-steven-msg','bl-steven-meet','bl-ai-onepager','bl-sequences','bl-prospecting','bl-closedlost','bl-campaign-plan'];
+  const allIds=['bl-jordan','bl-steven-msg','bl-steven-meet','bl-ai-onepager','bl-sequences','bl-prospecting','bl-closedlost','bl-closedlost-data','bl-campaign-plan','bl-roi-templates','bl-closedwon-bot'];
   allIds.forEach(id=>{
     const row=document.querySelector('[onclick*="'+id+'"]');
     if(row && todayState.checked[id]) row.classList.add('checked');
