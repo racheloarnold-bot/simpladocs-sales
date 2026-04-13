@@ -168,6 +168,11 @@
       border-radius: 99px;
       opacity: 0.85;
     }
+    .tab-count.urgent {
+      background: var(--coral);
+      animation: pulse-urgent 2s ease-in-out infinite;
+    }
+    @keyframes pulse-urgent { 0%,100% { opacity:1; } 50% { opacity:0.6; } }
     .tab-btn.active .tab-count { opacity: 1; }
 
     /* ── Layout ── */
@@ -196,7 +201,23 @@
       padding: 12px 16px 0;
       display: flex; align-items: center; justify-content: space-between;
     }
-    .bh-left { display: flex; align-items: center; gap: 7px; }
+    .bh-left { display: flex; align-items: center; gap: 10px; }
+    .block-num {
+      width: 24px; height: 24px; border-radius: 6px;
+      background: linear-gradient(135deg, var(--navy), var(--teal-mid));
+      color: white; font-size: 11px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .is-active .block-num { background: linear-gradient(135deg, #B8860B, var(--amber)); }
+    .is-break .block-num { opacity: 0.4; }
+    .block-badge {
+      font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 99px;
+      margin-left: 6px;
+    }
+    .block-badge.badge-left { background: rgba(10,191,188,0.12); color: #007A8A; }
+    .block-badge.badge-done { background: var(--green-bg); color: var(--green); }
+    .block-badge.badge-now { background: rgba(156,39,176,0.13); color: var(--amber-text); }
     .pulse-dot {
       width: 6px; height: 6px; min-width: 6px; border-radius: 50%;
       background: var(--amber);
@@ -454,6 +475,26 @@
       margin-bottom: 12px;
       box-shadow: 0 4px 20px rgba(0,53,102,0.08), 0 1px 4px rgba(0,53,102,0.05);
     }
+
+    /* -- Backlog tab -- */
+    .bl-section { background: rgba(255,255,255,0.55); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.75); border-radius: var(--radius); overflow: hidden; margin-bottom: 10px; box-shadow: 0 4px 20px rgba(0,53,102,0.08); }
+    .bl-header { padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; border-bottom: 0.5px solid var(--border); background: linear-gradient(120deg, rgba(0,53,102,0.04) 0%, rgba(10,191,188,0.04) 100%); cursor: pointer; }
+    .bl-header-left { display: flex; align-items: center; gap: 10px; }
+    .bl-num { width: 24px; height: 24px; border-radius: 6px; background: linear-gradient(135deg, var(--navy), var(--teal-mid)); color: white; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .bl-title { font-size: 14px; font-weight: 500; color: var(--text-1); }
+    .bl-badge { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 99px; background: rgba(10,191,188,0.12); color: #007A8A; }
+    .bl-items { padding: 4px 16px 4px; }
+    .bl-row { display: flex; align-items: flex-start; gap: 10px; padding: 9px 0; border-bottom: 0.5px solid var(--border); }
+    .bl-row:last-child { border-bottom: none; }
+    .bl-content { flex: 1; min-width: 0; }
+    .bl-text { font-size: 13px; color: var(--text-1); line-height: 1.4; }
+    .bl-text.done { text-decoration: line-through; opacity: 0.4; }
+    .bl-meta { display: flex; gap: 6px; margin-top: 3px; flex-wrap: wrap; }
+    .bl-pill { font-size: 10px; font-weight: 600; padding: 1px 6px; border-radius: 99px; }
+    .bl-pill-high { background: rgba(255,20,147,0.12); color: #FF1493; }
+    .bl-pill-medium { background: rgba(156,39,176,0.12); color: #7B1FA2; }
+    .bl-pill-low { background: rgba(0,53,102,0.08); color: var(--navy); }
+    .bl-source { font-size: 10px; color: var(--text-3); }
     .rock-header {
       padding: 12px 16px;
       display: flex; align-items: center; justify-content: space-between;
@@ -853,6 +894,8 @@
   <button class="tab-btn active" onclick="switchTab(&#39;today&#39;,this)">Today</button>
   <button class="tab-btn" onclick="switchTab(&#39;tasks&#39;,this)">
     HubSpot Tasks <span class="tab-count" id="tasks-count">6</span>
+    </button><button class="tab-btn" data-tab="backlog">
+    Backlog <span class="tab-count" id="backlog-count">8</span>
   </button>
   <button class="tab-btn" onclick="switchTab(&#39;rocks&#39;,this)">
     Q2 Rocks <span class="tab-count" id="rocks-count">26</span>
@@ -1049,6 +1092,48 @@
   </div><!-- /tab-tasks -->
 
   <!-- ═══════════════ TAB: Q2 ROCKS ═══════════════ -->
+
+  <!-- TAB: BACKLOG -->
+  <div class="tab-panel" id="tab-backlog">
+
+    <div class="bl-section">
+      <div class="bl-header" onclick="toggleBl('bl-today-body')">
+        <div class="bl-header-left">
+          <div class="bl-num">!</div>
+          <div class="bl-title">Today</div>
+        </div>
+        <span class="bl-badge" id="bl-today-badge">2 tasks</span>
+      </div>
+      <div id="bl-today-body">
+        <div class="bl-items">
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-jordan',this)"></div><div class="bl-content"><div class="bl-text" id="bl-jordan-t">Message Jordan re: Fidelity proposal &mdash; share template, coordinate to join or coach</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">Scott 1:1 4/13</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-steven-msg',this)"></div><div class="bl-content"><div class="bl-text" id="bl-steven-msg-t">Connect with Steven &mdash; get AI opportunity data + content for AI one-pager</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">Scott 1:1 4/13</span></div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bl-section">
+      <div class="bl-header" onclick="toggleBl('bl-week-body')">
+        <div class="bl-header-left">
+          <div class="bl-num">W</div>
+          <div class="bl-title">This Week</div>
+        </div>
+        <span class="bl-badge" id="bl-week-badge">6 tasks</span>
+      </div>
+      <div id="bl-week-body">
+        <div class="bl-items">
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-steven-meet',this)"></div><div class="bl-content"><div class="bl-text" id="bl-steven-meet-t">Meet with Steven tomorrow &mdash; align on AI outreach before Wed team meeting</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">Scott 1:1 4/13</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-ai-onepager',this)"></div><div class="bl-content"><div class="bl-text" id="bl-ai-onepager-t">Build AI services one-pager (goes into sequence &mdash; build first)</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">Scott 1:1 4/13</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-sequences',this)"></div><div class="bl-content"><div class="bl-text" id="bl-sequences-t">Build outbound sequences &mdash; personalized past clients, generic partnerships, client upsell</div><div class="bl-meta"><span class="bl-pill bl-pill-medium">Medium</span><span class="bl-source">Scott 1:1 4/13</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-prospecting',this)"></div><div class="bl-content"><div class="bl-text" id="bl-prospecting-t">Build prospecting lists &mdash; HubSpot agent + Clay enrichment, define ICP</div><div class="bl-meta"><span class="bl-pill bl-pill-medium">Medium</span><span class="bl-source">Scott 1:1 4/13</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-closedlost',this)"></div><div class="bl-content"><div class="bl-text" id="bl-closedlost-t">Start working through closed-lost list (need context from Scott &mdash; Wed earliest)</div><div class="bl-meta"><span class="bl-pill bl-pill-medium">Medium</span><span class="bl-source">Scott 1:1 4/13</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-campaign-plan',this)"></div><div class="bl-content"><div class="bl-text" id="bl-campaign-plan-t">Have AI outreach campaign plan ready by EOW</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">Scott 1:1 4/13</span></div></div></div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /tab-backlog -->
+
   <div class="tab-panel" id="tab-rocks">
 
     <!-- Rock 1 -->
@@ -1299,24 +1384,25 @@ let rocksState = { checked: {}, ...load(KEYS.rocks) };
 // ─── Today blocks ───────────────────────────────────
 const BLOCKS = [
   { id:'prescott', title:'Pre-Scott Block', start:12.0, end:13.0, tasks:[
-    { id:'t-dealroom', hi:true, text:'Finish deal room edits', note:'Quick pass \u2014 5 min \u00b7 show Scott at 1pm' },
-    { id:'t-1on1-prep', hi:true, text:'Run 1:1 prep + think through action items', note:'Initiatives only \u2014 NO deal talk \u00b7 Rock progress, Robinhood decision, coverage gap' },
+    { id:'t-dealroom', hi:true, text:'Finish deal room edits', note:'Quick pass - 5 min - show Scott at 1pm' },
+    { id:'t-1on1-prep', hi:true, text:'Run 1:1 prep + think through action items', note:'Initiatives only - NO deal talk' },
   ]},
   { id:'scott', title:'Scott / Rachel Weekly', start:13.0, end:13.5, tasks:[
-    { id:'t-scott-call', text:'1:1 with Scott', note:'Initiatives \u00b7 deal rooms walkthrough \u00b7 Rock progress \u00b7 Robinhood decision' },
+    { id:'t-scott-call', text:'1:1 with Scott', note:'Initiatives - deal rooms - Rock progress - Robinhood decision' },
   ]},
-  { id:'deepwork', title:'AZ Business Case One-Pager', start:13.5, end:14.5, tasks:[
-    { id:'t-az-onepager', hi:true, text:'Build/refresh AstraZeneca business case for Pedro', note:'OVERDUE (4/10) \u00b7 Risk-framed: Coda scaling risk, single-person dependency, Snowflake complexity' },
+  { id:'urgent', title:'Post-Scott: Urgent Action Items', start:13.5, end:15.0, tasks:[
+    { id:'t-msg-jordan', hi:true, text:'Message Jordan re: Fidelity proposal', note:'Share proposal call template/script - coordinate to join or coach her through it - today or early tomorrow' },
+    { id:'t-msg-steven', hi:true, text:'Connect with Steven re: AI opportunity data', note:'Get AI opportunity identifier data + content for AI services one-pager - set up meeting for tomorrow' },
+    { id:'t-checkin', text:'HubSpot: Check back in - reschedule next steps call?', note:'DUE TODAY 4/13' },
+    { id:'t-jocio', text:'Confirm metrics with Jocio - async message', note:'Due 4/16 - quick fire' },
   ]},
-  { id:'tasks', title:'Deal Follow-Ups & HubSpot Tasks', start:14.5, end:16.5, tasks:[
-    { id:'t-scott-actions', text:'Action items from Scott call', note:'Capture and execute anything from the 1:1' },
-    { id:'t-checkin', text:'Check back in \u2014 reschedule next steps call?', note:'DUE TODAY 4/13 \u00b7 HubSpot task' },
-    { id:'t-jocio', text:'Confirm metrics with Jocio \u2014 async message', note:'Due 4/16 \u00b7 Quick fire: lock in success metrics before regroup' },
+  { id:'deepwork', title:'AZ Business Case + Deal Follow-ups', start:15.0, end:16.5, tasks:[
+    { id:'t-az-onepager', hi:true, text:'Build/refresh AstraZeneca business case for Pedro', note:'OVERDUE (4/10) - Risk-framed: Coda scaling risk, single-person dependency, Snowflake complexity' },
     { id:'t-deal-followups', text:'Deal follow-up emails', note:'Catch up on any outstanding outreach' },
     { id:'t-hs-admin', text:'HubSpot admin / deal progression', note:'Update stages, next steps, general hygiene' },
   ]},
   { id:'wrapup', title:'Done for the day', start:16.5, end:17.0, tasks:[
-    { id:'t-wrapup', text:'Daily wrap-up', note:'Close out, prep for tomorrow' },
+    { id:'t-wrapup', text:'Daily wrap-up', note:'Close out, prep for tomorrow - block time for closed-lost work + Steven meeting' },
   ]},
   { id:'gym', title:'Gym', start:17.0, end:18.5, tasks:[], isBreak:true },
 ];
@@ -1383,12 +1469,14 @@ function renderBlock(b) {
   if(b.isBreak) cls+=' is-break';
   else if(s==='active') cls+=' is-active';
   else if(s==='past') cls += done===total&&total>0 ? ' is-past-done' : ' is-past-inc';
+  const idx = getOrderedBlocks().indexOf(b) + 1;
   let badge='';
   if(!b.isBreak&&total>0){
-    if(s==='active') badge=`<span class="b-badge badge-now">now</span>`;
+    if(s==='active') badge=`<span class="block-badge badge-now">now</span>`;
     else if(s==='past') badge=done===total
-      ?`<span class="b-badge badge-done">done</span>`
-      :`<span class="b-badge badge-left">${total-done} left</span>`;
+      ?`<span class="block-badge badge-done">done</span>`
+      :`<span class="block-badge badge-left">${total-done} left</span>`;
+    else badge=`<span class="block-badge badge-left">${total} tasks</span>`;
   }
   let body = b.isBreak
     ? `<div class="break-note">Enjoy the break ☀️</div>`
@@ -1401,7 +1489,7 @@ function renderBlock(b) {
       <div class="add-input-row" id="addinput-${b.id}"><div class="add-box">+</div><input class="add-input" placeholder="New task…" onkeydown="addKey(event,'${b.id}')" onblur="closeAdd('${b.id}')" /></div>`;
   return `<div class="${cls}" draggable="true" data-block-id="${b.id}" ondragstart="onBlockDragStart(event)" ondragend="onBlockDragEnd(event)" ondragover="onBlockDragOver(event)" ondrop="onBlockDrop(event)" ondragleave="onBlockDragLeave(event)">
     <div class="block-header">
-      <div class="bh-left"><div class="pulse-dot"></div><span class="block-title">${esc(b.title)}</span>${badge}</div>
+      <div class="bh-left"><div class="block-num">${idx}</div><div class="pulse-dot"></div><span class="block-title">${esc(b.title)}</span>${badge}</div>
       <span class="block-time">${fmtH(b.start)} – ${fmtH(b.end)}</span>
     </div>
     <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
@@ -1497,7 +1585,7 @@ function toggleToday(id,el) {
   todayState.checked[id]=!todayState.checked[id];
   save(KEYS.today,todayState);
   if(todayState.checked[id]) sparkle(el);
-  renderToday();
+  renderToday(); if(typeof initBacklog==='function') initBacklog();
 }
 
 function toggleHs(id,el) {
@@ -1556,10 +1644,53 @@ function updateRocksCount() {
 }
 
 function updateTasksCount() {
-  const ids=['hs-agenda-proposal','hs-sandbox-checkin','hs-sellerx-fu','hs-luke-fu','hs-linkedin-connect'];
+  const ids=['hs-az-onepager','hs-reschedule-checkin','hs-gong-review','hs-jocio-metrics','hs-paige-timeline-1','hs-paige-timeline-2'];
+  const urgentIds=['hs-az-onepager','hs-reschedule-checkin'];
   const left=ids.filter(id=>!tasksState.checked[id]).length;
+  const urgentLeft=urgentIds.filter(id=>!tasksState.checked[id]).length;
   const el=document.getElementById('tasks-count');
-  if(el) el.textContent=left;
+  if(el) { el.textContent=left; el.classList.toggle('urgent', urgentLeft>0); }
+
+// -- Backlog tab --
+function toggleBl(id) {
+  const el=document.getElementById(id);
+  if(el) el.style.display = el.style.display==='none' ? '' : 'none';
+}
+function toggleBl2(id, el) {
+  todayState.checked[id]=!todayState.checked[id];
+  save(KEYS.today,todayState);
+  const cb=el; cb.classList.toggle('checked',todayState.checked[id]);
+  const txt=document.getElementById(id+'-t');
+  if(txt) txt.classList.toggle('done',todayState.checked[id]);
+  if(todayState.checked[id]) sparkle(el);
+  updateBlCounts();
+  renderToday();
+}
+function updateBlCounts() {
+  const groups = {
+    'bl-today': ['bl-jordan','bl-steven-msg'],
+    'bl-week': ['bl-steven-meet','bl-ai-onepager','bl-sequences','bl-prospecting','bl-closedlost','bl-campaign-plan']
+  };
+  let total=0;
+  for(const [prefix, ids] of Object.entries(groups)) {
+    const left=ids.filter(id=>!todayState.checked[id]).length;
+    total+=left;
+    const badge=document.getElementById(prefix+'-badge');
+    if(badge) badge.textContent=left+' task'+(left!==1?'s':'');
+  }
+  const el=document.getElementById('backlog-count');
+  if(el) el.textContent=total;
+}
+function initBacklog() {
+  const allIds=['bl-jordan','bl-steven-msg','bl-steven-meet','bl-ai-onepager','bl-sequences','bl-prospecting','bl-closedlost','bl-campaign-plan'];
+  allIds.forEach(id=>{
+    const row=document.querySelector('[onclick*="'+id+'"]');
+    if(row && todayState.checked[id]) row.classList.add('checked');
+    const txt=document.getElementById(id+'-t');
+    if(txt && todayState.checked[id]) txt.classList.add('done');
+  });
+  updateBlCounts();
+}
 }
 
 // ─── Add task (per-block) ──────────────────────────
@@ -2047,7 +2178,7 @@ function toggleRock(bodyId) {
 
 // ─── Restore checked state ─────────────────────────
 function restoreHsTasks() {
-  const ids=['hs-agenda-proposal','hs-sandbox-checkin','hs-sellerx-fu','hs-luke-fu','hs-linkedin-connect'];
+  const ids=['hs-az-onepager','hs-reschedule-checkin','hs-gong-review','hs-jocio-metrics','hs-paige-timeline-1','hs-paige-timeline-2'];
   ids.forEach(id=>{
     if(tasksState.checked[id]){
       const row=document.querySelector(`[data-hsid="${id}"]`);
