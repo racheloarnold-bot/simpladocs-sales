@@ -1583,6 +1583,7 @@ function updateTasksCount() {
   const urgentLeft=urgentIds.filter(id=>!tasksState.checked[id]).length;
   const el=document.getElementById('tasks-count');
   if(el) { el.textContent=left; el.classList.toggle('urgent', urgentLeft>0); }
+}
 
 // -- Backlog tab --
 function toggleBl(id) {
@@ -1665,7 +1666,6 @@ function initBacklog() {
     if(txt && todayState.checked[id]) txt.classList.add('done');
   });
   updateBlCounts();
-}
 }
 
 // ─── Add task (per-block) ──────────────────────────
