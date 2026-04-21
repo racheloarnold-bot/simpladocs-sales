@@ -956,7 +956,7 @@
   <button class="tab-btn" onclick="switchTab(&#39;tasks&#39;,this)">
     HubSpot Tasks <span class="tab-count" id="tasks-count">1</span>
     </button><button class="tab-btn" onclick="switchTab(&#39;backlog&#39;,this)">
-    Backlog <span class="tab-count" id="backlog-count">23</span>
+    Backlog <span class="tab-count" id="backlog-count">25</span>
   </button>
   <button class="tab-btn" onclick="switchTab(&#39;rocks&#39;,this)">
     Q2 Rocks <span class="tab-count" id="rocks-count">26</span>
@@ -1012,11 +1012,13 @@
           <div class="bl-num">!</div>
           <div class="bl-title">Today (pulled forward)</div>
         </div>
-        <span class="bl-badge" id="bl-today-badge">2 tasks</span>
+        <span class="bl-badge" id="bl-today-badge">4 tasks</span>
       </div>
       <div id="bl-today-body">
         <div class="bl-items">
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-group1-emails',this)"></div><div class="bl-content"><div class="bl-text" id="bl-group1-emails-t">Write individualized Group 1 first emails</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">AI Outreach &middot; slipped from 4/18 — Wed/Thu if not today</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-jesus-list',this)"></div><div class="bl-content"><div class="bl-text" id="bl-jesus-list-t">Send Jesus 20-30 company list for Clay enrichment</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">Steven call 4/21 &middot; Jesus OOO Fri</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-group1-emails',this)"></div><div class="bl-content"><div class="bl-text" id="bl-group1-emails-t">Draft 30 outreach emails (by Thu EOD \u2014 OOO Fri)</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">Steven call 4/21 &middot; commitment: 30 by Fri</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-jesus-sync',this)"></div><div class="bl-content"><div class="bl-text" id="bl-jesus-sync-t">Schedule Jesus sync \u2014 ICP vs. persona definitions</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">Steven call 4/21 &middot; before Fri</span></div></div></div>
           <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-yoasobi',this)"></div><div class="bl-content"><div class="bl-text" id="bl-yoasobi-t">🎫 YOASOBI tickets — 3 PM drop</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">Hard time — see sparkle block in Today tab</span></div></div></div>
         </div>
       </div>
@@ -1394,10 +1396,11 @@ const BLOCKS = [
   { id:'wrap', title:'Daily Wrap Up', start:15.5, end:16.5, tasks:[
     { id:'t-wrap-main', text:'Daily wrap up (dnb)', note:'Live meeting block.' },
   ]},
-  { id:'wed-final', title:'Wed Prep Finalize', start:16.5, end:17.0, tasks:[
+  { id:'wed-final', title:'Post-Steven Actions + Wed Prep', start:16.5, end:17.0, tasks:[
+    { id:'t-jesus-list', hi:true, text:'Send Jesus 20-30 company list for Clay enrichment', note:'From Steven call. Jesus OOO Fri \u2014 get it to him today or tomorrow AM at the latest.' },
+    { id:'t-jesus-sync', hi:true, text:'Schedule Jesus sync \u2014 ICP vs. persona definitions', note:'Before Fri. Needed to finalize outreach segmentation.' },
     { id:'t-el-prep', text:'ExploreLearning sync prep (Wed 10:30 AM)', note:'Returning client \u2014 Dawn, Pam, Bonnie + Scott. Review latest thread.' },
-    { id:'t-pipe-agenda', text:'Finalize Wed pipeline review agenda', note:'Scott 9 AM. What needs decisions, what needs his context.' },
-    { id:'t-group1-carry', text:'Carry Group 1 emails to Wed if not done', note:'Pipeline prep comes first today.' },
+    { id:'t-pipe-agenda', text:'Finalize Wed pipeline review agenda', note:'Scott 9 AM.' },
   ]},
   { id:'gym', title:'Gym (hard stop)', start:17.0, end:18.5, tasks:[], isBreak:true },
   { id:'tarot', title:'444 Tarot Setup (optional, after gym)', start:18.5, end:19.5, tasks:[
@@ -1673,7 +1676,7 @@ function toggleBl2(id, el) {
 }
 function updateBlCounts() {
   const groups = {
-    'bl-today': ['bl-group1-emails','bl-yoasobi'],
+    'bl-today': ['bl-jesus-list','bl-group1-emails','bl-jesus-sync','bl-yoasobi'],
     'bl-week': ['bl-closedlost','bl-closedlost-data','bl-royal-farms','bl-coda-dates','bl-hs-props','bl-hs-clean'],
     'bl-nextweek': ['bl-sh-go-enablement','bl-qa-coda'],
     'bl-tarot': ['bl-tarot-hs','bl-tarot-email','bl-tarot-cost'],
