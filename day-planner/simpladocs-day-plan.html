@@ -1366,7 +1366,11 @@ const BLOCKS = [
     { id:'t-closedlost-data', hi:true, text:'Clean closed-lost data on sample deals', note:'Reasons, close dates, contact associations. Doubles as pipeline hygiene for Wed review.' },
     { id:'t-hs-props-stretch', text:'Stretch: HubSpot custom property list per outreach group', note:'If cleanup finishes early. P0 blocker long-term.' },
   ]},
-  { id:'lunch', title:'Lunch', start:11.0, end:12.0, tasks:[], isBreak:true },
+  { id:'lunch', title:'Lunch + 444 Tarot tinkering', start:11.0, end:12.0, tasks:[
+    { id:'t-tarot-hs-lunch', text:'Free HubSpot acct for 444 Tarot traffic analytics', note:'Personal account fine \u2014 not registered as biz yet.' },
+    { id:'t-tarot-email-lunch', text:'Marketing / transactional email config', note:'Maybe upgrade Formspree to connect HubSpot. Check what\u2019s possible on free tier first.' },
+    { id:'t-tarot-cost-lunch', text:'Quick cost analysis across tools', note:'Stay lean until biz is registered.' },
+  ]},
   { id:'steven-prep', title:'Prep for Steven Call', start:12.0, end:13.0, tasks:[
     { id:'t-candidate-list', hi:true, text:'Review candidate company list for outreach', note:'You\'ve already pulled it \u2014 make sure it\'s structured for walkthrough.' },
     { id:'t-roleplay', hi:true, text:'Structure roleplay / pretend sales call proposal', note:'Steven\'s hesitant on your discovery ability. Discovery is literally your job \u2014 prove it with a mock call.' },
