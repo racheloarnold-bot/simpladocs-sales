@@ -954,9 +954,9 @@
 <div class="tab-bar">
   <button class="tab-btn active" onclick="switchTab(&#39;today&#39;,this)">Today</button>
   <button class="tab-btn" onclick="switchTab(&#39;tasks&#39;,this)">
-    HubSpot Tasks <span class="tab-count" id="tasks-count">6</span>
+    HubSpot Tasks <span class="tab-count" id="tasks-count">1</span>
     </button><button class="tab-btn" onclick="switchTab(&#39;backlog&#39;,this)">
-    Backlog <span class="tab-count" id="backlog-count">8</span>
+    Backlog <span class="tab-count" id="backlog-count">23</span>
   </button>
   <button class="tab-btn" onclick="switchTab(&#39;rocks&#39;,this)">
     Q2 Rocks <span class="tab-count" id="rocks-count">26</span>
@@ -1643,8 +1643,8 @@ function updateRocksCount() {
 }
 
 function updateTasksCount() {
-  const ids=['hs-pedro','hs-mike','hs-agenda-1','hs-agenda-2','hs-gong'];
-  const urgentIds=['hs-agenda-1','hs-agenda-2'];
+  const ids=['hs-gong'];
+  const urgentIds=[];
   const left=ids.filter(id=>!tasksState.checked[id]).length;
   const urgentLeft=urgentIds.filter(id=>!tasksState.checked[id]).length;
   const el=document.getElementById('tasks-count');
@@ -1669,11 +1669,11 @@ function toggleBl2(id, el) {
 }
 function updateBlCounts() {
   const groups = {
-    'bl-today': ['bl-group1-emails','bl-royal-farms','bl-hs-clean'],
-    'bl-week': ['bl-closedlost','bl-closedlost-data','bl-coda-dates','bl-hs-props'],
+    'bl-today': ['bl-group1-emails','bl-yoasobi'],
+    'bl-week': ['bl-closedlost','bl-closedlost-data','bl-royal-farms','bl-coda-dates','bl-hs-props','bl-hs-clean'],
     'bl-nextweek': ['bl-sh-go-enablement','bl-qa-coda'],
-    'bl-tarot': ['bl-tarot-stripe-signup','bl-tarot-stripe-bank','bl-tarot-link-33','bl-tarot-link-111','bl-tarot-link-333','bl-tarot-link-444','bl-tarot-redirect','bl-tarot-book-btns','bl-tarot-intake-page','bl-tarot-intake-email','bl-tarot-intake-tech','bl-tarot-noindex','bl-tarot-delivery-method','bl-tarot-delivery-template','bl-tarot-practice-flow','bl-tarot-email','bl-tarot-thankyou','bl-tarot-faq','bl-tarot-track-clients'],
-    'bl-later': ['bl-group1-seq','bl-group1-list','bl-group2-list','bl-group2-seq','bl-group3-lists','bl-sequences','bl-ai-icp','bl-roi-templates','bl-closedwon-bot']
+    'bl-tarot': ['bl-tarot-hs','bl-tarot-email','bl-tarot-cost'],
+    'bl-later': ['bl-group1-seq','bl-group1-list','bl-group2-list','bl-group2-seq','bl-group3-lists','bl-sequences','bl-ai-icp','bl-roi-templates','bl-closedwon-bot','bl-sh-mail']
   };
   let total=0;
   for(const [prefix, ids] of Object.entries(groups)) {
