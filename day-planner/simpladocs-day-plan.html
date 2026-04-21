@@ -984,58 +984,6 @@
   <!-- ═══════════════ TAB: HUBSPOT TASKS ═══════════════ -->
   <div class="tab-panel" id="tab-tasks">
 
-    <div class="section-hdr">Today</div>
-    <div class="hs-card" id="hs-today-card">
-      <div class="hs-task-row" data-hsid="hs-pedro">
-        <div class="cb" onclick="toggleHs('hs-pedro',this)"></div>
-        <div class="hs-content">
-          <div class="hs-text">Bump email to Pedro &mdash; did he receive business case PDF okay?</div>
-          <div class="hs-meta">
-            <span class="b-badge badge-hi">MEDIUM</span>
-            <span style="font-size:11px;color:var(--text-3);">Apr 20 &middot; AstraZeneca</span>
-            <a href="https://app.hubspot.com/tasks/245482189/view/all/task/364977146609" target="_blank" style="font-size:11px;color:var(--teal-mid);">View in HubSpot &#8599;</a>
-          </div>
-        </div>
-      </div>
-      <div class="hs-task-row" data-hsid="hs-mike">
-        <div class="cb" onclick="toggleHs('hs-mike',this)"></div>
-        <div class="hs-content">
-          <div class="hs-text">Check in with Mike for next steps</div>
-          <div class="hs-meta">
-            <span class="b-badge badge-hs">&#128203; To-do</span>
-            <span style="font-size:11px;color:var(--text-3);">Apr 20 &middot; Royal Farms</span>
-            <a href="https://app.hubspot.com/tasks/245482189/view/all/task/364977146580" target="_blank" style="font-size:11px;color:var(--teal-mid);">View in HubSpot &#8599;</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section-hdr">Tomorrow (4/21)</div>
-    <div class="hs-card" id="hs-tomorrow-card">
-      <div class="hs-task-row" data-hsid="hs-agenda-1">
-        <div class="cb" onclick="toggleHs('hs-agenda-1',this)"></div>
-        <div class="hs-content">
-          <div class="hs-text">Send agenda email for sync call</div>
-          <div class="hs-meta">
-            <span class="b-badge badge-hi">HIGH</span>
-            <span style="font-size:11px;color:var(--text-3);">Apr 21</span>
-            <a href="https://app.hubspot.com/tasks/245482189/view/all/task/364953839340" target="_blank" style="font-size:11px;color:var(--teal-mid);">View in HubSpot &#8599;</a>
-          </div>
-        </div>
-      </div>
-      <div class="hs-task-row" data-hsid="hs-agenda-2">
-        <div class="cb" onclick="toggleHs('hs-agenda-2',this)"></div>
-        <div class="hs-content">
-          <div class="hs-text">Send agenda/check in email &mdash; good to proceed?</div>
-          <div class="hs-meta">
-            <span class="b-badge badge-hi">HIGH</span>
-            <span style="font-size:11px;color:var(--text-3);">Apr 21</span>
-            <a href="https://app.hubspot.com/tasks/245482189/view/all/task/365092248287" target="_blank" style="font-size:11px;color:var(--teal-mid);">View in HubSpot &#8599;</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <div class="section-hdr">Later this week</div>
     <div class="hs-card" id="hs-later-card">
       <div class="hs-task-row" data-hsid="hs-gong">
@@ -1064,13 +1012,12 @@
           <div class="bl-num">!</div>
           <div class="bl-title">Today (pulled forward)</div>
         </div>
-        <span class="bl-badge" id="bl-today-badge">3 tasks</span>
+        <span class="bl-badge" id="bl-today-badge">2 tasks</span>
       </div>
       <div id="bl-today-body">
         <div class="bl-items">
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-group1-emails',this)"></div><div class="bl-content"><div class="bl-text" id="bl-group1-emails-t">Write individualized Group 1 first emails per contact</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">AI Outreach &middot; carried over from 4/18 target</span></div></div></div>
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-royal-farms',this)"></div><div class="bl-content"><div class="bl-text" id="bl-royal-farms-t">Brief on Royal Farms opportunity</div><div class="bl-meta"><span class="bl-pill bl-pill-medium">Medium</span><span class="bl-source">Before Wed pipeline review</span></div></div></div>
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-hs-clean',this)"></div><div class="bl-content"><div class="bl-text" id="bl-hs-clean-t">Clean HubSpot deals data (close dates, end dates, closed-lost reasons)</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">AI Outreach &middot; P0 blocking</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-group1-emails',this)"></div><div class="bl-content"><div class="bl-text" id="bl-group1-emails-t">Write individualized Group 1 first emails</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">AI Outreach &middot; slipped from 4/18 \u2014 Wed/Thu if not today</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-yoasobi',this)"></div><div class="bl-content"><div class="bl-text" id="bl-yoasobi-t">\U0001F3AB YOASOBI tickets \u2014 3 PM drop</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">Hard time \u2014 see sparkle block in Today tab</span></div></div></div>
         </div>
       </div>
     </div>
@@ -1081,14 +1028,16 @@
           <div class="bl-num">W</div>
           <div class="bl-title">This Week</div>
         </div>
-        <span class="bl-badge" id="bl-week-badge">3 tasks</span>
+        <span class="bl-badge" id="bl-week-badge">5 tasks</span>
       </div>
       <div id="bl-week-body">
         <div class="bl-items">
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-closedlost',this)"></div><div class="bl-content"><div class="bl-text" id="bl-closedlost-t">Start working through closed-lost list</div><div class="bl-meta"><span class="bl-pill bl-pill-medium">Medium</span><span class="bl-source">Sequence built, need context from Scott</span></div></div></div>
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-closedlost-data',this)"></div><div class="bl-content"><div class="bl-text" id="bl-closedlost-data-t">Find less manual way to pull closed-lost data</div><div class="bl-meta"><span class="bl-pill bl-pill-medium">Medium</span></div></div></div>
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-coda-dates',this)"></div><div class="bl-content"><div class="bl-text" id="bl-coda-dates-t">Pull Coda close + contract end dates for list segmentation</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">AI Outreach &middot; P0 blocking</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-closedlost',this)"></div><div class="bl-content"><div class="bl-text" id="bl-closedlost-t">Start working through closed-lost list</div><div class="bl-meta"><span class="bl-pill bl-pill-medium">Medium</span><span class="bl-source">Sequence built, need Scott context</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-closedlost-data',this)"></div><div class="bl-content"><div class="bl-text" id="bl-closedlost-data-t">Less manual way to pull closed-lost data for outreach</div><div class="bl-meta"><span class="bl-pill bl-pill-medium">Medium</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-royal-farms',this)"></div><div class="bl-content"><div class="bl-text" id="bl-royal-farms-t">Brief on Royal Farms opportunity</div><div class="bl-meta"><span class="bl-pill bl-pill-medium">Medium</span><span class="bl-source">Before Wed pipeline review</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-coda-dates',this)"></div><div class="bl-content"><div class="bl-text" id="bl-coda-dates-t">Pull Coda close + contract end dates for segmentation</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">AI Outreach &middot; P0 blocking \u2014 Thu block</span></div></div></div>
           <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-hs-props',this)"></div><div class="bl-content"><div class="bl-text" id="bl-hs-props-t">Identify HubSpot custom properties per outreach group</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">AI Outreach &middot; P0 blocking</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-hs-clean',this)"></div><div class="bl-content"><div class="bl-text" id="bl-hs-clean-t">Clean HubSpot deals data (close dates, end dates, reasons)</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">AI Outreach &middot; in-progress today for sample deals</span></div></div></div>
         </div>
       </div>
     </div>
@@ -1103,8 +1052,8 @@
       </div>
       <div id="bl-nextweek-body">
         <div class="bl-items">
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-sh-go-enablement',this)"></div><div class="bl-content"><div class="bl-text" id="bl-sh-go-enablement-t">Superhuman Go Sales Enablement e-Learning</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span></div></div></div>
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-qa-coda',this)"></div><div class="bl-content"><div class="bl-text" id="bl-qa-coda-t">QA Coda close dates in HubSpot &mdash; Mar 9 import issue</div><div class="bl-meta"><span class="bl-pill bl-pill-medium">Medium</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-sh-go-enablement',this)"></div><div class="bl-content"><div class="bl-text" id="bl-sh-go-enablement-t">Superhuman Go Sales Enablement e-Learning</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">Slate for EOW \u2014 Thu</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-qa-coda',this)"></div><div class="bl-content"><div class="bl-text" id="bl-qa-coda-t">QA Coda close dates in HubSpot \u2014 Mar 9 import issue</div><div class="bl-meta"><span class="bl-pill bl-pill-medium">Medium</span></div></div></div>
         </div>
       </div>
     </div>
@@ -1115,33 +1064,14 @@
           <div class="bl-num" style="background:linear-gradient(135deg,#a855f7,#ec4899);color:white">\u2728</div>
           <div class="bl-title">444 Tarot (side biz)</div>
         </div>
-        <span class="bl-badge" id="bl-tarot-badge">19 tasks</span>
+        <span class="bl-badge" id="bl-tarot-badge">3 focus</span>
       </div>
       <div id="bl-tarot-body" style="display:none;">
         <div class="bl-items">
-          <div class="rock-group-hdr">Payments</div>
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-tarot-stripe-signup',this)"></div><div class="bl-content"><div class="bl-text" id="bl-tarot-stripe-signup-t">Register for Stripe (personal account fine for now)</div></div></div>
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-tarot-stripe-bank',this)"></div><div class="bl-content"><div class="bl-text" id="bl-tarot-stripe-bank-t">Connect Stripe to bank account for payouts</div></div></div>
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-tarot-link-33',this)"></div><div class="bl-content"><div class="bl-text" id="bl-tarot-link-33-t">Payment Link: Focused Pull ($33)</div></div></div>
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-tarot-link-111',this)"></div><div class="bl-content"><div class="bl-text" id="bl-tarot-link-111-t">Payment Link: Full Picture ($111)</div></div></div>
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-tarot-link-333',this)"></div><div class="bl-content"><div class="bl-text" id="bl-tarot-link-333-t">Payment Link: Year Ahead ($333)</div></div></div>
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-tarot-link-444',this)"></div><div class="bl-content"><div class="bl-text" id="bl-tarot-link-444-t">Payment Link: Soul Reading ($444)</div></div></div>
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-tarot-redirect',this)"></div><div class="bl-content"><div class="bl-text" id="bl-tarot-redirect-t">Set each link redirect to 444tarot.com/intake?tier=...</div></div></div>
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-tarot-book-btns',this)"></div><div class="bl-content"><div class="bl-text" id="bl-tarot-book-btns-t">Wire up site &ldquo;Book&rdquo; buttons to Stripe links</div></div></div>
-          <div class="rock-group-hdr">Intake</div>
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-tarot-intake-page',this)"></div><div class="bl-content"><div class="bl-text" id="bl-tarot-intake-page-t">Build /intake page (tier-aware via ?tier= param)</div></div></div>
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-tarot-intake-email',this)"></div><div class="bl-content"><div class="bl-text" id="bl-tarot-intake-email-t">Email forwarding so form submissions land in inbox</div></div></div>
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-tarot-intake-tech',this)"></div><div class="bl-content"><div class="bl-text" id="bl-tarot-intake-tech-t">Decide: Formspree vs Tally vs custom (leaning Formspree)</div></div></div>
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-tarot-noindex',this)"></div><div class="bl-content"><div class="bl-text" id="bl-tarot-noindex-t">Add &lt;meta name=&quot;robots&quot; content=&quot;noindex&quot;&gt; to intake</div></div></div>
-          <div class="rock-group-hdr">Delivery</div>
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-tarot-delivery-method',this)"></div><div class="bl-content"><div class="bl-text" id="bl-tarot-delivery-method-t">Decide delivery method (Loom? Google Drive? Vimeo?)</div></div></div>
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-tarot-delivery-template',this)"></div><div class="bl-content"><div class="bl-text" id="bl-tarot-delivery-template-t">Create &ldquo;your reading is ready&rdquo; email template</div></div></div>
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-tarot-practice-flow',this)"></div><div class="bl-content"><div class="bl-text" id="bl-tarot-practice-flow-t">Practice full flow end-to-end yourself</div></div></div>
-          <div class="rock-group-hdr">Business basics</div>
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-tarot-email',this)"></div><div class="bl-content"><div class="bl-text" id="bl-tarot-email-t">Decide: personal email vs rachel@444tarot.com</div></div></div>
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-tarot-thankyou',this)"></div><div class="bl-content"><div class="bl-text" id="bl-tarot-thankyou-t">Thank you / confirmation page after intake</div></div></div>
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-tarot-faq',this)"></div><div class="bl-content"><div class="bl-text" id="bl-tarot-faq-t">Brief FAQ / &ldquo;what to expect&rdquo; for confirmation email</div></div></div>
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-tarot-track-clients',this)"></div><div class="bl-content"><div class="bl-text" id="bl-tarot-track-clients-t">Spreadsheet for first clients (name/tier/paid/delivered)</div></div></div>
+          <div class="rock-group-hdr">Today's focus (after gym)</div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-tarot-hs',this)"></div><div class="bl-content"><div class="bl-text" id="bl-tarot-hs-t">Free HubSpot account for traffic analytics</div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-tarot-email',this)"></div><div class="bl-content"><div class="bl-text" id="bl-tarot-email-t">Marketing / transactional email config (maybe Formspree upgrade)</div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-tarot-cost',this)"></div><div class="bl-content"><div class="bl-text" id="bl-tarot-cost-t">Cost analysis across all tools (not registered as biz yet)</div></div></div>
         </div>
         <a class="coda-link" href="https://coda.io/d/444-Tarot-Launch-Checklist_djKJq6Hm6ey/Launch-Checklist_suK-hBXA" target="_blank">\u2197 View in Coda</a>
       </div>
@@ -1153,7 +1083,7 @@
           <div class="bl-num">L</div>
           <div class="bl-title">Later</div>
         </div>
-        <span class="bl-badge" id="bl-later-badge">9 tasks</span>
+        <span class="bl-badge" id="bl-later-badge">10 tasks</span>
       </div>
       <div id="bl-later-body" style="display:none;">
         <div class="bl-items">
@@ -1162,10 +1092,11 @@
           <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-group2-list',this)"></div><div class="bl-content"><div class="bl-text" id="bl-group2-list-t">Build Group 2 contact list (12+ mo past clients)</div><div class="bl-meta"><span class="bl-pill bl-pill-medium">Medium</span></div></div></div>
           <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-group2-seq',this)"></div><div class="bl-content"><div class="bl-text" id="bl-group2-seq-t">Write Group 2 re-introduction sequence</div><div class="bl-meta"><span class="bl-pill bl-pill-medium">Medium</span></div></div></div>
           <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-group3-lists',this)"></div><div class="bl-content"><div class="bl-text" id="bl-group3-lists-t">Build Group 3 contact lists (3 segments)</div><div class="bl-meta"><span class="bl-pill bl-pill-medium">Medium</span></div></div></div>
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-sequences',this)"></div><div class="bl-content"><div class="bl-text" id="bl-sequences-t">Build outbound sequences &mdash; past clients, partnerships, upsell</div><div class="bl-meta"><span class="bl-pill bl-pill-medium">Medium</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-sequences',this)"></div><div class="bl-content"><div class="bl-text" id="bl-sequences-t">Build outbound sequences \u2014 past clients, partnerships, upsell</div><div class="bl-meta"><span class="bl-pill bl-pill-medium">Medium</span></div></div></div>
           <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-ai-icp',this)"></div><div class="bl-content"><div class="bl-text" id="bl-ai-icp-t">Determine ICP for AI services</div><div class="bl-meta"><span class="bl-pill bl-pill-medium">Medium</span></div></div></div>
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-roi-templates',this)"></div><div class="bl-content"><div class="bl-text" id="bl-roi-templates-t">Make ROI card + engagement timeline templates in Claude</div><div class="bl-meta"><span class="bl-pill bl-pill-low">Low</span></div></div></div>
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-closedwon-bot',this)"></div><div class="bl-content"><div class="bl-text" id="bl-closedwon-bot-t">Fix Closed Won Slack notification &mdash; rebuild as Claude bot</div><div class="bl-meta"><span class="bl-pill bl-pill-low">Low</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-roi-templates',this)"></div><div class="bl-content"><div class="bl-text" id="bl-roi-templates-t">ROI card + engagement timeline templates in Claude</div><div class="bl-meta"><span class="bl-pill bl-pill-low">Low</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-closedwon-bot',this)"></div><div class="bl-content"><div class="bl-text" id="bl-closedwon-bot-t">Fix Closed Won Slack notification \u2014 rebuild as Claude bot</div><div class="bl-meta"><span class="bl-pill bl-pill-low">Low</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-sh-mail',this)"></div><div class="bl-content"><div class="bl-text" id="bl-sh-mail-t">Watch Superhuman Mail webinar replay</div><div class="bl-meta"><span class="bl-pill bl-pill-low">Low</span></div></div></div>
         </div>
       </div>
     </div>
@@ -1401,10 +1332,10 @@ e.g. Closed Won Slack notification — where does this stand?" oninput="saveNote
 // ─── Storage ───────────────────────────────────────
 const KEYS = {
   notes1on1: 'sd-1on1-notes-v1',
-  today: 'sd-today-apr20-v1',
+  today: 'sd-today-apr21-v1',
   tasks: 'sd-tasks-q2-v1',
   rocks: 'sd-rocks-q2-v1',
-  water: 'sd-water-apr20-v1',
+  water: 'sd-water-apr21-v1',
 };
 // Migrate rocks checked state from older keys if new key is empty
 (function migrateRocks() {
@@ -1427,50 +1358,49 @@ let rocksState = { checked: {}, ...load(KEYS.rocks) };
 
 // ─── Today blocks ───────────────────────────────────
 const BLOCKS = [
-  { id:'morning', title:'Morning (done)', start:8.5, end:10.0, tasks:[
-    { id:'t-pipe-lookahead', text:'Weekly pipeline look-ahead & admin', note:'8:30-9:00 \u2014 done' },
-    { id:'t-magic-pages', text:'Magic Pages | SimplaDocs (Jeremy Olson, Ruggy, Jordyn)', note:'9:00-10:00 \u2014 done' },
+  { id:'morning-done', title:'Morning (done)', start:8.5, end:9.25, tasks:[
+    { id:'t-prep-done', text:'Prep for day', note:'7:30-8:30 \u2014 done' },
   ]},
-  { id:'pipe-hygiene', title:'Pipeline Hygiene + Week Setup', start:10.917, end:11.917, tasks:[
-    { id:'t-deal-walk', hi:true, text:'Walk all 8 open deals \u2014 confirm next step is current', note:'AZ $120k, SellerX $25k, Smartsheet, IHH $13.75k, IDC $75k, SBC, GTH, TSS. Verify next meeting exists for Proposal+ (not just a HubSpot task).' },
-    { id:'t-close-dates', text:'Close date sanity pass \u2014 anything unrealistic for Q2?', note:'AZ is the swing. Update `hs_next_step` on anything you touch.' },
-    { id:'t-royal-farms', text:'Brief on Royal Farms (Scott-owned, Mike intro)', note:'Pulled forward from backlog \u2014 understand before Wed pipeline review.' },
-    { id:'t-hs-clean-light', text:'Light HubSpot data cleanup (close dates, end dates)', note:'Pulled forward from backlog \u2014 P0 blocking AI outreach.' },
+  { id:'outreach-cleanup', title:'Outreach Sample Group Cleanup (top priority)', start:9.25, end:11.0, tasks:[
+    { id:'t-outreach-lists', hi:true, text:'Clean outreach sample group contact lists', note:'Top priority today \u2014 trumps other backlog. Get lists tight for kickoff.' },
+    { id:'t-closedlost-data', hi:true, text:'Clean closed-lost data on sample deals', note:'Reasons, close dates, contact associations. Doubles as pipeline hygiene for Wed review.' },
+    { id:'t-hs-props-stretch', text:'Stretch: HubSpot custom property list per outreach group', note:'If cleanup finishes early. P0 blocker long-term.' },
   ]},
-  { id:'scott-prep', title:'Scott 1:1 Prep', start:11.917, end:12.0, tasks:[
-    { id:'t-scott-prep', hi:true, text:'Final 5-min prep', note:'Rocks 1-4 one-liner. Raise: partner ownership map, pitch PDF, Robinhood disposition.' },
+  { id:'lunch', title:'Lunch', start:11.0, end:12.0, tasks:[], isBreak:true },
+  { id:'steven-prep', title:'Prep for Steven Call', start:12.0, end:13.0, tasks:[
+    { id:'t-candidate-list', hi:true, text:'Review candidate company list for outreach', note:'You\'ve already pulled it \u2014 make sure it\'s structured for walkthrough.' },
+    { id:'t-roleplay', hi:true, text:'Structure roleplay / pretend sales call proposal', note:'Steven\'s hesitant on your discovery ability. Discovery is literally your job \u2014 prove it with a mock call.' },
+    { id:'t-onepager-align', hi:true, text:'AI one-pager alignment questions', note:'#1 blocker for outreach kickoff. Nail open Qs before the call.' },
+    { id:'t-group1-start', text:'Start Group 1 personalized first emails (if time)', note:'Slipped from 4/18. Continue after Steven call if cleanup blocks it.' },
   ]},
-  { id:'scott-11', title:'Scott 1:1', start:12.0, end:12.5, tasks:[
-    { id:'t-scott-call', text:'Scott / Rachel weekly', note:'Monday focus = initiatives + Rock progress, NOT pipeline.' },
+  { id:'steven-call', title:'Steven \u2014 AI Outreach / Content', start:13.0, end:14.0, tasks:[
+    { id:'t-steven-live', text:'Live call \u2014 AI outreach strategy w/ Steven', note:'Meet: dzn-akgp-gkt' },
   ]},
-  { id:'lunch', title:'Lunch (shifted)', start:12.5, end:13.25, tasks:[], isBreak:true },
-  { id:'tasks-block', title:'HubSpot Tasks + One-Pager Update', start:12.917, end:13.667, tasks:[
-    { id:'t-onepager-1k', hi:true, text:'Add $1K assessment offer to AI one-pager', note:'From Scott 1:1. Assess/prepare/build framing. $750-1K, 2 calls, 1-week turnaround, 45min discovery + 2hr strategy + 30min deliverable. Position as discount from $1.8K.' },
-    { id:'t-pedro', hi:true, text:'Bump email to Pedro \u2014 did he receive AZ business case?', note:'HubSpot task due today.' },
-    { id:'t-mike', text:'Check in with Mike for next steps (Royal Farms)', note:'HubSpot task due today.' },
-    { id:'t-agenda-1', hi:true, text:'Draft HIGH agenda email #1 (due 4/21)', note:'HubSpot task flagged HIGH for tomorrow AM.' },
-    { id:'t-agenda-2', hi:true, text:'Draft HIGH agenda/check-in email #2 (due 4/21)', note:'HubSpot task flagged HIGH for tomorrow AM.' },
+  { id:'wed-prep', title:'Wed Pipeline Review Prep', start:14.0, end:15.0, tasks:[
+    { id:'t-deal-snapshot', hi:true, text:'Draft deal snapshot for Scott', note:'8 open deals. Confirm next steps, close dates, next meetings for Proposal+ stage.' },
+    { id:'t-sellerx-prep', hi:true, text:'SellerX next-steps call prep (Wed 8:30 AM)', note:'Meeting w/ Scott + Bradley. Notion migration, $25k. Locked at $250/hr.' },
+    { id:'t-royal-farms', text:'Royal Farms context', note:'Mike intro, Scott-owned. Understand before pipeline review.' },
   ]},
-  { id:'wed-prep', title:'Wed Meeting Prep', start:13.667, end:14.167, tasks:[
-    { id:'t-sellerx-prep', text:'SellerX next-steps agenda (Wed 8:30 AM)', note:'CEO was out last week \u2014 rescheduled 4/22.' },
-    { id:'t-el-prep', text:'ExploreLearning projects sync prep (Wed 10:30 AM)', note:'Returning client \u2014 review latest thread.' },
-    { id:'t-pipeline-view', text:'Scan Wed pipeline review dashboard', note:'Wed 9:00 AM \u2014 make sure MEDDPICC gaps are up to date.' },
+  { id:'yoasobi', title:'\U0001F3AB YOASOBI Tickets \u2014 3 PM DROP', start:15.0, end:15.417, sparkle:true, tasks:[
+    { id:'t-yoasobi', hi:true, text:'PHONE READY \u2014 refresh refresh refresh', note:'Pre-sale drops at 3 PM sharp. Do not miss.' },
   ]},
-  { id:'close-lost-launch', title:'Launch Close-Lost Outreach (Scott ask)', start:14.167, end:15.0, tasks:[
-    { id:'t-cl-pick-10', hi:true, text:'Pick 10 close-lost clients (2 per buyer persona)', note:'Personas: Jordan (growth ops), Brian (traditional owner), Mark (enterprise), Fractional buyer, Burnt buyer. Focus on timing/budget blockers from before.' },
-    { id:'t-cl-send', hi:true, text:'Send first wave with AI one-pager', note:'From Scott 1:1 \u2014 launch today. Pipeline coverage only 2x, half riding on AZ $120k. Scott wants momentum.' },
+  { id:'buffer-az', title:'Buffer / AZ Async Check', start:15.417, end:15.5, tasks:[
+    { id:'t-az-check', text:'Check AZ thread with Mike & Scott', note:'You already pinged them \u2014 monitor async throughout the day.' },
   ]},
-  { id:'wrap', title:'Daily Wrap', start:15.0, end:15.333, tasks:[
-    { id:'t-cl-send', hi:true, text:'Send close-lost AI sequence wave (IF unblocked)', note:'BLOCKED on Scott/Steven responses. Fire if they come back by 3:15 \u2014 otherwise carry to tomorrow.' },
-    { id:'t-steven-agenda', text:'Add opp identifier review to tomorrow\u2019s Steven agenda', note:'From Scott 1:1 \u2014 quick Slack/cal note before tomorrow 1 PM AI Outreach content session.' },
-    { id:'t-robinhood', text:'Robinhood disposition note', note:'Saagar has been following up, no answer. Decide: re-engage angle or close out.' },
-    { id:'t-tue-lookahead', text:'Tuesday look-ahead', note:'AI Outreach content w/ Steven 1:00 PM.' },
+  { id:'wrap', title:'Daily Wrap Up', start:15.5, end:16.5, tasks:[
+    { id:'t-wrap-main', text:'Daily wrap up (dnb)', note:'Live meeting block.' },
   ]},
-  { id:'tarot', title:'444 Tarot Launch Sprint (after-work)', start:15.333, end:16.417, tasks:[
-    { id:'t-stripe-signup', text:'Sign up for Stripe + connect bank account', note:'Launch checklist \u201CToday/tomorrow\u201D step.' },
-    { id:'t-stripe-links', text:'Start 4 payment links ($33/$111/$333/$444)', note:'Focused Pull, Full Picture, Year Ahead, Soul Reading.' },
+  { id:'wed-final', title:'Wed Prep Finalize', start:16.5, end:17.0, tasks:[
+    { id:'t-el-prep', text:'ExploreLearning sync prep (Wed 10:30 AM)', note:'Returning client \u2014 Dawn, Pam, Bonnie + Scott. Review latest thread.' },
+    { id:'t-pipe-agenda', text:'Finalize Wed pipeline review agenda', note:'Scott 9 AM. What needs decisions, what needs his context.' },
+    { id:'t-group1-carry', text:'Carry Group 1 emails to Wed if not done', note:'Pipeline prep comes first today.' },
   ]},
   { id:'gym', title:'Gym (hard stop)', start:17.0, end:18.5, tasks:[], isBreak:true },
+  { id:'tarot', title:'444 Tarot Setup (optional, after gym)', start:18.5, end:19.5, tasks:[
+    { id:'t-tarot-hs', text:'Free HubSpot account for traffic analytics', note:'Side biz setup. Not registered as biz yet \u2014 personal account fine.' },
+    { id:'t-tarot-email', text:'Marketing / transactional email config', note:'Maybe upgrade Formspree to connect HubSpot. Cost analysis needed.' },
+    { id:'t-tarot-cost', text:'Cost analysis across all tools', note:'Not registered as biz yet \u2014 keep lean.' },
+  ]},
 ];
 
 function getOrderedBlocks() {
