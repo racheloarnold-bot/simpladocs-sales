@@ -1144,7 +1144,7 @@
         <div class="bl-items">
           <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-teladoc-1pg',this)"></div><div class="bl-content"><div class="bl-text" id="bl-teladoc-1pg-t">Send AI one-pager to Teladoc (Beth, Tracy, Will)</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">HubSpot &middot; re-engage Data &amp; AI</span></div></div></div>
           <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-ihh-1pg',this)"></div><div class="bl-content"><div class="bl-text" id="bl-ihh-1pg-t">Send AI one-pager to IHH (exclude Luke)</div><div class="bl-meta"><span class="bl-pill bl-pill-medium">Medium</span><span class="bl-source">HubSpot &middot; FYI framing</span></div></div></div>
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-g3-start',this)"></div><div class="bl-content"><div class="bl-text" id="bl-g3-start-t">Start Group 3 closed-lost emails (budget / timing / ghosted)</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">Launch kickoff &middot; least risky</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-g3-start',this)"></div><div class="bl-content"><div class="bl-text" id="bl-g3-start-t">Launch Group 3 pilot &mdash; target 30 sequences out today</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">Sequences built &middot; finish list, enrich w/ Scott+Steven, send</span></div></div></div>
         </div>
       </div>
     </div>
@@ -1155,10 +1155,11 @@
           <div class="bl-num">W</div>
           <div class="bl-title">This Week</div>
         </div>
-        <span class="bl-badge" id="bl-week-badge">6 tasks</span>
+        <span class="bl-badge" id="bl-week-badge">7 tasks</span>
       </div>
       <div id="bl-week-body">
         <div class="bl-items">
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-sh-go-training',this)"></div><div class="bl-content"><div class="bl-text" id="bl-sh-go-training-t">Superhuman Go Partner Training course</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">Due Fri 4/25 &middot; OOO Fri &mdash; do Thu 4/24</span></div></div></div>
           <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-closedlost',this)"></div><div class="bl-content"><div class="bl-text" id="bl-closedlost-t">Start working through closed-lost list</div><div class="bl-meta"><span class="bl-pill bl-pill-medium">Medium</span><span class="bl-source">Group 3 launch today</span></div></div></div>
           <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-closedlost-data',this)"></div><div class="bl-content"><div class="bl-text" id="bl-closedlost-data-t">Less manual way to pull closed-lost data for outreach</div><div class="bl-meta"><span class="bl-pill bl-pill-medium">Medium</span></div></div></div>
           <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-royal-farms',this)"></div><div class="bl-content"><div class="bl-text" id="bl-royal-farms-t">Brief on Royal Farms opportunity</div><div class="bl-meta"><span class="bl-pill bl-pill-medium">Medium</span><span class="bl-source">Confirm intro w/ Scott today</span></div></div></div>
@@ -1175,11 +1176,10 @@
           <div class="bl-num">N</div>
           <div class="bl-title">Next Week</div>
         </div>
-        <span class="bl-badge" id="bl-nextweek-badge">2 tasks</span>
+        <span class="bl-badge" id="bl-nextweek-badge">1 task</span>
       </div>
       <div id="bl-nextweek-body">
         <div class="bl-items">
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-sh-go-enablement',this)"></div><div class="bl-content"><div class="bl-text" id="bl-sh-go-enablement-t">Superhuman Go Sales Enablement e-Learning</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span></div></div></div>
           <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-qa-coda',this)"></div><div class="bl-content"><div class="bl-text" id="bl-qa-coda-t">QA Coda close dates in HubSpot &mdash; Mar 9 import issue</div><div class="bl-meta"><span class="bl-pill bl-pill-medium">Medium</span></div></div></div>
         </div>
       </div>
@@ -1522,10 +1522,12 @@ const BLOCKS = [
   { id:'sarah-call', title:'\ud83d\udcde Sarah (Grammarly)', start:13.5, end:14.0, tasks:[
     { id:'t-sarah-live', text:'Live call \u2014 Scott + Sarah Issner (Grammarly)', note:'meet.google.com/xja-oudc-jdo' },
   ]},
-  { id:'closed-lost-g3', title:'Closed-Lost Group 3 Drafting \ud83d\ude80', start:14.0, end:15.5, tasks:[
-    { id:'t-g3-budget', hi:true, text:'Draft Group 3 \u2014 budget segment email', note:'Least risky if burned. AI one-pager template already inserted.' },
-    { id:'t-g3-timing', hi:true, text:'Draft Group 3 \u2014 timing segment email', note:'Personalized body, template already in sequence.' },
-    { id:'t-g3-ghosted', hi:true, text:'Draft Group 3 \u2014 ghosted segment email', note:'Personalized body, template already in sequence.' },
+  { id:'closed-lost-g3', title:'Closed-Lost Group 3 Outreach \ud83d\ude80 (PILOT LAUNCH \u2014 target 30)', start:14.0, end:15.5, tasks:[
+    { id:'t-g3-list-finish', hi:true, text:'Finish building the pilot list', note:'Sequences + AI one-pager already in place. Get the pilot list locked before enrollment.' },
+    { id:'t-g3-enrich-scott', hi:true, text:'Pull enrichment data from Scott & Steven', note:'Anything they know about the contacts / deals that will sharpen the outreach.' },
+    { id:'t-g3-enrich-contact', text:'Enrich contact data (if needed)', note:'Fill gaps on the pilot contacts \u2014 Clay if Clay\'s ready, manual otherwise.' },
+    { id:'t-g3-enroll', hi:true, text:'Enroll & send \u2014 target 30 sequences out today', note:'Actually send the pilot. Spread across the 3 segments (budget / timing / ghosted).' },
+    { id:'t-g3-monitor', text:'Monitor initial sends \u2014 bounces, replies, opt-outs', note:'Watch first hour post-launch.' },
   ]},
   { id:'wrap', title:'Daily Wrap Up', start:15.5, end:16.5, tasks:[
     { id:'t-wrap-live', text:'Daily wrap up (dnb)', note:'Live meeting block.' },
@@ -1778,8 +1780,8 @@ function updateRocksCount() {
 }
 
 function updateTasksCount() {
-  const ids=['hs-gong'];
-  const urgentIds=[];
+  const ids=['hs-teladoc-1pg','hs-single-thread','hs-robinhood','hs-royal-farms','hs-ihh-1pg','hs-fidelity','hs-vtpro','hs-gong','hs-teladoc-p2','hs-smartsheet','hs-janpro'];
+  const urgentIds=['hs-teladoc-1pg','hs-single-thread','hs-robinhood'];
   const left=ids.filter(id=>!tasksState.checked[id]).length;
   const urgentLeft=urgentIds.filter(id=>!tasksState.checked[id]).length;
   const el=document.getElementById('tasks-count');
@@ -1804,10 +1806,10 @@ function toggleBl2(id, el) {
 }
 function updateBlCounts() {
   const groups = {
-    'bl-today': ['bl-jesus-list','bl-group1-emails','bl-jesus-sync','bl-yoasobi'],
-    'bl-week': ['bl-closedlost','bl-closedlost-data','bl-royal-farms','bl-coda-dates','bl-hs-props','bl-hs-clean'],
-    'bl-nextweek': ['bl-sh-go-enablement','bl-qa-coda'],
-    'bl-tarot': ['bl-tarot-hs','bl-tarot-email','bl-tarot-cost'],
+    'bl-today': ['bl-teladoc-1pg','bl-ihh-1pg','bl-g3-start'],
+    'bl-week': ['bl-sh-go-training','bl-closedlost','bl-closedlost-data','bl-royal-farms','bl-coda-dates','bl-hs-props','bl-hs-clean'],
+    'bl-nextweek': ['bl-qa-coda'],
+    'bl-tarot': ['bl-tarot-seq','bl-tarot-loops','bl-tarot-return-disc','bl-tarot-launch-disc','bl-tarot-drip'],
     'bl-later': ['bl-group1-seq','bl-group1-list','bl-group2-list','bl-group2-seq','bl-group3-lists','bl-sequences','bl-ai-icp','bl-roi-templates','bl-closedwon-bot','bl-sh-mail']
   };
   let total=0;
