@@ -954,9 +954,9 @@
 <div class="tab-bar">
   <button class="tab-btn active" onclick="switchTab(&#39;today&#39;,this)">Today</button>
   <button class="tab-btn" onclick="switchTab(&#39;tasks&#39;,this)">
-    HubSpot Tasks <span class="tab-count" id="tasks-count">1</span>
+    HubSpot Tasks <span class="tab-count" id="tasks-count">4</span>
     </button><button class="tab-btn" onclick="switchTab(&#39;backlog&#39;,this)">
-    Backlog <span class="tab-count" id="backlog-count">25</span>
+    Backlog <span class="tab-count" id="backlog-count">20</span>
   </button>
   <button class="tab-btn" onclick="switchTab(&#39;rocks&#39;,this)">
     Q2 Rocks <span class="tab-count" id="rocks-count">26</span>
@@ -1664,8 +1664,8 @@ function updateRocksCount() {
 }
 
 function updateTasksCount() {
-  const ids=['hs-teladoc-1pg','hs-single-thread','hs-robinhood','hs-royal-farms','hs-ihh-1pg','hs-fidelity','hs-vtpro','hs-gong','hs-teladoc-p2','hs-smartsheet','hs-janpro'];
-  const urgentIds=['hs-teladoc-1pg','hs-single-thread','hs-robinhood'];
+  const ids=['hs-gong','hs-teladoc-p2','hs-smartsheet','hs-janpro'];
+  const urgentIds=['hs-gong'];
   const left=ids.filter(id=>!tasksState.checked[id]).length;
   const urgentLeft=urgentIds.filter(id=>!tasksState.checked[id]).length;
   const el=document.getElementById('tasks-count');
@@ -1690,11 +1690,11 @@ function toggleBl2(id, el) {
 }
 function updateBlCounts() {
   const groups = {
-    'bl-today': ['bl-teladoc-1pg','bl-ihh-1pg','bl-g3-start'],
-    'bl-week': ['bl-sh-go-training','bl-closedlost','bl-closedlost-data','bl-royal-farms','bl-coda-dates','bl-hs-props','bl-hs-clean'],
+    'bl-today': ['bl-tarot-walkthrough','bl-tarot-video','bl-tarot-hs','bl-tarot-drip'],
+    'bl-prospect': ['bl-g3-enroll'],
+    'bl-week': ['bl-sh-go-training','bl-gong','bl-royal-farms','bl-closedlost-data','bl-hs-clean'],
     'bl-nextweek': ['bl-qa-coda'],
-    'bl-tarot': ['bl-tarot-seq','bl-tarot-loops','bl-tarot-return-disc','bl-tarot-launch-disc','bl-tarot-drip'],
-    'bl-later': ['bl-group1-seq','bl-group1-list','bl-group2-list','bl-group2-seq','bl-group3-lists','bl-sequences','bl-ai-icp','bl-roi-templates','bl-closedwon-bot','bl-sh-mail']
+    'bl-later': ['bl-group1-seq','bl-group1-list','bl-group2-list','bl-group2-seq','bl-sequences','bl-ai-icp','bl-roi-templates','bl-closedwon-bot','bl-sh-mail']
   };
   let total=0;
   for(const [prefix, ids] of Object.entries(groups)) {
