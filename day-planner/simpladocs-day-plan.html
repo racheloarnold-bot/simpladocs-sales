@@ -1077,8 +1077,7 @@
       </div>
       <div id="bl-prospect-body">
         <div class="bl-items">
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-g3-qa',this)"></div><div class="bl-content"><div class="bl-text" id="bl-g3-qa-t">QA all 3 Group 3 sequences (budget / timing / ghosted)</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">Coda target 4/23</span></div></div></div>
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-g3-enroll',this)"></div><div class="bl-content"><div class="bl-text" id="bl-g3-enroll-t">Enroll + launch Group 3 today</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">Moved from Fri — Rachel OOO</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-g3-enroll',this)"></div><div class="bl-content"><div class="bl-text" id="bl-g3-enroll-t">Enroll + launch Group 3 today</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">QA done · ship before OOO Fri</span></div></div></div>
         </div>
       </div>
     </div>
@@ -1409,12 +1408,12 @@ const BLOCKS = [
     { id:'t-hs-optin', hi:true, text:'Add opt-in checkbox at checkout', note:'"Send me follow-ups and offers." Covers CAN-SPAM/CASL/GDPR.' },
     { id:'t-hs-drip', text:'Scaffold 3-month post-purchase drip workflow', note:'Shell only — workflow + opt-in filter. Write emails another day.' },
   ]},
-  { id:'g3-launch', title:'🚀 Group 3 QA + Launch (OOO Friday, ship today)', start:13.0, end:15.25, tasks:[
-    { id:'t-g3-qa-budget', hi:true, text:'QA Budget segment sequence', note:'Check AI one-pager insertion, list filters, test send.' },
-    { id:'t-g3-qa-timing', hi:true, text:'QA Timing segment sequence', note:'Same QA pass.' },
-    { id:'t-g3-qa-ghosted', hi:true, text:'QA Ghosted segment sequence', note:'Same QA pass.' },
-    { id:'t-g3-enroll', hi:true, text:'Enroll contacts across all 3 segments', note:'Actually ship it — you\'re OOO Friday.' },
+  { id:'g3-launch', title:'🚀 Group 3 Launch (OOO Friday, ship today)', start:13.0, end:13.75, tasks:[
+    { id:'t-g3-enroll', hi:true, text:'Enroll contacts across all 3 segments', note:'QA already done. Ship it before OOO Fri.' },
     { id:'t-g3-monitor', text:'Monitor first hour — bounces, replies, opt-outs', note:'Catch issues early.' },
+  ]},
+  { id:'sh-go-training', title:'📚 Superhuman Go Partner Training', start:13.75, end:15.25, tasks:[
+    { id:'t-sh-go', hi:true, text:'Start Superhuman Go Partner Training course', note:'Due Fri 4/25. OOO Fri — get as far as possible today. Carries to Thu if needed.' },
   ]},
   { id:'wrap', title:'Review Gong + Wrap', start:15.25, end:15.5, tasks:[
     { id:'t-gong', text:'Review Gong call (HubSpot task due 4/24)', note:'Keep tight.' },
