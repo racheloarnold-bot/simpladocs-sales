@@ -986,26 +986,6 @@
 
     <div class="section-hdr">Today / Overdue</div>
     <div class="hs-card">
-      <div style="padding:12px;color:var(--text-3);font-size:12px;">No HubSpot tasks due today. Nothing on the calendar — rare deep-work day.</div>
-    </div>
-
-    <div class="section-hdr">Later this week</div>
-    <div class="hs-card">
-      <div class="hs-task-row" data-hsid="hs-gong">
-        <div class="cb" onclick="toggleHs('hs-gong',this)"></div>
-        <div class="hs-content">
-          <div class="hs-text">Review Gong call</div>
-          <div class="hs-meta">
-            <span class="b-badge badge-hs">&#128203; To-do</span>
-            <span style="font-size:11px;color:var(--text-3);">Apr 24</span>
-            <a href="https://app.hubspot.com/tasks/245482189/view/all/task/361411800815" target="_blank" style="font-size:11px;color:var(--teal-mid);">View in HubSpot &#8599;</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section-hdr">Next week</div>
-    <div class="hs-card">
       <div class="hs-task-row" data-hsid="hs-teladoc-p2">
         <div class="cb" onclick="toggleHs('hs-teladoc-p2',this)"></div>
         <div class="hs-content">
@@ -1013,18 +993,44 @@
           <div class="hs-meta">
             <span class="b-badge badge-hs">&#128203; To-do</span>
             <span class="bl-pill bl-pill-medium">Medium</span>
-            <span style="font-size:11px;color:var(--text-3);">Apr 27</span>
+            <span style="font-size:11px;color:var(--text-3);">Apr 27 (overdue)</span>
             <a href="https://app.hubspot.com/tasks/245482189/view/all/task/365580867267" target="_blank" style="font-size:11px;color:var(--teal-mid);">View in HubSpot &#8599;</a>
           </div>
         </div>
       </div>
+      <div class="hs-task-row" data-hsid="hs-gong">
+        <div class="cb" onclick="toggleHs('hs-gong',this)"></div>
+        <div class="hs-content">
+          <div class="hs-text">Review Gong call</div>
+          <div class="hs-meta">
+            <span class="b-badge badge-hs">&#128203; To-do</span>
+            <span style="font-size:11px;color:var(--text-3);">Apr 24 (overdue — deferred to Wed AM)</span>
+            <a href="https://app.hubspot.com/tasks/245482189/view/all/task/361411800815" target="_blank" style="font-size:11px;color:var(--teal-mid);">View in HubSpot &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="hs-task-row" data-hsid="hs-research-acct">
+        <div class="cb" onclick="toggleHs('hs-research-acct',this)"></div>
+        <div class="hs-content">
+          <div class="hs-text">Research account</div>
+          <div class="hs-meta">
+            <span class="b-badge badge-hs">&#128203; To-do</span>
+            <span style="font-size:11px;color:var(--text-3);">Apr 27 (no context — skip)</span>
+            <a href="https://app.hubspot.com/tasks/245482189/view/all/task/366797946571" target="_blank" style="font-size:11px;color:var(--teal-mid);">View in HubSpot &#8599;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-hdr">Next week</div>
+    <div class="hs-card">
       <div class="hs-task-row" data-hsid="hs-smartsheet">
         <div class="cb" onclick="toggleHs('hs-smartsheet',this)"></div>
         <div class="hs-content">
           <div class="hs-text">Ping Smartsheet after Go desktop release</div>
           <div class="hs-meta">
             <span class="b-badge badge-hs">&#128203; To-do</span>
-            <span style="font-size:11px;color:var(--text-3);">May 4</span>
+            <span style="font-size:11px;color:var(--text-3);">May 4 (after 4/30 Go release)</span>
             <a href="https://app.hubspot.com/tasks/245482189/view/all/task/365573874417" target="_blank" style="font-size:11px;color:var(--teal-mid);">View in HubSpot &#8599;</a>
           </div>
         </div>
@@ -1035,7 +1041,7 @@
           <div class="hs-text">Ping JAN-PRO after Go desktop release</div>
           <div class="hs-meta">
             <span class="b-badge badge-hs">&#128203; To-do</span>
-            <span style="font-size:11px;color:var(--text-3);">May 4</span>
+            <span style="font-size:11px;color:var(--text-3);">May 4 (after 4/30 Go release)</span>
             <a href="https://app.hubspot.com/tasks/245482189/view/all/task/365574101749" target="_blank" style="font-size:11px;color:var(--teal-mid);">View in HubSpot &#8599;</a>
           </div>
         </div>
@@ -1370,10 +1376,10 @@ e.g. Closed Won Slack notification — where does this stand?" oninput="saveNote
 // ─── Storage ───────────────────────────────────────
 const KEYS = {
   notes1on1: 'sd-1on1-notes-v1',
-  today: 'sd-today-apr23-v1',
+  today: 'sd-today-apr28-v1',
   tasks: 'sd-tasks-q2-v1',
   rocks: 'sd-rocks-q2-v1',
-  water: 'sd-water-apr23-v1',
+  water: 'sd-water-apr28-v1',
 };
 // Migrate rocks checked state from older keys if new key is empty
 (function migrateRocks() {
@@ -1396,32 +1402,42 @@ let rocksState = { checked: {}, ...load(KEYS.rocks) };
 
 // ─── Today blocks ───────────────────────────────────
 const BLOCKS = [
-  { id:'tarot-launch', title:'✨ 444 Tarot Launch Readiness', start:9.0, end:10.25, tasks:[
-    { id:'t-email-jocio', hi:true, text:'Email Jocio', note:'Right now.' },
-    { id:'t-tarot-walkthrough', hi:true, text:'Final walkthrough — all paths, copy, links, payment flow', note:'Tested yesterday. One more confident pass.' },
-    { id:'t-tarot-infra', text:'Confirm domain + SSL + analytics firing', note:'Quick sanity check.' },
-    { id:'t-tarot-video', hi:true, text:'Decide free-video delivery method', note:'Recommend unlisted Loom or YouTube. 15 min max — do not spiral.' },
+  { id:'email', title:'✉️ Email Triage + Laundry', start:9.5, end:9.75, tasks:[
+    { id:'t-email-triage', text:'Quick inbox check + responses', note:'Don\'t spiral. 15 min.' },
+    { id:'t-laundry-1', text:'Start laundry load #1', note:'Run while you work.' },
   ]},
-  { id:'tarot-hubspot', title:'444 Tarot HubSpot + Drip Scaffold', start:10.25, end:11.5, tasks:[
-    { id:'t-hs-form', text:'Form capture + source=444tarot contact property', note:'Light lift. Don\'t overengineer.' },
-    { id:'t-hs-lifecycle', text:'Set basic lifecycle stage for buyers', note:'Subscriber → Customer on purchase.' },
-    { id:'t-hs-optin', hi:true, text:'Add opt-in checkbox at checkout', note:'"Send me follow-ups and offers." Covers CAN-SPAM/CASL/GDPR.' },
-    { id:'t-hs-drip', text:'Scaffold 3-month post-purchase drip workflow', note:'Shell only — workflow + opt-in filter. Write emails another day.' },
+  { id:'deal-updates', title:'🆕 Daily Deal-Updates Ritual', start:9.75, end:10.25, tasks:[
+    { id:'t-deal-scan', hi:true, text:'Scan all open deals — log activity, capture next steps', note:'NEW step #1 every morning. Open: AstraZeneca, IHH, TSS, IDC, Smartsheet, Teladoc CO, TCB Energy, GTH, SBC Gaming.' },
+    { id:'t-pam-bonnie', hi:true, text:'Schedule proposal pre-read with Pam & Bonnie', note:'Explore Learning unblock.' },
   ]},
-  { id:'g3-launch', title:'🚀 Group 3 Launch (OOO Friday, ship today)', start:11.5, end:12.5, tasks:[
-    { id:'t-g3-enroll', hi:true, text:'Enroll contacts across all 3 segments', note:'QA already done. Ship it before OOO Fri.' },
-    { id:'t-g3-monitor', text:'Monitor first hour — bounces, replies, opt-outs', note:'Catch issues early.' },
+  { id:'mike', title:'👋 Mike / Rach Catchup', start:10.25, end:10.75, tasks:[
+    { id:'t-mike', text:'Casual catchup w/ Mike (OpenRouter)', note:'No prep. Just vibes.' },
   ]},
-  { id:'gym', title:'🏋️ Workout + Lunch', start:12.5, end:14.0, tasks:[], isBreak:true },
-  { id:'sh-go-training', title:'📚 Superhuman Go Partner Training', start:14.0, end:15.25, tasks:[
-    { id:'t-sh-go', hi:true, text:'Start Superhuman Go Partner Training course', note:'Due Fri 4/25. OOO Fri — get as far as possible today.' },
+  { id:'prospecting', title:'🔥 Deep Prospecting (peak focus window)', start:10.75, end:12.5, tasks:[
+    { id:'t-closed-lost', hi:true, text:'Research 10–20 closed-lost companies, enroll in sequence', note:'Q2 outbound = closed-lost re-engagement only. Feeds the live closed-lost sequence (Q2 Rock 2).' },
+    { id:'t-clay-buyer-intent', hi:true, text:'Pick 10–12 from buyer-intent list, add to Clay workbook', note:'Filter for fit — process automation, Coda/Notion adjacency, mid-market+. Scott approved Clay upgrade 4/21.' },
   ]},
-  { id:'wrap', title:'Review Gong + Wrap', start:15.25, end:15.5, tasks:[
-    { id:'t-gong', text:'Review Gong call (HubSpot task due 4/24)', note:'Keep tight.' },
-    { id:'t-inbox', text:'Inbox flash-through', note:'Anything urgent before OOO Fri.' },
+  { id:'lunch', title:'🥗 Lunch (moved later)', start:12.5, end:13.5, tasks:[], isBreak:true },
+  { id:'steven-framework', title:'🛠️ Build Steven 1:1 Framework', start:13.5, end:14.5, tasks:[
+    { id:'t-steven-skill', hi:true, text:'Add Steven section to prep-1on1 skill', note:'~/.claude/skills/prep-1on1/. Mirror Scott/Jordyn structure.' },
+    { id:'t-steven-doc', text:'Create Steven 1:1 doc (parallel to Scott/Jordyn docs)', note:'Recurring themes, what to surface, source signals.' },
   ]},
-  { id:'leave', title:'🚗 Leave for haircut (hard stop)', start:15.5, end:16.0, tasks:[], isBreak:true },
-  { id:'haircut', title:'✂️ Haircut', start:16.0, end:17.5, tasks:[], isBreak:true },
+  { id:'steven-prep', title:'📝 Steven 1:1 Prep (for tomorrow)', start:14.5, end:15.0, tasks:[
+    { id:'t-steven-prep', hi:true, text:'Draft prospecting strategy talking points', note:'Closed-lost criteria, signal sources, enrollment cadence, what "good" looks like.' },
+  ]},
+  { id:'teladoc-side', title:'💸 Teladoc Push + Side Biz Quick Start', start:15.0, end:15.5, tasks:[
+    { id:'t-teladoc-co', hi:true, text:'Teladoc Change Order ($8k, closes 5/1) — confirm SOW status', note:'Closes Friday. Push if needed.' },
+    { id:'t-teladoc-p2', text:'Teladoc Phase 2 — confirm Phase 1 delivered, open Phase 2 convo', note:'HubSpot task overdue 4/27.' },
+    { id:'t-side-biz', text:'Side biz: pick ONE — pick-a-pile tarot OR stelliums blog post', note:'Quick start. Continue post-wrap if energy.' },
+  ]},
+  { id:'wrap', title:'📊 Daily Wrap-up (DNB)', start:15.5, end:16.5, tasks:[
+    { id:'t-wrap', text:'Daily wrap-up call', note:'Calendar.' },
+    { id:'t-laundry-switch', text:'Switch laundry mid-block', note:'' },
+  ]},
+  { id:'buffer', title:'⏱ Buffer + Laundry Fold', start:16.5, end:17.0, tasks:[
+    { id:'t-laundry-fold', text:'Fold laundry, prep for gym', note:'Light only — protect gym hard stop.' },
+  ]},
+  { id:'gym', title:'🏋️ Gym (EOD HARD STOP)', start:17.0, end:18.5, tasks:[], isBreak:true },
 ];
 
 function getOrderedBlocks() {
