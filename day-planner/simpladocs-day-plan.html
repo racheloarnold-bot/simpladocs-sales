@@ -1450,16 +1450,21 @@ const BLOCKS = [
     { id:'t-deal-scan', hi:true, text:'Scan all 9 open deals — log activity, capture next steps', note:'AZ, IHH, TSS, IDC, Smartsheet, Teladoc CO, TCB, GTH, SBC.' },
     { id:'t-source-contacts', text:'HubSpot task: Source contacts & reach out (today)', note:'task 366996216557' },
   ]},
-  { id:'pipeline-prep', title:'📊 Pipeline Review + Steven 1:1 Prep', start:8.5, end:10.0, tasks:[
-    { id:'t-az-push', hi:true, text:'AstraZeneca status push — chase Superhuman Y/N', note:'$120k Proposal · most important deal.' },
-    { id:'t-teladoc-co', hi:true, text:'Verify Teladoc Change Order ($8k, closes 5/1) — SOW status', note:'Closes Friday.' },
-    { id:'t-ihh-bump', text:'IHH 1-pager email follow-up', note:'$13.75k · "bumping up 1-pager emails" 4/28.' },
+  { id:'pipeline-prep', title:'📊 Pipeline Review Prep (NOW)', start:8.5, end:9.5, tasks:[
+    { id:'t-deal-by-deal', hi:true, text:'Deal-by-deal walkthrough — all 9 open deals', note:'AZ ($120k Proposal), Smartsheet, Teladoc CO ($8k closes 5/1), IHH ($13.75k), TSS ($24k), IDC ($75k), TCB 2027, GTH, SBC.' },
+    { id:'t-meddpicc-gaps', hi:true, text:'Note MEDDPICC gaps for Scoping+ deals', note:'Deals at risk for stage transitions.' },
+    { id:'t-pipeline-talking-pts', hi:true, text:'Draft talking points + asks for Scott', note:'What needs his input/unblock?' },
+    { id:'t-ihh-bump', text:'IHH 1-pager email follow-up', note:'$13.75k · "bumping up 1-pager emails" 4/28. Park or quick-send.' },
+  ]},
+  { id:'steven-prep-block', title:'📝 Steven 1:1 Prep', start:9.5, end:10.0, tasks:[
     { id:'t-steven-skill', hi:true, text:'Update prep-1on1 skill — add Steven section + framework', note:'~/.claude/skills/prep-1on1/. Mirror Scott/Jordyn structure.' },
-    { id:'t-steven-prep', hi:true, text:'Run Steven 1:1 prep doc (5 agenda items below)', note:'Opp identifier, sequences/intent signals, cadence plan, lanes, inbound vs outbound take.' },
+    { id:'t-steven-prep', hi:true, text:'Run Steven 1:1 prep doc (5 agenda items)', note:'Opp identifier, sequences/intent signals, cadence plan, lanes, inbound vs outbound take.' },
   ]},
   { id:'buffer1', title:'⏱ Buffer / Refresh', start:10.0, end:10.25, tasks:[], isBreak:true },
   { id:'pipeline-review', title:'👥 Weekly Pipeline Review (Scott + Steven)', start:10.25, end:11.0, tasks:[
-    { id:'t-pipeline-mtg', text:'Pipeline review meeting', note:'Calendar — fixed.' },
+    { id:'t-az-push', hi:true, text:'AstraZeneca — push for Superhuman Y/N', note:'$120k Proposal · most important deal in pipeline.' },
+    { id:'t-teladoc-co', hi:true, text:'Teladoc Change Order ($8k, closes 5/1) — SOW status', note:'Closes Friday.' },
+    { id:'t-pipeline-mtg', text:'Run pipeline through Scott', note:'Calendar — fixed.' },
   ]},
   { id:'lunch', title:'🥗 Lunch', start:11.0, end:12.0, tasks:[], isBreak:true },
   { id:'el-prep', title:'📝 ExploreLearning Proposal Pre-Read Prep (Thu 12pm)', start:12.0, end:13.0, tasks:[
