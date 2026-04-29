@@ -1136,6 +1136,9 @@
       <div id="bl-week-body">
         <div class="bl-items">
           <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-jordyn-outreach',this)"></div><div class="bl-content"><div class="bl-text" id="bl-jordyn-outreach-t">Build outreach for Jordyn's Coda &lt;$20k list (Thu) · ship Fri or next week</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">After today's import · nurture-tone campaign</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-sh-launch-seq',this)"></div><div class="bl-content"><div class="bl-text" id="bl-sh-launch-seq-t">Build Superhuman launch email sequence</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">From Steven 1:1 · May–June launch window · time-sensitive</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-smb-icp',this)"></div><div class="bl-content"><div class="bl-text" id="bl-smb-icp-t">Refine SMB lead scoring criteria</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">From Steven 1:1 · Remove mining/metals, hospitality, higher ed, telecoms, federal gov · Exclude DE/FR/UK · Include Mexico</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-website-booking',this)"></div><div class="bl-content"><div class="bl-text" id="bl-website-booking-t">Create separate booking link for website traffic</div><div class="bl-meta"><span class="bl-pill bl-pill-medium">Medium</span><span class="bl-source">From Steven 1:1 · Distinct analytics tracking</span></div></div></div>
           <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-group3',this)"></div><div class="bl-content"><div class="bl-text" id="bl-group3-t">Group 3 emails — steady, no completion pressure</div><div class="bl-meta"><span class="bl-pill bl-pill-medium">Medium</span><span class="bl-source">Data quality bad; not blocking</span></div></div></div>
           <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-hs-clean',this)"></div><div class="bl-content"><div class="bl-text" id="bl-hs-clean-t">Clean HubSpot deals data (close dates, end dates, reasons)</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">Parked behind better-leverage outreach</span></div></div></div>
           <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-coda-dates',this)"></div><div class="bl-content"><div class="bl-text" id="bl-coda-dates-t">Pull Coda close dates + contract end dates</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">P0 blocker for list segmentation</span></div></div></div>
@@ -1749,7 +1752,7 @@ function toggleBl2(id, el) {
 function updateBlCounts() {
   const groups = {
     'bl-today': ['bl-az-push','bl-teladoc-co','bl-clay-auto','bl-enroll-10','bl-jordyn-list'],
-    'bl-week': ['bl-jordyn-outreach','bl-group3','bl-hs-clean','bl-coda-dates'],
+    'bl-week': ['bl-jordyn-outreach','bl-sh-launch-seq','bl-smb-icp','bl-website-booking','bl-group3','bl-hs-clean','bl-coda-dates'],
     'bl-nextweek': ['bl-qa-coda'],
     'bl-later': ['bl-group1-emails','bl-group1-seq','bl-group2-list','bl-group2-seq','bl-group3-build','bl-sequences','bl-ai-icp','bl-cold-prospect','bl-roi-templates','bl-closedwon-bot','bl-sh-mail']
   };
