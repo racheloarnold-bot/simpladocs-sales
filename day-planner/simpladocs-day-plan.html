@@ -1473,15 +1473,12 @@ const BLOCKS = [
   { id:'steven-1on1', title:'👋 Steven / Rachel Weekly', start:13.0, end:13.5, tasks:[
     { id:'t-steven-meet', text:'Steven 1:1 (runs from prep doc)', note:'Calendar — fixed.' },
   ]},
-  { id:'el-proposal', title:'🚨 EL Proposal — PROTECT THIS TIME', start:13.5, end:15.5, tasks:[
-    { id:'t-el-proposal', hi:true, text:'Draft ExploreLearning proposal — ONLY focus', note:'For Thu 12pm pre-read with Pam + Bonnie. SOW template structure. Everything else moved to tomorrow.' },
+  { id:'el-proposal', title:'📝 EL Proposal (ran long — finish + send)', start:13.5, end:17.0, tasks:[
+    { id:'t-el-proposal', hi:true, text:'Finish ExploreLearning proposal', note:'Almost done at 4:45pm. Took longer than expected — proposals are 1.5+ hr work, noted for next time.' },
+    { id:'t-send-scott', hi:true, text:'Send to Scott for approval', note:'Slack + email · Thu 12pm pre-read tomorrow.' },
   ]},
-  { id:'wrap', title:'📊 Wrap-up — Send to Scott (compressed)', start:15.5, end:16.0, tasks:[
-    { id:'t-send-scott', hi:true, text:'Send EL proposal to Scott for approval — BEFORE BEACH', note:'Slack/email Scott · flag urgency · Thu 12pm pre-read.' },
-    { id:'t-wrap', text:'Skip or shorten wrap-up call if needed', note:'Beach hard stop at 4pm.' },
-  ]},
-  { id:'beach', title:'🐕 Beach with dogs (HARD STOP 4pm)', start:16.0, end:17.0, tasks:[], isBreak:true },
-  { id:'gym', title:'🏋️ Gym (loose plan — go if energy)', start:17.0, end:18.5, tasks:[], isBreak:true },
+  { id:'beach', title:'🐕 Beach with dogs (pushed back — go when proposal\'s out)', start:17.0, end:18.0, tasks:[], isBreak:true },
+  { id:'gym-maybe', title:'🏋️ Gym (skip if drained — beach + a finished proposal is enough)', start:18.0, end:19.0, tasks:[], isBreak:true },
 ];
 
 function getOrderedBlocks() {
