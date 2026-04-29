@@ -1458,9 +1458,11 @@ const BLOCKS = [
     { id:'t-teladoc-co', hi:true, text:'Teladoc Change Order ($8k, closes 5/1) — SOW status', note:'Closes Friday.' },
     { id:'t-pipeline-mtg', text:'Run pipeline through Scott', note:'Calendar — fixed.' },
   ]},
-  { id:'lunch', title:'🥗 Lunch', start:11.0, end:12.0, tasks:[], isBreak:true },
-  { id:'steven-prep-block', title:'📝 Steven 1:1 Prep (full hour)', start:12.0, end:13.0, tasks:[
-    { id:'t-steven-skill', hi:true, text:'Update prep-1on1 skill — add Steven section + framework', note:'~/.claude/skills/prep-1on1/. Mirror Scott/Jordyn structure. Timebox 30 min.' },
+  { id:'steven-skill-block', title:'🛠️ Steven Prep — Skill Update', start:11.0, end:11.5, tasks:[
+    { id:'t-steven-skill', hi:true, text:'Update prep-1on1 skill — add Steven section + framework', note:'~/.claude/skills/prep-1on1/. Mirror Scott/Jordyn structure. 30-min timebox.' },
+  ]},
+  { id:'lunch', title:'🥗 Lunch (pushed to 11:30)', start:11.5, end:12.5, tasks:[], isBreak:true },
+  { id:'steven-prep-block', title:'📝 Steven 1:1 Prep — Run Doc', start:12.5, end:13.0, tasks:[
     { id:'t-steven-prep', hi:true, text:'Run Steven 1:1 prep doc (5 agenda items)', note:'Opp identifier · sequences/intent signals · cadence plan · 4 outreach lanes · inbound-vs-outbound take.' },
   ]},
   { id:'steven-1on1', title:'👋 Steven / Rachel Weekly', start:13.0, end:13.5, tasks:[
