@@ -1476,13 +1476,12 @@ const BLOCKS = [
   { id:'el-proposal', title:'🚨 EL Proposal — PROTECT THIS TIME', start:13.5, end:15.5, tasks:[
     { id:'t-el-proposal', hi:true, text:'Draft ExploreLearning proposal — ONLY focus', note:'For Thu 12pm pre-read with Pam + Bonnie. SOW template structure. Everything else moved to tomorrow.' },
   ]},
-  { id:'wrap', title:'📊 Wrap-up — Send to Scott', start:15.5, end:16.5, tasks:[
-    { id:'t-send-scott', hi:true, text:'Send EL proposal to Scott for approval — BEFORE EOD', note:'Slack/email Scott · flag urgency · Thu 12pm pre-read.' },
-    { id:'t-wrap', text:'Daily wrap-up call (shorten if needed)', note:'Calendar — keep brief if proposal still in progress.' },
-    { id:'t-hs-update', text:'Update HubSpot deals — only if time', note:'Skip if proposal isn\'t out yet.' },
+  { id:'wrap', title:'📊 Wrap-up — Send to Scott (compressed)', start:15.5, end:16.0, tasks:[
+    { id:'t-send-scott', hi:true, text:'Send EL proposal to Scott for approval — BEFORE BEACH', note:'Slack/email Scott · flag urgency · Thu 12pm pre-read.' },
+    { id:'t-wrap', text:'Skip or shorten wrap-up call if needed', note:'Beach hard stop at 4pm.' },
   ]},
-  { id:'buffer-gym', title:'⏱ Buffer / Prep for gym', start:16.5, end:17.0, tasks:[], isBreak:true },
-  { id:'gym', title:'🏋️ Gym (rescheduled from Monday — HARD STOP)', start:17.0, end:18.5, tasks:[], isBreak:true },
+  { id:'beach', title:'🐕 Beach with dogs (HARD STOP 4pm)', start:16.0, end:17.0, tasks:[], isBreak:true },
+  { id:'gym', title:'🏋️ Gym (loose plan — go if energy)', start:17.0, end:18.5, tasks:[], isBreak:true },
 ];
 
 function getOrderedBlocks() {
