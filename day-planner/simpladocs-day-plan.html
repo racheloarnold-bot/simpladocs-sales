@@ -1458,6 +1458,8 @@ const BLOCKS = [
     { id:'t-hs-update', hi:true, text:'Update HubSpot deals from today\'s actions', note:'Daily ritual close-out.' },
     { id:'t-el-confirm', text:'Confirm ExploreLearning prep ready for tomorrow 12pm', note:'' },
   ]},
+  { id:'buffer-gym', title:'⏱ Buffer / Prep for gym', start:16.5, end:17.0, tasks:[], isBreak:true },
+  { id:'gym', title:'🏋️ Gym (rescheduled from Monday — HARD STOP)', start:17.0, end:18.5, tasks:[], isBreak:true },
 ];
 
 function getOrderedBlocks() {
@@ -1700,8 +1702,8 @@ function updateRocksCount() {
 }
 
 function updateTasksCount() {
-  const ids=['hs-gong','hs-teladoc-p2','hs-smartsheet','hs-janpro'];
-  const urgentIds=['hs-gong'];
+  const ids=['hs-source-contacts','hs-li-1','hs-li-2','hs-li-3','hs-enroll-batch','hs-smartsheet','hs-janpro','hs-gong'];
+  const urgentIds=['hs-source-contacts'];
   const left=ids.filter(id=>!tasksState.checked[id]).length;
   const urgentLeft=urgentIds.filter(id=>!tasksState.checked[id]).length;
   const el=document.getElementById('tasks-count');
@@ -1726,11 +1728,10 @@ function toggleBl2(id, el) {
 }
 function updateBlCounts() {
   const groups = {
-    'bl-today': ['bl-tarot-walkthrough','bl-tarot-video','bl-tarot-hs','bl-tarot-drip'],
-    'bl-prospect': ['bl-g3-enroll'],
-    'bl-week': ['bl-sh-go-training','bl-gong','bl-royal-farms','bl-closedlost-data','bl-hs-clean'],
+    'bl-today': ['bl-az-push','bl-teladoc-co','bl-clay-auto','bl-enroll-10'],
+    'bl-week': ['bl-group3','bl-hs-clean','bl-coda-dates'],
     'bl-nextweek': ['bl-qa-coda'],
-    'bl-later': ['bl-group1-seq','bl-group1-list','bl-group2-list','bl-group2-seq','bl-sequences','bl-ai-icp','bl-roi-templates','bl-closedwon-bot','bl-sh-mail']
+    'bl-later': ['bl-group1-emails','bl-group1-seq','bl-group2-list','bl-group2-seq','bl-group3-build','bl-sequences','bl-ai-icp','bl-cold-prospect','bl-roi-templates','bl-closedwon-bot','bl-sh-mail']
   };
   let total=0;
   for(const [prefix, ids] of Object.entries(groups)) {
