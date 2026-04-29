@@ -1470,16 +1470,19 @@ const BLOCKS = [
   { id:'steven-1on1', title:'👋 Steven / Rachel Weekly', start:13.0, end:13.5, tasks:[
     { id:'t-steven-meet', text:'Steven 1:1 (runs from prep doc)', note:'Calendar — fixed.' },
   ]},
-  { id:'outbound', title:'🔥 Outbound Block — Timeboxed', start:13.5, end:15.5, tasks:[
-    { id:'t-clay-automation', hi:true, text:'Clay-workbook automation R&D — TIMEBOX 45 min', note:'If not solved by 2:15, drop it and enroll manually with what you have. Don\'t let R&D eat the whole block.' },
-    { id:'t-enroll-10', hi:true, text:'+10 sequence enrollments (manual fallback if needed)', note:'Pull from buyer-intent. 20× HS "Enroll contacts" tasks queued for 4/30 — pre-stage.' },
-    { id:'t-li-connects', text:'Knock 4× LinkedIn Connect requests (queued for 4/30)', note:'Easy to clear early — 5 min total.' },
-    { id:'t-group3', text:'Group 3 emails — only if time after 10 enrollments', note:'Data quality bad; not blocking. Better cold outreach > cleaning bad data.' },
+  { id:'quick-outbound', title:'⚡ Quick Wins — LI + Clay setup', start:13.5, end:14.0, tasks:[
+    { id:'t-li-connects', hi:true, text:'Knock 4× LinkedIn Connect requests (queued for 4/30)', note:'5 min total — clear them now.' },
+    { id:'t-clay-automation', text:'Open Clay + start workbook automation R&D', note:'Get setup ready so 2:00 block runs hot. Defer deep R&D if EL proposal needs the time.' },
+  ]},
+  { id:'el-proposal', title:'📝 ExploreLearning Proposal + Prospecting (calendar block)', start:14.0, end:15.5, tasks:[
+    { id:'t-el-proposal', hi:true, text:'Draft ExploreLearning proposal — PRIORITY', note:'For Thu 12pm pre-read with Pam + Bonnie. Pull from discovery notes; use SOW template structure.' },
+    { id:'t-enroll-10', hi:true, text:'+10 sequence enrollments (after proposal draft)', note:'Honest flag: proposal may eat most of this 90 min. If so, hit fewer enrollments today.' },
+    { id:'t-group3', text:'Group 3 emails — only if proposal + enrollments done', note:'No completion pressure.' },
   ]},
   { id:'wrap', title:'📊 Daily Wrap-up (DNB)', start:15.5, end:16.5, tasks:[
     { id:'t-wrap', text:'Daily wrap-up call', note:'Calendar.' },
+    { id:'t-send-scott', hi:true, text:'Send EL proposal to Scott for approval — BEFORE EOD', note:'Slack/email Scott · flag urgency · Thu 12pm pre-read.' },
     { id:'t-hs-update', hi:true, text:'Update HubSpot deals from today\'s actions', note:'Daily ritual close-out.' },
-    { id:'t-el-flag', text:'Flag ExploreLearning prep for tomorrow AM (Thu 7:30–8:30)', note:'Pre-read is at 12pm — prep tomorrow morning, not today.' },
   ]},
   { id:'buffer-gym', title:'⏱ Buffer / Prep for gym', start:16.5, end:17.0, tasks:[], isBreak:true },
   { id:'gym', title:'🏋️ Gym (rescheduled from Monday — HARD STOP)', start:17.0, end:18.5, tasks:[], isBreak:true },
