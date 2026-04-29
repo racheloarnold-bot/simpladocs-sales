@@ -1118,6 +1118,7 @@
         <div class="bl-items">
           <div class="bl-row"><div class="cb checked" onclick="toggleBl2('bl-az-push',this)"></div><div class="bl-content"><div class="bl-text done" id="bl-az-push-t">AstraZeneca status push — Superhuman Y/N</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">$120k Proposal · covered in pipeline review</span></div></div></div>
           <div class="bl-row"><div class="cb checked" onclick="toggleBl2('bl-teladoc-co',this)"></div><div class="bl-content"><div class="bl-text done" id="bl-teladoc-co-t">Verify Teladoc Change Order — closes 5/1</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">$8k · covered in pipeline review</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-jordyn-list',this)"></div><div class="bl-content"><div class="bl-text" id="bl-jordyn-list-t">Clean + import Jordyn's Coda &lt;$20k companies · source contacts in Clay</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">New nurture campaign · build outreach tomorrow</span></div></div></div>
           <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-clay-auto',this)"></div><div class="bl-content"><div class="bl-text" id="bl-clay-auto-t">Solve Clay-workbook automation</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">3 contacts/co w/ email + phone — repeatable</span></div></div></div>
           <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-enroll-10',this)"></div><div class="bl-content"><div class="bl-text" id="bl-enroll-10-t">+10 sequence enrollments</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">Buyer-intent signals</span></div></div></div>
         </div>
@@ -1134,6 +1135,7 @@
       </div>
       <div id="bl-week-body">
         <div class="bl-items">
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-jordyn-outreach',this)"></div><div class="bl-content"><div class="bl-text" id="bl-jordyn-outreach-t">Build outreach for Jordyn's Coda &lt;$20k list (Thu) · ship Fri or next week</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">After today's import · nurture-tone campaign</span></div></div></div>
           <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-group3',this)"></div><div class="bl-content"><div class="bl-text" id="bl-group3-t">Group 3 emails — steady, no completion pressure</div><div class="bl-meta"><span class="bl-pill bl-pill-medium">Medium</span><span class="bl-source">Data quality bad; not blocking</span></div></div></div>
           <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-hs-clean',this)"></div><div class="bl-content"><div class="bl-text" id="bl-hs-clean-t">Clean HubSpot deals data (close dates, end dates, reasons)</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">Parked behind better-leverage outreach</span></div></div></div>
           <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-coda-dates',this)"></div><div class="bl-content"><div class="bl-text" id="bl-coda-dates-t">Pull Coda close dates + contract end dates</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">P0 blocker for list segmentation</span></div></div></div>
@@ -1473,8 +1475,9 @@ const BLOCKS = [
   ]},
   { id:'el-proposal', title:'📝 ExploreLearning Proposal + Prospecting (calendar block)', start:14.0, end:15.5, tasks:[
     { id:'t-el-proposal', hi:true, text:'Draft ExploreLearning proposal — PRIORITY', note:'For Thu 12pm pre-read with Pam + Bonnie. Pull from discovery notes; use SOW template structure.' },
-    { id:'t-enroll-10', hi:true, text:'+10 sequence enrollments — contacts uploaded, ready to go', note:'Clay export already done in 1:30 block.' },
-    { id:'t-group3', text:'Group 3 emails — only if proposal + enrollments done', note:'No completion pressure.' },
+    { id:'t-jordyn-list', hi:true, text:'Clean + import Jordyn\'s Coda <$20k companies list', note:'NEW from Jordyn. Maybe-clients, maybe-not. Source contacts in Clay if not already enriched.' },
+    { id:'t-enroll-10', text:'+10 sequence enrollments — if time after proposal + import', note:'Clay export already done in 1:30 block. Honest flag: proposal + Jordyn list will likely eat the block.' },
+    { id:'t-group3', text:'Group 3 emails — only if everything else done', note:'No completion pressure.' },
   ]},
   { id:'wrap', title:'📊 Daily Wrap-up (DNB)', start:15.5, end:16.5, tasks:[
     { id:'t-wrap', text:'Daily wrap-up call', note:'Calendar.' },
@@ -1751,8 +1754,8 @@ function toggleBl2(id, el) {
 }
 function updateBlCounts() {
   const groups = {
-    'bl-today': ['bl-az-push','bl-teladoc-co','bl-clay-auto','bl-enroll-10'],
-    'bl-week': ['bl-group3','bl-hs-clean','bl-coda-dates'],
+    'bl-today': ['bl-az-push','bl-teladoc-co','bl-clay-auto','bl-enroll-10','bl-jordyn-list'],
+    'bl-week': ['bl-jordyn-outreach','bl-group3','bl-hs-clean','bl-coda-dates'],
     'bl-nextweek': ['bl-qa-coda'],
     'bl-later': ['bl-group1-emails','bl-group1-seq','bl-group2-list','bl-group2-seq','bl-group3-build','bl-sequences','bl-ai-icp','bl-cold-prospect','bl-roi-templates','bl-closedwon-bot','bl-sh-mail']
   };
