@@ -791,12 +791,19 @@
   .meds-row .task-text.done { color: #bbb !important; font-weight: 400 !important; }
   .meds-row .task-note { color: rgba(22,163,74,0.75) !important; }
 
-  .hi-row { background: rgba(168,85,247,0.07) !important; border: 1.5px solid rgba(168,85,247,0.28); border-radius: 7px; margin: 3px 0; }
-  .hi-row:hover { background: rgba(168,85,247,0.12) !important; }
-  .hi-row .task-text { color: #7c3aed !important; font-weight: 600 !important; }
+  .hi-row { background: rgba(236,72,153,0.08) !important; border: 1.5px solid rgba(236,72,153,0.38); border-radius: 7px; margin: 3px 0; }
+  .hi-row:hover { background: rgba(236,72,153,0.15) !important; }
+  .hi-row .task-text { color: #db2777 !important; font-weight: 700 !important; }
   .hi-row .task-text.done { color: #bbb !important; font-weight: 400 !important; }
-  .hi-row .task-note { color: rgba(124,58,237,0.65) !important; }
-  .hi-row::before { content: '⚡'; font-size: 10px; position: absolute; right: 8px; top: 8px; opacity: 0.5; }
+  .hi-row .task-note { color: rgba(219,39,119,0.7) !important; }
+  .hi-row::before { content: '🔥'; font-size: 10px; position: absolute; right: 8px; top: 8px; opacity: 0.7; }
+
+  .med-row { background: rgba(168,85,247,0.07) !important; border: 1.5px solid rgba(168,85,247,0.28); border-radius: 7px; margin: 3px 0; }
+  .med-row:hover { background: rgba(168,85,247,0.12) !important; }
+  .med-row .task-text { color: #7c3aed !important; font-weight: 600 !important; }
+  .med-row .task-text.done { color: #bbb !important; font-weight: 400 !important; }
+  .med-row .task-note { color: rgba(124,58,237,0.65) !important; }
+  .med-row::before { content: '•'; font-size: 14px; position: absolute; right: 8px; top: 4px; opacity: 0.6; color: #7c3aed; }
 </style>
 <style>@keyframes pf0{
       0%  { transform: translateY(-40px) translateX(0) rotate(0deg);           opacity:0;    }
@@ -1421,8 +1428,9 @@ let rocksState = { checked: {}, ...load(KEYS.rocks) };
 // ─── Today blocks ───────────────────────────────────
 const BLOCKS = [
   { id:'morning-ritual', title:'📥 Email Inbox + Daily Deal Updates', start:8.667, end:9.25, tasks:[
-    { id:'t-email-triage', hi:true, text:'Email triage + responses', note:'Daily ritual block 1. Don\'t spiral.' },
-    { id:'t-deal-scan', hi:true, text:'Scan all open deals — log activity, capture next steps', note:'AZ, IHH, TSS, IDC, Smartsheet, Teladoc CO, TCB, GTH, SBC, MichiganMed.' },
+    { id:'t-meds', meds:true, text:'💊 Take meds', note:'Don\'t skip.' },
+    { id:'t-email-triage', med:true, text:'Email triage + responses', note:'Daily ritual block 1. Don\'t spiral.' },
+    { id:'t-deal-scan', med:true, text:'Scan all open deals — log activity, capture next steps', note:'AZ, IHH, TSS, IDC, Smartsheet, Teladoc CO, TCB, GTH, SBC, MichiganMed.' },
     { id:'t-fidelity-sig', text:'Ping Jordyn — Fidelity Canada signature target', note:'HubSpot HIGH overdue from 4/29. $30.8k, Out for Signature.' },
   ]},
   { id:'clay-upload', title:'📤 Clay → Coda Upload (3–4 contact lists)', start:9.25, end:10.25, tasks:[
@@ -1438,14 +1446,14 @@ const BLOCKS = [
   ]},
   { id:'enrollments', title:'🚀 Buyer-Intent Sequence Enrollments (20+)', start:12.75, end:14.5, tasks:[
     { id:'t-enroll-batch', hi:true, text:'Knock out 20+ HubSpot enrollment tasks', note:'22 "Enroll contacts in sequence" tasks dated 4/30. Only run AFTER Clay data is uploaded.' },
-    { id:'t-revmed-bump', text:'RevMed — if no Ian Winters response, remind Scott to bump', note:'HubSpot task due today. Scott\'s contact, not Rachel\'s.' },
+    { id:'t-revmed-bump', med:true, text:'RevMed — if no Ian Winters response, remind Scott to bump', note:'HubSpot task due today. Scott\'s contact, not Rachel\'s.' },
   ]},
   { id:'coda-clients', title:'📧 Coda-Clients Sequence — Build + Schedule Tomorrow\'s Batch', start:14.5, end:16.0, tasks:[
     { id:'t-coda-seq-build', hi:true, text:'Build new Coda-clients sequence (drafts + cadence)', note:'New sequence — not the existing AI Outreach Group 2.' },
     { id:'t-coda-tasks-tomorrow', hi:true, text:'Create HubSpot tasks for 5/1 — enroll first batch tomorrow', note:'NOT shipping today. Schedule for Friday.' },
   ]},
   { id:'janpro-prep', title:'📋 JAN-PRO Prep for Friday 7:30 AM Sync', start:16.0, end:16.75, tasks:[
-    { id:'t-janpro-prep', hi:true, text:'Review JAN-PRO use case + draft asks for Scott', note:'Solo intro with Paige Friday morning. HubSpot task 367110680256.' },
+    { id:'t-janpro-prep', med:true, text:'Review JAN-PRO use case + draft asks for Scott', note:'Solo intro with Paige Friday morning. HubSpot task 367110680256.' },
   ]},
   { id:'buffer', title:'⏱ Buffer / Overflow', start:16.75, end:17.0, tasks:[], isBreak:true },
   { id:'gym', title:'🏋️ Gym', start:17.0, end:18.5, tasks:[], isBreak:true },
@@ -1528,7 +1536,7 @@ function renderBlock(b) {
     : `<div class="task-list" data-block-id="${b.id}" ondragover="onDragOverList(event)" ondrop="onDropList(event,'${b.id}')" ondragleave="onDragLeaveList(event)">${tasks.map(t=>{
         const ck=!!todayState.checked[t.id];
         const txt=esc(todayState.edited?.[t.id]??t.text);
-        return `<div class="task-row${t.meds?' meds-row':''}${t.hi?' hi-row':''}" draggable="true" data-task-id="${t.id}" data-block-id="${b.id}" ondragstart="onDragStart(event)" ondragend="onDragEnd(event)" ondragover="onDragOverRow(event)" ondrop="onDropRow(event)" ondragleave="onDragLeaveRow(event)"><div class="cb ${ck?'checked':''}" onclick="toggleToday('${t.id}',this)"></div><div class="task-content"><div class="task-text ${ck?'done':''}" id="tt-${t.id}" ondblclick="editTask('${t.id}',this)" title="Double-click to edit">${txt}</div>${t.note?`<div class="task-note">${esc(t.note)}</div>`:''}</div><div class="task-actions"><button class="task-act-btn" onclick="openMoveMenu('${t.id}','${b.id}',event)" title="Move to block…">→</button><button class="task-act-btn del" onclick="deleteTask('${t.id}',event)" title="Remove task">×</button></div></div>`;
+        return `<div class="task-row${t.meds?' meds-row':''}${t.hi?' hi-row':''}${t.med?' med-row':''}" draggable="true" data-task-id="${t.id}" data-block-id="${b.id}" ondragstart="onDragStart(event)" ondragend="onDragEnd(event)" ondragover="onDragOverRow(event)" ondrop="onDropRow(event)" ondragleave="onDragLeaveRow(event)"><div class="cb ${ck?'checked':''}" onclick="toggleToday('${t.id}',this)"></div><div class="task-content"><div class="task-text ${ck?'done':''}" id="tt-${t.id}" ondblclick="editTask('${t.id}',this)" title="Double-click to edit">${txt}</div>${t.note?`<div class="task-note">${esc(t.note)}</div>`:''}</div><div class="task-actions"><button class="task-act-btn" onclick="openMoveMenu('${t.id}','${b.id}',event)" title="Move to block…">→</button><button class="task-act-btn del" onclick="deleteTask('${t.id}',event)" title="Remove task">×</button></div></div>`;
       }).join('')}</div>
       <div class="add-trigger" id="trig-${b.id}" onclick="openAdd('${b.id}')"><div class="add-box">+</div><span class="add-label">add task</span></div>
       <div class="add-input-row" id="addinput-${b.id}"><div class="add-box">+</div><input class="add-input" placeholder="New task…" onkeydown="addKey(event,'${b.id}')" onblur="closeAdd('${b.id}')" /></div>`;
