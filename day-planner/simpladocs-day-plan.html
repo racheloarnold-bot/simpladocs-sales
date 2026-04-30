@@ -1421,6 +1421,9 @@ function save(k,v) { localStorage.setItem(k, JSON.stringify(v)); }
 
 let todayState = { checked: {}, added: {}, edited: {}, deleted: {}, ...load(KEYS.today) };
 // Fresh start — 4/30/26
+// Pre-seed: 20+ buyer-intent sequences done, EL talk-track done, proposal-builder skill shipped
+['t-enroll-batch','bl-enroll-20','t-el-talktrack','bl-el-talktrack','bl-proposal-skill','t-clay-export','t-coda-upload','bl-clay-upload'].forEach(id => { if(todayState.checked[id]===undefined) todayState.checked[id]=true; });
+save(KEYS.today, todayState);
 let tasksState = { checked: {}, ...load(KEYS.tasks) };
 let rocksState = { checked: {}, ...load(KEYS.rocks) };
 
