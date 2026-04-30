@@ -1427,7 +1427,8 @@ let tasksState = { checked: {}, ...load(KEYS.tasks) };
 let rocksState = { checked: {}, ...load(KEYS.rocks) };
 // Fresh start — 4/30/26
 // Pre-seed today blocks: 20+ buyer-intent sequences done, EL talk-track done, proposal-builder skill shipped
-['t-enroll-batch','bl-enroll-20','t-el-talktrack','bl-el-talktrack','bl-proposal-skill','t-clay-export','t-coda-upload','bl-clay-upload','t-coda-seq-build','t-coda-tasks-tomorrow','bl-smb-icp','bl-website-booking','bl-closedlost-list','bl-ai-icp','bl-group3-launch'].forEach(id => { if(todayState.checked[id]===undefined) todayState.checked[id]=true; });
+// Force-set: confirmed done in Coda or completed earlier today — always true on load
+['t-enroll-batch','bl-enroll-20','t-el-talktrack','bl-el-talktrack','bl-proposal-skill','t-clay-export','t-coda-upload','bl-clay-upload','t-coda-seq-build','t-coda-tasks-tomorrow','bl-smb-icp','bl-website-booking','bl-closedlost-list','bl-ai-icp','bl-group3-launch'].forEach(id => { todayState.checked[id]=true; });
 save(KEYS.today, todayState);
 // Pre-seed HubSpot tasks state — "Check engagement" (367094785739) and "Enroll contacts" batch are COMPLETED in HubSpot
 ['hs-check-eng','hs-enroll-batch'].forEach(id => { if(tasksState.checked[id]===undefined) tasksState.checked[id]=true; });
@@ -2491,6 +2492,7 @@ function reprioritize() {
 
 // ─── Boot ──────────────────────────────────────────
 renderToday();
+initBacklog();
 restoreHsTasks();
 restoreRocks();
 loadNotes();
