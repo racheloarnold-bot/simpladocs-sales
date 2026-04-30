@@ -1420,6 +1420,8 @@ function load(k) { try { return JSON.parse(localStorage.getItem(k)) || {}; } cat
 function save(k,v) { localStorage.setItem(k, JSON.stringify(v)); }
 
 let todayState = { checked: {}, added: {}, edited: {}, deleted: {}, ...load(KEYS.today) };
+let tasksState = { checked: {}, ...load(KEYS.tasks) };
+let rocksState = { checked: {}, ...load(KEYS.rocks) };
 // Fresh start — 4/30/26
 // Pre-seed today blocks: 20+ buyer-intent sequences done, EL talk-track done, proposal-builder skill shipped
 ['t-enroll-batch','bl-enroll-20','t-el-talktrack','bl-el-talktrack','bl-proposal-skill','t-clay-export','t-coda-upload','bl-clay-upload'].forEach(id => { if(todayState.checked[id]===undefined) todayState.checked[id]=true; });
@@ -1427,8 +1429,6 @@ save(KEYS.today, todayState);
 // Pre-seed HubSpot tasks state — "Check engagement" (367094785739) and "Enroll contacts" batch are COMPLETED in HubSpot
 ['hs-check-eng','hs-enroll-batch'].forEach(id => { if(tasksState.checked[id]===undefined) tasksState.checked[id]=true; });
 save(KEYS.tasks, tasksState);
-let tasksState = { checked: {}, ...load(KEYS.tasks) };
-let rocksState = { checked: {}, ...load(KEYS.rocks) };
 
 // ─── Today blocks ───────────────────────────────────
 const BLOCKS = [
