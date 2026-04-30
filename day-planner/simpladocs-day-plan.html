@@ -1801,7 +1801,7 @@ function syncCheckbox(id, checked) {
   updateTasksCount();
 }
 function initBacklog() {
-  const allIds=['bl-jordan','bl-steven-msg','bl-steven-meet','bl-ai-onepager','bl-sequences','bl-prospecting','bl-closedlost','bl-closedlost-data','bl-campaign-plan','bl-roi-templates','bl-closedwon-bot'];
+  const allIds=['bl-clay-upload','bl-el-talktrack','bl-enroll-20','bl-coda-seq','bl-janpro-prep','bl-smb-icp','bl-website-booking','bl-hs-clean','bl-coda-dates','bl-closedlost-list','bl-sh-go-training','bl-sh-launch-seq','bl-qa-coda','bl-sh-docs-timeline','bl-proposal-skill','bl-onepager-edits','bl-group1-emails','bl-group1-seq','bl-group2-list','bl-group2-seq','bl-group3-build','bl-group3-launch','bl-group3-context','bl-sequences','bl-ai-icp','bl-transcripts-6mo','bl-roi-templates','bl-closedwon-bot','bl-ai-onepager-edits','bl-sh-mail'];
   allIds.forEach(id=>{
     const row=document.querySelector('[onclick*="'+id+'"]');
     if(row && todayState.checked[id]) row.classList.add('checked');
