@@ -998,8 +998,8 @@
         <div class="hs-content">
           <div class="hs-text">Get signature target from Jordyn — Fidelity Canada SM</div>
           <div class="hs-meta">
-            <span class="b-badge badge-hs">&#128203; To-do · HIGH · OVERDUE</span>
-            <span style="font-size:11px;color:var(--text-3);">Was due Apr 29 · $30.8K · Out for Signature (0.95)</span>
+            <span class="b-badge badge-hs">&#128203; To-do · HIGH · pushed to 5/4</span>
+            <span style="font-size:11px;color:var(--text-3);">Rescheduled · $30.8K · Out for Signature (0.95)</span>
             <a href="https://app.hubspot.com/tasks/245482189/view/all/task/367097429697" target="_blank" style="font-size:11px;color:var(--teal-mid);">View in HubSpot &#8599;</a>
           </div>
         </div>
@@ -1421,9 +1421,12 @@ function save(k,v) { localStorage.setItem(k, JSON.stringify(v)); }
 
 let todayState = { checked: {}, added: {}, edited: {}, deleted: {}, ...load(KEYS.today) };
 // Fresh start — 4/30/26
-// Pre-seed: 20+ buyer-intent sequences done, EL talk-track done, proposal-builder skill shipped
+// Pre-seed today blocks: 20+ buyer-intent sequences done, EL talk-track done, proposal-builder skill shipped
 ['t-enroll-batch','bl-enroll-20','t-el-talktrack','bl-el-talktrack','bl-proposal-skill','t-clay-export','t-coda-upload','bl-clay-upload'].forEach(id => { if(todayState.checked[id]===undefined) todayState.checked[id]=true; });
 save(KEYS.today, todayState);
+// Pre-seed HubSpot tasks state — "Check engagement" (367094785739) and "Enroll contacts" batch are COMPLETED in HubSpot
+['hs-check-eng','hs-enroll-batch'].forEach(id => { if(tasksState.checked[id]===undefined) tasksState.checked[id]=true; });
+save(KEYS.tasks, tasksState);
 let tasksState = { checked: {}, ...load(KEYS.tasks) };
 let rocksState = { checked: {}, ...load(KEYS.rocks) };
 
@@ -1439,22 +1442,21 @@ const BLOCKS = [
     { id:'t-clay-export', hi:true, text:'Pull 3–4 contact lists from Clay', note:'FIRST work block. Hard prereq for any sequence sends today.' },
     { id:'t-coda-upload', hi:true, text:'Upload to Coda + segment', note:'Clean inputs for buyer-intent + Coda-client sequences.' },
   ]},
-  { id:'el-prep', title:'📝 ExploreLearning Proposal Talk-Track Prep', start:10.25, end:11.0, tasks:[
+  { id:'el-prep', title:'📝 ExploreLearning Talk-Track (finish)', start:10.25, end:11.5, tasks:[
     { id:'t-el-talktrack', hi:true, text:'Build proposal talk-track for 12pm Pre-Read', note:'P1 Pre-Read with Pam, Bonnie, Scott. Walkthrough structure.' },
   ]},
-  { id:'lunch', title:'🥗 Lunch', start:11.0, end:12.0, tasks:[], isBreak:true },
+  { id:'coda-clients-kickoff', title:'📧 Coda-Clients Sequence — Kickoff (pre-call sprint)', start:11.5, end:12.0, tasks:[
+    { id:'t-coda-seq-build', hi:true, text:'Start Coda-clients sequence (drafts + cadence)', note:'30 min pre-call sprint. Continue after lunch.' },
+  ]},
   { id:'el-call', title:'🔴 ExploreLearning <> SimplaDocs | Proposal Pre-Read (P1)', start:12.0, end:12.75, tasks:[
     { id:'t-el-call', text:'ExploreLearning Pre-Read call', note:'Pam Larson, Bonnie Ellis, Scott. Calendar fixed.' },
   ]},
-  { id:'enrollments', title:'🚀 Buyer-Intent Sequence Enrollments (20+)', start:12.75, end:14.5, tasks:[
-    { id:'t-enroll-batch', hi:true, text:'Knock out 20+ HubSpot enrollment tasks', note:'22 "Enroll contacts in sequence" tasks dated 4/30. Only run AFTER Clay data is uploaded.' },
-    { id:'t-revmed-bump', med:true, text:'RevMed — if no Ian Winters response, remind Scott to bump', note:'HubSpot task due today. Scott\'s contact, not Rachel\'s.' },
-  ]},
-  { id:'coda-clients', title:'📧 Coda-Clients Sequence — Build + Schedule Tomorrow\'s Batch', start:14.5, end:16.0, tasks:[
-    { id:'t-coda-seq-build', hi:true, text:'Build new Coda-clients sequence (drafts + cadence)', note:'New sequence — not the existing AI Outreach Group 2.' },
+  { id:'lunch', title:'🥗 Lunch (moved to post-call)', start:12.75, end:13.75, tasks:[], isBreak:true },
+  { id:'coda-clients-finish', title:'📧 Coda-Clients Sequence — Finish + Queue Tomorrow', start:13.75, end:15.75, tasks:[
     { id:'t-coda-tasks-tomorrow', hi:true, text:'Create HubSpot tasks for 5/1 — enroll first batch tomorrow', note:'NOT shipping today. Schedule for Friday.' },
+    { id:'t-revmed-bump', med:true, text:'RevMed — if no Ian Winters response, remind Scott to bump', note:'Quick check. Roll into Scott Slack if needed.' },
   ]},
-  { id:'janpro-prep', title:'📋 JAN-PRO Prep for Friday 7:30 AM Sync', start:16.0, end:16.75, tasks:[
+  { id:'janpro-prep', title:'📋 JAN-PRO Prep for Friday 7:30 AM Sync', start:15.75, end:16.75, tasks:[
     { id:'t-janpro-prep', med:true, text:'Review JAN-PRO use case + draft asks for Scott', note:'Solo intro with Paige Friday morning. HubSpot task 367110680256.' },
   ]},
   { id:'eod-scott', title:'💬 EOD — Bundled Scott Slack', start:16.75, end:17.0, tasks:[
