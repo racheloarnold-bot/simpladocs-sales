@@ -1431,7 +1431,8 @@ let rocksState = { checked: {}, ...load(KEYS.rocks) };
 ['t-enroll-batch','bl-enroll-20','t-el-talktrack','bl-el-talktrack','bl-proposal-skill','t-clay-export','t-coda-upload','bl-clay-upload','t-coda-seq-build','t-coda-tasks-tomorrow','bl-smb-icp','bl-website-booking','bl-closedlost-list','bl-ai-icp','bl-group3-launch'].forEach(id => { todayState.checked[id]=true; });
 save(KEYS.today, todayState);
 // Pre-seed HubSpot tasks state — "Check engagement" (367094785739) and "Enroll contacts" batch are COMPLETED in HubSpot
-['hs-check-eng','hs-enroll-batch'].forEach(id => { if(tasksState.checked[id]===undefined) tasksState.checked[id]=true; });
+// Force-set: confirmed completed in HubSpot
+['hs-check-eng','hs-enroll-batch'].forEach(id => { tasksState.checked[id]=true; });
 save(KEYS.tasks, tasksState);
 
 // ─── Today blocks ───────────────────────────────────
@@ -2297,7 +2298,7 @@ function toggleRock(bodyId) {
 
 // ─── Restore checked state ─────────────────────────
 function restoreHsTasks() {
-  const ids=['hs-pedro','hs-mike','hs-agenda-1','hs-agenda-2','hs-gong'];
+  const ids=['hs-fidelity-sig','hs-check-eng','hs-ian-bump','hs-enroll-batch','hs-paige','hs-smartsheet','hs-gong'];
   ids.forEach(id=>{
     if(tasksState.checked[id]){
       const row=document.querySelector(`[data-hsid="${id}"]`);
