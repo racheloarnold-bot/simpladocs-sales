@@ -1424,7 +1424,7 @@ let tasksState = { checked: {}, ...load(KEYS.tasks) };
 let rocksState = { checked: {}, ...load(KEYS.rocks) };
 // Fresh start — 4/30/26
 // Pre-seed today blocks: 20+ buyer-intent sequences done, EL talk-track done, proposal-builder skill shipped
-['t-enroll-batch','bl-enroll-20','t-el-talktrack','bl-el-talktrack','bl-proposal-skill','t-clay-export','t-coda-upload','bl-clay-upload'].forEach(id => { if(todayState.checked[id]===undefined) todayState.checked[id]=true; });
+['t-enroll-batch','bl-enroll-20','t-el-talktrack','bl-el-talktrack','bl-proposal-skill','t-clay-export','t-coda-upload','bl-clay-upload','t-coda-seq-build','t-coda-tasks-tomorrow'].forEach(id => { if(todayState.checked[id]===undefined) todayState.checked[id]=true; });
 save(KEYS.today, todayState);
 // Pre-seed HubSpot tasks state — "Check engagement" (367094785739) and "Enroll contacts" batch are COMPLETED in HubSpot
 ['hs-check-eng','hs-enroll-batch'].forEach(id => { if(tasksState.checked[id]===undefined) tasksState.checked[id]=true; });
@@ -1451,17 +1451,21 @@ const BLOCKS = [
   { id:'el-call', title:'🔴 ExploreLearning <> SimplaDocs | Proposal Pre-Read (P1)', start:12.0, end:12.75, tasks:[
     { id:'t-el-call', text:'ExploreLearning Pre-Read call', note:'Pam Larson, Bonnie Ellis, Scott. Calendar fixed.' },
   ]},
-  { id:'lunch', title:'🥗 Lunch (moved to post-call)', start:12.75, end:13.75, tasks:[], isBreak:true },
-  { id:'coda-clients-finish', title:'📧 Coda-Clients Sequence — Finish + Queue Tomorrow', start:13.75, end:15.75, tasks:[
-    { id:'t-coda-tasks-tomorrow', hi:true, text:'Create HubSpot tasks for 5/1 — enroll first batch tomorrow', note:'NOT shipping today. Schedule for Friday.' },
+  { id:'el-proposal-rework', title:'🔥 EL Proposal Rework — Phase 1 Standalone, Open-Scope', start:12.75, end:14.75, tasks:[
+    { id:'t-el-rework', hi:true, text:'Rework EL proposal: Phase 1 standalone engagement, open-scope project (no retainer)', note:'EOD deadline. Scope as its own engagement. Everything changes.' },
+    { id:'t-el-ship', hi:true, text:'Ship updated proposal to EL by EOD', note:'Send before gym. Non-negotiable.' },
+  ]},
+  { id:'scott-sync', title:'📞 Scott Sync (EL pivot + deals)', start:14.75, end:15.083, tasks:[
+    { id:'t-scott-sync', med:true, text:'Sync with Scott — EL proposal pivot, open items', note:'20 min. Cover Phase 1 standalone decision, open-scope vs retainer shift.' },
+  ]},
+  { id:'janpro-prep', title:'📋 JAN-PRO Prep for Friday 7:30 AM Sync', start:15.083, end:15.833, tasks:[
+    { id:'t-janpro-prep', med:true, text:'Review JAN-PRO use case + draft asks for Scott', note:'Solo intro with Paige Friday morning. HubSpot task 367110680256.' },
     { id:'t-revmed-bump', med:true, text:'RevMed — if no Ian Winters response, remind Scott to bump', note:'Quick check. Roll into Scott Slack if needed.' },
   ]},
-  { id:'janpro-prep', title:'📋 JAN-PRO Prep for Friday 7:30 AM Sync', start:15.75, end:16.75, tasks:[
-    { id:'t-janpro-prep', med:true, text:'Review JAN-PRO use case + draft asks for Scott', note:'Solo intro with Paige Friday morning. HubSpot task 367110680256.' },
-  ]},
-  { id:'eod-scott', title:'💬 EOD — Bundled Scott Slack', start:16.75, end:17.0, tasks:[
+  { id:'eod-scott', title:'💬 EOD — Bundled Scott Slack', start:15.833, end:16.083, tasks:[
     { id:'t-scott-slack', med:true, text:'Ship bundled deal updates + Qs to Scott (1 Slack)', note:'All deal to-dos, updates, questions go in ONE message — not multiple pings.' },
   ]},
+  { id:'buffer', title:'🕐 Buffer / Overflow', start:16.083, end:17.0, tasks:[], isBreak:true },
   { id:'gym', title:'🏋️ Gym', start:17.0, end:18.5, tasks:[], isBreak:true },
 ];
 
