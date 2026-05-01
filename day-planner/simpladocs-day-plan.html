@@ -1009,7 +1009,7 @@
         <div class="hs-content">
           <div class="hs-text">Current Coda Customer — Outreach round 1 (∼24 contacts)</div>
           <div class="hs-meta">
-            <span class="b-badge badge-hs">📋 To-do · HIGH</span>
+            <span class="bl-pill bl-pill-high">High</span>
             <span style="font-size:11px;color:var(--text-3);">May 1 · due today</span>
             <a href="https://app.hubspot.com/tasks/245482189/view/all" target="_blank" style="font-size:11px;color:var(--teal-mid);">View all ↗</a>
           </div>
@@ -1020,7 +1020,7 @@
         <div class="hs-content">
           <div class="hs-text">Current Coda Customer — Outreach round 1/2 (∼24 contacts)</div>
           <div class="hs-meta">
-            <span class="b-badge badge-hs">📋 To-do · HIGH</span>
+            <span class="bl-pill bl-pill-high">High</span>
             <span style="font-size:11px;color:var(--text-3);">May 1 · due today</span>
             <a href="https://app.hubspot.com/tasks/245482189/view/all" target="_blank" style="font-size:11px;color:var(--teal-mid);">View all ↗</a>
           </div>
@@ -1031,7 +1031,7 @@
         <div class="hs-content">
           <div class="hs-text">Enroll contacts in sequence (overdue 4/30, 2 tasks)</div>
           <div class="hs-meta">
-            <span class="b-badge badge-hs">📋 To-do · overdue</span>
+            <span class="bl-pill bl-pill-high">Overdue</span>
             <span style="font-size:11px;color:var(--text-3);">From 4/30</span>
             <a href="https://app.hubspot.com/tasks/245482189/view/all" target="_blank" style="font-size:11px;color:var(--teal-mid);">View all ↗</a>
           </div>
@@ -1087,16 +1087,11 @@
           <div class="bl-num" style="background:linear-gradient(135deg,#a855f7,#ec4899);color:white">★</div>
           <div class="bl-title">Today's Focus</div>
         </div>
-        <span class="bl-badge" id="bl-today-badge">6 tasks</span>
+        <span class="bl-badge" id="bl-today-badge">1 task</span>
       </div>
       <div id="bl-today-body">
         <div class="bl-items">
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-paige-debrief',this)"></div><div class="bl-content"><div class="bl-text" id="bl-paige-debrief-t">Paige debrief: log JAN-PRO next steps + Odoo AI research</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">Granola transcript pulled · Canada-only · align rate w/ Scott</span></div></div></div>
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-deal-scan',this)"></div><div class="bl-content"><div class="bl-text" id="bl-deal-scan-t">Daily deal-updates ritual</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">Scan all open deals · log activity</span></div></div></div>
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-jordyn-prep',this)"></div><div class="bl-content"><div class="bl-text" id="bl-jordyn-prep-t">Jordyn 1:1 prep — Fidelity CA, EL contractor, Teladoc CO</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">Ops alignment angle</span></div></div></div>
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-hs-batch',this)"></div><div class="bl-content"><div class="bl-text" id="bl-hs-batch-t">48 HubSpot tasks — sequence sends + connections</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">Current Coda Customer outreach + Enroll in sequence</span></div></div></div>
           <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-arrows',this)"></div><div class="bl-content"><div class="bl-text" id="bl-arrows-t">Arrows sales skills setup in Claude</div><div class="bl-meta"><span class="bl-pill bl-pill-medium">Medium</span><span class="bl-source">AI headspace · spillover for HS batch if needed</span></div></div></div>
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-scott-slack',this)"></div><div class="bl-content"><div class="bl-text" id="bl-scott-slack-t">Bundled Scott Slack EOD</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">Before 2:15 hard stop</span></div></div></div>
         </div>
       </div>
     </div>
@@ -1408,8 +1403,9 @@ const BLOCKS = [
     { id:'t-paige-granola', hi:true, text:'Pull Granola notes from Paige call → log next steps in HubSpot', note:'JAN-PRO is Canada-only (separate domain). Update HubSpot. Research Odoo native AI capabilities for 5/6 Dean call. Align with Scott on AI hourly rate (250–275) + offer 10 free pilot hours.' },
     { id:'t-deal-scan', hi:true, text:'Scan all open deals — log activity, capture next steps', note:'EL P1 (Laura budget call today), AZ (SOW/MSA sent), Spring Health ($52.2k sig 5/5), Teladoc CO + Phase 2, Fidelity CA (Jordyn redlines), RevMed (Ian Winters bump), IHH 1-pager bumps.' },
   ]},
-  { id:'jordyn-prep', title:'📝 Jordyn 1:1 Prep', start:9.0, end:9.917, tasks:[
+  { id:'jordyn-prep', title:'📝 Jordyn 1:1 Prep + Proposal Skill', start:9.0, end:9.917, tasks:[
     { id:'t-meds', meds:true, text:'💊 Take meds at 9 AM', note:'Don\'t skip.' },
+    { id:'t-proposal-skill', hi:true, text:'Finish proposal-builder skill (concurrent session)', note:'Wrapping up in parallel — check in on progress, unblock if needed.' },
     { id:'t-jordyn-prep', hi:true, text:'Build Jordyn 1:1 prep doc', note:'Ops alignment angle: Fidelity CA redlines status, EL contractor delivery resourcing if Laura approves, Teladoc Change Order resourcing implications.' },
   ]},
   { id:'jordyn-1on1', title:'👥 Jordyn <> Rachel Weekly', start:10.0, end:10.5, tasks:[
