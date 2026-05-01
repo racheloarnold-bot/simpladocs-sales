@@ -299,7 +299,19 @@
     .badge-hi   { background: rgba(255,20,147,0.12);   color: #FF1493;      font-size: 9px; padding: 2px 6px; }
     .badge-med  { background: rgba(156,39,176,0.12);  color: #7B1FA2;      font-size: 9px; padding: 2px 6px; }
 
-    .block-time { font-size: 11px; color: var(--text-3); font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .block-time {
+      font-size: 12px; font-weight: 600; color: var(--navy);
+      font-variant-numeric: tabular-nums; white-space: nowrap;
+      background: linear-gradient(135deg, rgba(0,53,102,0.08), rgba(10,191,188,0.10));
+      padding: 4px 10px; border-radius: 8px;
+      letter-spacing: 0.3px;
+    }
+    .is-active .block-time {
+      background: linear-gradient(135deg, rgba(184,134,11,0.12), rgba(255,193,7,0.10));
+      color: var(--amber-text);
+    }
+    .is-past-done .block-time, .is-past-inc .block-time { opacity: 0.5; }
+    .block-duration { font-size: 10px; font-weight: 400; opacity: 0.7; margin-left: 2px; }
 
     .progress-bar { height: 2px; background: rgba(0,53,102,0.07); margin-top: 10px; }
     .progress-fill { height: 100%; background: var(--navy); transition: width 300ms; }
@@ -1512,7 +1524,7 @@ function renderBlock(b) {
   return `<div class="${cls}" draggable="true" data-block-id="${b.id}" ondragstart="onBlockDragStart(event)" ondragend="onBlockDragEnd(event)" ondragover="onBlockDragOver(event)" ondrop="onBlockDrop(event)" ondragleave="onBlockDragLeave(event)">
     <div class="block-header">
       <div class="bh-left"><div class="block-num">${idx}</div><div class="pulse-dot"></div><span class="block-title">${esc(b.title)}</span>${badge}</div>
-      <span class="block-time">${fmtH(b.start)} – ${fmtH(b.end)}</span>
+      <span class="block-time">${fmtH(b.start)} – ${fmtH(b.end)}<span class="block-duration"> · ${Math.round((b.end-b.start)*60)}m</span></span>
     </div>
     <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
     ${body}
