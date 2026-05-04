@@ -1027,25 +1027,23 @@
           </div>
         </div>
       </div>
-      <div class="hs-task-row" data-hsid="hs-resume-seq">
-        <div class="cb" onclick="toggleHs('hs-resume-seq',this)"></div>
+      <div class="hs-task-row" data-hsid="hs-resume-seq" style="opacity:0.5;text-decoration:line-through;">
+        <div class="cb cb-checked" onclick="toggleHs('hs-resume-seq',this)">✓</div>
         <div class="hs-content">
           <div class="hs-text">Resume sequence if no response</div>
           <div class="hs-meta">
-            <span class="bl-pill bl-pill-high">High</span>
-            <span style="font-size:11px;color:var(--text-3);">May 4 · due today</span>
-            <a href="https://app.hubspot.com/tasks/245482189/view/all/task/367435547364" target="_blank" style="font-size:11px;color:var(--teal-mid);">View in HubSpot ↗</a>
+            <span class="b-badge badge-hs">📋 done</span>
+            <span style="font-size:11px;color:var(--text-3);">Already restarted</span>
           </div>
         </div>
       </div>
-      <div class="hs-task-row" data-hsid="hs-fidelity-sig">
-        <div class="cb" onclick="toggleHs('hs-fidelity-sig',this)"></div>
+      <div class="hs-task-row" data-hsid="hs-fidelity-sig" style="opacity:0.5;text-decoration:line-through;">
+        <div class="cb cb-checked" onclick="toggleHs('hs-fidelity-sig',this)">✓</div>
         <div class="hs-content">
           <div class="hs-text">Get signature target from Jordyn — Fidelity Canada SM</div>
           <div class="hs-meta">
-            <span class="bl-pill bl-pill-high">Overdue</span>
-            <span style="font-size:11px;color:var(--text-3);">$30.8k Out for Signature · from 5/1</span>
-            <a href="https://app.hubspot.com/tasks/245482189/view/all/task/367097429697" target="_blank" style="font-size:11px;color:var(--teal-mid);">View in HubSpot ↗</a>
+            <span class="b-badge badge-hs">📋 done</span>
+            <span style="font-size:11px;color:var(--text-3);">Already handled</span>
           </div>
         </div>
       </div>
@@ -1071,17 +1069,7 @@
           </div>
         </div>
       </div>
-      <div class="hs-task-row" data-hsid="hs-smartsheet">
-        <div class="cb" onclick="toggleHs('hs-smartsheet',this)"></div>
-        <div class="hs-content">
-          <div class="hs-text">Ping Smartsheet after Go desktop release</div>
-          <div class="hs-meta">
-            <span class="b-badge badge-hs">📋 To-do · MED</span>
-            <span style="font-size:11px;color:var(--text-3);">May 4 · release expected 4/30</span>
-            <a href="https://app.hubspot.com/tasks/245482189/view/all/task/365573874417" target="_blank" style="font-size:11px;color:var(--teal-mid);">View in HubSpot ↗</a>
-          </div>
-        </div>
-      </div>
+      <!-- Smartsheet removed — Go desktop hasn't released yet -->
     </div>
 
     <div class="section-hdr">Tomorrow (5/5)</div>
@@ -1445,20 +1433,16 @@ let rocksState = { checked: {}, ...load(KEYS.rocks) };
 // ─── Today blocks ───────────────────────────────────
 const BLOCKS = [
   { id:'prep', title:'☕️ Morning Prep', start:9.0, end:9.5, tasks:[
-    { id:'t-email', hi:true, text:'Email triage', note:'Inbox to zero. Anything actionable → next block or backlog.' },
-    { id:'t-pipeline-look', hi:true, text:'Weekly pipeline look-ahead', note:'Scan all open deals — confirm next steps logged in HubSpot, identify the week\'s focus deals.' },
-    { id:'t-deal-scan', hi:true, text:'Daily deal scan & log activity', note:'Step #1 ritual after triage. Hot today: JAN-PRO (run by Scott), IHH (bad signal from Luke), EL P1 (Laura budget call), AZ (SOW/MSA at Superhuman), Teladoc CO.' },
+    { id:'t-email', text:'Email triage', note:'Inbox to zero. Anything actionable → next block or backlog.' },
+    { id:'t-pipeline-look', text:'Weekly pipeline look-ahead', note:'Scan all open deals — confirm next steps logged in HubSpot, identify the week\'s focus deals.' },
+    { id:'t-deal-scan', med:true, text:'Daily deal scan & log activity', note:'Step #1 ritual after triage. Hot today: JAN-PRO (run by Scott), IHH (bad signal from Luke), EL P1 (Laura budget call), AZ (SOW/MSA at Superhuman), Teladoc CO.' },
   ]},
   { id:'morning-work', title:'🚀 Deal Moves & Outreach Batch', start:9.5, end:11.5, tasks:[
     { id:'t-meds', meds:true, text:'💊 Take meds at 9:30 AM', note:'Don\'t skip.' },
     { id:'t-ihh-thread', hi:true, text:'Reply to IHH thread — break it up', note:'Natarie unresponsive to emails, asked Jon to meet tmw but no movement. Luke also has no news. Send a direct breakup-style reply to surface where things actually stand.' },
     { id:'t-el-bump', hi:true, text:'ExploreLearning — bump email', note:'P1 contractor proposal shipped 4/30. Laura budget call was scheduled for today — nudge if no movement.' },
-    { id:'t-az-bump', hi:true, text:'AstraZeneca — bump email', note:'SOW + MSA sent to Superhuman 4/30. Quick check-in on procurement movement.' },
-    { id:'t-coda-batch', hi:true, text:'HubSpot Coda Customer Outreach round 2 batch (~30 tasks)', note:'Round 2 is due today (5/4). Round 1 leftovers from 5/1 (~6 tasks) overdue — catch up first.' },
-    { id:'t-resume-seq', text:'Resume sequence if no response (HubSpot task)', note:'Knock out alongside Coda batch.' },
-    { id:'t-fidelity-jordyn', text:'Slack Jordyn for Fidelity Canada SM signature target', note:'Overdue from 5/1. $30.8k Out for Signature — quick ask, or save for Fri 1:1 if no urgency.' },
-    { id:'t-smartsheet-ping', text:'Ping Smartsheet — Go desktop release', note:'Was in holding pattern as of 4/29 awaiting 4/30 release.' },
-    { id:'t-odoo-research', text:'Research Odoo native AI capabilities', note:'For 5/6 Dean Mueller intro w/ Scott.' },
+    { id:'t-az-bump', med:true, text:'AstraZeneca — bump email', note:'SOW + MSA sent to Superhuman 4/30. Quick check-in on procurement movement.' },
+    { id:'t-coda-batch', med:true, text:'HubSpot Coda Customer Outreach round 2 batch (~30 tasks)', note:'Round 2 is due today (5/4). Round 1 leftovers from 5/1 (~6 tasks) overdue — catch up first.' },
   ]},
   { id:'scott-prep', title:'📝 Scott 1:1 Prep', start:11.5, end:12.0, tasks:[
     { id:'t-scott-prep', hi:true, text:'Build Scott 1:1 prep doc', note:'Monday = initiatives, NOT pipeline. Surface: Rocks 1–4 status (partner one-pager, partner schema, playbook, partner ownership), JAN-PRO walk-through + asks (rate alignment, Odoo AI), IHH situation update, Q2 goal pacing.' },
@@ -1471,11 +1455,11 @@ const BLOCKS = [
   ], isBreak:true },
   { id:'afternoon-work', title:'⚡ Needle-Movers — MAP, AI Articles, Arrows QA', start:14.0, end:15.5, tasks:[
     { id:'t-map', hi:true, text:'Mutual Action Plan — build & refine template', note:'Move-the-needle work. Reusable across deals — used in late-stage qualification + procurement.' },
-    { id:'t-ai-articles', hi:true, text:'5 AI articles outline (sales/revops use cases)', note:'1) proposal-builder skill, 2) proposal-talk-track skill (MEDDPICC surfacing), 3) 1:1 prep documents, 4) pipeline review + risk surfacing, 5) building cold outreach/sequences. Sketch outlines today, prose later.' },
+    { id:'t-ai-articles', med:true, text:'5 AI articles outline (sales/revops use cases)', note:'1) proposal-builder skill, 2) proposal-talk-track skill (MEDDPICC surfacing), 3) 1:1 prep documents, 4) pipeline review + risk surfacing, 5) building cold outreach/sequences. Sketch outlines today, prose later.' },
     { id:'t-arrows-qa', text:'QA Arrows sales skill FAQ docs / resources', note:'Skill produced FAQ docs/resources — review, refine, mark gaps.' },
   ]},
   { id:'wrap', title:'📋 Daily Wrap', start:15.5, end:16.5, tasks:[
-    { id:'t-scott-slack', hi:true, text:'Send Scott bundled deal-update Slack (1 message)', note:'All deal to-dos, updates, Qs in ONE end-of-day message. Cover JAN-PRO recap + asks, IHH update, EL/AZ status, Teladoc CO.' },
+    { id:'t-scott-slack', med:true, text:'Send Scott bundled deal-update Slack (1 message)', note:'All deal to-dos, updates, Qs in ONE end-of-day message. Cover JAN-PRO recap + asks, IHH update, EL/AZ status, Teladoc CO.' },
     { id:'t-log-activity', text:'Log activity in HubSpot (anything missed)', note:'Update notes_last_contacted/next_step on any deal touched today.' },
     { id:'t-tomorrow-prep', text:'Tomorrow prep — Steven 1:1 at 1 PM', note:'Tuesday = pipeline review prep day. Steven 1:1 1:00–1:45 PM.' },
   ]},
