@@ -1308,6 +1308,18 @@ e.g. Closed Won Slack notification — where does this stand?" oninput="saveNote
 
       <div class="notes1on1-section">
         <div class="notes1on1-header">
+          <span class="notes1on1-person">Steven</span>
+          <span class="notes1on1-cadence">1:1 · partnerships, AI services, one-pager direction</span>
+        </div>
+        <textarea class="notes1on1-area" id="notes-steven" placeholder="e.g. Superhuman launch sequence — confirm May vs June timing
+e.g. AI services one-pager edits — waiting on direction" oninput="saveNotes()"></textarea>
+        <div style="display:flex;justify-content:flex-end;margin-top:6px">
+          <button onclick="copyNotes('notes-steven')" style="font-size:12px;padding:5px 12px;border-radius:6px;border:1.5px solid rgba(124,58,237,0.35);background:rgba(168,85,247,0.07);color:#7c3aed;cursor:pointer;font-weight:600;transition:all 0.2s">Copy notes</button>
+        </div>
+      </div>
+
+      <div class="notes1on1-section">
+        <div class="notes1on1-header">
           <span class="notes1on1-person">Other</span>
           <span class="notes1on1-cadence">One-off 1:1s</span>
         </div>
@@ -2167,7 +2179,7 @@ function handleNoteKeydown(e) {
 
 function loadNotes() {
   const saved = JSON.parse(localStorage.getItem(KEYS.notes1on1) || '{}');
-  ['general','scott','jordyn','other'].forEach(k => {
+  ['general','scott','jordyn','steven','other'].forEach(k => {
     const el = document.getElementById('notes-'+k);
     if (!el) return;
     if (saved[k]) {
@@ -2186,7 +2198,7 @@ function loadNotes() {
 }
 function saveNotes() {
   const data = {};
-  ['general','scott','jordyn','other'].forEach(k => {
+  ['general','scott','jordyn','steven','other'].forEach(k => {
     const el = document.getElementById('notes-'+k);
     if (el) data[k] = el.value;
   });
