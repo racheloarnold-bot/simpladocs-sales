@@ -1376,8 +1376,8 @@ let rocksState = { checked: {}, ...load(KEYS.rocks) };
 // ─── Today blocks ───────────────────────────────────
 const BLOCKS = [
   { id:'morning', title:'☕️ Morning Block', start:9.13, end:9.75, tasks:[
-    { id:'t-email', text:'Email triage', note:'Inbox to zero. Anything actionable → next block or backlog.' },
-    { id:'t-deal-scan', text:'Daily deal scan & log activity', note:'Step #1 ritual. Hot today: AZ (Elisa MSA response!), JAN-PRO (discovery tmw 8:30a), IHH (silent), EL (said no), Fidelity CA (redlines).' },
+    { id:'t-email', text:'Email triage', note:'Inbox to zero.' },
+    { id:'t-deal-scan', text:'Daily deal scan & log activity', note:'Hot: AZ, JAN-PRO, IHH, EL, Fidelity CA.' },
     { id:'t-meds', meds:true, text:'💊 Take meds', note:'Done.' },
   ]},
   { id:'deep-work', title:'🚀 Deep Work: Clay & Outreach Build', start:9.75, end:12.75, tasks:[
@@ -1385,29 +1385,26 @@ const BLOCKS = [
     { id:'t-clay-visitor', hi:true, text:'Add visitor intent companies to Clay & scrape', note:'Second batch after buyer intent.' },
     { id:'t-csv-hubspot', text:'Export companies to HubSpot via CSV', note:'Clean format, dedupe against existing.' },
     { id:'t-create-seq-tasks', text:'Create tasks to sequence all new companies', note:'Will feed into new Group 1-2 sequence.' },
-    { id:'t-li-batch', text:'LinkedIn connection requests (batch ~50)', note:'HubSpot tasks due today. Open LinkedIn, batch send.' },
+    { id:'t-li-batch', text:'LinkedIn connection requests (batch ~50)', note:'HubSpot tasks due today.' },
   ]},
   { id:'steven-prep', title:'📝 Steven 1:1 Prep', start:12.75, end:13.0, tasks:[
-    { id:'t-steven-prep', text:'Prep for Steven weekly', note:'Pipeline context, sequence progress, one-pager updates, ask re: standard one-pager language direction.' },
+    { id:'t-steven-prep', text:'Prep for Steven weekly', note:'Pipeline context, sequence progress, one-pager updates.' },
   ]},
   { id:'steven-call', title:'👥 Steven / Rachel Weekly', start:13.0, end:14.0, tasks:[
-    { id:'t-steven-call', text:'Steven / Rachel Weekly', note:'Usually runs over. Buffer built in.' },
+    { id:'t-steven-call', text:'Steven / Rachel Weekly', note:'Usually runs over.' },
   ]},
   { id:'lunch', title:'🍽️ Lunch', start:14.0, end:14.5, tasks:[], isBreak:true },
   { id:'sequences', title:'⚡ Sequences + Pipeline Prep', start:14.5, end:15.5, tasks:[
     { id:'t-group12', hi:true, text:'Create consolidated past-client sequence (Group 1+2)', note:'Combines old Group 1 + Group 2 into one sequence.' },
     { id:'t-group3-ai', text:'Edit Group 3 sequence — more AI forward msgs', note:'Lean AI angle harder in Group 3 copy.' },
-    { id:'t-pipeline-prep', text:'Pipeline review prep (tomorrow 9 AM)', note:'Flag stale deals, missing next steps, deals needing strategy convos. Clean up HubSpot data.' },
     { id:'t-q2-rocks', text:'Update Q2 rocks', note:'Reflect recent completions and reprioritizations.' },
   ]},
-  { id:'janpro-prep', title:'🔍 JAN-PRO Discovery Prep', start:15.5, end:16.25, tasks:[
-    { id:'t-odoo-research', hi:true, text:'Research Odoo native AI capabilities & gaps', note:'Understand what Odoo offers natively, identify where Go agents fill gaps. Key for discovery positioning.' },
-    { id:'t-janpro-agenda', text:'Prep JAN-PRO discovery call agenda', note:'Tomorrow 8:30 AM PT. Attendees: Paige (Superhuman), Scott, Rachel, Dean Mueller (JAN-PRO), Dariia (Grammarly).' },
+  { id:'janpro-pipeline', title:'🔍 Pipeline Review Prep + JAN-PRO Prep (in progress)', start:15.5, end:18.75, tasks:[
+    { id:'t-pipeline-prep', hi:true, text:'Pipeline review prep (tomorrow 9 AM)', note:'Flag stale deals, missing next steps, deals needing strategy convos. Clean up HubSpot data.' },
+    { id:'t-odoo-research', hi:true, text:'Research Odoo native AI capabilities & gaps', note:'Key for JAN-PRO discovery positioning.' },
+    { id:'t-janpro-agenda', text:'Prep JAN-PRO discovery call agenda', note:'Tomorrow 8:30 AM PT. Attendees: Paige, Scott, Rachel, Dean Mueller, Dariia.' },
+    { id:'t-hs-check', text:'HubSpot spot check before close out', note:'Quick scan, log any missed activity, push incomplete to backlog.' },
   ]},
-  { id:'wrap', title:'📋 Daily Wrap', start:16.25, end:16.5, tasks:[
-    { id:'t-hs-check', text:'HubSpot spot check — did everything? push leftovers to backlog', note:'15 min. Quick scan, log any missed activity, move incomplete items.' },
-  ]},
-  { id:'gym', title:'🏋️ Gym (glute & core)', start:17.0, end:18.5, tasks:[], isBreak:true },
   { id:'reading', title:'🔮 Suzie Reading (444 Tarot)', start:19.0, end:20.0, tasks:[], isBreak:true },
 ];
 
