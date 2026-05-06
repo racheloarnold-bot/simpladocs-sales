@@ -1381,8 +1381,9 @@ function save(k,v) { localStorage.setItem(k, JSON.stringify(v)); }
 let todayState = { checked: {}, added: {}, edited: {}, deleted: {}, ...load(KEYS.today) };
 let tasksState = { checked: {}, ...load(KEYS.tasks) };
 let rocksState = { checked: {}, ...load(KEYS.rocks) };
-// Fresh start — 5/5/26 (Tuesday)
-// No pre-seeds for today
+// Pre-seeds — confirmed done 5/6
+if (!todayState.checked['t-outreach2']) { todayState.checked['t-outreach2']=true; save(KEYS.today,todayState); }
+if (!todayState.checked['t-jocio-agenda']) { todayState.checked['t-jocio-agenda']=true; save(KEYS.today,todayState); }
 
 // ─── Today blocks ───────────────────────────────────
 const BLOCKS = [
@@ -1402,16 +1403,6 @@ const BLOCKS = [
   { id:'lunch', title:'🍽️ Walgreens + Lunch', start:16.0, end:16.5, tasks:[], isBreak:true },
   { id:'outreach2', title:'🏗️ Rock 3 — Sales Playbook', start:14.25, end:15.75, tasks:[
     { id:'t-outreach2', text:'Rock 3: Sales SOPs + deal stage entrance & exit criteria', note:'Build out the framework. Capture what you have now.' },
-    { id:'t-content-bullets', text:'Rock 3: Best practices + template library', note:'Add to what you already have going.' },
-  ]},
-  { id:'go-training', title:'🤖 Superhuman Go Partner Training (EOD)', start:16.5, end:17.0, tasks:[
-    { id:'t-go-training', text:'Superhuman Go Partner Training course', note:'1.5-2 hrs total — start today, continue tomorrow if needed.' },
-  ]},
-  { id:'wrapup', title:'🌇 Quick Hitters', start:15.75, end:16.0, tasks:[
-    { id:'t-q2-rocks', text:'Update Q2 Rocks doc in Coda', note:'Reflect recent completions. Quick update.' },
-    { id:'t-az-preread', hi:true, text:'Run pre-call prep for AZ in HubSpot AI', note:'AZ <> SimplaDocs Next Steps Alignment — tomorrow 8 AM. Use HubSpot AI pre-call feature on the deal before EOD.' },
-    { id:'t-jocio-agenda', hi:true, text:'Send agenda to Jocio (AZ — tomorrow 8 AM)', note:'Send before EOD today.' },
-    { id:'t-dean-followup', text:'Send follow-up to Dean Mueller (JAN-PRO)', note:'Post-discovery recap + next steps.' },
   ]},
   { id:'gym', title:'🏋️ Gym', start:17.0, end:18.5, tasks:[], isBreak:true },
 ];
