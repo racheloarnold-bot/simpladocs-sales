@@ -1629,7 +1629,7 @@ function toggleRockGeneric(id,el,rockId) {
 
 function rockIds(n) {
   const maps = {
-    rock1:['r1-pp','r1-pdf','r1-cs','r1-uc'],
+    rock1:['r1-pp','r1-scope-proj','r1-scope-ret','r1-pdf','r1-cs','r1-uc'],
     rock2:['r2-tracker','r2-domain','r2-prop-agenda','r2-ic-fu','r2-qbr',
            'r2-d1','r2-d2','r2-d3','r2-d4','r2-d5','r2-d6','r2-d7','r2-d8','r2-d9','r2-d10',
            'r2-d11','r2-d12','r2-d13','r2-d14','r2-d15'],
@@ -2240,11 +2240,9 @@ function toggleRock(bodyId) {
 
 // ─── Restore checked state ─────────────────────────
 function restoreHsTasks() {
-  const ids=['hs-fidelity-sig','hs-check-eng','hs-ian-bump','hs-enroll-batch','hs-paige','hs-smartsheet','hs-gong'];
-  ids.forEach(id=>{
+  document.querySelectorAll('[data-hsid]').forEach(row=>{
+    const id=row.getAttribute('data-hsid');
     if(tasksState.checked[id]){
-      const row=document.querySelector(`[data-hsid="${id}"]`);
-      if(!row) return;
       const cb=row.querySelector('.cb'); if(cb) cb.classList.add('checked');
       const t=row.querySelector('.hs-text'); if(t) t.classList.add('done');
     }
