@@ -1386,31 +1386,31 @@ let rocksState = { checked: {}, ...load(KEYS.rocks) };
 
 // ─── Today blocks ───────────────────────────────────
 const BLOCKS = [
-  { id:'deal-updates', title:'☕️ Deal Updates & Activity Log', start:9.75, end:10.75, tasks:[
+  { id:'deal-updates', title:'📋 Deal Updates & Activity Log', start:9.75, end:10.75, tasks:[
     { id:'t-meds', meds:true, text:'💊 Take meds', note:'Morning reminder.' },
-    { id:'t-janpro-notes', hi:true, text:'Log JAN-PRO discovery call notes + update next step in HubSpot', note:'Call was this morning. Capture what was discussed and confirm next action.' },
-    { id:'t-deal-scan', med:true, text:'Update next steps on all open deals post-pipeline review', note:'Smartsheet, Myodetox, Royal Farms, RevMed.' },
-    { id:'t-hs-recording', med:true, text:'Get recording & transcription turned on in HubSpot', note:'Quick setup task in HubSpot settings.' },
-    { id:'t-joseph-check', text:'Quick check-in with Joseph (Myodetox rep)', note:'Quick ping to see how his call went today.' },
+    { id:'t-janpro-notes', hi:true, text:'Log JAN-PRO discovery call notes + update next step in HubSpot', note:'Call was this morning — capture what was discussed and confirm next action.' },
+    { id:'t-deal-scan', med:true, text:'Update next steps on all open deals post-pipeline review', note:'Smartsheet, Myodetox, Royal Farms, RevMed — log whatever was surfaced today.' },
+    { id:'t-hs-recording', med:true, text:'Get recording & transcription turned on in HubSpot', note:'Quick setup task — enable call recording + transcription in HubSpot settings.' },
+    { id:'t-joseph-check', text:'Quick check-in with Joseph (Myodetox rep) — how did his call go?', note:'Myodetox rep call was today. Quick ping to see how his conversation went.' },
   ]},
-  { id:'quick-hitters', title:'⚡ Quick Hitters', start:10.75, end:11.5, tasks:[
-    { id:'t-jocio-agenda', hi:true, text:'Send agenda to Jocio (AZ — tomorrow 8 AM)', note:'AZ <> SimplaDocs Next Steps Alignment. Send before EOD.' },
-    { id:'t-dean-followup', hi:true, text:'Send follow-up to Dean Mueller (JAN-PRO)', note:'Post-discovery follow-up. Recap the call, confirm next steps, share any resources.' },
-    { id:'t-source-contacts', med:true, text:'Source ~15 contacts for tomorrow outreach', note:'Sequences sent for today buyer intent batch. Get the next list ready.' },
-  ]},
-  { id:'rock3-start', title:'🏗️ Rock 3 — Sales Playbook (Start)', start:11.5, end:12.25, tasks:[
-    { id:'t-rock3-kick', hi:true, text:'Start Rock 3: Sales SOPs, deal stage criteria, best practices, template library', note:'Capture everything top of mind right now before BAR.' },
+  { id:'outreach1', title:'🚀 Outreach Block 1 — Buyer Intent Queue', start:10.75, end:12.25, tasks:[
+    { id:'t-buyer-intent', hi:true, text:'Work buyer intent outreach queue — 10+ companies minimum', note:'70 sequence enrollment tasks in HubSpot from yesterday. Maintain ≥10/day pace.' },
   ]},
   { id:'bar-meeting', title:'📊 BAR — Big Account Review', start:12.5, end:13.25, tasks:[
-    { id:'t-bar', text:'BAR: New Mexico, Qualtrics, AlixPartners, IDC, SBC', note:'Retention + expansion focus. Jordyn attends.' },
+    { id:'t-bar', text:'BAR: New Mexico, Qualtrics, AlixPartners, IDC, SBC', note:'Retention + expansion focus. Jordyn attends. No special prep needed — just show up.' },
   ]},
   { id:'lunch', title:'🍽️ Lunch + Walgreens', start:13.25, end:14.25, tasks:[], isBreak:true },
-  { id:'rock3-deep', title:'🏗️ Rock 3 — Sales Playbook (Deep Work)', start:14.25, end:16.0, tasks:[
-    { id:'t-rock3-deep', hi:true, text:'Continue Rock 3 build-out — SOPs, entrance & exit criteria, best practices, template library', note:'Get as much done today as possible. This is the priority block.' },
-    { id:'t-q2-rocks', med:true, text:'Update Q2 Rocks doc as Rock 3 items get completed', note:'Check off items in Coda as you go.' },
+  { id:'outreach2', title:'⚡ Outreach Block 2 + Content Bullets', start:14.25, end:15.5, tasks:[
+    { id:'t-outreach2', hi:true, text:'Continue buyer intent outreach — keep pace going', note:'Get as many sequences rolling as possible.' },
+    { id:'t-content-bullets', med:true, text:'Start content bullet points — Sales/RevOps AI topics for Steven', note:'Dictate ideas first, polish later. Topics: AI in sales, RevOps use cases. From Steven 1:1 5/5.' },
   ]},
-  { id:'go-training', title:'🤖 Superhuman Go Partner Training (EOD)', start:16.0, end:17.0, tasks:[
-    { id:'t-go-training', med:true, text:'Superhuman Go Partner Training course', note:'1.5–2 hrs total — start today, continue tomorrow if needed. Was due 4/25.' },
+  { id:'go-training', title:'🤖 Superhuman Go Partner Training', start:15.5, end:16.25, tasks:[
+    { id:'t-go-training', med:true, text:'Superhuman Go Partner Training course', note:'Prioritize this if you have the energy. Was due 4/25 — tackle it today.' },
+  ]},
+  { id:'wrapup', title:'🌇 Daily Wrap-Up', start:16.25, end:16.75, tasks:[
+    { id:'t-q2-rocks', text:'Update Q2 Rocks doc in Coda', note:'Reflect recent completions. Quick update.' },
+    { id:'t-az-preread', hi:true, text:'Run pre-call prep for AZ in HubSpot AI', note:'AZ <> SimplaDocs Next Steps Alignment — tomorrow 8 AM. Use HubSpot AI pre-call feature on the deal before EOD.' },
+    { id:'t-scott-slack', hi:true, text:'Send bundled Scott deal-update Slack', note:'One Slack: all deal updates, questions, next steps for Scott. EOD ritual.' },
   ]},
   { id:'gym', title:'🏋️ Gym', start:17.0, end:18.5, tasks:[], isBreak:true },
 ];
