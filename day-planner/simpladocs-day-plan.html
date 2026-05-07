@@ -1003,16 +1003,16 @@
   <!-- ═══════════════ TAB: HUBSPOT TASKS ═══════════════ -->
     <div class="tab-panel" id="tab-tasks">
 
-    <div class="section-hdr">Today (5/6) &mdash; Due Today</div>
+    <div class="section-hdr">Today (5/7) &mdash; Due Today</div>
     <div class="hs-card">
-      <div class="hs-task-row" data-hsid="hs-buyer-intent">
-        <div class="cb" onclick="toggleHs('hs-buyer-intent',this)"></div>
+      <div class="hs-task-row" data-hsid="hs-source-contacts">
+        <div class="cb" onclick="toggleHs('hs-source-contacts',this)"></div>
         <div class="hs-content">
-          <div class="hs-text">Buyer intent outreach queue &mdash; 70 contacts to enroll in sequence</div>
+          <div class="hs-text">Source contacts (&times;15) &mdash; outreach sourcing batch due today</div>
           <div class="hs-meta">
-            <span class="b-badge badge-hs">📋 To-do · MED</span>
-            <span style="font-size:11px;color:var(--text-3);">May 6 &middot; Created yesterday &middot; Bulk enrollment batch</span>
-            <a href="https://app.hubspot.com/tasks/245482189/view/all" target="_blank" style="font-size:11px;color:var(--teal-mid);">View all in HubSpot ↗</a>
+            <span class="b-badge badge-hs">&#128203; To-do &middot; MED</span>
+            <span style="font-size:11px;color:var(--text-3);">May 7 &middot; 15 tasks due today</span>
+            <a href="https://app.hubspot.com/tasks/245482189/view/all" target="_blank" style="font-size:11px;color:var(--teal-mid);">View all in HubSpot &#8599;</a>
           </div>
         </div>
       </div>
@@ -1020,25 +1020,39 @@
 
     <div class="section-hdr">This Week &mdash; Upcoming</div>
     <div class="hs-card">
-      <div class="hs-task-row" data-hsid="hs-janpro-notes">
-        <div class="cb" onclick="toggleHs('hs-janpro-notes',this)"></div>
+      <div class="hs-task-row" data-hsid="hs-linkedin-connect">
+        <div class="cb" onclick="toggleHs('hs-linkedin-connect',this)"></div>
         <div class="hs-content">
-          <div class="hs-text">Log JAN-PRO discovery call notes &amp; next step</div>
+          <div class="hs-text">Send LinkedIn Connection request &times;2</div>
           <div class="hs-meta">
-            <span class="bl-pill bl-pill-high">High</span>
-            <span style="font-size:11px;color:var(--text-3);">Call was this morning (5/6)</span>
-            <a href="https://app.hubspot.com/contacts/245482189/record/0-3/317585807055" target="_blank" style="font-size:11px;color:var(--teal-mid);">JAN-PRO deal ↗</a>
+            <span class="b-badge badge-hs">&#128203; To-do &middot; MED</span>
+            <span style="font-size:11px;color:var(--text-3);">Due 5/8</span>
+            <a href="https://app.hubspot.com/tasks/245482189/view/all" target="_blank" style="font-size:11px;color:var(--teal-mid);">View in HubSpot &#8599;</a>
           </div>
         </div>
       </div>
-      <div class="hs-task-row" data-hsid="hs-deal-nextsteps">
-        <div class="cb" onclick="toggleHs('hs-deal-nextsteps',this)"></div>
+    </div>
+
+    <div class="section-hdr">Next Week</div>
+    <div class="hs-card">
+      <div class="hs-task-row" data-hsid="hs-paige-ping">
+        <div class="cb" onclick="toggleHs('hs-paige-ping',this)"></div>
         <div class="hs-content">
-          <div class="hs-text">Update next steps on all open deals post-pipeline review</div>
+          <div class="hs-text">Ping Paige for to-do&apos;s after Go desktop release</div>
           <div class="hs-meta">
-            <span class="bl-pill bl-pill-high">High</span>
-            <span style="font-size:11px;color:var(--text-3);">Smartsheet · Myodetox · Royal Farms · RevMed</span>
-            <a href="https://app.hubspot.com/contacts/245482189/deals" target="_blank" style="font-size:11px;color:var(--teal-mid);">View pipeline ↗</a>
+            <span class="b-badge badge-hs">&#128203; To-do &middot; MED</span>
+            <span style="font-size:11px;color:var(--text-3);">Due 5/11</span>
+            <a href="https://app.hubspot.com/contacts/245482189/record/0-3/318185881313" target="_blank" style="font-size:11px;color:var(--teal-mid);">Smartsheet deal &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="hs-task-row" data-hsid="hs-gong-review">
+        <div class="cb" onclick="toggleHs('hs-gong-review',this)"></div>
+        <div class="hs-content">
+          <div class="hs-text">Review Gong call</div>
+          <div class="hs-meta">
+            <span class="b-badge badge-hs">&#128203; To-do &middot; MED</span>
+            <span style="font-size:11px;color:var(--text-3);">Due 5/12</span>
           </div>
         </div>
       </div>
@@ -1061,7 +1075,7 @@
       </div>
       <div id="bl-today-body">
         <div class="bl-items">
-          <div style="padding:12px 16px;font-size:13px;color:var(--text-3);font-style:italic;">All Today tasks are in the schedule above (deal updates, outreach, Go training).</div>
+          <div style="padding:12px 16px;font-size:13px;color:var(--text-3);font-style:italic;">Update Group 3 sequences (add AI angle) is in the Deal Scan block above. All other today items are scheduled.</div>
         </div>
       </div>
     </div>
@@ -1359,7 +1373,7 @@ e.g. AI services one-pager edits — waiting on direction" oninput="saveNotes()"
 // ─── Storage ───────────────────────────────────────
 const KEYS = {
   notes1on1: 'sd-1on1-notes-v1',
-  today: 'sd-today-may06-v1',
+  today: 'sd-today-may07-v1',
   tasks: 'sd-tasks-q2-v1',
   rocks: 'sd-rocks-q2-v1',
   water: 'sd-water-may05-v1',
@@ -1387,24 +1401,29 @@ if (!todayState.checked['t-jocio-agenda']) { todayState.checked['t-jocio-agenda'
 
 // ─── Today blocks ───────────────────────────────────
 const BLOCKS = [
-  { id:'deal-updates', title:'📋 Deal Updates & Activity Log', start:9.75, end:10.75, tasks:[
-    { id:'t-meds', meds:true, text:'💊 Take meds', note:'Morning reminder.' },
-    { id:'t-janpro-notes', hi:true, text:'Log JAN-PRO discovery call notes + update next step in HubSpot', note:'Call was this morning — capture what was discussed and confirm next action.' },
-    { id:'t-deal-scan', text:'Update next steps on all open deals post-pipeline review', note:'Smartsheet, Myodetox, Royal Farms, RevMed — log whatever was surfaced today.' },
-    { id:'t-hs-recording', text:'Get recording & transcription turned on in HubSpot', note:'Quick setup task — enable call recording + transcription in HubSpot settings.' },
-    { id:'t-joseph-check', text:'Quick check-in with Joseph (Myodetox rep) — how did his call go?', note:'Myodetox rep call was today. Quick ping to see how his conversation went.' },
+  { id:'az-followup', title:'AZ Follow-Up & Deal Update', start:9.33, end:10.0, tasks:[
+    { id:'t-az-meds', meds:true, text:'Take meds', note:'' },
+    { id:'t-az-email', hi:true, text:'Send AZ follow-up email (Jocio + Mike) — recap call, their AIs, our AIs, June Work Vevo prep', note:'jocio.morais@astrazeneca.com, mike.zerbato@grammarly.com' },
+    { id:'t-az-slack', hi:true, text:'Loop Scott into AZ Slack channel', note:'Action item from this morning\'s call' },
+    { id:'t-az-hubspot', hi:true, text:'Update AZ deal in HubSpot — log today\'s call, update next step', note:'Waiting on Superhuman legal docs from Mike (exp. 5/8)' },
   ]},
-  { id:'outreach1', title:'🚀 Outreach Block 1 — Buyer Intent Queue', start:10.75, end:12.25, tasks:[
-    { id:'t-buyer-intent', text:'Work buyer intent outreach queue — 10+ companies minimum', note:'70 sequence enrollment tasks in HubSpot from yesterday. Maintain ≥10/day pace.' },
+  { id:'deal-outreach', title:'Deal Scan + Outreach', start:10.0, end:12.0, tasks:[
+    { id:'t-meds-ritual', meds:true, text:'Maintain outreach pace — 10+ companies/day', note:'Work through "Source contacts" HubSpot tasks' },
+    { id:'t-deal-scan', hi:true, text:'Daily deal scan — log activity + next steps on all open deals', note:'RevMed (Scott/Anthony call today?), JAN-PRO, Questrade (keep open?), Myodetox, Smartsheet, Royal Farms' },
+    { id:'t-group3-seq', text:'Update Group 3 sequences — add AI angle to copy', note:'Lean AI harder. Today backlog item.' },
+    { id:'t-linkedin', text:'LinkedIn connection requests (2 due 5/8)', note:'HubSpot tasks — knock out today' },
   ]},
-  { id:'bar-meeting', title:'📊 BAR — Big Account Review', start:12.5, end:13.25, tasks:[
-    { id:'t-bar', text:'BAR: New Mexico, Qualtrics, AlixPartners, IDC, SBC', note:'Retention + expansion focus. Jordyn attends. No special prep needed — just show up.' },
+  { id:'lunch', title:'Lunch', start:12.0, end:13.0, tasks:[], isBreak:true },
+  { id:'backlog-work', title:'Backlog + Outreach Overflow', start:13.0, end:15.0, tasks:[
+    { id:'t-ai-articles', hi:true, text:'5 AI articles outline — dictate content bullets (Sales/RevOps)', note:'From Steven 1:1 5/5. Outline only, prose later. Voice memo OK.' },
+    { id:'t-call-notes', text:'Pull call notes + emails into HubSpot (Group 3 context)', note:'This Week backlog. Rachel + Scott.' },
+    { id:'t-outreach-overflow', text:'Outreach overflow if not at 10+ companies yet', note:'' },
   ]},
-  { id:'lunch', title:'🍽️ Walgreens + Lunch', start:16.0, end:16.5, tasks:[], isBreak:true },
-  { id:'outreach2', title:'🏗️ Rock 3 — Sales Playbook', start:14.25, end:15.75, tasks:[
-    { id:'t-outreach2', text:'Rock 3: Sales SOPs + deal stage entrance & exit criteria', note:'Build out the framework. Capture what you have now.' },
+  { id:'wrap', title:'EOD Wrap', start:15.0, end:16.75, tasks:[
+    { id:'t-scott-slack', hi:true, text:'Send Scott bundled deal-update Slack', note:'Include: AZ status, RevMed Anthony outcome, JAN-PRO scoping, Questrade Q' },
+    { id:'t-inbound', text:'Handle any inbound outreach responses', note:'' },
   ]},
-  { id:'gym', title:'🏋️ Gym', start:17.0, end:18.5, tasks:[], isBreak:true },
+  { id:'gym', title:'Gym', start:17.0, end:18.5, tasks:[], isBreak:true },
 ];
 
 function getOrderedBlocks() {
