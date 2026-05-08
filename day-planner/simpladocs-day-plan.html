@@ -1371,6 +1371,13 @@ let tasksState = { checked: {}, ...load(KEYS.tasks) };
 let rocksState = { checked: {}, ...load(KEYS.rocks) };
 // No pre-seeds for 5/8
 
+// Pre-seed known-completed rocks so they survive localStorage wipes
+const knownCheckedRocks = ['r2-tracker','r2-prop-agenda','r2-ic-fu','r2-d1','r2-d2','r2-d3','r2-d4','r2-d6','r2-d7','r2-d9','r3-med','r3-prop','r5-ct'];
+knownCheckedRocks.forEach(id => {
+  if (!rocksState.checked[id]) { rocksState.checked[id] = true; }
+});
+save(KEYS.rocks, rocksState);
+
 // ─── Today blocks ───────────────────────────────────
 const BLOCKS = [
   { id:'morning', title:'Morning Ritual', start:8.0, end:10.0, tasks:[
