@@ -1041,16 +1041,15 @@
     <div class="bl-section">
       <div class="bl-header" onclick="toggleBl('bl-today-body')" style="background:linear-gradient(90deg,rgba(168,85,247,0.10),rgba(236,72,153,0.06))">
         <div class="bl-header-left">
-          <div class="bl-num" style="background:linear-gradient(135deg,#a855f7,#ec4899);color:white">★</div>
-          <div class="bl-title">Today's Focus</div>
+          <div class="bl-num" style="background:linear-gradient(135deg,#a855f7,#ec4899);color:white">&#9733;</div>
+          <div class="bl-title">Today&#x2019;s Focus</div>
         </div>
-        <span class="bl-badge" id="bl-today-badge">scheduled ✓</span>
+        <span class="bl-badge" id="bl-today-badge">in schedule</span>
       </div>
       <div id="bl-today-body">
         <div class="bl-items">
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-group3-seq-today',this)"></div><div class="bl-content"><div class="bl-text" id="bl-group3-seq-today-t">Update Group 3 sequences &#x2014; add more AI offering language</div><div class="bl-meta"><span class="bl-pill bl-pill-medium">Medium</span><span class="bl-source">In schedule: Follow-ups &amp; Outreach block</span></div></div></div>
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-sops-today',this)"></div><div class="bl-content"><div class="bl-text" id="bl-sops-today-t">Finish deal strategy SOPs in Coda Sales HQ</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">In schedule: 1:00&#x2013;2:30 PM block</span></div></div></div>
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-pitch-today',this)"></div><div class="bl-content"><div class="bl-text" id="bl-pitch-today-t">Update pitch deck + prep Monday intro call</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">In schedule: 2:30&#x2013;4:00 PM block</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-t-cmd',this)"></div><div class="bl-content"><div class="bl-text" id="bl-t-cmd-t">ConvenientMD: draft MAP with open scoping questions for John</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">In schedule: 11:00&#x2013;12:00pm block</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-t-ihh',this)"></div><div class="bl-content"><div class="bl-text" id="bl-t-ihh-t">IHH Healthcare: get Scott to review requirements Excel before tier estimate</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">In schedule: Scott 1:1 2:30pm</span></div></div></div>
         </div>
       </div>
     </div>
@@ -1061,15 +1060,23 @@
           <div class="bl-num">W</div>
           <div class="bl-title">This Week</div>
         </div>
-        <span class="bl-badge" id="bl-week-badge">5 tasks</span>
+        <span class="bl-badge" id="bl-week-badge">14 tasks</span>
       </div>
       <div id="bl-week-body" style="display:none;">
         <div class="bl-items">
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-ai-articles',this)"></div><div class="bl-content"><div class="bl-text" id="bl-ai-articles-t">5 AI articles outline (sales/revops use cases)</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">Outline first, prose later. From Steven 1:1 5/5.</span></div></div></div>
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-ai-outreach',this)"></div><div class="bl-content"><div class="bl-text" id="bl-ai-outreach-t">AI one-pager outreach to past clients / closed-lost</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">Blocked on Scott CSV (~344 records) — prioritize when CSV lands</span></div></div></div>
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-group3-call-notes',this)"></div><div class="bl-content"><div class="bl-text" id="bl-group3-call-notes-t">Pull call notes + emails into HubSpot (Group 3 context)</div><div class="bl-meta"><span class="bl-pill bl-pill-medium">Medium</span><span class="bl-source">Rachel + Scott. Depends on Coda access.</span></div></div></div>
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-q2-rocks-doc',this)"></div><div class="bl-content"><div class="bl-text" id="bl-q2-rocks-doc-t">Update Q2 Rocks document &amp; planner section</div><div class="bl-meta"><span class="bl-pill bl-pill-low">Low</span><span class="bl-source">In Progress</span></div></div></div>
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-group3-seq',this)"></div><div class="bl-content"><div class="bl-text" id="bl-group3-seq-t">Update Group 3 sequences — add more AI offering language</div><div class="bl-meta"><span class="bl-pill bl-pill-medium">Medium</span><span class="bl-source">Blocked on Steven (case study + one-pager). Est. Thu–Fri.</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-ai-outreach',this)"></div><div class="bl-content"><div class="bl-text" id="bl-ai-outreach-t">AI one-pager outreach to past clients / closed-lost</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">Blocked on Scott CSV (~344 records). Prioritize when CSV lands.</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-buyer-source',this)"></div><div class="bl-content"><div class="bl-text" id="bl-buyer-source-t">Source 8 companies from buyer intent for outreach</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">From day planner 5/8</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-buyer-contacts',this)"></div><div class="bl-content"><div class="bl-text" id="bl-buyer-contacts-t">Source contacts for new buyer intent companies</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">From day planner 5/8</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-buyer-seq',this)"></div><div class="bl-content"><div class="bl-text" id="bl-buyer-seq-t">Sequence buyer intent companies</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">From day planner 5/8</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-rock3',this)"></div><div class="bl-content"><div class="bl-text" id="bl-rock3-t">Finish Rock 3 &#x2014; sales playbook docs to Coda Sales HQ</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">Proposal framework + MEDDPICC + deal entrance/exit + objection handling. Was mid-flow 5/7.</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-ai-articles',this)"></div><div class="bl-content"><div class="bl-text" id="bl-ai-articles-t">5 AI articles outline (sales/revops use cases)</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">From Steven 1:1 5/5. Outline first, prose later.</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-pitch-deck',this)"></div><div class="bl-content"><div class="bl-text" id="bl-pitch-deck-t">Update pitch deck (slightly more tool agnostic)</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">Keep Coda-specific for current calls; adjust framing for future use.</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-group3-seq',this)"></div><div class="bl-content"><div class="bl-text" id="bl-group3-seq-t">Update Group 3 sequences &#x2014; add more AI offering language</div><div class="bl-meta"><span class="bl-pill bl-pill-medium">Medium</span><span class="bl-source">Lean AI angle harder in Group 3 copy.</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-hs-hygiene',this)"></div><div class="bl-content"><div class="bl-text" id="bl-hs-hygiene-t">HubSpot hygiene: close dates, next steps</div><div class="bl-meta"><span class="bl-pill bl-pill-medium">Medium</span><span class="bl-source">QA Coda close dates (March 9 import issue).</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-ms-agenda',this)"></div><div class="bl-content"><div class="bl-text" id="bl-ms-agenda-t">Draft Movement Strategy agenda</div><div class="bl-meta"><span class="bl-pill bl-pill-medium">Medium</span><span class="bl-source">Call rescheduled from 5/13 &#x2014; send before next attempt.</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-group3-notes',this)"></div><div class="bl-content"><div class="bl-text" id="bl-group3-notes-t">Pull call notes + emails into HubSpot (Group 3 context)</div><div class="bl-meta"><span class="bl-pill bl-pill-medium">Medium</span><span class="bl-source">In Progress. Depends on Coda access.</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-sh-training',this)"></div><div class="bl-content"><div class="bl-text" id="bl-sh-training-t">Superhuman Go Partner Training course</div><div class="bl-meta"><span class="bl-pill bl-pill-low">Low</span><span class="bl-source">Not Started</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-q2rocks-update',this)"></div><div class="bl-content"><div class="bl-text" id="bl-q2rocks-update-t">Update Q2 Rocks document &amp; planner section to reflect recent changes</div><div class="bl-meta"><span class="bl-pill bl-pill-low">Low</span><span class="bl-source">In Progress</span></div></div></div>
         </div>
       </div>
     </div>
@@ -1084,12 +1091,12 @@
       </div>
       <div id="bl-nextweek-body" style="display:none;">
         <div class="bl-items">
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-hs-deals',this)"></div><div class="bl-content"><div class="bl-text" id="bl-hs-deals-t">Clean HubSpot deals data (close dates, end dates, closed-lost reason)</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">P0 blocking · In Progress</span></div></div></div>
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-hs-contacts',this)"></div><div class="bl-content"><div class="bl-text" id="bl-hs-contacts-t">Clean up HubSpot contacts &amp; companies — merge duplicates</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">From 5/4 brain dump</span></div></div></div>
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-sh-launch-seq',this)"></div><div class="bl-content"><div class="bl-text" id="bl-sh-launch-seq-t">Build Superhuman launch email sequence (pre-launch AI &rarr; targeted launch &rarr; post-webinar follow-up)</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">From Steven 1:1 4/29 &middot; May&ndash;June launch</span></div></div></div>
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-qa-coda-dates',this)"></div><div class="bl-content"><div class="bl-text" id="bl-qa-coda-dates-t">QA Coda close dates in HubSpot</div><div class="bl-meta"><span class="bl-pill bl-pill-medium">Medium</span><span class="bl-source">Known March 9 import issue &middot; In Progress</span></div></div></div>
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-partner-onepager',this)"></div><div class="bl-content"><div class="bl-text" id="bl-partner-onepager-t">Create partner-facing one-pager — revise for Go Agents</div><div class="bl-meta"><span class="bl-pill bl-pill-medium">Medium</span><span class="bl-source">Waiting on Scott to share existing draft</span></div></div></div>
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-onepager-lang',this)"></div><div class="bl-content"><div class="bl-text" id="bl-onepager-lang-t">Update standard one-pager language</div><div class="bl-meta"><span class="bl-pill bl-pill-medium">Medium</span><span class="bl-source">Blocked on Steven direction</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-hs-deals',this)"></div><div class="bl-content"><div class="bl-text" id="bl-hs-deals-t">Clean HubSpot deals data (close dates, end dates, closed-lost reason)</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">P0 blocking. In Progress.</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-hs-contacts',this)"></div><div class="bl-content"><div class="bl-text" id="bl-hs-contacts-t">Clean up HubSpot contacts &amp; companies &#x2014; merge duplicates</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">From 5/4 brain dump</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-sh-launch-seq',this)"></div><div class="bl-content"><div class="bl-text" id="bl-sh-launch-seq-t">Build Superhuman launch email sequence (pre-launch AI &rarr; targeted launch &rarr; post-webinar follow-up)</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">From Steven 1:1 4/29. May&#x2013;June launch.</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-qa-coda-dates',this)"></div><div class="bl-content"><div class="bl-text" id="bl-qa-coda-dates-t">QA Coda close dates in HubSpot</div><div class="bl-meta"><span class="bl-pill bl-pill-medium">Medium</span><span class="bl-source">Known March 9 import issue. In Progress.</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-onepager-lang',this)"></div><div class="bl-content"><div class="bl-text" id="bl-onepager-lang-t">Update standard one-pager language</div><div class="bl-meta"><span class="bl-pill bl-pill-medium">Medium</span><span class="bl-source">Blocked on Steven direction.</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-partner-onepager',this)"></div><div class="bl-content"><div class="bl-text" id="bl-partner-onepager-t">Create partner-facing one-pager &#x2014; revise for Go Agents</div><div class="bl-meta"><span class="bl-pill bl-pill-medium">Medium</span><span class="bl-source">Waiting on Scott to share existing draft.</span></div></div></div>
           <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-ai-onepager',this)"></div><div class="bl-content"><div class="bl-text" id="bl-ai-onepager-t">Future edits to AI services one-pager</div><div class="bl-meta"><span class="bl-pill bl-pill-low">Low</span><span class="bl-source">From Steven 1:1 4/29</span></div></div></div>
         </div>
       </div>
@@ -1101,14 +1108,12 @@
           <div class="bl-num">L</div>
           <div class="bl-title">Later</div>
         </div>
-        <span class="bl-badge" id="bl-later-badge">4 tasks</span>
+        <span class="bl-badge" id="bl-later-badge">3 tasks</span>
       </div>
       <div id="bl-later-body" style="display:none;">
         <div class="bl-items">
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-pe-clay',this)"></div><div class="bl-content"><div class="bl-text" id="bl-pe-clay-t">Build Clay workbook for small/mid-size PE firms (PE outreach campaign)</div><div class="bl-meta"><span class="bl-pill bl-pill-low">Low</span><span class="bl-source">Grab company list, create contacts, research AI outreach strategy first</span></div></div></div>
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-outbound-seq',this)"></div><div class="bl-content"><div class="bl-text" id="bl-outbound-seq-t">Build outbound sequences for PE outreach</div><div class="bl-meta"><span class="bl-pill bl-pill-medium">Medium</span><span class="bl-source">After Clay workbook is live</span></div></div></div>
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-rock3',this)"></div><div class="bl-content"><div class="bl-text" id="bl-rock3-t">Finish Rock 3 — sales playbook docs to Coda Sales HQ</div><div class="bl-meta"><span class="bl-pill bl-pill-medium">Medium</span><span class="bl-source">Proposal framework + MEDDPICC + deal entrance/exit + objection handling</span></div></div></div>
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-clay-poc',this)"></div><div class="bl-content"><div class="bl-text" id="bl-clay-poc-t">Build list of POCs at active contracts &rarr; Clay job-change tracking</div><div class="bl-meta"><span class="bl-pill bl-pill-low">Low</span><span class="bl-source">Not urgent</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-pe-seq',this)"></div><div class="bl-content"><div class="bl-text" id="bl-pe-seq-t">Build outbound sequences for PE outreach</div><div class="bl-meta"><span class="bl-pill bl-pill-medium">Medium</span><span class="bl-source">After Clay workbook is live.</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-clay-poc',this)"></div><div class="bl-content"><div class="bl-text" id="bl-clay-poc-t">Build list of POCs at active contracts &rarr; Clay job-change tracking</div><div class="bl-meta"><span class="bl-pill bl-pill-low">Low</span><span class="bl-source">Not urgent.</span></div></div></div>
         </div>
       </div>
     </div>
