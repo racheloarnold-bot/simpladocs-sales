@@ -1406,8 +1406,6 @@ const BLOCKS = [
   ]},
   { id:'outreach', title:'Outreach + Prep', start:12.0, end:12.5, tasks:[
     { id:'t-meds', meds:true, text:'Take meds', note:'Reminder' },
-    { id:'t-seq-g123', med:true, text:'Update Group 1 & 2 sequences — add case study + blurbs from Steven', note:'Steven just delivered — do today' },
-    { id:'t-seq-g3', med:true, text:'Update Group 3 sequences — add case study + AI offering language', note:'Steven just delivered — do today' },
     { id:'t-seq', text:'Enroll buyer intent contacts in sequence (batch)', note:'20+ pending in HubSpot' },
     { id:'t-li', med:true, text:'LinkedIn messages — Coda & AI (batch)', note:'11 due today' },
     { id:'t-outreach-pace', text:'Maintain outreach pace — 10+ companies/day', note:'Daily ritual' },
@@ -1415,7 +1413,11 @@ const BLOCKS = [
     { id:'t-scott-bundle', med:true, text:'Bundle Scott Qs: IHH Excel review ask + deal updates', note:'One Slack — not drip pings' },
   ]},
   { id:'steven-1on1', title:'Steven / Rachel 1:1', start:12.5, end:13.5, tasks:[]},
-  { id:'lunch', title:'Lunch', start:13.5, end:14.25, tasks:[], isBreak:true },
+  { id:'seq-updates', title:'Sequence Updates (post-Steven sync)', start:13.5, end:14.25, tasks:[
+    { id:'t-seq-g123', med:true, text:'Update Group 1 & 2 sequences — add case study + blurbs from Steven', note:'After Steven 1:1 context' },
+    { id:'t-seq-g3', med:true, text:'Update Group 3 sequences — add case study + AI offering language', note:'After Steven 1:1 context' },
+  ]},
+  { id:'lunch', title:'Lunch', start:14.25, end:14.5, tasks:[], isBreak:true },
   { id:'scott-prep', title:'Scott 1:1 Prep', start:14.25, end:14.5, tasks:[
     { id:'t-scott-prep', text:'Frame IHH ask: Scott to review Excel before Rachel can estimate', note:'' },
   ]},
