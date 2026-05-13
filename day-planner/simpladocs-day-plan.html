@@ -1003,31 +1003,35 @@
   <!-- ═══════════════ TAB: HUBSPOT TASKS ═══════════════ -->
     <div class="tab-panel" id="tab-tasks">
 
-    <div class="section-hdr">Today (5/8)</div>
+    <div class="section-hdr">Today (5/13)</div>
+
     <div class="hs-card">
-      <div class="hs-task-row" data-hsid="hs-followup-email">
-        <div class="cb" onclick="toggleHs('hs-followup-email',this)"></div>
+      <div class="hs-task-row" data-hsid="hs-seq-buyers">
+        <div class="cb" onclick="toggleHs('hs-seq-buyers',this)"></div>
         <div class="hs-content">
-          <div class="hs-text">Follow up on email</div>
+          <div class="hs-text">Enroll buyer intent contacts in sequence (batch)</div>
           <div class="hs-meta">
-            <span class="bl-pill bl-pill-high">High</span>
-            <a href="https://app.hubspot.com/tasks/245482189/view/all" target="_blank" style="font-size:11px;color:var(--teal-mid);">View in HubSpot &#8599;</a>
-          </div>
-        </div>
-      </div>
-      <div class="hs-task-row" data-hsid="hs-connect-req">
-        <div class="cb" onclick="toggleHs('hs-connect-req',this)"></div>
-        <div class="hs-content">
-          <div class="hs-text">Send connection requests &times;2</div>
-          <div class="hs-meta">
-            <span class="b-badge badge-hs">&#128203; To-do &middot; MED</span>
-            <a href="https://app.hubspot.com/tasks/245482189/view/all" target="_blank" style="font-size:11px;color:var(--teal-mid);">View in HubSpot &#8599;</a>
+            <span class="b-badge badge-hs">📋 To-do &middot; MED</span>
+            <span class="hs-note">20+ contacts pending</span>
           </div>
         </div>
       </div>
     </div>
 
-  </div><!-- /tab-tasks -->
+    <div class="hs-card">
+      <div class="hs-task-row" data-hsid="hs-li-msg">
+        <div class="cb" onclick="toggleHs('hs-li-msg',this)"></div>
+        <div class="hs-content">
+          <div class="hs-text">LinkedIn messages — Coda &amp; AI (batch)</div>
+          <div class="hs-meta">
+            <span class="b-badge badge-hs">📋 To-do &middot; MED</span>
+            <span class="hs-note">11 due today</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- /tab-tasks -->
 
   <!-- ═══════════════ TAB: Q2 ROCKS ═══════════════ -->
 
@@ -1347,7 +1351,7 @@ e.g. AI services one-pager edits — waiting on direction" oninput="saveNotes()"
 // ─── Storage ───────────────────────────────────────
 const KEYS = {
   notes1on1: 'sd-1on1-notes-v1',
-  today: 'sd-today-may08-v2',
+  today: 'sd-today-may13-v1',
   tasks: 'sd-tasks-q2-v1',
   rocks: 'sd-rocks-q2-v1',
   water: 'sd-water-may08-v1',
@@ -1380,35 +1384,43 @@ save(KEYS.rocks, rocksState);
 
 // ─── Today blocks ───────────────────────────────────
 const BLOCKS = [
-  { id:'morning', title:'Morning Ritual', start:8.0, end:10.0, tasks:[
-    { id:'t-meds', meds:true, text:'Take meds', note:'' },
-    { id:'t-deal-scan', hi:true, text:'Daily deal scan + log activity and next steps', note:'AZ: agreements ASAP | IHH: mgmt decision | Teladoc: follow up Tracie and Will | EL: budget approval status' },
+  { id:'morning', title:'Morning', start:8.0, end:9.0, tasks:[
+    { id:'t-prep', text:'Prep for day', note:'Done' },
   ]},
-  { id:'jordyn-1on1', title:'Jordyn / Rachel 1:1', start:10.0, end:10.5, tasks:[
-    { id:'t-1on1-prep', hi:true, text:'Jordyn 1:1', note:'Rate alignment (Notion migration $200 vs $285) + AI consulting hours and pricing' },
+  { id:'pipeline', title:'Weekly Pipeline Review', start:9.0, end:9.75, tasks:[
+    { id:'t-pipeline', text:'Pipeline review with Scott + Steven', note:'Done' },
   ]},
-  { id:'mid-morning', title:'Follow-ups and Outreach', start:10.5, end:12.0, tasks:[
-    { id:'t-connection-requests', text:'HubSpot connection requests (2 due today)', note:'' },
-    { id:'t-outreach-10', hi:true, text:'Outreach to 10+ companies', note:'' },
-    { id:'t-source-intent', text:'Source 8 companies from buyer intent for outreach', note:'' },
-    { id:'t-source-contacts', text:'Source contacts for new buyer intent companies', note:'' },
-    { id:'t-sequence-intent', text:'Sequence buyer intent companies', note:'' },
-    { id:'t-group3-sequences', text:'Update Group 3 sequences, lean harder on AI angle', note:'TODAY in backlog' },
+  { id:'teladoc', title:'Teladoc Calls', start:9.75, end:11.0, tasks:[
+    { id:'t-teladoc1', text:'Scott | Teladoc: Continue SOW Extension Discussion', note:'Done — written quote to follow tomorrow' },
+    { id:'t-ms', text:'Movement Strategy <> SimplaDocs Intro', note:'Rescheduled — Brianne declined this time' },
   ]},
-  { id:'lunch', title:'Lunch', start:12.0, end:13.0, tasks:[], isBreak:true },
-  { id:'sops', title:'Deal Strategy SOPs', start:13.0, end:14.5, tasks:[
-    { id:'t-sops', hi:true, text:'Finish deal strategy SOPs in Coda Sales HQ', note:'Was mid-flow yesterday when interrupted. Pick up where you left off (Rock 3).' },
+  { id:'cmd-map', title:'ConvenientMD — MAP & Open Questions', start:11.0, end:12.0, tasks:[
+    { id:'t-cmd-map', hi:true, text:'Draft MAP with open scoping questions for John', note:'Proposal review tomorrow 2:30pm' },
+    { id:'t-cmd-call', text:'Decide: schedule scoping call or send questions async', note:'' },
+    { id:'t-cmd-log', text:'Log activity in HubSpot', note:'' },
   ]},
-  { id:'monday-prep', title:'Monday Intro Call Prep', start:14.5, end:16.0, tasks:[
-    { id:'t-pitch-deck', hi:true, text:'Update pitch deck (slightly more tool agnostic)', note:'Keep Coda-specific for this call; adjust framing for future use' },
-    { id:'t-intro-prep', hi:true, text:'Run company research + write agenda for Monday call', note:'Use /intro-call-prep once you have the prospect name/URL' },
-    { id:'t-movement-agenda', text:'Draft Movement Strategy agenda to send 5/11', note:'Discovery call 5/13' },
+  { id:'outreach', title:'Outreach + Prep', start:12.0, end:12.5, tasks:[
+    { id:'t-meds', meds:true, text:'Take meds', note:'Reminder' },
+    { id:'t-seq', med:true, text:'Enroll buyer intent contacts in sequence (batch)', note:'20+ pending in HubSpot' },
+    { id:'t-li', med:true, text:'LinkedIn messages — Coda & AI (batch)', note:'11 due today' },
+    { id:'t-outreach-pace', text:'Maintain outreach pace — 10+ companies/day', note:'Daily ritual' },
+    { id:'t-steven-prep', text:'Light prep for Steven 1:1', note:'' },
+    { id:'t-scott-bundle', med:true, text:'Bundle Scott Qs: IHH Excel review ask + deal updates', note:'One Slack — not drip pings' },
   ]},
-  { id:'eow-wrap', title:'EOW Wrap', start:16.0, end:17.0, tasks:[
-    { id:'t-hs-cleanup', text:'HubSpot hygiene: close dates and next steps', note:'QA Coda close dates (March 9 import issue)' },
-    { id:'t-q2-rocks-update', text:'Update Q2 Rocks doc in Coda', note:'Reflect recent changes' },
+  { id:'steven-1on1', title:'Steven / Rachel 1:1', start:12.5, end:13.5, tasks:[]},
+  { id:'lunch', title:'Lunch', start:13.5, end:14.25, tasks:[], isBreak:true },
+  { id:'scott-prep', title:'Scott 1:1 Prep', start:14.25, end:14.5, tasks:[
+    { id:'t-scott-prep', text:'Frame IHH ask: Scott to review Excel before Rachel can estimate', note:'' },
   ]},
-  { id:'gym', title:'Gym', start:17.0, end:18.5, tasks:[], isBreak:true },
+  { id:'scott-1on1', title:'Scott / Rachel 1:1', start:14.5, end:15.25, tasks:[
+    { id:'t-ihh', hi:true, text:'IHH Healthcare — Scott to review requirements Excel before tier estimate', note:"Don't estimate until Scott has seen it" },
+    { id:'t-cmd-scott', med:true, text:'ConvenientMD — scope alignment ahead of tomorrow\'s proposal review', note:'' },
+    { id:'t-deal-updates', text:'Deal updates: RevMed, Myodetox, JAN-PRO', note:'' },
+  ]},
+  { id:'wrap', title:'Daily Wrap Up', start:15.25, end:15.5, tasks:[
+    { id:'t-hs-scan', text:'Quick HubSpot deal scan — log activity from today', note:'' },
+    { id:'t-dnb', text:'Do Not Book protection', note:'' },
+  ]},
 ];
 
 function getOrderedBlocks() {
