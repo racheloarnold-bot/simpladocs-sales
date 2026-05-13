@@ -1050,6 +1050,8 @@
         <div class="bl-items">
           <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-t-cmd',this)"></div><div class="bl-content"><div class="bl-text" id="bl-t-cmd-t">ConvenientMD: draft MAP with open scoping questions for John</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">In schedule: 11:00&#x2013;12:00pm block</span></div></div></div>
           <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-t-ihh',this)"></div><div class="bl-content"><div class="bl-text" id="bl-t-ihh-t">IHH Healthcare: get Scott to review requirements Excel before tier estimate</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">In schedule: Scott 1:1 2:30pm</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-t-seq-g123',this)"></div><div class="bl-content"><div class="bl-text" id="bl-t-seq-g123-t">Update Group 1 &amp; 2 sequences &#x2014; add case study + blurbs from Steven</div><div class="bl-meta"><span class="bl-pill bl-pill-medium">Medium</span><span class="bl-source">In schedule: Outreach + Prep block</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-t-seq-g3',this)"></div><div class="bl-content"><div class="bl-text" id="bl-t-seq-g3-t">Update Group 3 sequences &#x2014; add case study + AI offering language</div><div class="bl-meta"><span class="bl-pill bl-pill-medium">Medium</span><span class="bl-source">In schedule: Outreach + Prep block</span></div></div></div>
         </div>
       </div>
     </div>
@@ -1071,7 +1073,7 @@
           <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-rock3',this)"></div><div class="bl-content"><div class="bl-text" id="bl-rock3-t">Finish Rock 3 &#x2014; sales playbook docs to Coda Sales HQ</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">Proposal framework + MEDDPICC + deal entrance/exit + objection handling. Was mid-flow 5/7.</span></div></div></div>
           <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-ai-articles',this)"></div><div class="bl-content"><div class="bl-text" id="bl-ai-articles-t">5 AI articles outline (sales/revops use cases)</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">From Steven 1:1 5/5. Outline first, prose later.</span></div></div></div>
           <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-pitch-deck',this)"></div><div class="bl-content"><div class="bl-text" id="bl-pitch-deck-t">Update pitch deck (slightly more tool agnostic)</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">Keep Coda-specific for current calls; adjust framing for future use.</span></div></div></div>
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-group3-seq',this)"></div><div class="bl-content"><div class="bl-text" id="bl-group3-seq-t">Update Group 3 sequences &#x2014; add more AI offering language</div><div class="bl-meta"><span class="bl-pill bl-pill-medium">Medium</span><span class="bl-source">Lean AI angle harder in Group 3 copy.</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-group3-seq',this)"></div><div class="bl-content"><div class="bl-text" id="bl-group3-seq-t">Update Group 3 sequences &#x2014; add case study + AI offering language</div><div class="bl-meta"><span class="bl-pill bl-pill-medium">Medium</span><span class="bl-source">Doing today &#x2014; Steven delivered case study + blurbs.</span></div></div></div>
           <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-hs-hygiene',this)"></div><div class="bl-content"><div class="bl-text" id="bl-hs-hygiene-t">HubSpot hygiene: close dates, next steps</div><div class="bl-meta"><span class="bl-pill bl-pill-medium">Medium</span><span class="bl-source">QA Coda close dates (March 9 import issue).</span></div></div></div>
           <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-ms-agenda',this)"></div><div class="bl-content"><div class="bl-text" id="bl-ms-agenda-t">Draft Movement Strategy agenda</div><div class="bl-meta"><span class="bl-pill bl-pill-medium">Medium</span><span class="bl-source">Call rescheduled from 5/13 &#x2014; send before next attempt.</span></div></div></div>
           <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-group3-notes',this)"></div><div class="bl-content"><div class="bl-text" id="bl-group3-notes-t">Pull call notes + emails into HubSpot (Group 3 context)</div><div class="bl-meta"><span class="bl-pill bl-pill-medium">Medium</span><span class="bl-source">In Progress. Depends on Coda access.</span></div></div></div>
@@ -1406,7 +1408,9 @@ const BLOCKS = [
   ]},
   { id:'outreach', title:'Outreach + Prep', start:12.0, end:12.5, tasks:[
     { id:'t-meds', meds:true, text:'Take meds', note:'Reminder' },
-    { id:'t-seq', med:true, text:'Enroll buyer intent contacts in sequence (batch)', note:'20+ pending in HubSpot' },
+    { id:'t-seq-g123', med:true, text:'Update Group 1 & 2 sequences — add case study + blurbs from Steven', note:'Steven just delivered — do today' },
+    { id:'t-seq-g3', med:true, text:'Update Group 3 sequences — add case study + AI offering language', note:'Steven just delivered — do today' },
+    { id:'t-seq', text:'Enroll buyer intent contacts in sequence (batch)', note:'20+ pending in HubSpot' },
     { id:'t-li', med:true, text:'LinkedIn messages — Coda & AI (batch)', note:'11 due today' },
     { id:'t-outreach-pace', text:'Maintain outreach pace — 10+ companies/day', note:'Daily ritual' },
     { id:'t-steven-prep', text:'Light prep for Steven 1:1', note:'' },
