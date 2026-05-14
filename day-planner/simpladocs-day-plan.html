@@ -1334,14 +1334,15 @@ const BLOCKS = [
     { id:'t-teladoc-estimate', hi:true, text:'Send Teladoc estimate to Aneel: 25 hrs/mo x $225/hr = $5,625/mo | 3-mo block = $16,875', note:'Granola: quote from 5/13 call' },
     { id:'t-myo-email', med:true, text:'Email Myo re: scheduling follow-up' },
   ]},
-  { id:'hs-clear', title:'Clear HubSpot outreach task list', start:10.0, end:12.0, tasks:[
-    { id:'t-hs-batch', hi:true, text:'Batch process open outreach tasks: 181 open (LinkedIn messages, connection requests)', note:'Must clear before sequence builds' },
+  { id:'sequences-main', title:'Sequences', start:10.0, end:12.0, tasks:[
+    { id:'t-seq-group3', hi:true, text:'CREATE: Group 3 (Closed Lost) AI sequence' },
+    { id:'t-seq-group12', hi:true, text:'UPDATE: Group 1/2 (past client AI) sequence' },
+    { id:'t-seq-lnc', hi:true, text:'CREATE: Cold outreach sequence: low/no code platform' },
   ]},
   { id:'lunch', title:'Lunch', start:12.0, end:13.0, tasks:[], isBreak:true },
-  { id:'seq-start', title:'Sequences (head start)', start:13.0, end:13.5, tasks:[
-    { id:'t-seq-group3-start', hi:true, text:'BEGIN: Group 3 (Closed Lost) AI sequence build' },
-  ]},
-  { id:'cmd-prep', title:'ConvenientMD discovery prep', start:13.5, end:14.5, tasks:[
+  { id:'pre-call', title:'Pre-call wrap + ConvenientMD prep start', start:13.0, end:14.5, tasks:[
+    { id:'t-seq-lists', med:true, text:'Upload lists: Group 3 + cold outreach', note:'Required for sequence sends' },
+    { id:'t-hs-batch', text:'Mass complete LinkedIn tasks in HubSpot (no InMail — batch close)', note:'Quick clear before sequences go live' },
     { id:'t-cmd-notes', med:true, text:'Pull Monday intro call notes (Granola)' },
     { id:'t-cmd-questions', hi:true, text:'Build discovery question bank: 20 to 150 user rollout, Meeting Notes + OKRs templates' },
     { id:'t-cmd-proposal-sketch', med:true, text:'Sketch proposal structure (project + retainer): close call with clear next step' },
@@ -1349,13 +1350,10 @@ const BLOCKS = [
   { id:'cmd-call', title:'ConvenientMD Technical Discovery', start:14.5, end:15.0, tasks:[
     { id:'t-cmd-call', hi:true, text:'ConvenientMD call: John Aldrich + Steven (Google Meet)' },
   ]},
-  { id:'post-call', title:'Sequences (continued) + post-call', start:15.0, end:16.5, tasks:[
-    { id:'t-seq-group3', hi:true, text:'FINISH: Group 3 (Closed Lost) AI sequence' },
-    { id:'t-seq-group12', hi:true, text:'UPDATE: Group 1/2 (past client AI) sequence' },
-    { id:'t-seq-lnc', hi:true, text:'CREATE: Cold outreach sequence: low/no code platform' },
-    { id:'t-seq-lists', med:true, text:'Upload lists: Group 3 + cold outreach', note:'Required for sequence sends' },
+  { id:'post-call', title:'Post-call + sequences wrap', start:15.0, end:16.5, tasks:[
     { id:'t-cmd-notes-log', med:true, text:'Capture ConvenientMD call notes in HubSpot' },
     { id:'t-cmd-proposal', med:true, text:'Start ConvenientMD proposal (project + retainer scope)' },
+    { id:'t-seq-overflow', text:'Finish any remaining sequence work' },
   ]},
   { id:'wrapup', title:'Wrap up', start:16.5, end:17.0, tasks:[
     { id:'t-cmd-followup', hi:true, text:'Draft + send ConvenientMD follow-up email (EOD)' },
