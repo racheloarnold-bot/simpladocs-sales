@@ -1357,24 +1357,21 @@ const BLOCKS = [
   { id:'photon-call', title:'Photon Commerce Intro Call', start:10.75, end:11.25, tasks:[
     { id:'t-photon-call', hi:true, text:'Intro call: Christopher Robinson (chris@photoncommerce.com)', note:'Google Meet: meet.google.com/fxm-faqr-wan' },
   ]},
-  { id:'pre-jordyn', title:'Post-Call Log + Jordyn Prep', start:11.25, end:11.5, tasks:[
-    { id:'t-photon-log', hi:true, text:'Log Photon call in HubSpot, capture next steps (keep it quick — 3-5 min)' },
-    { id:'t-jordyn-prep', hi:true, text:'Prep for Jordyn 1:1 (15 min) — review open items, anything to flag' },
+  { id:'pre-jordyn', title:'Post-Call + Photon Log', start:11.25, end:11.5, tasks:[
+    { id:'t-photon-log', hi:true, text:'Log Photon call in HubSpot, capture next steps' },
     { id:'t-az-confirm', med:true, text:'Confirm Jocio calendar invite went out for Tuesday' },
   ]},
-  { id:'jordyn-1on1', title:'Jordyn 1:1', start:11.5, end:12.0, tasks:[
-    { id:'t-jordyn-call', hi:true, text:'Jordyn 1:1' },
+  { id:'lunch-learn', title:'Lunch & Learn + Pipeline Work', start:12.0, end:13.0, tasks:[
+    { id:'t-pe-pipeline-start', hi:true, text:'Build PE pipeline in HubSpot' },
+    { id:'t-partner-pipeline-start', hi:true, text:'Build partnerships pipeline in HubSpot' },
+    { id:'t-pe-flag-research', med:true, text:'Figure out PE-backed flag: property on company record + how to populate it', note:'Clay enrichment? Manual tag? Apollo funding data?' },
   ]},
-  { id:'lunch-learn', title:'Lunch & Learn', start:12.0, end:13.0, tasks:[], isBreak:true },
-  { id:'post-lunch', title:'Loose Ends', start:13.0, end:13.25, tasks:[
-    { id:'t-ihh-check', text:'IHH Healthcare: anything needed from Rachel on tighter estimate?' },
-    { id:'t-ms-scott', text:'Flag to Scott: Movement Strategy needs new date (OOO 5/20)' },
-  ]},
-  { id:'sop-work', title:'Sales SOP Docs — Rock 3', start:13.25, end:14.5, tasks:[
-    { id:'t-meddpicc-drop', hi:true, text:'MEDDPICC page: drop already-done content into Coda Sales HQ (~15 min)' },
-    { id:'t-map-edits', hi:true, text:'MAP template: personal review + edits (Scott editing too)' },
-    { id:'t-sop-continue', med:true, text:'Continue Sales SOP where you left off' },
-    { id:'t-cmd-proposal-stretch', text:'Stretch: start ConvenientMD proposal if time allows', note:'Needs 90+ min dedicated session — proposal review is Tue 5/19 1pm ET' },
+  { id:'pipeline-build', title:'PE + Partnerships Pipeline Build', start:13.0, end:14.5, tasks:[
+    { id:'t-pe-pipeline', hi:true, text:'Finalize PE pipeline: stages, properties, deal entry criteria' },
+    { id:'t-partner-pipeline', hi:true, text:'Finalize partnerships pipeline: stages, properties, deal entry criteria' },
+    { id:'t-funding-enrichment', hi:true, text:'Enrich company data: PE-backed flag + funding round info on HubSpot records' },
+    { id:'t-pe-property', med:true, text:'Create "PE-Backed" property on company record (yes/no + firm name)' },
+    { id:'t-sop-stretch', text:'Stretch: Sales SOP docs if time allows', note:'MEDDPICC + MAP template — can move to Monday' },
   ]},
   { id:'doctors', title:"Doctor's Appointment", start:14.5, end:16.0, tasks:[], isBreak:true },
 ];
