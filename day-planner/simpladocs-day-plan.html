@@ -1029,6 +1029,18 @@
       </div>
     </div>
 
+    <div class="hs-card">
+      <div class="hs-task-row" data-hsid="hs-buyer-intent-enrolls">
+        <div class="cb" onclick="toggleHs('hs-buyer-intent-enrolls',this)"></div>
+        <div class="hs-content">
+          <div class="hs-text">Enroll in sequence &mdash; Buyer Intent (~20 due today)</div>
+          <div class="hs-meta">
+            <span class="b-badge badge-hs">&#128203; To-do &middot; MED</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div><!-- /tab-tasks -->
 
   <!-- ═══════════════ TAB: BACKLOG ═══════════════ -->
@@ -1333,7 +1345,8 @@ const BLOCKS = [
     { id:'t-teladoc-flag', text:'Flag: Teladoc | Data & AI — close out if no response from Tracie/Will?' },
   ]},
   { id:'outreach', title:'Outreach', start:9.75, end:10.667, tasks:[
-    { id:'t-past-clients-seq', hi:true, text:'Enroll past clients (assigned to Rachel) in past clients AI sequence — 10+/day' },
+    { id:'t-past-clients-seq', hi:true, text:'Enroll past clients in past clients AI sequence', note:'Assigned to Rachel in HubSpot — work through the list, 10+/day pace' },
+    { id:'t-buyer-intent-enrolls', med:true, text:'Buyer Intent sequence enrollments (~20 due today)', note:'In HubSpot tasks — enroll through the list' },
     { id:'t-karen', hi:true, text:'Follow up with Karen Grossman — LinkedIn msg logged 5/14' },
     { id:'t-onepager-fu', med:true, text:'Custom follow-up: viewed one-pager' },
   ]},
