@@ -1325,16 +1325,16 @@ save(KEYS.rocks, rocksState);
 const BLOCKS = [
   { id:'startup', title:'Quick Startup', start:9.333, end:9.5, tasks:[
     { id:'t-meds', meds:true, text:'Take meds' },
-    { id:'t-az-cal', text:'Blind-schedule Jocio for Tuesday \u2014 AstraZeneca landing page sync' },
+    { id:'t-az-cal', text:'Blind-schedule Jocio for Tuesday — AstraZeneca landing page sync' },
   ]},
   { id:'deal-scan', title:'Deal Scan', start:9.5, end:9.75, tasks:[
     { id:'t-deal-scan', hi:true, text:'Scan 11 open deals: log activity, update next steps in HubSpot' },
     { id:'t-ms-flag', text:'Flag: Movement Strategy reschedule (proposed 5/20, Scott OOO that day)' },
-    { id:'t-teladoc-flag', text:'Flag: Teladoc | Data & AI \u2014 close out if no response from Tracie/Will?' },
+    { id:'t-teladoc-flag', text:'Flag: Teladoc | Data & AI — close out if no response from Tracie/Will?' },
   ]},
   { id:'outreach', title:'Outreach', start:9.75, end:10.667, tasks:[
-    { id:'t-past-clients-seq', hi:true, text:'Enroll past clients (assigned to Rachel) in past clients AI sequence \u2014 10+/day' },
-    { id:'t-karen', hi:true, text:'Follow up with Karen Grossman \u2014 LinkedIn msg logged 5/14' },
+    { id:'t-past-clients-seq', hi:true, text:'Enroll past clients (assigned to Rachel) in past clients AI sequence — 10+/day' },
+    { id:'t-karen', hi:true, text:'Follow up with Karen Grossman — LinkedIn msg logged 5/14' },
     { id:'t-onepager-fu', med:true, text:'Custom follow-up: viewed one-pager' },
   ]},
   { id:'photon-prep', title:'Photon Prep + Buffer', start:10.667, end:10.75, tasks:[
@@ -1343,14 +1343,19 @@ const BLOCKS = [
   { id:'photon-call', title:'Photon Commerce Intro Call', start:10.75, end:11.25, tasks:[
     { id:'t-photon-call', hi:true, text:'Intro call: Christopher Robinson (chris@photoncommerce.com)', note:'Google Meet: meet.google.com/fxm-faqr-wan' },
   ]},
-  { id:'post-call', title:'Post-Call Notes + Loose Ends', start:11.25, end:12.0, tasks:[
+  { id:'pre-jordyn', title:'Quick Post-Call Log', start:11.25, end:11.5, tasks:[
     { id:'t-photon-log', hi:true, text:'Log Photon call in HubSpot, capture next steps' },
     { id:'t-az-confirm', med:true, text:'Confirm Jocio calendar invite went out for Tuesday' },
-    { id:'t-ihh-check', text:'IHH Healthcare: anything needed from Rachel on tighter estimate?' },
-    { id:'t-ms-scott', text:'Flag to Scott: Movement Strategy needs new date (he\'s OOO 5/20)' },
   ]},
-  { id:'lunch-learn', title:'Lunch \u0026 Learn', start:12.0, end:13.0, tasks:[], isBreak:true },
-  { id:'sop-work', title:'Sales SOP Docs \u2014 Rock 3', start:13.0, end:14.5, tasks:[
+  { id:'jordyn-1on1', title:'Jordyn 1:1', start:11.5, end:12.0, tasks:[
+    { id:'t-jordyn-call', hi:true, text:'Jordyn 1:1' },
+  ]},
+  { id:'lunch-learn', title:'Lunch & Learn', start:12.0, end:13.0, tasks:[], isBreak:true },
+  { id:'post-lunch', title:'Loose Ends', start:13.0, end:13.25, tasks:[
+    { id:'t-ihh-check', text:'IHH Healthcare: anything needed from Rachel on tighter estimate?' },
+    { id:'t-ms-scott', text:'Flag to Scott: Movement Strategy needs new date (OOO 5/20)' },
+  ]},
+  { id:'sop-work', title:'Sales SOP Docs — Rock 3', start:13.25, end:14.5, tasks:[
     { id:'t-meddpicc-drop', hi:true, text:'MEDDPICC page: drop already-done content into Coda Sales HQ (~15 min)' },
     { id:'t-map-edits', hi:true, text:'MAP template: personal review + edits (Scott editing too)' },
     { id:'t-sop-continue', med:true, text:'Continue Sales SOP where you left off' },
