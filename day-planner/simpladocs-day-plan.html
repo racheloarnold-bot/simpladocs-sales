@@ -1003,45 +1003,142 @@
   <!-- ═══════════════ TAB: HUBSPOT TASKS ═══════════════ -->
     <div class="tab-panel" id="tab-tasks">
 
-    <div class="section-hdr">Today (5/15)</div>
+    <div class="section-hdr">Today / Overdue (5/18)</div>
+
+    <div class="hs-card">
+      <div class="hs-task-row" data-hsid="hs-ai-consulting">
+        <div class="cb" onclick="toggleHs('hs-ai-consulting',this)"></div>
+        <div class="hs-content">
+          <div class="hs-text">Follow up &mdash; AI consulting</div>
+          <div class="hs-meta"><span class="bl-pill bl-pill-high">High</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hs-card">
+      <div class="hs-task-row" data-hsid="hs-li-msgs">
+        <div class="cb" onclick="toggleHs('hs-li-msgs',this)"></div>
+        <div class="hs-content">
+          <div class="hs-text">LinkedIn message &mdash; Coda &amp; AI (x4 contacts, created today)</div>
+          <div class="hs-meta"><span class="b-badge badge-hs">&#128203; To-do &middot; MED</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hs-card">
+      <div class="hs-task-row" data-hsid="hs-fu-meeting">
+        <div class="cb" onclick="toggleHs('hs-fu-meeting',this)"></div>
+        <div class="hs-content">
+          <div class="hs-text">Follow-up task after meeting (5/15)</div>
+          <div class="hs-meta"><span class="bl-pill bl-pill-high">Overdue</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hs-card">
+      <div class="hs-task-row" data-hsid="hs-matt-hubbell">
+        <div class="cb" onclick="toggleHs('hs-matt-hubbell',this)"></div>
+        <div class="hs-content">
+          <div class="hs-text">Follow up with Matt Hubbell (5/15)</div>
+          <div class="hs-meta"><span class="bl-pill bl-pill-high">Overdue</span></div>
+        </div>
+      </div>
+    </div>
 
     <div class="hs-card">
       <div class="hs-task-row" data-hsid="hs-karen">
         <div class="cb" onclick="toggleHs('hs-karen',this)"></div>
         <div class="hs-content">
-          <div class="hs-text">Follow up with Karen Grossman &mdash; LinkedIn message logged 5/14</div>
-          <div class="hs-meta">
-            <span class="bl-pill bl-pill-high">High</span>
-          </div>
+          <div class="hs-text">Follow up with Karen Grossman</div>
+          <div class="hs-meta"><span class="bl-pill bl-pill-high">Overdue</span></div>
         </div>
       </div>
     </div>
 
     <div class="hs-card">
-      <div class="hs-task-row" data-hsid="hs-onepager">
-        <div class="cb" onclick="toggleHs('hs-onepager',this)"></div>
+      <div class="hs-task-row" data-hsid="hs-meeting-link">
+        <div class="cb" onclick="toggleHs('hs-meeting-link',this)"></div>
         <div class="hs-content">
-          <div class="hs-text">Viewed one-pager &mdash; custom follow-up</div>
-          <div class="hs-meta">
-            <span class="b-badge badge-hs">&#128203; To-do &middot; MED</span>
-          </div>
+          <div class="hs-text">Follow up &mdash; clicked meeting link</div>
+          <div class="hs-meta"><span class="b-badge badge-hs">&#128203; To-do &middot; MED</span></div>
         </div>
       </div>
     </div>
 
     <div class="hs-card">
-      <div class="hs-task-row" data-hsid="hs-buyer-intent-enrolls">
-        <div class="cb" onclick="toggleHs('hs-buyer-intent-enrolls',this)"></div>
+      <div class="hs-task-row" data-hsid="hs-resources">
+        <div class="cb" onclick="toggleHs('hs-resources',this)"></div>
         <div class="hs-content">
-          <div class="hs-text">Enroll in sequence &mdash; Buyer Intent (~20 due today)</div>
-          <div class="hs-meta">
-            <span class="b-badge badge-hs">&#128203; To-do &middot; MED</span>
-          </div>
+          <div class="hs-text">Send resources and video examples of Coda setups (simple + complex)</div>
+          <div class="hs-meta"><span class="b-badge badge-hs">&#128203; To-do &middot; MED</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hs-card">
+      <div class="hs-task-row" data-hsid="hs-screenshots">
+        <div class="cb" onclick="toggleHs('hs-screenshots',this)"></div>
+        <div class="hs-content">
+          <div class="hs-text">Provide screenshots: 50-hour vs 150-hour Coda implementations</div>
+          <div class="hs-meta"><span class="b-badge badge-hs">&#128203; To-do &middot; MED</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-hdr">This Week</div>
+
+    <div class="hs-card">
+      <div class="hs-task-row" data-hsid="hs-buyer-intent">
+        <div class="cb" onclick="toggleHs('hs-buyer-intent',this)"></div>
+        <div class="hs-content">
+          <div class="hs-text">Enroll in sequence &mdash; Buyer Intent (13 contacts from 5/11)</div>
+          <div class="hs-meta"><span class="b-badge badge-hs">&#128203; To-do &middot; MED</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hs-card">
+      <div class="hs-task-row" data-hsid="hs-source-contacts">
+        <div class="cb" onclick="toggleHs('hs-source-contacts',this)"></div>
+        <div class="hs-content">
+          <div class="hs-text">Source contacts for outreach (7 tasks)</div>
+          <div class="hs-meta"><span class="b-badge badge-hs">&#128203; To-do &middot; MED</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hs-card">
+      <div class="hs-task-row" data-hsid="hs-connection-reqs">
+        <div class="cb" onclick="toggleHs('hs-connection-reqs',this)"></div>
+        <div class="hs-content">
+          <div class="hs-text">Send connection requests (15+ contacts)</div>
+          <div class="hs-meta"><span class="b-badge badge-hs">&#128203; To-do &middot; MED</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hs-card">
+      <div class="hs-task-row" data-hsid="hs-kacey-nic">
+        <div class="cb" onclick="toggleHs('hs-kacey-nic',this)"></div>
+        <div class="hs-content">
+          <div class="hs-text">Text Kacey and/or Nic to get contacts</div>
+          <div class="hs-meta"><span class="b-badge badge-hs">&#128203; To-do &middot; MED</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hs-card">
+      <div class="hs-task-row" data-hsid="hs-paige-go">
+        <div class="cb" onclick="toggleHs('hs-paige-go',this)"></div>
+        <div class="hs-content">
+          <div class="hs-text">Ping Paige for to-do&#x2019;s after Go desktop release</div>
+          <div class="hs-meta"><span class="b-badge badge-hs">&#128203; To-do &middot; MED</span></div>
         </div>
       </div>
     </div>
 
   </div><!-- /tab-tasks -->
+
 
   <!-- ═══════════════ TAB: BACKLOG ═══════════════ -->
   <div class="tab-panel" id="tab-backlog">
@@ -1056,16 +1153,17 @@
       </div>
       <div id="bl-today-body">
         <div class="bl-items">
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-t-cmd-proposal',this)"></div><div class="bl-content"><div class="bl-text" id="bl-t-cmd-proposal-t">ConvenientMD proposal &#x2014; done before Monday AM</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">Proposal review Tuesday 5/19 1pm ET. Block 90+ min this weekend or Monday morning.</span></div></div></div>
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-t-past-seq',this)"></div><div class="bl-content"><div class="bl-text" id="bl-t-past-seq-t">Enroll past clients in AI sequence (10+/day pace)</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">In schedule: Outreach block 9:45am.</span></div></div></div>
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-t-rock3',this)"></div><div class="bl-content"><div class="bl-text" id="bl-t-rock3-t">Finish Rock 3: Sales SOP docs (MEDDPICC, MAP template, continue)</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">In schedule: 1:00pm block.</span></div></div></div>
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-t-deal-scan',this)"></div><div class="bl-content"><div class="bl-text" id="bl-t-deal-scan-t">Deal scan: flag Movement Strategy + Teladoc | Data &amp; AI</div><div class="bl-meta"><span class="b-badge badge-hs">&#128203; To-do &middot; MED</span><span class="bl-source">In schedule: Deal Scan 9:30am.</span></div></div></div>
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-t-photon-log',this)"></div><div class="bl-content"><div class="bl-text" id="bl-t-photon-log-t">Post-call: log Photon Commerce in HubSpot, capture next steps</div><div class="bl-meta"><span class="b-badge badge-hs">&#128203; To-do &middot; MED</span><span class="bl-source">In schedule: Post-Call block 11:15am.</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-t-az',this)"></div><div class="bl-content"><div class="bl-text" id="bl-t-az-t">AstraZeneca: post-call follow-up + AZ Sync prep (11 AM)</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">In schedule: AZ Follow-Up block 10 AM.</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-t-cmd-proposal',this)"></div><div class="bl-content"><div class="bl-text" id="bl-t-cmd-proposal-t">ConvenientMD proposal — complete before tomorrow 10 AM</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">In schedule: ConvenientMD Proposal block 2 PM. Proposal review 5/19 10 AM PT.</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-t-scott-prep',this)"></div><div class="bl-content"><div class="bl-text" id="bl-t-scott-prep-t">Scott 1:1 prep (15 min) — Rocks progress, AZ/IHH status</div><div class="bl-meta"><span class="b-badge badge-hs">&#128203; To-do · MED</span><span class="bl-source">In schedule: Scott 1:1 Prep 11:30 AM.</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-t-outreach',this)"></div><div class="bl-content"><div class="bl-text" id="bl-t-outreach-t">Outreach: 10 companies via Clay — scrape, contacts, upload, enroll Buyer Intent</div><div class="bl-meta"><span class="b-badge badge-hs">&#128203; To-do · MED</span><span class="bl-source">In schedule: Outreach block 3:30 PM. Clay credits limited today.</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-t-hs-tasks',this)"></div><div class="bl-content"><div class="bl-text" id="bl-t-hs-tasks-t">HubSpot tasks — AI consulting follow-up, Karen Grossman, Matt Hubbell, LinkedIn messages</div><div class="bl-meta"><span class="b-badge badge-hs">&#128203; To-do · MED</span><span class="bl-source">In schedule: Outreach block 3:30 PM.</span></div></div></div>
         </div>
       </div>
     </div>
 
   </div><!-- /tab-backlog -->
+
 
   <div class="tab-panel" id="tab-rocks">
 
@@ -1303,7 +1401,7 @@ e.g. AI services one-pager edits — waiting on direction" oninput="saveNotes()"
 // ─── Storage ───────────────────────────────────────
 const KEYS = {
   notes1on1: 'sd-1on1-notes-v1',
-  today: 'sd-today-may15-v1',
+  today: 'sd-today-may18-v1',
   tasks: 'sd-tasks-q2-v1',
   rocks: 'sd-rocks-q2-v1',
   water: 'sd-water-may15-v1',
@@ -1336,48 +1434,42 @@ save(KEYS.rocks, rocksState);
 
 // ─── Today blocks ───────────────────────────────────
 const BLOCKS = [
-  { id:'startup', title:'Quick Startup', start:9.333, end:9.5, tasks:[
+  { id:'prep', title:'Prep for Day', start:8.533, end:9.5, tasks:[
     { id:'t-meds', meds:true, text:'Take meds' },
-    { id:'t-az-cal', text:'Blind-schedule Jocio for Tuesday — AstraZeneca landing page sync' },
+    { id:'t-email-triage', text:'Email triage — action, archive, defer' },
+    { id:'t-deal-scan', hi:true, text:'Log AstraZeneca call in HubSpot — note João Corrêa handover June 1, Jocio transition', note:'João Corrêa (joao.correa@astrazeneca.com) takes over from Jocio on June 1' },
   ]},
-  { id:'deal-scan', title:'Deal Scan', start:9.5, end:9.75, tasks:[
-    { id:'t-deal-scan', hi:true, text:'Scan 11 open deals: log activity, update next steps in HubSpot' },
-    { id:'t-ms-flag', text:'Flag: Movement Strategy reschedule (proposed 5/20, Scott OOO that day)' },
-    { id:'t-teladoc-flag', text:'Flag: Teladoc | Data & AI — close out if no response from Tracie/Will?' },
+  { id:'pipeline', title:'Pipeline Look-Ahead & Admin', start:9.5, end:10.0, tasks:[
+    { id:'t-pipeline-flag', text:'Scan open deals — flag anything needing attention this week', note:'ConvenientMD proposal review TOMORROW 5/19 at 10 AM PT' },
   ]},
-  { id:'outreach', title:'Outreach', start:9.75, end:10.667, tasks:[
-    { id:'t-past-clients-seq', hi:true, text:'Enroll past clients in past clients AI sequence', note:'Assigned to Rachel in HubSpot — work through the list, 10+/day pace' },
-    { id:'t-buyer-intent-enrolls', med:true, text:'Buyer Intent sequence enrollments (~20 due today)', note:'In HubSpot tasks — enroll through the list' },
-    { id:'t-karen', hi:true, text:'Follow up with Karen Grossman — LinkedIn msg logged 5/14' },
-    { id:'t-onepager-fu', med:true, text:'Custom follow-up: viewed one-pager' },
+  { id:'az-block', title:'AZ Follow-Up + AZ Sync Prep', start:10.0, end:11.0, tasks:[
+    { id:'t-az-email', hi:true, text:'Send post-call follow-up to João Corrêa + Jocio — confirm landing page plan, DPA next steps', note:'SimplaDocs can start in own env before Doc Maker seat is provisioned. Schedule Jocio handoff intro before June 1.' },
+    { id:'t-az-sync-prep', hi:true, text:'Prep for 11 AM AZ Sync (Grammarly/Mike Zerbato)', note:'Topics: landing page, three-way legal/SOW (AZ + SimplaDocs + Superhuman), Work Vevo launch June rollout' },
+    { id:'t-ihh-slack', med:true, text:'IHH: reply to Luke in Slack — confirm if tech disco call with Scott needed', note:'Luke offered Sunday to pull context together. Surface to Scott in 1:1.' },
   ]},
-  { id:'photon-prep', title:'Photon Prep + Buffer', start:10.667, end:10.75, tasks:[
-    { id:'t-photon-prep', text:'Quick review: Photon Commerce deal notes' },
+  { id:'az-sync', title:'AZ Sync — Coda & SimplaDocs (Grammarly)', start:11.0, end:11.5, tasks:[] },
+  { id:'scott-prep', title:'Scott 1:1 Prep (15 min)', start:11.5, end:11.75, tasks:[
+    { id:'t-scott-prep', text:'Prep Scott 1:1 — Rocks progress, AZ status, IHH discovery gap, Clay upgrade timing', note:'Monday = Rocks + Q2 tracking, NOT pipeline. Rock 1: one-pager + PDF deck open. Rock 2: sequence lists + partner schema. IHH may need tech disco call.' },
   ]},
-  { id:'photon-call', title:'Photon Commerce Intro Call', start:10.75, end:11.25, tasks:[
-    { id:'t-photon-call', hi:true, text:'Intro call: Christopher Robinson (chris@photoncommerce.com)', note:'Google Meet: meet.google.com/fxm-faqr-wan' },
+  { id:'scott-1on1', title:'Scott / Rachel 1:1', start:12.0, end:12.75, tasks:[] },
+  { id:'lunch', title:'Lunch', start:12.75, end:13.5, tasks:[], isBreak:true },
+  { id:'hliboki', title:'Joseph Hliboki — Book Interview', start:13.5, end:14.0, tasks:[
+    { id:'t-hliboki', text:'Book interview — Joseph Hliboki (Focal Point Coaching) is interviewing Rachel', note:'30 min. He interviews Rachel for his book. Not a sales call.' },
   ]},
-  { id:'pre-jordyn', title:'Post-Call + Photon Log', start:11.25, end:11.5, tasks:[
-    { id:'t-photon-log', hi:true, text:'Log Photon call in HubSpot, capture next steps' },
-    { id:'t-photon-fu', hi:true, text:'Send follow-up to Chris Robinson (Photon Commerce)', note:'chris@photoncommerce.com' },
-    { id:'t-az-confirm', med:true, text:'Confirm Jocio calendar invite went out for Tuesday' },
+  { id:'cmd-proposal', title:'ConvenientMD Proposal', start:14.0, end:15.5, tasks:[
+    { id:'t-cmd-proposal', hi:true, text:'Build ConvenientMD proposal — scope + pricing + talk track for tomorrow', note:'Proposal review 5/19 at 10:00–10:45 AM PT with John Aldrich. $11k deal at Proposal stage. 90 min block.' },
   ]},
-  { id:'lunch-learn', title:'Lunch & Learn + Pipeline Work', start:12.0, end:13.0, tasks:[
-    { id:'t-pe-pipeline-start', hi:true, text:'Build PE pipeline in HubSpot' },
-    { id:'t-partner-pipeline-start', hi:true, text:'Build partnerships pipeline in HubSpot' },
-    { id:'t-pe-flag-research', med:true, text:'PE-backed flag + funding data: enriching via Clay', note:'Map Clay output to HubSpot company property — PE-backed (yes/no) + firm name + funding round' },
+  { id:'outreach', title:'Outreach Block — Clay + HubSpot', start:15.5, end:16.75, tasks:[
+    { id:'t-clay-research', med:true, text:'Pull companies from Clay — pick high-value targets, run scrape, get contacts', note:'Clay credits limited. Target 10 today. Pace rest through week.' },
+    { id:'t-hs-upload', med:true, text:'Upload Clay contacts to HubSpot + enroll in Buyer Intent sequence', note:'13 open Buyer Intent enrollment tasks from 5/11' },
+    { id:'t-hs-tasks', text:'Work through HubSpot tasks — LinkedIn messages (x4), AI consulting follow-up, Karen Grossman, Matt Hubbell', note:'"Follow up - AI consulting" is HIGH in HubSpot. Do after Clay work.' },
+    { id:'t-resources', text:'Send Coda resources + screenshots to prospect', note:'Tasks from 5/15: video examples of Coda setups + screenshots of 50-hour vs 150-hour implementations' },
   ]},
-  { id:'jordyn-1on1', title:'Jordyn 1:1', start:13.0, end:13.5, tasks:[
-    { id:'t-jordyn-call', hi:true, text:'Jordyn 1:1' },
+  { id:'wrapup', title:'Wrap Up (15 min)', start:16.75, end:17.0, tasks:[
+    { id:'t-hs-log', text:'Log activity in HubSpot — update next steps on AZ, IHH, ConvenientMD' },
+    { id:'t-scott-slack', text:'Bundle Scott update Slack — AZ status, IHH next move, any blockers', note:'One message, not drip pings' },
   ]},
-  { id:'pipeline-build', title:'PE + Partnerships Pipeline Build', start:13.5, end:14.5, tasks:[
-    { id:'t-pe-pipeline', hi:true, text:'Finalize PE pipeline: stages, properties, deal entry criteria' },
-    { id:'t-partner-pipeline', hi:true, text:'Finalize partnerships pipeline: stages, properties, deal entry criteria' },
-    { id:'t-funding-enrichment', hi:true, text:'Push Clay enrichment to HubSpot: PE-backed flag + funding data on company records' },
-    { id:'t-pe-property', med:true, text:'Create "PE-Backed" property on company record (yes/no + firm name)' },
-    { id:'t-sop-stretch', text:'Stretch: Sales SOP docs if time allows', note:'MEDDPICC + MAP template — can move to Monday' },
-  ]},
-  { id:'doctors', title:"Doctor's Appointment", start:14.5, end:16.0, tasks:[], isBreak:true },
+  { id:'gym', title:'Gym', start:17.0, end:18.5, tasks:[], isBreak:true },
 ];
 
 function getOrderedBlocks() {
@@ -1678,10 +1770,6 @@ function addSync(a,b) {
   if(!SYNC[b]) SYNC[b]=new Set();
   SYNC[a].add(b); SYNC[b].add(a);
 }
-addSync('t-karen','hs-karen');
-addSync('t-onepager-fu','hs-onepager');
-addSync('t-janpro-prep','hs-paige');
-addSync('t-janpro-prep','bl-janpro-prep');
 
 function syncCheckbox(id, checked) {
   const linked = SYNC[id];
