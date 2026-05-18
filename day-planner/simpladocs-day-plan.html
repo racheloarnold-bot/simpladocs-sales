@@ -1435,41 +1435,45 @@ save(KEYS.rocks, rocksState);
 // ─── Today blocks ───────────────────────────────────
 const BLOCKS = [
   { id:'prep', title:'Prep for Day', start:8.533, end:9.5, tasks:[
-    { id:'t-meds', meds:true, text:'Take meds' },
     { id:'t-email-triage', text:'Email triage — action, archive, defer' },
-    { id:'t-deal-scan', hi:true, text:'Log AstraZeneca call in HubSpot — note João Corrêa handover June 1, Jocio transition', note:'João Corrêa (joao.correa@astrazeneca.com) takes over from Jocio on June 1' },
+    { id:'t-deal-scan', hi:true, text:'Log AstraZeneca call in HubSpot — note João Corrêa handover June 1, Jocio transition', note:'João Corrêa (joao.correa@astrazeneca.com) takes over from Jocio on June 1' },
   ]},
   { id:'pipeline', title:'Pipeline Look-Ahead & Admin', start:9.5, end:10.0, tasks:[
-    { id:'t-pipeline-flag', text:'Scan open deals — flag anything needing attention this week', note:'ConvenientMD proposal review TOMORROW 5/19 at 10 AM PT' },
+    { id:'t-meds', meds:true, text:'Take meds' },
+    { id:'t-pipeline-flag', text:'Scan open deals — flag anything needing attention this week', note:'ConvenientMD proposal review TOMORROW 5/19 at 10 AM PT' },
   ]},
-  { id:'az-block', title:'AZ Follow-Up + AZ Sync Prep', start:10.0, end:11.0, tasks:[
-    { id:'t-az-email', hi:true, text:'Send post-call follow-up to João Corrêa + Jocio — confirm landing page plan, DPA next steps', note:'SimplaDocs can start in own env before Doc Maker seat is provisioned. Schedule Jocio handoff intro before June 1.' },
-    { id:'t-az-sync-prep', hi:true, text:'Prep for 11 AM AZ Sync (Grammarly/Mike Zerbato)', note:'Topics: landing page, three-way legal/SOW (AZ + SimplaDocs + Superhuman), Work Vevo launch June rollout' },
+  { id:'hs-tasks-am', title:'HubSpot Tasks', start:10.0, end:10.5, tasks:[
+    { id:'t-ai-consulting', hi:true, text:'Follow up — AI consulting (HIGH in HubSpot)' },
+    { id:'t-hs-tasks', text:'LinkedIn messages (x4), Karen Grossman, Matt Hubbell follow-ups', note:'Work down today/overdue list first' },
+    { id:'t-buyer-intent', text:'Enroll in Buyer Intent sequence — work through 5/11 tasks', note:'13 open tasks. These are existing contacts already in HubSpot — quick enrollments.' },
     { id:'t-ihh-slack', med:true, text:'IHH: reply to Luke in Slack — confirm if tech disco call with Scott needed', note:'Luke offered Sunday to pull context together. Surface to Scott in 1:1.' },
+    { id:'t-resources', text:'Send Coda resources + screenshots to prospect', note:'Tasks from 5/15: video examples of Coda setups + screenshots of 50-hour vs 150-hour implementations' },
+  ]},
+  { id:'az-block', title:'AZ Follow-Up + AZ Sync Prep', start:10.5, end:11.0, tasks:[
+    { id:'t-az-email', hi:true, text:'Send post-call follow-up to João Corrêa + Jocio — confirm landing page plan, DPA next steps', note:'SimplaDocs can start in own env before Doc Maker seat is provisioned. Schedule Jocio handoff intro before June 1.' },
+    { id:'t-az-sync-prep', hi:true, text:'Prep for AZ Sync (Grammarly/Mike Zerbato)', note:'Topics: landing page, three-way legal/SOW (AZ + SimplaDocs + Superhuman), Work Vevo launch June rollout' },
   ]},
   { id:'az-sync', title:'AZ Sync — Coda & SimplaDocs (Grammarly)', start:11.0, end:11.5, tasks:[
     { id:'t-az-sync-done', text:'AZ Sync — Coda & SimplaDocs (Grammarly)' },
   ]},
-  { id:'scott-prep', title:'Scott 1:1 Prep (15 min)', start:11.5, end:11.75, tasks:[
-    { id:'t-scott-prep', text:'Prep Scott 1:1 — Rocks progress, AZ status, IHH discovery gap, Clay upgrade timing', note:'Monday = Rocks + Q2 tracking, NOT pipeline. Rock 1: one-pager + PDF deck open. Rock 2: sequence lists + partner schema. IHH may need tech disco call.' },
+  { id:'scott-prep', title:'Scott 1:1 Prep (15 min)', start:11.5, end:11.75, tasks:[
+    { id:'t-scott-prep', text:'Prep Scott 1:1 — Rocks progress, AZ status, IHH discovery gap, Clay upgrade timing', note:'Monday = Rocks + Q2 tracking, NOT pipeline. Rock 1: one-pager + PDF deck open. Rock 2: sequence lists + partner schema. IHH may need tech disco call.' },
   ]},
   { id:'scott-1on1', title:'Scott / Rachel 1:1', start:12.0, end:12.75, tasks:[
     { id:'t-scott-1on1-done', text:'Scott / Rachel 1:1' },
   ]},
   { id:'lunch', title:'Lunch', start:12.75, end:13.5, tasks:[], isBreak:true },
   { id:'hliboki', title:'Joseph Hliboki — Book Interview', start:13.5, end:14.0, tasks:[
-    { id:'t-hliboki', text:'Book interview — Joseph Hliboki (Focal Point Coaching) is interviewing Rachel', note:'30 min. He interviews Rachel for his book. Not a sales call.' },
+    { id:'t-hliboki', text:'Book interview — Joseph Hliboki (Focal Point Coaching) is interviewing Rachel', note:'30 min. He interviews Rachel for his book. Not a sales call.' },
   ]},
   { id:'cmd-proposal', title:'ConvenientMD Proposal', start:14.0, end:15.5, tasks:[
-    { id:'t-cmd-proposal', hi:true, text:'Build ConvenientMD proposal — scope + pricing + talk track for tomorrow', note:'Proposal review 5/19 at 10:00–10:45 AM PT with John Aldrich. $11k deal at Proposal stage. 90 min block.' },
+    { id:'t-cmd-proposal', hi:true, text:'Build ConvenientMD proposal — scope + pricing + talk track for tomorrow', note:'Proposal review 5/19 at 10:00–10:45 AM PT with John Aldrich. $11k deal at Proposal stage. 90 min block.' },
   ]},
-  { id:'outreach', title:'Outreach Block — Clay + HubSpot', start:15.5, end:16.75, tasks:[
+  { id:'outreach', title:'Outreach — Clay Research', start:15.5, end:16.75, tasks:[
     { id:'t-clay-research', med:true, text:'Pull companies from Clay — pick high-value targets, run scrape, get contacts', note:'Clay credits limited. Target 10 today. Pace rest through week.' },
-    { id:'t-hs-upload', med:true, text:'Upload Clay contacts to HubSpot + enroll in Buyer Intent sequence', note:'13 open Buyer Intent enrollment tasks from 5/11' },
-    { id:'t-hs-tasks', text:'Work through HubSpot tasks — LinkedIn messages (x4), AI consulting follow-up, Karen Grossman, Matt Hubbell', note:'"Follow up - AI consulting" is HIGH in HubSpot. Do after Clay work.' },
-    { id:'t-resources', text:'Send Coda resources + screenshots to prospect', note:'Tasks from 5/15: video examples of Coda setups + screenshots of 50-hour vs 150-hour implementations' },
+    { id:'t-hs-upload', med:true, text:'Upload Clay contacts to HubSpot + enroll in sequences', note:'New contacts from today\'s Clay pull' },
   ]},
-  { id:'wrapup', title:'Wrap Up (15 min)', start:16.75, end:17.0, tasks:[
+  { id:'wrapup', title:'Wrap Up (15 min)', start:16.75, end:17.0, tasks:[
     { id:'t-hs-log', text:'Log activity in HubSpot — update next steps on AZ, IHH, ConvenientMD' },
     { id:'t-scott-slack', text:'Bundle Scott update Slack — AZ status, IHH next move, any blockers', note:'One message, not drip pings' },
   ]},
