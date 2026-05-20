@@ -1046,16 +1046,6 @@
     </div>
 
     <div class="hs-card">
-      <div class="hs-task-row" data-hsid="hs-buyer-intent">
-        <div class="cb" onclick="toggleHs('hs-buyer-intent',this)"></div>
-        <div class="hs-content">
-          <div class="hs-text">Enroll in sequence &mdash; Buyer Intent</div>
-          <div class="hs-meta"><span class="b-badge badge-hs">&#128203; To-do &middot; MED</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="hs-card">
       <div class="hs-task-row" data-hsid="hs-ihh-proposal">
         <div class="cb" onclick="toggleHs('hs-ihh-proposal',this)"></div>
         <div class="hs-content">
@@ -1092,7 +1082,7 @@
         <div class="cb" onclick="toggleHs('hs-buyer-intent-wk',this)"></div>
         <div class="hs-content">
           <div class="hs-text">Enroll in sequence &mdash; Buyer Intent (multiple contacts)</div>
-          <div class="hs-meta"><span class="b-badge badge-hs">&#128203; To-do &middot; MED &middot; due 5/25</span></div>
+          <div class="hs-meta"><span class="b-badge badge-hs">&#128203; To-do &middot; MED &middot; next week</span></div>
         </div>
       </div>
     </div>
@@ -1437,14 +1427,10 @@ save(KEYS.rocks, rocksState);
 const BLOCKS = [
   { id:'hs-tasks', title:'HubSpot Tasks + Deal Work', start:9.0, end:9.75, tasks:[
     { id:'t-deal-scan', med:true, text:'Daily deal scan — log activity, capture next steps', note:'Morning ritual' },
-    { id:'t-outreach-pace', med:true, text:'Maintain outreach pace — 10+ companies/day', note:'Daily ritual' },
     { id:'t-meds', meds:true, text:'Take meds', note:'9:30 AM' },
     { id:'t-nrhythm-agenda', hi:true, text:'Send agenda email — nRhythm', note:'New deal — agenda before first call' },
     { id:'t-comren-agenda', hi:true, text:'Send agenda email — Comren', note:'Call Friday 5/22 9:15 AM with Kristopher Amstutz' },
-    { id:'t-li-connect', text:'Send LinkedIn connection request', note:'Sequence task — HIGH, due today' },
-    { id:'t-li-msg', text:'LinkedIn message — Coda &amp; AI (2 contacts)', note:'MED — bundle and send' },
-    { id:'t-li-followup', text:'Accepted LinkedIn connect — find something to reach out about', note:'Due today' },
-    { id:'t-buyer-intent', text:'Enroll in sequence — Buyer Intent', note:'MED — due today' },
+    { id:'t-li-tasks', text:'LinkedIn HubSpot tasks: connection request + 2x messages + accepted connect follow-up', note:'HIGH + MED — bundle and knock out' },
     { id:'t-ihh-workspace', text:'Research: can Coda copy/sync data across workspaces? Reply to Eugene', note:'Came up on IHH call this morning — confirm before sending proposal' },
   ]},
   { id:'ihh-proposal', title:'IHH Proposal Build', start:10.0, end:12.0, tasks:[
@@ -1469,6 +1455,7 @@ const BLOCKS = [
   { id:'wrapup', title:'EOD Wrap', start:15.833, end:16.0, tasks:[
     { id:'t-eod-check', text:'Quick scan — IHH proposal confirmed sent?' },
     { id:'t-eod-email', text:'Quick email scan — anything urgent?' },
+    { id:'t-outreach-pace', med:true, text:'Maintain outreach pace — 10+ companies/day', note:'Check off if you hit it today' },
   ]},
   { id:'gym', title:'Gym', start:17.0, end:18.5, tasks:[], isBreak:true },
 ]
