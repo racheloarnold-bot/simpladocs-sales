@@ -1,13 +1,10 @@
-# Capture Notes
+# Capture Notes — May 28, 2026
 
-Paste your daily capture notes here each evening. The morning planner agent reads this file before building tomorrow's schedule.
-
-**How to update:**
-1. In your day planner, go to the Notes tab
-2. Click "Copy capture notes"
-3. Paste below (replace everything under the line)
-4. Commit via GitHub web or a Claude conversation
+- Need to finish Sales SOPs doc
+  - Finish deal strategy section
+  - Build objection handling guide + proactive questions to surface objections
+- Need to update Rocks doc with updated Rock 4 content and determine SMART goals
+- Need to finish the Mutual Action Plan guide: how to fill out, when to use, what does what and what goes where
 
 ---
-
-_No notes yet — paste your capture notes here._
+_Last updated: May 28, 2026_
