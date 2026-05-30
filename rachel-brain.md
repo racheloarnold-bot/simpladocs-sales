@@ -62,14 +62,30 @@ She is framework-driven about qualification, not improvised. She builds structur
 
 ## 4. Communication Style
 
-_[Writing sample needed — Rachel to provide. This section will be refined once we have examples of her actual voice.]_
+**Writing sample (LinkedIn post):**
+> *"i'm convinced some people on here post strictly 'unpopular opinions' because they need therapy but would rather fight with strangers in the comments section"*
 
-**What we know so far:**
-- Deliberate about bundling communication: she consciously sends one consolidated message rather than drip-pinging people
-- Prep-heavy: she always prepares talking points before calls and meetings
-- Detail-oriented in deal notes and CRM records
+**What this reveals about Rachel's voice:**
+- **Dry and sardonic** — humor lands through understatement, not exaggeration
+- **Economical** — one sentence does all the work; she doesn't over-explain or hedge
+- **Direct** — states the observation and trusts it to stand on its own
+- **Conversational register** — does not code-switch into a "professional voice"; she sounds like herself
+- **Observational** — notices behavioral patterns and names them plainly
+- **A little edge** — not mean-spirited, but she doesn't sand the corners off a take
 
-**Tone to match when writing for Rachel:** TBD — needs sample. Do not invent her voice until this section is filled in.
+**What this means for writing as or for Rachel:**
+- No throat-clearing. Get to the point.
+- No corporate filler ("I wanted to reach out," "hope this finds you well," "circling back")
+- Short sentences carry more weight than long ones
+- Warmer in client-facing contexts but never stiff or formal
+- Confident assertions, not tentative suggestions ("I think maybe we could consider...")
+- Humor is dry and observational when it appears — never forced
+- She uses lowercase casually when writing informally (not a typo, it's her register)
+
+**Other communication behaviors:**
+- Deliberately bundles messages — sends one consolidated Slack rather than drip-pinging
+- Preps talking points before every call and meeting
+- Detail-oriented in CRM notes and deal records
 
 ---
 
