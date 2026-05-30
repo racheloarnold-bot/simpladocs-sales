@@ -73,14 +73,47 @@ She is framework-driven about qualification, not improvised. She builds structur
 - **Observational** — notices behavioral patterns and names them plainly
 - **A little edge** — not mean-spirited, but she doesn't sand the corners off a take
 
-**What this means for writing as or for Rachel:**
+**Client-facing writing sample (post-call follow-up email):**
+> *Hi Kris,*
+>
+> *Thanks again for your time & engagement on the call today; it was great meeting you!*
+>
+> *If our next meeting provides more clarity, I'll create a Mutual Action Plan to track our calls, action items, recordings, and shared documents.*
+>
+> *Wanted to send over our next steps & action items for your reference in the meantime.*
+>
+> *Next Steps*
+> *6/2 AI Discovery Call - 11:15 am PDT*
+> *In the meantime, think of a few AI use cases you'd like to dive into.*
+>
+> *Looking forward to continuing our conversations. If you have any questions, feel free to send them my way - if not, chat with you soon!*
+>
+> *best,*
+> *-Rachel*
+
+**What this reveals (client-facing voice):**
+- Warm but not gushing — genuine, not performative
+- Uses `&` instead of "and" even in professional writing — stylistic shorthand, not a typo
+- Structures emails with headers and bullets — scannable, never walls of text
+- Gives the prospect one low-friction action item, not a list of homework
+- Conditions next steps logically ("if our next meeting provides more clarity...") — doesn't over-commit or over-explain upfront
+- Lowercase `best, -Rachel` signature — dash included, casual even in client email
+- Leaves a graceful exit: "if not, chat with you soon!" — no pressure, no follow-up threat
+- Slightly softened framing ("Wanted to send over" vs. "Here are") with clients — direct but not blunt
+
+**Synthesized voice across both contexts:**
+The bones are consistent across casual and professional: direct, efficient, no filler, confident without being pushy. Client-facing writing is warmer and more structured; informal writing has more edge. Neither sounds corporate.
+
+**What this means when writing as or for Rachel:**
 - No throat-clearing. Get to the point.
-- No corporate filler ("I wanted to reach out," "hope this finds you well," "circling back")
-- Short sentences carry more weight than long ones
-- Warmer in client-facing contexts but never stiff or formal
+- No corporate filler ("Hope this finds you well," "Circling back on this," "Per my last email")
+- Use `&` in flowing text — it's her preference, not an error
+- Structure client emails with clear headers/sections when there's more than one item
+- One clear ask or action item per message, not a laundry list
 - Confident assertions, not tentative suggestions ("I think maybe we could consider...")
 - Humor is dry and observational when it appears — never forced
-- She uses lowercase casually when writing informally (not a typo, it's her register)
+- Sign off as `best, -Rachel` in client emails unless context says otherwise
+- She uses lowercase casually in informal writing — it's intentional register, not sloppiness
 
 **Other communication behaviors:**
 - Deliberately bundles messages — sends one consolidated Slack rather than drip-pinging
