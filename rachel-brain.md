@@ -150,9 +150,9 @@ The bones are consistent across casual and professional: direct, efficient, no f
 
 ## 5. How Rachel Thinks & Processes
 
-**Learning and ingestion style:** TBD — to be filled in.
+**Learning and ingestion style:** Primarily internal processing. She consumes LinkedIn posts and sales content regularly but doesn't have a formal capture or tagging system for it — it gets absorbed, processed mentally, and surfaces later in conversation, in her work, or in sessions with Claude. She sometimes discusses interesting content with Scott, Steven, or Jordyn but most of it lives in her head. Don't expect a second-brain system for external content; her brain *is* the system.
 
-**Organizational system:** Day-planner with time-blocked schedules. HubSpot for anything deal-related. Coda for docs and resources. Capture notes feed into daily planning sessions.
+**Organizational system:** Organization is Rachel's pride and joy — it's a genuine strength, not just a habit. Day-planner with time-blocked schedules. HubSpot for anything deal-related. Coda for docs and resources. Capture notes feed into daily planning sessions.
 
 **How she builds her day:** Morning startup block (deal scan → HubSpot sequence sprint → call prep) followed by meetings, then a work sprint. Core hours roughly 8 AM–4/5 PM PT.
 
@@ -222,15 +222,20 @@ When Rachel loses a deal, she obsessively reviews everything: listens back to ca
 
 ## 9. Strengths
 
-_[Rachel to confirm/correct — inferred below]_
+**Rachel's own assessment (confirmed):**
 
-- Analytically thorough: post-mortems, CRM hygiene, call review, prep work
+- **Discovery** — Leads with the *why* behind everything. Doesn't stay surface-level ("oh you need this, cool, we can do that"). Digs into context and motivation. Rigorous BANT qualification on every intro call. Peppers MEDDPICC throughout the sales process including discovery, but makes it feel natural — questions framed for the prospect's benefit, not to fill in a template.
+- **Deal velocity** — Exceptional at momentum and keeping cycles short. Near-impossible to ghost her once she's in a deal. Excels at setting *real* next steps — specific, time-bound, mutually committed, not vague "let's touch base" placeholders.
+- **Written & verbal communication** — Strong in both registers. Adapts from casual to client-facing without losing her voice. Clear, direct, never over-explains.
+- **Organization** — Her pride and joy. Rigorous CRM hygiene, structured planning, everything in its place. The day planner, HubSpot workflow, and Coda library are all expressions of this.
+
+**Additional strengths (observed/inferred, not disputed):**
+- Analytically thorough: post-mortems, call review, prep work
 - Framework-literate: BANT and MEDDPICC practiced, not just known
-- Builder mentality: comfortable creating infrastructure from scratch (SOPs, HubSpot rollout, enablement programs)
+- Builder mentality: comfortable creating from scratch (SOPs, HubSpot rollout, enablement programs)
 - Internally authoritative: the most sales-literate person in the room regardless of title
-- Deliberate communicator: bundles messages, preps talking points, doesn't wing important interactions
-- Practitioner credibility: uses the tools she sells (Superhuman); has sold HubSpot, used HubSpot, implemented HubSpot
-- Coaching ability: has mentored AEs, built enablement programs, coached upward — this is a real skill, not incidental
+- Practitioner credibility: uses the tools she sells; has sold HubSpot, used HubSpot, implemented HubSpot
+- Coaching ability: has mentored AEs, built enablement programs, coaches upward — a real skill, not incidental
 
 ---
 
@@ -247,7 +252,7 @@ Rachel's own honest assessment:
 ## 11. Key Workflows
 
 ### Pipeline Review
-_[To be filled in — Rachel to walk through her actual process]_
+Focused on in-quarter deals. Rachel assesses each deal for MEDDPICC gaps and next steps, then builds close plans for everything ~6 weeks out from end of quarter (EOQ). The review is qualification-driven, not just a status update — the output is a clear picture of what's at risk, what's on track, and what needs a close plan built.
 
 ### Day Planning
 Full workflow documented in `day-planner/SKILL.md`. Core pattern: brain dump → prioritize → time-block → interactive checklist.
@@ -258,6 +263,11 @@ Rachel does these obsessively when she loses. She reviews call recordings, email
 ### HubSpot Sequence Management
 Morning sprint: clear day's tasks, work through enrollment queues, follow up on opens/clicks. This is a daily high-priority block.
 
+### Meeting Capture & Post-Call Workflow
+During calls: HubSpot Notetaker or Fireflies handles video recording. Rachel simultaneously takes live notes in Granola — it gives her a space to write in real time and then enhance/clean the notes afterward. Enhanced Granola notes get pushed into HubSpot (the source of truth). Call recordings and notes together inform the proposal and scope of work written later in the deal cycle (in Coda).
+
+**Flow:** Call → HubSpot Notetaker / Fireflies (recording) + Granola (live notes) → enhanced notes pushed to HubSpot → informs proposal + scope in Coda.
+
 ### Content Creation
 Rachel creates sales content (SOPs, templates, BANT/MEDDPICC guides, proposals, MAPs) primarily in Coda. She also does marketing content for SimplaDocs.
 
@@ -265,7 +275,7 @@ Rachel creates sales content (SOPs, templates, BANT/MEDDPICC guides, proposals, 
 
 ## 12. Things Claude Should Know When Working With Rachel
 
-- **Never invent her voice** until the writing sample section is filled in. Ask her to provide one.
+- **Her voice is documented** — Section 4 has two writing samples and detailed guidelines. Use them.
 - **Don't assume outbound is working** — it's a current weak spot, not a strength.
 - **HubSpot is always the source of truth** — always pull from there for deal data.
 - **Scott is her boss but she coaches him** — don't frame Scott as someone Rachel should defer to on sales strategy.
