@@ -9,7 +9,19 @@ _Reference file for Claude. Use this whenever building content, drafting communi
 **Title:** Head of Sales
 **Company:** SimplaDocs
 **Location:** Gig Harbor, WA (fully remote)
-**Tenure:** Ramping — joined within the last few months
+**Tenure:** Joined ~early 2026; ramping
+
+**What SimplaDocs does:**
+Professional services agency specializing in Superhuman and Coda, but tool-agnostic in practice. They build custom operational solutions using whatever tools already exist in a client's stack. Service lines include:
+- **Coda:** implementations, Coda Pack builds, migrations
+- **Superhuman:** implementations
+- **AI consulting & implementation:** AI readiness briefings, building AI tools layered on top of existing team workflows
+- **General ops:** software migrations, workflow design, operational buildouts
+
+**ICP (Ideal Customer Profile):**
+- Coda/Superhuman work skews enterprise; AI work skews SMB/mid-market
+- **Buyer personas:** Operations teams — marketing ops, people ops, rev ops, sales ops, and generalized ops
+- **Industries:** Management consulting, healthcare, financial services, SaaS (most common); industry-agnostic in practice
 
 **What the role actually means:** Rachel is a one-person sales department. She owns the full sales cycle (prospecting through close), pipeline management, outbound, marketing content creation, rev ops, and sales enablement. Her title says "Head of Sales" but in practice she is also the sales ops person, the content person, and the sales coach — simultaneously.
 
@@ -24,6 +36,8 @@ _Reference file for Claude. Use this whenever building content, drafting communi
 **Recurring frustration:** Rachel is held to expectations by people (including leadership) who don't understand sales baselines or industry standards. She often has to justify things that shouldn't need justification — normal sales timelines, normal outbound response rates, normal ramp curves. This is draining.
 
 **What she walked into:** Before Rachel joined, SimplaDocs had no real sales infrastructure. Coda was being used as a CRM, invoicing tool, accounting tool, and SOP library — all inconsistently. She is simultaneously building the sales function from scratch and actively selling. HubSpot is the new source of truth she brought in and is still fighting for internal adoption.
+
+**Practitioner-seller note:** Rachel personally uses Superhuman as her email client — she sells a product she actually uses. Lean into this when it's relevant in prospecting or discovery.
 
 ---
 
@@ -187,20 +201,40 @@ When Rachel loses a deal, she obsessively reviews everything: listens back to ca
 
 ---
 
-## 8. Strengths
+## 8. Professional Background
 
-_[To be filled in — Rachel to confirm]_
+**Career timeline:**
+- **2018:** Began in sales at ProTaxPro.com / FileYourTaxes.com — started as Account Manager, quickly became Director of Sales & Marketing. Built and ran the sales and marketing function, implemented HubSpot, drove 25% revenue growth in year one and sustained 20–25% YoY.
+- **2022–2024:** HubSpot, Senior Account Executive (West Coast Territory). Exceeded 100%+ quota, promoted to Senior AE, selected for Team Lead Program (pre-management track). Coached and mentored junior AEs. Built outbound playbooks. Won HubSpot HEART Award.
+- **2024–2025:** Deel, Account Executive – Expansion (AMER). 110% of 2024 quota. Ran full post-sale commercial motion, consultative business reviews, outbound campaigns.
+- **2025:** Aptitude 8, Account Executive – Professional Services (Global). Elite HubSpot Partner. #2 AE in Q4 and Q1. Closed $400K in first 90 days, 7 net-new logos. ~$50K average deal size, 45-day sales cycle, 40% SQL-to-close rate. Applied BANT and MEDDPICC rigorously.
+- **2026–present:** SimplaDocs, Head of Sales. First sales hire; building the function from scratch.
 
-**Inferred from context:**
-- Analytically thorough (post-mortems, CRM hygiene, prep work)
-- Framework-literate (BANT, MEDDPICC — she builds proper qualification into her process)
-- Builder mentality — comfortable creating infrastructure from scratch (SOPs, templates, HubSpot rollout)
-- Internally authoritative — the most sales-literate person in the room, including above her manager
-- Deliberate communicator — bundles messages, preps talking points, doesn't wing important interactions
+**Before sales:** Long-time bartender and server. Explains the natural warmth, read-the-room instinct, and relationship-first communication style. Hospitality is excellent training for sales — she came in already knowing how to work a room.
+
+**Education:** General Studies / Dance — Ventura College and Cal State Long Beach. No traditional four-year degree; self-made sales career built on performance.
+
+**HubSpot note:** Rachel is a former HubSpot AE. She knows the platform inside and out, has relationships there, and has co-sold with HubSpot's mid-market and enterprise teams. Her conviction about HubSpot adoption at SimplaDocs is not arbitrary — she's watched it work at scale.
+
+**Certifications:** HubSpot Inbound, HubSpot Sales Software, HubSpot Marketing Software.
 
 ---
 
-## 9. Growth Areas
+## 9. Strengths
+
+_[Rachel to confirm/correct — inferred below]_
+
+- Analytically thorough: post-mortems, CRM hygiene, call review, prep work
+- Framework-literate: BANT and MEDDPICC practiced, not just known
+- Builder mentality: comfortable creating infrastructure from scratch (SOPs, HubSpot rollout, enablement programs)
+- Internally authoritative: the most sales-literate person in the room regardless of title
+- Deliberate communicator: bundles messages, preps talking points, doesn't wing important interactions
+- Practitioner credibility: uses the tools she sells (Superhuman); has sold HubSpot, used HubSpot, implemented HubSpot
+- Coaching ability: has mentored AEs, built enablement programs, coached upward — this is a real skill, not incidental
+
+---
+
+## 10. Growth Areas
 
 Rachel's own honest assessment:
 
@@ -210,7 +244,7 @@ Rachel's own honest assessment:
 
 ---
 
-## 10. Key Workflows
+## 11. Key Workflows
 
 ### Pipeline Review
 _[To be filled in — Rachel to walk through her actual process]_
@@ -229,7 +263,7 @@ Rachel creates sales content (SOPs, templates, BANT/MEDDPICC guides, proposals, 
 
 ---
 
-## 11. Things Claude Should Know When Working With Rachel
+## 12. Things Claude Should Know When Working With Rachel
 
 - **Never invent her voice** until the writing sample section is filled in. Ask her to provide one.
 - **Don't assume outbound is working** — it's a current weak spot, not a strength.
