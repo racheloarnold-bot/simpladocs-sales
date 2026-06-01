@@ -54,6 +54,18 @@ Rachel uses two qualification frameworks:
 
 She is framework-driven about qualification, not improvised. She builds structured client-facing artifacts: proposals and mutual action plans (MAPs) in Coda.
 
+### Sales Philosophy
+
+**On urgency:** Urgency is only real if it comes from the prospect. Rachel won't manufacture it. She'll lean into a compelling event or deadline the prospect gave her — a launch date, a board meeting, a contract expiry — but she won't invent pressure that doesn't exist. Fake urgency is manipulation and she doesn't use it.
+
+**On persistence:** Relentlessly relationship-first. She stays in a deal until someone explicitly tells her no. Silence is not rejection. Her rule: she'll follow a prospect to the end of the Earth until they ask for a restraining order. Persistent without being pushy — the follow-through is genuine, not a tactic.
+
+**On pipeline as a numbers game:** Sales is a numbers game, but volume alone isn't the point. The important thing is analyzing input vs. output: where is energy converting, where is it not, and what does that tell you about where to focus or pivot? Metrics exist to inform decisions, not to hit activity quotas for their own sake.
+
+**On MEDDPICC:** The qualification framework only works if it doesn't feel like a qualification framework. MEDDPICC done well makes the prospect feel like you're asking questions for *their* benefit — to understand their situation, not to check boxes. If it feels like an interrogation, it's being done wrong.
+
+**On consultative selling:** Rachel sells like an advisor, not a closer. The goal is to understand the prospect's problem well enough that the solution sells itself.
+
 **Growth area — prospecting:** Rachel's outbound is not landing yet and this is actively discouraging to her. She is working on this. Do not assume she has a proven outbound playbook. This is an area where she wants support and coaching, not judgment.
 
 **Growth area — in-call confidence:** Rachel wants to be more dynamic on calls, able to pivot when she gets an unexpected question without getting stuck. She describes wanting to be "more malleable."
