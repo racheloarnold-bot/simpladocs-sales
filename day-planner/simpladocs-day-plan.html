@@ -989,9 +989,7 @@
 <!-- Tabs -->
 <div class="tab-bar">
   <button class="tab-btn active" onclick="switchTab(&#39;today&#39;,this)">Today</button>
-  <button class="tab-btn" onclick="switchTab(&#39;tasks&#39;,this)">
-    HubSpot Tasks <span class="tab-count" id="tasks-count">4</span>
-    </button><button class="tab-btn" onclick="switchTab(&#39;backlog&#39;,this)">
+  <button class="tab-btn" onclick="switchTab(&#39;backlog&#39;,this)">
     Backlog <span class="tab-count" id="backlog-count">20</span>
   </button>
   <button class="tab-btn" onclick="switchTab(&#39;rocks&#39;,this)">
@@ -1027,169 +1025,7 @@
   </div>
 
   <!-- ═══════════════ TAB: HUBSPOT TASKS ═══════════════ -->
-        <div class="tab-panel" id="tab-tasks">
-
-    <div class="section-hdr">Today &amp; Overdue</div>
-
-    <div class="hs-card">
-      <div class="hs-task-row" data-hsid="hs-372962034406">
-        <div class="cb" onclick="toggleHs('hs-372962034406',this)"></div>
-        <div class="hs-content">
-          <div class="hs-text">Run intro call prep: DEFTEC Air Force Scheduling RFI</div>
-          <div class="hs-meta"><span class="bl-pill bl-pill-high">High</span> <span class="b-badge badge-hs">&#128203; due 6/2</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="hs-card">
-      <div class="hs-task-row" data-hsid="hs-372807962304">
-        <div class="cb" onclick="toggleHs('hs-372807962304',this)"></div>
-        <div class="hs-content">
-          <div class="hs-text">Send follow-up email: closed lost AI sequence (1 of 2)</div>
-          <div class="hs-meta"><span class="bl-pill bl-pill-high">High</span> <span class="b-badge badge-hs">&#128203; due 6/2</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="hs-card">
-      <div class="hs-task-row" data-hsid="hs-372841764543">
-        <div class="cb" onclick="toggleHs('hs-372841764543',this)"></div>
-        <div class="hs-content">
-          <div class="hs-text">Send follow-up email: closed lost AI sequence (2 of 2)</div>
-          <div class="hs-meta"><span class="bl-pill bl-pill-high">High</span> <span class="b-badge badge-hs">&#128203; due 6/2</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="hs-card">
-      <div class="hs-task-row" data-hsid="hs-372922388165">
-        <div class="cb" onclick="toggleHs('hs-372922388165',this)"></div>
-        <div class="hs-content">
-          <div class="hs-text">Send LinkedIn connection request (1 of 2)</div>
-          <div class="hs-meta"><span class="bl-pill bl-pill-high">High</span> <span class="b-badge badge-hs">&#128203; due 6/2</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="hs-card">
-      <div class="hs-task-row" data-hsid="hs-373044740802">
-        <div class="cb" onclick="toggleHs('hs-373044740802',this)"></div>
-        <div class="hs-content">
-          <div class="hs-text">Send LinkedIn connection request (2 of 2)</div>
-          <div class="hs-meta"><span class="bl-pill bl-pill-high">High</span> <span class="b-badge badge-hs">&#128203; due 6/2</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="hs-card">
-      <div class="hs-task-row" data-hsid="hs-370319166192">
-        <div class="cb" onclick="toggleHs('hs-370319166192',this)"></div>
-        <div class="hs-content">
-          <div class="hs-text">Accepted LinkedIn connect request: find something to reach out about</div>
-          <div class="hs-meta"><span class="bl-pill bl-pill-high">Overdue</span> <span class="b-badge badge-hs">&#128203; was due 5/20</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section-hdr">Tomorrow (6/3)</div>
-
-    <div class="hs-card">
-      <div class="hs-task-row" data-hsid="hs-373115241187">
-        <div class="cb" onclick="toggleHs('hs-373115241187',this)"></div>
-        <div class="hs-content">
-          <div class="hs-text">Send follow-up email: email opens or clicks</div>
-          <div class="hs-meta"><span class="bl-pill bl-pill-high">High</span> <span class="b-badge badge-hs">&#128203; due 6/3</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="hs-card">
-      <div class="hs-task-row" data-hsid="hs-373134859987">
-        <div class="cb" onclick="toggleHs('hs-373134859987',this)"></div>
-        <div class="hs-content">
-          <div class="hs-text">Follow up on email</div>
-          <div class="hs-meta"><span class="bl-pill bl-pill-high">High</span> <span class="b-badge badge-hs">&#128203; due 6/3</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section-hdr">This Week</div>
-
-    <div class="hs-card">
-      <div class="hs-task-row" data-hsid="hs-369772575455">
-        <div class="cb" onclick="toggleHs('hs-369772575455',this)"></div>
-        <div class="hs-content">
-          <div class="hs-text">Send resources and video examples of simple and complex Coda setups to Chris</div>
-          <div class="hs-meta"><span class="b-badge badge-hs">&#128203; To-do &middot; MED</span> <span class="b-badge badge-hs">due 6/4</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="hs-card">
-      <div class="hs-task-row" data-hsid="hs-369772534461">
-        <div class="cb" onclick="toggleHs('hs-369772534461',this)"></div>
-        <div class="hs-content">
-          <div class="hs-text">Provide screenshots: 50-hour vs 150-hour Coda implementations for Chris</div>
-          <div class="hs-meta"><span class="b-badge badge-hs">&#128203; To-do &middot; MED</span> <span class="b-badge badge-hs">due 6/4</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="hs-card">
-      <div class="hs-task-row" data-hsid="hs-372312322750">
-        <div class="cb" onclick="toggleHs('hs-372312322750',this)"></div>
-        <div class="hs-content">
-          <div class="hs-text">Send training examples and info to Tre (nRhythm, $8,500)</div>
-          <div class="hs-meta"><span class="b-badge badge-hs">&#128203; To-do &middot; MED</span> <span class="b-badge badge-hs">due 6/8 &middot; blocked on Scott for materials</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="hs-card">
-      <div class="hs-task-row" data-hsid="hs-source-bundle">
-        <div class="cb" onclick="toggleHs('hs-source-bundle',this)"></div>
-        <div class="hs-content">
-          <div class="hs-text">Source contacts for outreach (x7)</div>
-          <div class="hs-meta"><span class="b-badge badge-hs">&#128203; To-do &middot; MED</span> <span class="b-badge badge-hs">due 6/8</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section-hdr">Next Week</div>
-
-    <div class="hs-card">
-      <div class="hs-task-row" data-hsid="hs-361411800815">
-        <div class="cb" onclick="toggleHs('hs-361411800815',this)"></div>
-        <div class="hs-content">
-          <div class="hs-text">Review Gong call</div>
-          <div class="hs-meta"><span class="b-badge badge-hs">&#128203; To-do &middot; MED</span> <span class="b-badge badge-hs">due 6/11</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section-hdr">Later</div>
-
-    <div class="hs-card">
-      <div class="hs-task-row" data-hsid="hs-370160126657">
-        <div class="cb" onclick="toggleHs('hs-370160126657',this)"></div>
-        <div class="hs-content">
-          <div class="hs-text">Surface interest in potential Airtable migration project?</div>
-          <div class="hs-meta"><span class="bl-pill bl-pill-high">High</span> <span class="b-badge badge-hs">&#128203; due 7/13</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="hs-card">
-      <div class="hs-task-row" data-hsid="hs-369772570351">
-        <div class="cb" onclick="toggleHs('hs-369772570351',this)"></div>
-        <div class="hs-content">
-          <div class="hs-text">Follow up: AI consulting</div>
-          <div class="hs-meta"><span class="bl-pill bl-pill-high">High</span> <span class="b-badge badge-hs">&#128203; due 8/24</span></div>
-        </div>
-      </div>
-    </div>
-
-  </div><!-- /tab-tasks -->
+        
 
 
 
@@ -2532,6 +2368,7 @@ function reprioritize() {
 renderToday();
 initBacklog();
 restoreHsTasks();
+seedRocksIfEmpty();
 restoreRocks();
 loadNotes();
 updateTasksCount();
@@ -2642,6 +2479,23 @@ function dismissCarryover() {
   localStorage.removeItem('sd-carryover');
   const banner = document.getElementById('carryover-banner');
   if (banner) banner.style.display = 'none';
+}
+
+// -- Seed rocks state from Coda (runs once on fresh Vercel origin) --
+function seedRocksIfEmpty() {
+  if (Object.keys(rocksState.checked || {}).length > 0) return;
+  const done = [
+    'r1-scope-proj','r1-scope-ret',
+    'r2-tracker','r2-domain','r2-prop-agenda','r2-ic-fu',
+    'r2-d1','r2-d2','r2-d3','r2-d4','r2-d5',
+    'r2-d6','r2-d7','r2-d8','r2-d9',
+    'r2-d10','r2-d11','r2-d12','r2-d13','r2-d14','r2-d15',
+    'r3-med','r3-prop',
+    'r5-ct'
+  ];
+  if (!rocksState.checked) rocksState.checked = {};
+  done.forEach(id => { rocksState.checked[id] = true; });
+  save(KEYS.rocks, rocksState);
 }
 </script><div style="position: fixed; left: 3.71033%; top: -40px; width: 11.8921px; height: 8.56229px; background: rgb(255, 204, 213); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 22.9159s linear 5.82809s infinite normal none running pf0;"></div><div style="position: fixed; left: 64.5569%; top: -40px; width: 14.2205px; height: 10.2387px; background: rgb(255, 228, 236); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 27.0067s linear 4.44619s infinite normal none running pf1;"></div><div style="position: fixed; left: 47.1504%; top: -40px; width: 10.7896px; height: 7.76854px; background: rgb(255, 183, 197); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 26.8486s linear 13.2061s infinite normal none running pf2;"></div><div style="position: fixed; left: 93.4971%; top: -40px; width: 19.0422px; height: 13.7104px; background: rgb(255, 214, 224); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 16.2091s linear 4.8113s infinite normal none running pf3;"></div><div style="position: fixed; left: 28.8443%; top: -40px; width: 14.7601px; height: 10.6273px; background: rgb(255, 214, 224); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 17.7328s linear 6.35346s infinite normal none running pf4;"></div><div style="position: fixed; left: 62.5857%; top: -40px; width: 12.7222px; height: 9.16001px; background: rgb(255, 158, 181); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 16.8279s linear 13.1015s infinite normal none running pf5;"></div><div style="position: fixed; left: 38.3068%; top: -40px; width: 13.6174px; height: 9.80456px; background: rgb(255, 183, 197); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 23.2246s linear 2.7845s infinite normal none running pf6;"></div><div style="position: fixed; left: 104.919%; top: -40px; width: 17.8736px; height: 12.869px; background: rgb(255, 192, 203); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 24.2073s linear 8.11766s infinite normal none running pf7;"></div><div style="position: fixed; left: 90.1327%; top: -40px; width: 16.0474px; height: 11.5541px; background: rgb(255, 240, 245); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 16.9149s linear 1.84689s infinite normal none running pf8;"></div><div style="position: fixed; left: 73.5809%; top: -40px; width: 11.8112px; height: 8.50404px; background: rgb(255, 240, 245); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 18.6635s linear 1.32307s infinite normal none running pf9;"></div><div style="position: fixed; left: 21.3507%; top: -40px; width: 14.5408px; height: 10.4694px; background: rgb(255, 192, 203); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 21.3875s linear 9.461s infinite normal none running pf10;"></div><div style="position: fixed; left: 79.1786%; top: -40px; width: 10.5283px; height: 7.58038px; background: rgb(255, 158, 181); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 25.4139s linear 1.18367s infinite normal none running pf11;"></div><div style="position: fixed; left: 25.6279%; top: -40px; width: 16.0126px; height: 11.5291px; background: rgb(255, 183, 197); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 25.4727s linear 11.5445s infinite normal none running pf12;"></div><div style="position: fixed; left: 76.525%; top: -40px; width: 20.1286px; height: 14.4926px; background: rgb(255, 204, 213); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 19.6242s linear 3.21808s infinite normal none running pf13;"></div><div style="position: fixed; left: 52.9888%; top: -40px; width: 21.087px; height: 15.1827px; background: rgb(255, 214, 224); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 19.4427s linear 9.46158s infinite normal none running pf14;"></div><div style="position: fixed; left: 46.9709%; top: -40px; width: 12.2456px; height: 8.81687px; background: rgb(255, 183, 197); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 23.9665s linear 5.24734s infinite normal none running pf15;"></div><div style="position: fixed; left: 3.60387%; top: -40px; width: 10.1121px; height: 7.28069px; background: rgb(255, 228, 236); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 27.5904s linear 8.76133s infinite normal none running pf16;"></div><div style="position: fixed; left: 41.097%; top: -40px; width: 17.9461px; height: 12.9212px; background: rgb(255, 228, 236); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 21.1008s linear 1.30736s infinite normal none running pf17;"></div><div style="position: fixed; left: 61.8497%; top: -40px; width: 11.7978px; height: 8.49444px; background: rgb(255, 158, 181); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 18.558s linear 13.5628s infinite normal none running pf18;"></div><div style="position: fixed; left: 94.1063%; top: -40px; width: 16.6485px; height: 11.9869px; background: rgb(255, 204, 213); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 26.6035s linear 12.9028s infinite normal none running pf19;"></div><div style="position: fixed; left: 37.7039%; top: -40px; width: 21.4977px; height: 15.4783px; background: rgb(255, 158, 181); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 23.7424s linear 10.167s infinite normal none running pf20;"></div><div style="position: fixed; left: 39.9488%; top: -40px; width: 12.1147px; height: 8.72261px; background: rgb(255, 192, 203); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 23.8189s linear 1.31275s infinite normal none running pf21;"></div><div style="position: fixed; left: 55.1657%; top: -40px; width: 19.208px; height: 13.8298px; background: rgb(255, 158, 181); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 27.8927s linear 5.01815s infinite normal none running pf22;"></div><div style="position: fixed; left: 41.7706%; top: -40px; width: 10.7688px; height: 7.75352px; background: rgb(255, 228, 236); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 25.6015s linear 15.2753s infinite normal none running pf23;"></div><div style="position: fixed; left: 24.841%; top: -40px; width: 21.2521px; height: 15.3015px; background: rgb(255, 204, 213); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 22.1163s linear 2.43512s infinite normal none running pf24;"></div>
 
