@@ -942,8 +942,15 @@
       7%  { opacity: 0.88; }
       90% { opacity: 0.70; }
       100%{ transform: translateY(110vh) translateX(-17px) rotate(232deg); opacity:0; }
-    }</style></head>
+    }
+    /* -- Update banner -- */
+    #update-banner{display:none;position:sticky;top:0;z-index:9999;background:linear-gradient(135deg,#a855f7,#ec4899);color:#fff;padding:10px 18px;font-size:13px;font-weight:600;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.25);}
+    #update-banner button{background:#fff;color:#a855f7;border:none;border-radius:6px;padding:5px 14px;font-size:12px;font-weight:700;cursor:pointer;margin-left:12px;vertical-align:middle;}
+    #update-banner button:hover{background:#f3e8ff;}
+</style></head>
 <body>
+<div id="update-banner">New version available — today's planner is ready. <button onclick="fetchLatest()">Get latest</button></div>
+
 
 <!-- Blobs -->
 <div class="blob-layer">
@@ -1465,41 +1472,40 @@ save(KEYS.rocks, rocksState);
 const BLOCKS = [
   { id:'prep', title:'Prep for Day', start:9.0, end:9.5, tasks:[
     { id:'t-meds', meds:true, text:'Meds', note:'Take with water' },
-    { id:'t-prep-cal', text:'Review calendar: Ben Relles 9:30, Comren AI discovery 11:15, Steven 1:1 1 PM, DEFTEC intro 1:45 PM', note:'3 client calls today. Prep is in the deal sprint block.' },
+    { id:'t-prep-cal', text:'Review calendar: Ben Relles 9:30, Steven 1:1 1 PM, DEFTEC intro 1:45 PM', note:'Comren rescheduled, hair appt cancelled. Day is open. Protect the DEFTEC prep window.' },
     { id:'t-prep-slack', text:'Clear Slack + email', note:'Daniel asked for input on SimplaDocs mission statement and values Coda doc (group DM).' },
   ]},
   { id:'ben-relles', title:'Ben Relles <> Scott', start:9.5, end:9.833, tasks:[
-    { id:'t-br-notes', text:'Listen and capture: Make Believe deal context', note:'Possible discovery or other conversation. Scott is lead. Log in HubSpot after.' },
+    { id:'t-br-notes', text:'Listen and capture: Make Believe deal context', note:'Possible discovery or general conversation. Scott leads. Log in HubSpot after.' },
   ]},
-  { id:'deal-sprint', title:'Deal Sprint + Call Prep', start:9.833, end:11.25, tasks:[
-    { id:'t-az-docusign', hi:true, text:'AstraZeneca: chase SPA/DPA Docusign to unblock $120K SOW', note:'Close date 6/1 overdue. Both signatures must land before the SOW goes out.' },
-    { id:'t-spring-sig', hi:true, text:'Spring Health: chase final signature ($52,200)', note:'IT security cleared. Steven sending SOW today. Signature expected any day. Follow up.' },
-    { id:'t-comren-prep', med:true, text:'Comren call prep: AI discovery with Kris Amstutz (11:15 AM)', note:'$15K. Focus on pain, use cases, budget signal, and timeline. Pre-call email already sent.' },
-    { id:'t-deftec-prep', med:true, text:'DEFTEC call prep: Air Force Scheduling RFI intro (1:45 PM)', note:'Complex, competitive subcontracting deal. Review RFI requirements before the call.' },
-    { id:'t-ravens-check', med:true, text:'Ravens: confirm Jeremy sent intro to Ashish Kinra before outreach', note:'Granola action item from 6/1 call. 3 weeks behind in their consultant evaluation.' },
+  { id:'deal-sprint', title:'Deal Work + Outreach Sprint', start:9.833, end:11.5, tasks:[
+    { id:'t-az-docusign', hi:true, text:'AstraZeneca: chase SPA/DPA Docusign to unblock $120K SOW', note:'Close date 6/1 overdue. Both signatures must land before SOW goes out.' },
+    { id:'t-spring-sig', hi:true, text:'Spring Health: chase final signature ($52,200)', note:'IT security cleared. SOW sent. Expecting signature any day. Follow up.' },
+    { id:'t-comren-hs', med:true, text:'Comren: update HubSpot with rescheduled date and new next step', note:'Rescheduled today. Log the new date and what triggered the reschedule.' },
+    { id:'t-alix-fu', med:true, text:'AlixPartners: send follow-up touch ($20K, blank since 5/22)', note:'Deal is going cold. Quick check-in before it fully stalls.' },
+    { id:'t-outreach', med:true, text:'Maintain outreach pace: 10+ companies/day', note:'Sequence sprint: closed-lost AI emails (x2) + connection requests (x2) all due today.' },
   ]},
-  { id:'comren', title:'Comren AI Discovery Call', start:11.25, end:11.75, tasks:[] },
-  { id:'comren-fu', title:'Comren Follow-Up', start:11.75, end:12.0, tasks:[
-    { id:'t-comren-email', hi:true, text:'Send Comren post-call follow-up email (within 30 min)', note:'Warm, structured, one clear next step. Reference what you heard on the call.' },
-    { id:'t-comren-hs', med:true, text:'Update HubSpot: Comren notes + next step', note:'Log while fresh. Advance deal stage if warranted.' },
+  { id:'deftec-prep', title:'DEFTEC Call Prep', start:11.5, end:12.0, tasks:[
+    { id:'t-deftec-prep', hi:true, text:'Deep prep: DEFTEC Air Force Scheduling RFI intro (1:45 PM)', note:'Complex, competitive subcontracting deal. Review RFI requirements. Anticipate the competition angle and know your questions.' },
+    { id:'t-ravens-check', med:true, text:'Ravens: confirm Jeremy sent intro to Ashish Kinra before outreach', note:'Granola action item from 6/1. 3 weeks behind in their consultant eval. Do not cold-reach.' },
   ]},
   { id:'lunch', title:'Lunch', start:12.0, end:13.0, tasks:[], isBreak:true },
   { id:'steven-11', title:'Steven / Rachel 1:1', start:13.0, end:13.75, tasks:[
-    { id:'t-steven-outbound', text:'Outbound: what is landing, what is not, next experiment', note:'Tuesday focus. Honest assessment. Come with one concrete question or idea.' },
-    { id:'t-steven-ai', text:'AI pipeline: Ravens next step, nRhythm Scott blocker ($8,500), Comren debrief from today', note:'Three active AI deals. Share what came out of the Comren discovery call.' },
-    { id:'t-steven-content', text:'Mission statement + values input (Daniel ask in Slack), content strategy', note:'Daniel asked in group DM. Good item for this 1:1.' },
+    { id:'t-steven-outbound', text:'Outbound: what is landing, what is not, next experiment', note:'Tuesday focus. Known weak spot. One honest take and one concrete question.' },
+    { id:'t-steven-ai', text:'AI pipeline: Ravens next step, nRhythm Scott blocker ($8,500)', note:'Two active AI deals where things are stuck. Get unstuck here.' },
+    { id:'t-steven-content', text:'Mission statement + values input (Daniel ask), content strategy', note:'Daniel flagged in Slack. Good item for this 1:1.' },
   ]},
   { id:'deftec', title:'DEFTEC Intro Call', start:13.75, end:14.25, tasks:[] },
-  { id:'taylor-slot', title:'Post-Call Work + Taylor', start:14.25, end:16.0, tasks:[
-    { id:'t-deftec-email', hi:true, text:'DEFTEC: send post-call follow-up email right at 2:15', note:'Send while the call is fresh: what you heard, next steps, any action items.' },
-    { id:'t-deftec-hs', med:true, text:'Update HubSpot: DEFTEC notes + next step', note:'Complex deal. Log competition, requirements, and key signals from the call.' },
-    { id:'t-seq-tasks', med:true, text:'HubSpot sequence sprint: closed-lost AI emails (x2) + connection requests (x2)', note:'All due today. Work through the queue.' },
-    { id:'t-revmed-confirm', med:true, text:'RevMed: confirm 6/4 review call is still on ($48K)', note:'Anthony has the proposal. Call not yet confirmed. Quick note to confirm.' },
+  { id:'afternoon-sprint', title:'Post-DEFTEC Afternoon Sprint', start:14.25, end:16.0, tasks:[
+    { id:'t-deftec-email', hi:true, text:'DEFTEC: send post-call follow-up email right at 2:15', note:'Send while the call is fresh: what you heard, next steps, action items.' },
+    { id:'t-deftec-hs', med:true, text:'Update HubSpot: DEFTEC notes + next step', note:'Complex deal. Log competition signals, requirements, who said what.' },
+    { id:'t-revmed-confirm', med:true, text:'RevMed: confirm 6/4 review call is still on ($48K)', note:'Proposal sent 6/1. Call unconfirmed. Quick note to Anthony.' },
+    { id:'t-ihh-email', med:true, text:'IHH Healthcare: draft and send 6/3 follow-up to Luke ($24,750)', note:'Per notes: give it til 6/3. That is tomorrow. Draft today, send tomorrow AM.' },
+    { id:'t-rocks-sops', text:'Rocks doc update or Sales SOPs deal strategy section (deep work, use the time)', note:'Freed afternoon. Capture note items. Pick one and make progress.' },
   ]},
   { id:'wrapup', title:'Daily Wrap Up', start:16.0, end:17.0, tasks:[
-    { id:'t-wu-hs', med:true, text:'HubSpot EOD: update all touched deals with next steps', note:'Every deal you touched today needs a next step logged before you close out.' },
-    { id:'t-ihh-email', text:'IHH Healthcare: draft 6/3 follow-up email to Luke ($24,750)', note:'Per notes: give it til 6/3. Tomorrow is the day. Draft it now so it is ready.' },
-    { id:'t-wu-capture', text:'Update capture notes for tomorrow', note:'Log blockers, ideas, or follow-ups from today.' },
+    { id:'t-wu-hs', med:true, text:'HubSpot EOD: update all touched deals with next steps', note:'Every deal you touched today needs a next step logged before close.' },
+    { id:'t-wu-capture', text:'Update capture notes for tomorrow', note:'Log blockers, incomplete items, anything that surfaced today.' },
   ]},
   { id:'gym', title:'Gym', start:18.5, end:20.0, tasks:[], isBreak:true },
 ]
@@ -2516,6 +2522,36 @@ setInterval(renderToday, 60000);
 setInterval(updateHeader, 1000);
 createPetals();
 // createGlitter(); // disabled
+
+// -- Auto-update check --
+const BUILD_DATE = '2026-06-02';
+const _REPO = 'racheloarnold-bot/simpladocs-sales';
+const _FILE = 'day-planner/simpladocs-day-plan.html';
+
+async function checkForUpdate() {
+  try {
+    const r = await fetch('https://api.github.com/repos/'+_REPO+'/commits/main?path='+_FILE+'&per_page=1');
+    if (!r.ok) return;
+    const [c] = await r.json();
+    const remoteDate = c.commit.committer.date.slice(0,10);
+    if (remoteDate > BUILD_DATE) document.getElementById('update-banner').style.display='block';
+  } catch(e) {}
+}
+
+async function fetchLatest() {
+  try {
+    const r = await fetch('https://api.github.com/repos/'+_REPO+'/contents/'+_FILE);
+    const d = await r.json();
+    const html = atob(d.content.replace(/\n/g,''));
+    const blob = new Blob([html],{type:'text/html'});
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'simpladocs-day-plan.html';
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  } catch(e) { alert('Could not fetch update. Check your connection.'); }
+}
+
+window.addEventListener('load', checkForUpdate);
 </script><div style="position: fixed; left: 3.71033%; top: -40px; width: 11.8921px; height: 8.56229px; background: rgb(255, 204, 213); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 22.9159s linear 5.82809s infinite normal none running pf0;"></div><div style="position: fixed; left: 64.5569%; top: -40px; width: 14.2205px; height: 10.2387px; background: rgb(255, 228, 236); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 27.0067s linear 4.44619s infinite normal none running pf1;"></div><div style="position: fixed; left: 47.1504%; top: -40px; width: 10.7896px; height: 7.76854px; background: rgb(255, 183, 197); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 26.8486s linear 13.2061s infinite normal none running pf2;"></div><div style="position: fixed; left: 93.4971%; top: -40px; width: 19.0422px; height: 13.7104px; background: rgb(255, 214, 224); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 16.2091s linear 4.8113s infinite normal none running pf3;"></div><div style="position: fixed; left: 28.8443%; top: -40px; width: 14.7601px; height: 10.6273px; background: rgb(255, 214, 224); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 17.7328s linear 6.35346s infinite normal none running pf4;"></div><div style="position: fixed; left: 62.5857%; top: -40px; width: 12.7222px; height: 9.16001px; background: rgb(255, 158, 181); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 16.8279s linear 13.1015s infinite normal none running pf5;"></div><div style="position: fixed; left: 38.3068%; top: -40px; width: 13.6174px; height: 9.80456px; background: rgb(255, 183, 197); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 23.2246s linear 2.7845s infinite normal none running pf6;"></div><div style="position: fixed; left: 104.919%; top: -40px; width: 17.8736px; height: 12.869px; background: rgb(255, 192, 203); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 24.2073s linear 8.11766s infinite normal none running pf7;"></div><div style="position: fixed; left: 90.1327%; top: -40px; width: 16.0474px; height: 11.5541px; background: rgb(255, 240, 245); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 16.9149s linear 1.84689s infinite normal none running pf8;"></div><div style="position: fixed; left: 73.5809%; top: -40px; width: 11.8112px; height: 8.50404px; background: rgb(255, 240, 245); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 18.6635s linear 1.32307s infinite normal none running pf9;"></div><div style="position: fixed; left: 21.3507%; top: -40px; width: 14.5408px; height: 10.4694px; background: rgb(255, 192, 203); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 21.3875s linear 9.461s infinite normal none running pf10;"></div><div style="position: fixed; left: 79.1786%; top: -40px; width: 10.5283px; height: 7.58038px; background: rgb(255, 158, 181); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 25.4139s linear 1.18367s infinite normal none running pf11;"></div><div style="position: fixed; left: 25.6279%; top: -40px; width: 16.0126px; height: 11.5291px; background: rgb(255, 183, 197); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 25.4727s linear 11.5445s infinite normal none running pf12;"></div><div style="position: fixed; left: 76.525%; top: -40px; width: 20.1286px; height: 14.4926px; background: rgb(255, 204, 213); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 19.6242s linear 3.21808s infinite normal none running pf13;"></div><div style="position: fixed; left: 52.9888%; top: -40px; width: 21.087px; height: 15.1827px; background: rgb(255, 214, 224); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 19.4427s linear 9.46158s infinite normal none running pf14;"></div><div style="position: fixed; left: 46.9709%; top: -40px; width: 12.2456px; height: 8.81687px; background: rgb(255, 183, 197); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 23.9665s linear 5.24734s infinite normal none running pf15;"></div><div style="position: fixed; left: 3.60387%; top: -40px; width: 10.1121px; height: 7.28069px; background: rgb(255, 228, 236); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 27.5904s linear 8.76133s infinite normal none running pf16;"></div><div style="position: fixed; left: 41.097%; top: -40px; width: 17.9461px; height: 12.9212px; background: rgb(255, 228, 236); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 21.1008s linear 1.30736s infinite normal none running pf17;"></div><div style="position: fixed; left: 61.8497%; top: -40px; width: 11.7978px; height: 8.49444px; background: rgb(255, 158, 181); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 18.558s linear 13.5628s infinite normal none running pf18;"></div><div style="position: fixed; left: 94.1063%; top: -40px; width: 16.6485px; height: 11.9869px; background: rgb(255, 204, 213); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 26.6035s linear 12.9028s infinite normal none running pf19;"></div><div style="position: fixed; left: 37.7039%; top: -40px; width: 21.4977px; height: 15.4783px; background: rgb(255, 158, 181); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 23.7424s linear 10.167s infinite normal none running pf20;"></div><div style="position: fixed; left: 39.9488%; top: -40px; width: 12.1147px; height: 8.72261px; background: rgb(255, 192, 203); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 23.8189s linear 1.31275s infinite normal none running pf21;"></div><div style="position: fixed; left: 55.1657%; top: -40px; width: 19.208px; height: 13.8298px; background: rgb(255, 158, 181); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 27.8927s linear 5.01815s infinite normal none running pf22;"></div><div style="position: fixed; left: 41.7706%; top: -40px; width: 10.7688px; height: 7.75352px; background: rgb(255, 228, 236); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 25.6015s linear 15.2753s infinite normal none running pf23;"></div><div style="position: fixed; left: 24.841%; top: -40px; width: 21.2521px; height: 15.3015px; background: rgb(255, 204, 213); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 22.1163s linear 2.43512s infinite normal none running pf24;"></div>
 
 

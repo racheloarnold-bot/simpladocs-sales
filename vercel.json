@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/", "destination": "/day-planner/simpladocs-day-plan.html" },
+    { "source": "/planner", "destination": "/day-planner/simpladocs-day-plan.html" }
+  ]
+}
