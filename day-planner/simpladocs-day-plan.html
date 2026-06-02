@@ -947,6 +947,16 @@
     #update-banner{display:none;position:sticky;top:0;z-index:9999;background:linear-gradient(135deg,#a855f7,#ec4899);color:#fff;padding:10px 18px;font-size:13px;font-weight:600;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.25);}
     #update-banner button{background:#fff;color:#a855f7;border:none;border-radius:6px;padding:5px 14px;font-size:12px;font-weight:700;cursor:pointer;margin-left:12px;vertical-align:middle;}
     #update-banner button:hover{background:#f3e8ff;}
+
+    /* -- Carryover banner -- */
+    .co-banner{background:rgba(255,193,7,0.07);border:1px solid rgba(255,193,7,0.28);border-radius:var(--radius);padding:14px 16px;margin-bottom:12px;}
+    .co-banner-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
+    .co-banner-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.7px;color:#92700A;}
+    .co-banner-date{font-size:11px;color:var(--text-3);font-weight:400;margin-left:6px;}
+    .co-banner-close{background:none;border:none;cursor:pointer;font-size:18px;color:var(--text-3);padding:0;line-height:1;font-family:inherit;}
+    .co-banner-close:hover{color:var(--navy);}
+    .save-co-btn{display:flex;align-items:center;gap:6px;padding:6px 14px;border-radius:20px;border:1.5px solid rgba(0,53,102,0.18);background:rgba(255,255,255,0.7);color:var(--navy);font-size:12px;font-weight:600;cursor:pointer;transition:background 0.15s,box-shadow 0.15s;font-family:inherit;}
+    .save-co-btn:hover{background:rgba(255,255,255,0.95);box-shadow:var(--shadow);}
 </style></head>
 <body>
 <div id="update-banner">New version available — today's planner is ready. <button onclick="fetchLatest()">Get latest</button></div>
@@ -995,10 +1005,19 @@
   <!-- ═══════════════ TAB: TODAY ═══════════════ -->
   <div class="tab-panel active" id="tab-today">
     <div class="reprio-bar">
+      <button class="save-co-btn" onclick="saveCarryover()">Save for tomorrow</button>
       <button class="reprio-btn" onclick="reprioritize()">
         <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h12M4 8h8M6 12h4"></path></svg>
         Re-prioritize
       </button>
+    </div>
+    
+    <div id="carryover-banner" style="display:none" class="co-banner">
+      <div class="co-banner-hdr">
+        <span class="co-banner-title">From yesterday <span class="co-banner-date" id="co-banner-date"></span></span>
+        <button class="co-banner-close" onclick="dismissCarryover()" title="Dismiss">&#215;</button>
+      </div>
+      <div id="carryover-list"></div>
     </div>
     <div id="blocks-root"></div>
     <div class="co-section" id="co-section" style="display:none">
@@ -1777,6 +1796,7 @@ function toggleBl2(id, el) {
   if(todayState.checked[id]) sparkle(el);
   updateBlCounts();
   renderToday();
+loadCarryover();
 }
 function updateBlCounts() {
   const todayIds = ['bl-t-rocks-update','bl-t-sops-deal','bl-t-sops-obj','bl-t-map-guide','bl-t-mission-values'];
@@ -2552,6 +2572,78 @@ async function fetchLatest() {
 }
 
 window.addEventListener('load', checkForUpdate);
+
+// -- Carryover --
+function saveCarryover() {
+  const items = [];
+  const del = todayState.deleted || {};
+  getOrderedBlocks().forEach(b => {
+    if (b.isBreak) return;
+    allTasks(b).forEach(t => {
+      if (!todayState.checked[t.id] && !del[t.id]) {
+        items.push({
+          id: t.id,
+          text: (todayState.edited || {})[t.id] || t.text,
+          block: b.title,
+          hi: !!t.hi, med: !!t.med
+        });
+      }
+    });
+  });
+  Object.values(todayState.added || {}).forEach(t => {
+    if (!todayState.checked[t.id] && !del[t.id]) {
+      const blk = getOrderedBlocks().find(b => b.id === t.blockId);
+      items.push({ id: t.id, text: t.text, block: blk ? blk.title : 'Added' });
+    }
+  });
+  localStorage.setItem('sd-carryover', JSON.stringify({ date: BUILD_DATE, items }));
+  const coSection = document.getElementById('co-section');
+  const coList    = document.getElementById('co-list');
+  if (coSection && coList) {
+    coList.innerHTML = items.map(item =>
+      '<div class="co-row">'
+      + '<div class="co-cb"></div>'
+      + '<span class="co-text" style="color:var(--text-2);text-decoration:none">'
+      + (item.hi ? '<span class="bl-pill bl-pill-high" style="margin-right:5px">HIGH</span>' : item.med ? '<span class="bl-pill bl-pill-medium" style="margin-right:5px">MED</span>' : '')
+      + esc(item.text)
+      + '</span>'
+      + (item.block ? '<span class="co-badge">' + esc(item.block) + '</span>' : '')
+      + '</div>'
+    ).join('');
+    coSection.querySelector('.co-title').textContent = 'Saved for tomorrow (' + items.length + ' tasks)';
+    coSection.style.display = '';
+  }
+  showToast(items.length + ' task' + (items.length !== 1 ? 's' : '') + ' saved for tomorrow');
+}
+
+function loadCarryover() {
+  try {
+    const data = JSON.parse(localStorage.getItem('sd-carryover') || 'null');
+    if (!data || data.date === BUILD_DATE || !data.items || !data.items.length) return;
+    const banner = document.getElementById('carryover-banner');
+    const list   = document.getElementById('carryover-list');
+    const dateEl = document.getElementById('co-banner-date');
+    if (!banner || !list) return;
+    if (dateEl) dateEl.textContent = '(' + data.date + ')';
+    list.innerHTML = data.items.map(item =>
+      '<div class="co-row" style="cursor:default">'
+      + '<div class="co-cb"></div>'
+      + '<span class="co-text" style="color:var(--text-2);text-decoration:none">'
+      + (item.hi ? '<span class="bl-pill bl-pill-high" style="margin-right:5px">HIGH</span>' : item.med ? '<span class="bl-pill bl-pill-medium" style="margin-right:5px">MED</span>' : '')
+      + esc(item.text)
+      + '</span>'
+      + (item.block ? '<span class="co-badge">' + esc(item.block) + '</span>' : '')
+      + '</div>'
+    ).join('');
+    banner.style.display = 'block';
+  } catch(e) {}
+}
+
+function dismissCarryover() {
+  localStorage.removeItem('sd-carryover');
+  const banner = document.getElementById('carryover-banner');
+  if (banner) banner.style.display = 'none';
+}
 </script><div style="position: fixed; left: 3.71033%; top: -40px; width: 11.8921px; height: 8.56229px; background: rgb(255, 204, 213); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 22.9159s linear 5.82809s infinite normal none running pf0;"></div><div style="position: fixed; left: 64.5569%; top: -40px; width: 14.2205px; height: 10.2387px; background: rgb(255, 228, 236); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 27.0067s linear 4.44619s infinite normal none running pf1;"></div><div style="position: fixed; left: 47.1504%; top: -40px; width: 10.7896px; height: 7.76854px; background: rgb(255, 183, 197); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 26.8486s linear 13.2061s infinite normal none running pf2;"></div><div style="position: fixed; left: 93.4971%; top: -40px; width: 19.0422px; height: 13.7104px; background: rgb(255, 214, 224); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 16.2091s linear 4.8113s infinite normal none running pf3;"></div><div style="position: fixed; left: 28.8443%; top: -40px; width: 14.7601px; height: 10.6273px; background: rgb(255, 214, 224); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 17.7328s linear 6.35346s infinite normal none running pf4;"></div><div style="position: fixed; left: 62.5857%; top: -40px; width: 12.7222px; height: 9.16001px; background: rgb(255, 158, 181); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 16.8279s linear 13.1015s infinite normal none running pf5;"></div><div style="position: fixed; left: 38.3068%; top: -40px; width: 13.6174px; height: 9.80456px; background: rgb(255, 183, 197); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 23.2246s linear 2.7845s infinite normal none running pf6;"></div><div style="position: fixed; left: 104.919%; top: -40px; width: 17.8736px; height: 12.869px; background: rgb(255, 192, 203); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 24.2073s linear 8.11766s infinite normal none running pf7;"></div><div style="position: fixed; left: 90.1327%; top: -40px; width: 16.0474px; height: 11.5541px; background: rgb(255, 240, 245); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 16.9149s linear 1.84689s infinite normal none running pf8;"></div><div style="position: fixed; left: 73.5809%; top: -40px; width: 11.8112px; height: 8.50404px; background: rgb(255, 240, 245); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 18.6635s linear 1.32307s infinite normal none running pf9;"></div><div style="position: fixed; left: 21.3507%; top: -40px; width: 14.5408px; height: 10.4694px; background: rgb(255, 192, 203); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 21.3875s linear 9.461s infinite normal none running pf10;"></div><div style="position: fixed; left: 79.1786%; top: -40px; width: 10.5283px; height: 7.58038px; background: rgb(255, 158, 181); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 25.4139s linear 1.18367s infinite normal none running pf11;"></div><div style="position: fixed; left: 25.6279%; top: -40px; width: 16.0126px; height: 11.5291px; background: rgb(255, 183, 197); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 25.4727s linear 11.5445s infinite normal none running pf12;"></div><div style="position: fixed; left: 76.525%; top: -40px; width: 20.1286px; height: 14.4926px; background: rgb(255, 204, 213); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 19.6242s linear 3.21808s infinite normal none running pf13;"></div><div style="position: fixed; left: 52.9888%; top: -40px; width: 21.087px; height: 15.1827px; background: rgb(255, 214, 224); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 19.4427s linear 9.46158s infinite normal none running pf14;"></div><div style="position: fixed; left: 46.9709%; top: -40px; width: 12.2456px; height: 8.81687px; background: rgb(255, 183, 197); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 23.9665s linear 5.24734s infinite normal none running pf15;"></div><div style="position: fixed; left: 3.60387%; top: -40px; width: 10.1121px; height: 7.28069px; background: rgb(255, 228, 236); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 27.5904s linear 8.76133s infinite normal none running pf16;"></div><div style="position: fixed; left: 41.097%; top: -40px; width: 17.9461px; height: 12.9212px; background: rgb(255, 228, 236); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 21.1008s linear 1.30736s infinite normal none running pf17;"></div><div style="position: fixed; left: 61.8497%; top: -40px; width: 11.7978px; height: 8.49444px; background: rgb(255, 158, 181); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 18.558s linear 13.5628s infinite normal none running pf18;"></div><div style="position: fixed; left: 94.1063%; top: -40px; width: 16.6485px; height: 11.9869px; background: rgb(255, 204, 213); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 26.6035s linear 12.9028s infinite normal none running pf19;"></div><div style="position: fixed; left: 37.7039%; top: -40px; width: 21.4977px; height: 15.4783px; background: rgb(255, 158, 181); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 23.7424s linear 10.167s infinite normal none running pf20;"></div><div style="position: fixed; left: 39.9488%; top: -40px; width: 12.1147px; height: 8.72261px; background: rgb(255, 192, 203); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 23.8189s linear 1.31275s infinite normal none running pf21;"></div><div style="position: fixed; left: 55.1657%; top: -40px; width: 19.208px; height: 13.8298px; background: rgb(255, 158, 181); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 27.8927s linear 5.01815s infinite normal none running pf22;"></div><div style="position: fixed; left: 41.7706%; top: -40px; width: 10.7688px; height: 7.75352px; background: rgb(255, 228, 236); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 25.6015s linear 15.2753s infinite normal none running pf23;"></div><div style="position: fixed; left: 24.841%; top: -40px; width: 21.2521px; height: 15.3015px; background: rgb(255, 204, 213); border-radius: 50% / 62% 62% 38% 38%; pointer-events: none; z-index: 0; opacity: 0; animation: 22.1163s linear 2.43512s infinite normal none running pf24;"></div>
 
 
