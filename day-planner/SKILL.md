@@ -5,140 +5,178 @@ description: "Interactive daily planning workflow: brain-dump → prioritize →
 
 # Day Planner
 
-An interactive daily planning workflow that moves from brain-dump through prioritization to a time-blocked interactive checklist.
+An interactive daily planning workflow that produces a time-blocked HTML checklist, deployed to Vercel for stable URL access with persistent localStorage state.
 
 ## HTML Template Source
 
-The day planner is a single-file HTML app. The canonical template lives on GitHub:
+The canonical template lives in the cloned repo at:
 
-**Repo:** `racheloarnold-bot/simpladocs-sales`
-**File:** `day-planner/simpladocs-day-plan.html`
-**Raw URL:** `https://raw.githubusercontent.com/racheloarnold-bot/simpladocs-sales/main/day-planner/simpladocs-day-plan.html`
-
-### Fetching and customizing for a new day
-
-When building the day planner, always fetch the template fresh from GitHub rather than using a local file:
-
-```bash
-curl -sL "https://raw.githubusercontent.com/racheloarnold-bot/simpladocs-sales/main/day-planner/simpladocs-day-plan.html" -o ~/simpladocs-day-plan.html
+```
+/home/user/simpladocs-sales/day-planner/simpladocs-day-plan.html
 ```
 
-Then customize it via Python (binary mode to avoid encoding issues) with these changes:
+Copy it to /tmp before modifying (all edits use Python binary mode):
 
-1. **localStorage keys** — bump the date suffix: `'sd-today-apr8-v1'` → `'sd-today-apr9-v1'` (use abbreviated month + day number)
-2. **BLOCKS array** — replace the entire `const BLOCKS = [...]` with today's schedule (find array boundaries by tracking `[`/`]` depth)
-3. **Meds CSS** — already present in template (lime green, `.meds-row`)
-4. **High-priority CSS** — already present in template (purple, `.hi-row`)
-5. **Pre-checks** — inject checked state for any already-completed tasks after the `todayState = {...}` line
-6. **HubSpot Tasks tab** — update from fresh HubSpot pull
-7. **Q2 Rocks tab** — update from `~/Projects/MarkdownBrain/sales/q2-rocks.md`
+```bash
+cp /home/user/simpladocs-sales/day-planner/simpladocs-day-plan.html /tmp/simpladocs-day-plan.html
+```
 
-Write to `~/simpladocs-day-plan.html` and `~/Desktop/simpladocs-day-plan.html` using **binary mode** (`'rb'`/`'wb'`) — never text mode, which causes encoding corruption.
+The template already contains: auto-update banner, carryover feature, Q2 Rocks tab with Coda seeding, Notes tab, water tracker, cherry blossom animation, and all CSS. Do NOT regenerate from scratch — always start from this file and only update the date-specific sections below.
 
-### BLOCKS array format
+## Daily customization (4 things to update)
+
+Make all changes via Python in binary mode (`rb`/`wb`). Never use text mode — it corrupts encoding.
+
+### 1. BLOCKS array
+
+Replace the entire `const BLOCKS = [` array through (but not including) `function getOrderedBlocks()`. Use this pattern:
+
+```python
+blocks_start = html.find(b'const BLOCKS = [')
+fn_start = html.find(b'function getOrderedBlocks()')
+html = html[:blocks_start] + new_blocks + html[fn_start:]
+```
+
+Leave 2 blank lines between the closing `]` and `function getOrderedBlocks()`.
+
+### 2. localStorage today key
+
+Update the `today` key in the `const KEYS = {` object to today's date:
+
+```python
+html = html.replace(b"today: 'sd-today-jun02-v1'", b"today: 'sd-today-jun03-v1'")
+```
+
+Format: `sd-today-[3-letter-month][day]-v1` — e.g. `sd-today-jun03-v1`, `sd-today-jul4-v1`.
+This ensures each day's checked state is separate.
+
+### 3. BUILD_DATE
+
+Update the JS constant used by the auto-update banner:
+
+```python
+html = html.replace(b"const BUILD_DATE = '2026-06-02'", b"const BUILD_DATE = '2026-06-03'")
+```
+
+Format: `YYYY-MM-DD`.
+
+### 4. Header date display
+
+Update the hardcoded date string in the header:
+
+```python
+html = html.replace(b'>Wednesday, June 3<', b'>Thursday, June 4<')
+```
+
+Find the current value by searching for `id="header-date"`.
+
+## BLOCKS array format
 
 ```javascript
 const BLOCKS = [
-  { id:'blockid', title:'Block Title', start:9.0, end:10.5, tasks:[
-    { id:'t-taskid', text:'Task text', note:'Optional note' },
-    { id:'t-taskid2', hi:true, text:'High priority task', note:'Note' },
-    { id:'t-taskid3', meds:true, text:'💊 Take meds', note:'Reminder note' },
+  { id:'prep', title:'Prep for Day', start:9.0, end:9.5, tasks:[
+    { id:'t-meds', meds:true, text:'Meds', note:'Take with water' },
+    { id:'t-prep-cal', text:'Review calendar: [meetings today]', note:'[context]' },
+    { id:'t-prep-slack', text:'Clear Slack + email', note:'[anything urgent in Slack]' },
   ]},
-  { id:'break', title:'Lunch', start:12.0, end:13.0, tasks:[], isBreak:true },
-];
+  { id:'block-id', title:'Block Title', start:9.5, end:11.0, tasks:[
+    { id:'t-taskid', hi:true, text:'High priority task', note:'Context note' },
+    { id:'t-taskid2', med:true, text:'Medium priority task', note:'Context note' },
+    { id:'t-taskid3', text:'Normal task', note:'Context note' },
+  ]},
+  { id:'lunch', title:'Lunch', start:12.0, end:13.0, tasks:[], isBreak:true },
+  { id:'wrapup', title:'Daily Wrap Up', start:16.0, end:17.0, tasks:[
+    { id:'t-wu-hs', med:true, text:'HubSpot EOD: update all touched deals with next steps', note:'Every deal you touched today needs a next step logged before close.' },
+    { id:'t-wu-capture', text:'Update capture notes for tomorrow', note:'Log blockers, incomplete items, anything that surfaced today.' },
+  ]},
+  { id:'gym', title:'Gym', start:18.5, end:20.0, tasks:[], isBreak:true },
+]
 ```
 
-- `hi:true` — purple highlight with ⚡, use for high-priority tasks
-- `meds:true` — lime green highlight, use for meds reminders
-- `isBreak:true` — renders as a break card (no task list)
-- `start`/`end` — decimal hours (e.g. 9.75 = 9:45 AM, 13.5 = 1:30 PM)
+**Task flags:**
+- `hi:true` — hot pink highlight with fire emoji, use for top-priority items (max 4-6 per day)
+- `med:true` — purple highlight, use for important but not urgent items
+- `meds:true` — lime green, only for the meds reminder task
+- `isBreak:true` — renders as a break card with no task list
 
-### Auto-refreshing the HubSpot Tasks tab
+**Scheduling rules:**
+- Day always starts at 9:00 AM
+- First block: "Prep for Day" 9:00-9:30
+- Last work block: "Daily Wrap Up" 4:00-5:00 PM
+- Gym/evening block at 6:30 PM with `isBreak:true`
+- Max 4-5 tasks per block
+- Max 4-6 `hi:true` tasks across the entire day
+- Always include `meds:true` task in Prep block
 
-Every time the day planner is built or rebuilt, fetch fresh HubSpot tasks and replace the static tab. Do this via the HubSpot MCP:
+**Task IDs:** Use short, stable, descriptive IDs (e.g. `t-az-docusign`, `t-spring-sig`). These persist in localStorage so keep them consistent if a task carries over across days.
 
-1. Fetch open tasks assigned to Rachel (owner ID `89333594`, `hs_task_status != COMPLETED`)
-2. Build the full `<div id="tab-hubspot">` block with today's tasks as `<li>` items, grouped by due date if helpful
-3. Replace the existing `<div id="tab-hubspot">...</div>` in the template before writing the file
+## What NOT to update
 
-This replaces the need to manually ask "can you refresh my HubSpot tasks" — it always happens automatically.
+- **HubSpot Tasks tab**: removed from the planner entirely — do not add it back
+- **Q2 Rocks tab**: automatically seeded from Coda state on first load. Only update the seed list in `seedRocksIfEmpty()` when new rocks items are completed in the Coda Q2 Rocks doc.
+- **Carryover feature**: fully automatic. If Rachel clicked "Save for tomorrow" the previous day, a "From yesterday" banner will appear automatically on the next load.
+- **Auto-update banner JS**: already in template, no changes needed beyond updating `BUILD_DATE`.
+- **CSS / JS infrastructure**: all features are baked in. Never regenerate these sections.
 
-### Capture notes bridge
+## Data sources for BLOCKS content
 
-The day planner's Notes tab stores capture notes in browser localStorage (`id="notes-general"`). To bring them into a planning session:
+Pull from these sources to populate today's BLOCKS:
 
-1. At the **start of every planning session**, prompt Rachel: *"Before we start — click the 'Copy capture notes' button in your day planner's Notes tab, then paste anything you want me to factor in."*
-2. The button (purple, top-right of the Capture textarea) copies the notes to clipboard
-3. If Rachel pastes content, treat it as brain-dump input alongside whatever she types — factor it into prioritization and scheduling
-4. If Rachel says "nothing" or skips, proceed without it
+1. **Google Calendar** (`mcp__Google-Calendar__list_events`): today's meetings, fixed commitments, hard time constraints
+2. **Granola** (`mcp__Granola__get_meetings` or `list_meetings`): action items from recent meetings Rachel attended
+3. **HubSpot** (`mcp__HubSpot__get_crm_objects` or `query_crm_data`): open deals with overdue close dates, deals needing follow-up, tasks due today
+4. **Slack** (`mcp__Slack__slack_read_channel`): anything urgent or time-sensitive that came in
+5. **capture-notes.md** (read from repo at `day-planner/capture-notes.md`): carryover items and context from previous days
+6. **rachel-brain.md** (read from repo): Rachel's context, preferences, current focus areas
 
-### After updating, push changes back to GitHub
+## Pushing to GitHub / Vercel
 
-When the day planner is finalized (end of planning session or end of day), push the updated file back to keep GitHub in sync:
+After building, copy back to the repo and push:
 
 ```bash
-cd /tmp && rm -rf simpladocs-sales && gh repo clone racheloarnold-bot/simpladocs-sales simpladocs-sales
-cp ~/Desktop/simpladocs-day-plan.html /tmp/simpladocs-sales/day-planner/simpladocs-day-plan.html
-cd /tmp/simpladocs-sales && git add . && git commit -m "Day planner update — $(date +%Y-%m-%d)" && git push
+cp /tmp/simpladocs-day-plan.html /home/user/simpladocs-sales/day-planner/simpladocs-day-plan.html
+cd /home/user/simpladocs-sales
+git add day-planner/simpladocs-day-plan.html
+git commit -m "Day planner — YYYY-MM-DD"
+git push -u origin main
 ```
+
+Vercel auto-deploys within ~30 seconds of the push. Rachel's bookmarked URL updates automatically — no download needed.
+
+If push is rejected (another process pushed first), run `git fetch origin main && git rebase origin/main` then push again.
+
+## Capture notes bridge
+
+The Notes tab stores capture notes in localStorage (`id="notes-general"`). At the start of a planning session:
+
+1. Prompt Rachel: *"Before we start — click the 'Copy capture notes' button in your day planner's Notes tab, then paste anything you want me to factor in."*
+2. If she pastes content, treat it as brain-dump input alongside calendar and HubSpot data
+3. If she skips, proceed without it
 
 ## Workflow
 
-The full workflow has 7 steps, but the user may jump in at any point. Meet them where they are.
+The full flow has 5 steps. Meet Rachel where she is — she may jump in mid-flow.
 
 ### Step 1: Gather context
+Pull Google Calendar, Granola action items, HubSpot open tasks and deal status, Slack urgents, and capture-notes.md. Read rachel-brain.md for current context.
 
-Pull today's calendar events from Google Calendar. Check all relevant calendars (primary, work, prayer/salat, community calendars like Bay Area Meshk). Note fixed commitments, prayer times, and evening events that create hard deadlines.
-
-### Step 2: Brain-dump
-
-First prompt: *"Before we start — click the 'Copy capture notes' button in your day planner's Notes tab (top-right of the Capture section) and paste anything you want me to factor in."* Then ask what else is on their plate. They may provide a voice-transcribed dump, a typed list, or reference tasks from memory/past conversations. Capture everything without filtering.
+### Step 2: Brain-dump (optional)
+If running interactively: prompt for the capture notes paste, then ask what else is on her plate.
 
 ### Step 3: Prioritize
+Identify the 4-6 most critical items (these get `hi:true`). Everything else slots in by energy/time required.
 
-If the user has many tasks, use the **prioritizer widget** (see `references/prioritizer-widget.md`). This is a two-column interactive tool where tasks can be moved between "Later" and "Today" with time estimates. The widget outputs a structured list via `sendPrompt()`.
+### Step 4: Build BLOCKS
+Lay out the day time-block by time-block starting at 9 AM. Anchor to fixed calendar events. No more than 4-5 tasks per block.
 
-If the user wants to skip the prioritizer (small number of tasks, or they already know what's important), move straight to scheduling.
-
-### Step 4: Check calendar + constraints
-
-Cross-reference tasks against calendar blocks. Identify:
-- Hard commitments (meetings, prayer times, events)
-- Prep tasks that need lead time (e.g., cooking before an event)
-- Dependencies and blockers
-- Best windows for deep work vs. admin
-
-### Step 5: Propose schedule
-
-Present the proposed day as a text plan first. Group tasks into time blocks around fixed events. Flag any conflicts or tight windows. Get user confirmation before building the widget.
-
-### Step 6: Create calendar events (optional)
-
-If the user wants, create Google Calendar events for the planned blocks. Only do this if explicitly requested — many users prefer the checklist alone.
-
-### Step 7: Build the checklist
-
-Build the **interactive checklist widget** (see `references/checklist-widget.md`). This is the core deliverable — a time-blocked, interactive day view with checkboxes, progress tracking, carry-over support, and the ability to add new tasks on the fly.
-
-## Updating mid-day
-
-The user will often come back mid-day with changes:
-- New tasks discovered
-- Tasks completed that need checking off
-- Priorities shifted
-- Blocks that need rearranging
-
-When rebuilding the checklist, **always pre-seed the checked state** from:
-- Tasks confirmed as done in conversation
-- Screenshots showing completed items
-- Prior widget state if discussed
-
-Never make the user re-check things they've already completed.
+### Step 5: Build and push
+Apply the 4 daily customizations (BLOCKS, today key, BUILD_DATE, header date), push to GitHub, confirm push succeeded.
 
 ## Key principles
 
-- **Prioritize first, schedule second.** Don't create calendar events until the task list is settled.
-- **Respect prayer times.** These are non-negotiable fixed points in the schedule.
-- **Flag prep tasks early.** Things like cooking for an event need their time estimated and blocked before deep work gets scheduled.
-- **Be honest about capacity.** If the day is overloaded, say so. Mark stretch goals explicitly.
-- **Carry over gracefully.** Tasks that don't get done aren't failures — they carry over to tomorrow.
+- **Day starts at 9 AM.** Starting earlier makes Rachel feel behind before she starts. If she starts early, being ahead is a bonus.
+- **Max 4-6 hi:true tasks.** More than that and nothing is actually high priority.
+- **Max 4-5 tasks per block.** Blocks with 6+ tasks are stressful, not helpful.
+- **Never re-check completed tasks.** If a task is known done, pre-seed it or leave it off.
+- **Carry over gracefully.** Unchecked tasks from yesterday surface automatically via the carryover banner if Rachel used "Save for tomorrow."
+- **Deal context in notes.** Every deal task should have a `note` field with enough context to act without opening HubSpot.

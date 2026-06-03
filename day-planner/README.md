@@ -4,7 +4,7 @@ Branded interactive day planner for Rachel Arnold, Head of Sales at SimplaDocs.
 
 ## Files
 
-- `simpladocs-day-plan.html` — Single-file interactive day planner. Self-contained HTML/CSS/JS with time-blocked schedule, checkboxes, drag-and-drop, water tracker, HubSpot tasks tab, Q2 Rocks tab, and Notes tab.
+- `simpladocs-day-plan.html` — Single-file interactive day planner. Self-contained HTML/CSS/JS with time-blocked schedule, checkboxes, drag-and-drop, water tracker, carryover banner, Q2 Rocks tab, and Notes tab. Deployed via Vercel for stable URL access.
 
 ## Usage
 
@@ -18,8 +18,7 @@ The JS `const BLOCKS = [...]` array is the source of truth for the day's schedul
 
 - Time-blocked schedule with drag-and-drop reordering
 - Task checkboxes with localStorage persistence
-- HubSpot Tasks tab (manually synced)
-- Q2 Rocks tab with progress tracking
+- Q2 Rocks tab with progress tracking (seeded from Coda)
 - Notes / 1:1 prep tab
 - Water tracker
 - Cherry blossom background animation
