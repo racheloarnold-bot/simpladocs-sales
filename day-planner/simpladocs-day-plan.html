@@ -989,6 +989,9 @@
 <!-- Tabs -->
 <div class="tab-bar">
   <button class="tab-btn active" onclick="switchTab(&#39;today&#39;,this)">Today</button>
+  <button class="tab-btn" onclick="switchTab(&#39;tasks&#39;,this)">
+    Tasks <span class="tab-count" id="tasks-count">11</span>
+  </button>
   <button class="tab-btn" onclick="switchTab(&#39;backlog&#39;,this)">
     Backlog <span class="tab-count" id="backlog-count">20</span>
   </button>
@@ -1025,10 +1028,133 @@
   </div>
 
   <!-- ═══════════════ TAB: HUBSPOT TASKS ═══════════════ -->
-        
+  <div class="tab-panel" id="tab-tasks">
+    <div style="padding:16px 0 8px">
 
+      <!-- TODAY & OVERDUE -->
+      <div class="bl-section">
+        <div class="bl-header" onclick="toggleBl('hs-today-body')" style="background:linear-gradient(90deg,rgba(255,20,147,0.10),rgba(255,20,147,0.04))">
+          <div class="bl-header-left">
+            <div class="bl-num" style="background:linear-gradient(135deg,#FF1493,#c0015d);color:white">!</div>
+            <div class="bl-title">Today &amp; Overdue</div>
+          </div>
+          <span class="bl-badge" id="hs-today-badge">4</span>
+        </div>
+        <div id="hs-today-body">
+          <div class="hs-card">
+            <div class="hs-task-row" data-hsid="hs-conn-bundle-today">
+              <div class="cb" onclick="toggleHs('hs-conn-bundle-today',this)"></div>
+              <div class="hs-content">
+                <div class="hs-text">Send Connection request (8x due today)</div>
+                <div class="hs-meta"><span class="bl-pill bl-pill-high">High</span>&nbsp;<span class="bl-source">Batch all 8 connection request tasks. Due 6/3.</span></div>
+              </div>
+            </div>
+            <div class="hs-task-row" data-hsid="hs-373134859987">
+              <div class="cb" onclick="toggleHs('hs-373134859987',this)"></div>
+              <div class="hs-content">
+                <div class="hs-text">Follow up on email</div>
+                <div class="hs-meta"><span class="bl-pill bl-pill-high">High</span>&nbsp;<span class="bl-source">Due 6/3. Task 373134859987.</span></div>
+              </div>
+            </div>
+            <div class="hs-task-row" data-hsid="hs-372962034406">
+              <div class="cb" onclick="toggleHs('hs-372962034406',this)"></div>
+              <div class="hs-content">
+                <div class="hs-text">Run intro call prep</div>
+                <div class="hs-meta"><span class="bl-pill bl-pill-high">Overdue</span>&nbsp;<span class="bl-source">Was due 6/2. High priority.</span></div>
+              </div>
+            </div>
+            <div class="hs-task-row" data-hsid="hs-370319166192">
+              <div class="cb" onclick="toggleHs('hs-370319166192',this)"></div>
+              <div class="hs-content">
+                <div class="hs-text">Accepted LinkedIn connect: find something to reach out about</div>
+                <div class="hs-meta"><span class="bl-pill bl-pill-high">Overdue</span>&nbsp;<span class="bl-source">Was due 5/20. Pick one thing from their profile and message.</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
+      <!-- TOMORROW -->
+      <div class="bl-section">
+        <div class="bl-header" onclick="toggleBl('hs-tomorrow-body')">
+          <div class="bl-header-left">
+            <div class="bl-num">2</div>
+            <div class="bl-title">Tomorrow (Thu 6/4)</div>
+          </div>
+          <span class="bl-badge" id="hs-tomorrow-badge">4</span>
+        </div>
+        <div id="hs-tomorrow-body">
+          <div class="hs-card">
+            <div class="hs-task-row" data-hsid="hs-conn-bundle-tomorrow">
+              <div class="cb" onclick="toggleHs('hs-conn-bundle-tomorrow',this)"></div>
+              <div class="hs-content">
+                <div class="hs-text">Send Connection request (3x due tomorrow)</div>
+                <div class="hs-meta"><span class="bl-pill bl-pill-high">High</span>&nbsp;<span class="bl-source">Due 6/4. Tasks: 373379398359 + 373291186912 + 373320317655.</span></div>
+              </div>
+            </div>
+            <div class="hs-task-row" data-hsid="hs-373357999858">
+              <div class="cb" onclick="toggleHs('hs-373357999858',this)"></div>
+              <div class="hs-content">
+                <div class="hs-text">Send follow-up email: closed lost AI sequence</div>
+                <div class="hs-meta"><span class="bl-pill bl-pill-high">High</span>&nbsp;<span class="bl-source">Due 6/4. Closed lost re-engagement sequence.</span></div>
+              </div>
+            </div>
+            <div class="hs-task-row" data-hsid="hs-369772575455">
+              <div class="cb" onclick="toggleHs('hs-369772575455',this)"></div>
+              <div class="hs-content">
+                <div class="hs-text">Send resources and video examples of simple and complex Coda setups</div>
+                <div class="hs-meta"><span class="b-badge badge-hs">&#128203; To-do</span>&nbsp;<span class="bl-source">Due 6/4. Chris asked for Coda setup videos and examples.</span></div>
+              </div>
+            </div>
+            <div class="hs-task-row" data-hsid="hs-369772534461">
+              <div class="cb" onclick="toggleHs('hs-369772534461',this)"></div>
+              <div class="hs-content">
+                <div class="hs-text">Provide screenshots: 50-hour vs 150-hour Coda implementations</div>
+                <div class="hs-meta"><span class="b-badge badge-hs">&#128203; To-do</span>&nbsp;<span class="bl-source">Due 6/4. Chris requested implementation comparison screenshots.</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
+      <!-- THIS WEEK -->
+      <div class="bl-section">
+        <div class="bl-header" onclick="toggleBl('hs-week-body')">
+          <div class="bl-header-left">
+            <div class="bl-num">3</div>
+            <div class="bl-title">This Week (6/5-6/8)</div>
+          </div>
+          <span class="bl-badge" id="hs-week-badge">3</span>
+        </div>
+        <div id="hs-week-body">
+          <div class="hs-card">
+            <div class="hs-task-row" data-hsid="hs-source-bundle">
+              <div class="cb" onclick="toggleHs('hs-source-bundle',this)"></div>
+              <div class="hs-content">
+                <div class="hs-text">Source contacts for outreach (7x)</div>
+                <div class="hs-meta"><span class="b-badge badge-hs">&#128203; To-do</span>&nbsp;<span class="bl-source">Due 6/8. 7 tasks. Work in batch.</span></div>
+              </div>
+            </div>
+            <div class="hs-task-row" data-hsid="hs-372312322750">
+              <div class="cb" onclick="toggleHs('hs-372312322750',this)"></div>
+              <div class="hs-content">
+                <div class="hs-text">Send examples and info about available trainings to Tre</div>
+                <div class="hs-meta"><span class="b-badge badge-hs">&#128203; To-do</span>&nbsp;<span class="bl-source">Due 6/8. Blocked on Scott for training materials. Chase Scott first.</span></div>
+              </div>
+            </div>
+            <div class="hs-task-row" data-hsid="hs-361411800815">
+              <div class="cb" onclick="toggleHs('hs-361411800815',this)"></div>
+              <div class="hs-content">
+                <div class="hs-text">Review Gong call</div>
+                <div class="hs-meta"><span class="b-badge badge-med">&#128203; To-do &middot; MED</span>&nbsp;<span class="bl-source">Due 6/11.</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /tab-tasks -->
 
   <!-- ═══════════════ TAB: BACKLOG ═══════════════ -->
   <div class="tab-panel" id="tab-backlog">
@@ -1043,11 +1169,11 @@
       </div>
       <div id="bl-today-body">
         <div class="bl-items">
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-t-rocks-update',this)"></div><div class="bl-content"><div class="bl-text" id="bl-t-rocks-update-t">Update Rocks doc: Rock 4 content + SMART goals</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">Capture note. Open since 5/28. Raise in Steven 1:1 today.</span></div></div></div>
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-t-sops-deal',this)"></div><div class="bl-content"><div class="bl-text" id="bl-t-sops-deal-t">Sales SOPs: write deal strategy section</div><div class="bl-meta"><span class="bl-source">Capture note from 5/28. Background task for wrap-up block if time allows.</span></div></div></div>
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-t-sops-obj',this)"></div><div class="bl-content"><div class="bl-text" id="bl-t-sops-obj-t">Sales SOPs: build objection handling guide + proactive discovery questions</div><div class="bl-meta"><span class="bl-source">Capture note from 5/28. Useful for future call prep.</span></div></div></div>
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-t-map-guide',this)"></div><div class="bl-content"><div class="bl-text" id="bl-t-map-guide-t">Mutual Action Plan guide: finish how-to, when-to-use, what-goes-where</div><div class="bl-meta"><span class="bl-source">Capture note from 5/28. In progress.</span></div></div></div>
-          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-t-mission-values',this)"></div><div class="bl-content"><div class="bl-text" id="bl-t-mission-values-t">Weigh in on SimplaDocs mission statement and values (Daniel asked in Slack)</div><div class="bl-meta"><span class="bl-source">Group DM from Daniel. Coda doc linked. Surface in Steven 1:1.</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-t-rock3',this)"></div><div class="bl-content"><div class="bl-text" id="bl-t-rock3-t">Rock 3: push forward sales playbook docs (deal strategy section)</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">Backlog: This Week, In Progress. Capture note 5/28.</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-t-revmed-prep',this)"></div><div class="bl-content"><div class="bl-text" id="bl-t-revmed-prep-t">Prep for RevMed proposal review call Thursday ($48K)</div><div class="bl-meta"><span class="bl-pill bl-pill-high">High</span><span class="bl-source">Proposal review call likely happening 6/4. Prep scope, pricing, objections today.</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-t-map-guide',this)"></div><div class="bl-content"><div class="bl-text" id="bl-t-map-guide-t">MAP guide: finish how-to, when-to-use, what-goes-where</div><div class="bl-meta"><span class="bl-source">Capture note 5/28. In progress. Core asset for proposal stage.</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-t-rocks-update',this)"></div><div class="bl-content"><div class="bl-text" id="bl-t-rocks-update-t">Update Q2 Rocks doc: Rock 4 content + SMART goals</div><div class="bl-meta"><span class="bl-source">Backlog: This Week. Capture note 5/28.</span></div></div></div>
+          <div class="bl-row"><div class="cb" onclick="toggleBl2('bl-t-sops-obj',this)"></div><div class="bl-content"><div class="bl-text" id="bl-t-sops-obj-t">Sales SOPs: build objection handling guide + proactive discovery questions</div><div class="bl-meta"><span class="bl-source">Capture note 5/28. Useful for future call prep. Background task if time allows.</span></div></div></div>
         </div>
       </div>
     </div>
@@ -1291,10 +1417,10 @@ e.g. AI services one-pager edits — waiting on direction" oninput="saveNotes()"
 // ─── Storage ───────────────────────────────────────
 const KEYS = {
   notes1on1: 'sd-1on1-notes-v1',
-  today: 'sd-today-jun02-v1',
+  today: 'sd-today-jun03-v1',
   tasks: 'sd-tasks-q2-v1',
   rocks: 'sd-rocks-q2-v1',
-  water: 'sd-water-jun02-v1',
+  water: 'sd-water-jun03-v1',
 };
 // Migrate rocks checked state from older keys if new key is empty
 (function migrateRocks() {
@@ -1325,43 +1451,47 @@ save(KEYS.rocks, rocksState);
 
 // ─── Today blocks ───────────────────────────────────
 const BLOCKS = [
-  { id:'prep', title:'Prep for Day', start:9.0, end:9.5, tasks:[
+  { id:'prep', title:'Prep for Day', start:7.5, end:8.0, tasks:[
     { id:'t-meds', meds:true, text:'Meds', note:'Take with water' },
-    { id:'t-prep-cal', text:'Review calendar: Ben Relles 9:30, Steven 1:1 1 PM, DEFTEC intro 1:45 PM', note:'Comren rescheduled, hair appt cancelled. Day is open. Protect the DEFTEC prep window.' },
-    { id:'t-prep-slack', text:'Clear Slack + email', note:'Daniel asked for input on SimplaDocs mission statement and values Coda doc (group DM).' },
+    { id:'t-prep-cal', text:'Review calendar + clear Slack', note:'No external calls today. Full pipeline review day. Protect the deep-work windows.' },
   ]},
-  { id:'ben-relles', title:'Ben Relles <> Scott', start:9.5, end:9.833, tasks:[
-    { id:'t-br-notes', text:'Listen and capture: Make Believe deal context', note:'Possible discovery or general conversation. Scott leads. Log in HubSpot after.' },
+  { id:'hs-sprint', title:'HubSpot Sequence Sprint', start:8.0, end:9.5, tasks:[
+    { id:'t-conn-req', hi:true, text:'Send Connection requests (8x due today)', note:'Batch all 8 connection request tasks. Log as completed in HubSpot after each.' },
+    { id:'t-fu-email', hi:true, text:'Follow up on email (HIGH, due today)', note:'Task 373134859987. Check who it is for and send it.' },
+    { id:'t-intro-prep', hi:true, text:'Run intro call prep (HIGH, overdue from 6/2)', note:'Task 372962034406. Get this done or mark complete if already handled.' },
+    { id:'t-linkedin-accept', med:true, text:'LinkedIn: find something to reach out about for accepted connect (overdue 5/20)', note:'Task 370319166192. Pick one specific thing from their profile and send a message.' },
+    { id:'t-outreach-pace', med:true, text:'Maintain outreach pace: 10+ companies/day', note:'Enroll new contacts in sequences or send manual touches to hit daily pace.' },
   ]},
-  { id:'deal-sprint', title:'Deal Work + Outreach Sprint', start:9.833, end:11.5, tasks:[
-    { id:'t-comren-hs', med:true, text:'Comren: update HubSpot with rescheduled date and new next step', note:'Rescheduled today. Log the new date and what triggered the reschedule.' },
-    { id:'t-alix-fu', med:true, text:'AlixPartners: send follow-up touch ($20K, blank since 5/22)', note:'Deal is going cold. Quick check-in before it fully stalls.' },
-    { id:'t-outreach', med:true, text:'Maintain outreach pace: 10+ companies/day', note:'Sequence sprint: closed-lost AI emails (x2) + connection requests (x2) all due today.' },
+  { id:'pipeline-1', title:'Pipeline Review: Close Plans', start:9.5, end:11.5, tasks:[
+    { id:'t-astra', hi:true, text:'AstraZeneca ($120K): chase DocuSign on SPA + DPA', note:'Close date was 6/1, overdue. SPA and DPA must be signed before SOW goes. #1 revenue risk in pipeline.' },
+    { id:'t-ihh', hi:true, text:'IHH Healthcare ($24.75K): follow up with Luke on meeting request', note:'Self-imposed deadline today (6/3). Luke sent meeting request 5/29. At Verbal Commit. Get a date.' },
+    { id:'t-spring-health', med:true, text:'Spring Health ($52.2K): confirm SOW signature status', note:'Steven sent SOW 6/1. Expecting signature any day. Check with contact or Steven.' },
+    { id:'t-teladoc', med:true, text:'Teladoc Fixed Scope ($22.5K): push for review meeting date', note:'Scott sent revised scope to Anchal 5/29. Need a date on the calendar to review. Verbal Commit, close 6/30.' },
+    { id:'t-alixpartners', med:true, text:'AlixPartners ($20K): define next step (blank since 5/22)', note:'Verbal Commit, close 6/22. No next step documented. Deal going cold.' },
+    { id:'t-meddpicc', med:true, text:'Wednesday pipeline audit: flag MEDDPICC gaps across in-quarter deals', note:'Review each deal. Flag gaps in Metrics, Decision Criteria, Champion, Competition. Document in HubSpot.' },
   ]},
-  { id:'deftec-prep', title:'DEFTEC Call Prep', start:11.5, end:12.0, tasks:[
-    { id:'t-deftec-prep', hi:true, text:'Deep prep: DEFTEC Air Force Scheduling RFI intro (1:45 PM)', note:'Complex, competitive subcontracting deal. Review RFI requirements. Anticipate the competition angle and know your questions.' },
-    { id:'t-ravens-check', med:true, text:'Ravens: reach out to Asheesh Kinra (Jeremy intro already sent)', note:'Intro is done, go reach out directly now. 3 weeks behind in their consultant eval.' },
+  { id:'pipeline-2', title:'Pipeline Review: Mid-Funnel + Follow-ups', start:11.5, end:12.0, tasks:[
+    { id:'t-revmed-confirm', med:true, text:'RevMed ($48K): confirm Thursday proposal review call is still on', note:'Sent confirmation 6/2, no response yet. Follow up today to lock in the 6/4 call.' },
+    { id:'t-deftec-fu', med:true, text:'DEFTEC: send ServiceNow context + resources to Ryan', note:'Action item from 6/2 Granola. Ryan drafting RFI due June 19. Share ServiceNow scheduling workflow notes per Steven.' },
+    { id:'t-ravens-ashish', med:true, text:'Ravens: reach out re: Ashish Kinra intro', note:'Action item from 6/1 Granola. Jeremy to intro via email copying Scott + Rachel. Gauge AI consulting fit on business side.' },
+    { id:'t-fidelity', text:'Fidelity Canada ($34.1K): assess deal health and decide on next move', note:'Jordyn says "feels dead." Two-week grace period started 5/29. Decide: extend or move to stale?' },
   ]},
   { id:'lunch', title:'Lunch', start:12.0, end:13.0, tasks:[], isBreak:true },
-  { id:'steven-11', title:'Steven / Rachel 1:1', start:13.0, end:13.75, tasks:[
-    { id:'t-steven-outbound', text:'Outbound: what is landing, what is not, next experiment', note:'Tuesday focus. Known weak spot. One honest take and one concrete question.' },
-    { id:'t-steven-ai', text:'AI pipeline: Ravens outreach sent, nRhythm Scott blocker ($8,500)', note:'Ravens: reached out to Asheesh per Jeremy intro. nRhythm: still blocked on Scott for materials.' },
-    { id:'t-steven-content', text:'Mission statement + values input (Daniel ask), content strategy', note:'Daniel flagged in Slack. Good item for this 1:1.' },
+  { id:'revmed-prep', title:'RevMed Proposal Review Prep', start:13.0, end:14.5, tasks:[
+    { id:'t-revmed-deep', hi:true, text:'RevMed ($48K): deep prep for Thursday proposal review call', note:'90 min minimum. Review proposal scope and pricing. Anticipate objections on Ongoing Support model. Know your walk-in and walk-out position.' },
+    { id:'t-revmed-questions', med:true, text:'Prep 3-5 discovery questions for the RevMed call', note:'Even on a proposal review, come with questions: what does success look like, who signs, what is the timeline pressure?' },
   ]},
-  { id:'deftec', title:'DEFTEC Intro Call', start:13.75, end:14.25, tasks:[] },
-  { id:'afternoon-sprint', title:'Post-DEFTEC Afternoon Sprint', start:14.25, end:16.0, tasks:[
-    { id:'t-deftec-email', hi:true, text:'DEFTEC: send post-call follow-up email right at 2:15', note:'Send while the call is fresh: what you heard, next steps, action items.' },
-    { id:'t-spring-sig', hi:true, text:'Spring Health: chase final signature ($52,200)', note:'IT security cleared. SOW sent. Expecting signature any day. Follow up.' },
-    { id:'t-deftec-hs', med:true, text:'Update HubSpot: DEFTEC notes + next step', note:'Complex deal. Log competition signals, requirements, who said what.' },
-    { id:'t-revmed-confirm', med:true, text:'RevMed: confirm 6/4 review call is still on ($48K)', note:'Proposal sent 6/1. Call unconfirmed. Quick note to Anthony.' },
-    { id:'t-ihh-email', med:true, text:'IHH Healthcare: draft and send 6/3 follow-up to Luke ($24,750)', note:'Per notes: give it til 6/3. That is tomorrow. Draft today, send tomorrow AM.' },
-    { id:'t-rocks-sops', text:'Rocks doc update or Sales SOPs deal strategy section (deep work, use the time)', note:'Freed afternoon. Capture note items. Pick one and make progress.' },
+  { id:'backlog-work', title:'Backlog + Rock Work', start:14.5, end:16.0, tasks:[
+    { id:'t-rock3-sops', med:true, text:'Rock 3: advance sales playbook docs (deal strategy section)', note:'Backlog: This Week, High, In Progress. Capture note from 5/28. Pick one section and push it forward.' },
+    { id:'t-map-guide', med:true, text:'MAP guide: finish how-to, when-to-use, what-goes-where', note:'Capture note from 5/28. In progress. Core sales asset for proposal stage.' },
+    { id:'t-rocks-update', text:'Update Q2 Rocks doc: Rock 4 content + SMART goals', note:'Backlog item and capture note from 5/28. Keep Rocks doc current.' },
   ]},
-  { id:'wrapup', title:'Daily Wrap Up', start:16.0, end:17.0, tasks:[
+  { id:'wrapup', title:'Daily Wrap-Up', start:16.0, end:17.0, tasks:[
     { id:'t-wu-hs', med:true, text:'HubSpot EOD: update all touched deals with next steps', note:'Every deal you touched today needs a next step logged before close.' },
     { id:'t-wu-capture', text:'Update capture notes for tomorrow', note:'Log blockers, incomplete items, anything that surfaced today.' },
+    { id:'t-sops-wrap', text:'Sales SOPs: objection handling guide (if time allows)', note:'Capture note from 5/28. Background task. Low friction.' },
   ]},
-  { id:'gym', title:'Gym', start:18.5, end:20.0, tasks:[], isBreak:true },
+  { id:'gym', title:'Gym', start:17.0, end:18.5, tasks:[], isBreak:true },
 ]
 
 
@@ -1606,8 +1736,8 @@ function updateRocksCount() {
 }
 
 function updateTasksCount() {
-  const ids=['hs-372962034406','hs-372807962304','hs-372841764543','hs-372922388165','hs-373044740802','hs-370319166192','hs-373115241187','hs-373134859987','hs-369772575455','hs-369772534461','hs-372312322750','hs-source-bundle','hs-361411800815','hs-370160126657','hs-369772570351'];
-  const urgentIds=['hs-372962034406','hs-372807962304','hs-372841764543','hs-372922388165','hs-373044740802'];
+  const ids=['hs-conn-bundle-today','hs-373134859987','hs-372962034406','hs-370319166192','hs-conn-bundle-tomorrow','hs-373357999858','hs-369772575455','hs-369772534461','hs-source-bundle','hs-372312322750','hs-361411800815'];
+  const urgentIds=['hs-conn-bundle-today','hs-373134859987','hs-372962034406','hs-370319166192'];
   const left=ids.filter(id=>!tasksState.checked[id]).length;
   const urgentLeft=urgentIds.filter(id=>!tasksState.checked[id]).length;
   const el=document.getElementById('tasks-count');
@@ -1634,7 +1764,7 @@ function toggleBl2(id, el) {
 loadCarryover();
 }
 function updateBlCounts() {
-  const todayIds = ['bl-t-rocks-update','bl-t-sops-deal','bl-t-sops-obj','bl-t-map-guide','bl-t-mission-values'];
+  const todayIds = ['bl-t-rock3','bl-t-revmed-prep','bl-t-map-guide','bl-t-rocks-update','bl-t-sops-obj'];
   const left = todayIds.filter(id => !todayState.checked[id]).length;
   const badge = document.getElementById('bl-today-badge');
   if(badge) badge.textContent = left;
@@ -1678,7 +1808,7 @@ function syncCheckbox(id, checked) {
   updateTasksCount();
 }
 function initBacklog() {
-  const allIds=['bl-t-rocks-update','bl-t-sops-deal','bl-t-sops-obj','bl-t-map-guide','bl-t-mission-values'];
+  const allIds=['bl-t-rock3','bl-t-revmed-prep','bl-t-map-guide','bl-t-rocks-update','bl-t-sops-obj'];
   allIds.forEach(id=>{
     const row=document.querySelector('[onclick*="'+id+'"]');
     if(row && todayState.checked[id]) row.classList.add('checked');
