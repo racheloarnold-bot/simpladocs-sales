@@ -977,7 +977,7 @@
     <div class="logo-mark">S</div>
     <div class="logo-text">SimplaDocs <span>· Day Planner</span></div>
     <div class="hdiv"></div>
-    <div class="header-date" id="header-date">Wednesday, April 8</div>
+    <div class="header-date" id="header-date">Wednesday, June 3</div>
   </div>
   <div class="header-right">
     <div class="progress-stat" id="progress-stat"><strong>13</strong> of <strong>14</strong> tasks today</div>
@@ -1291,7 +1291,7 @@ e.g. AI services one-pager edits — waiting on direction" oninput="saveNotes()"
 // ─── Storage ───────────────────────────────────────
 const KEYS = {
   notes1on1: 'sd-1on1-notes-v1',
-  today: 'sd-today-jun02-v1',
+  today: 'sd-today-jun03-v1',
   tasks: 'sd-tasks-q2-v1',
   rocks: 'sd-rocks-q2-v1',
   water: 'sd-water-jun02-v1',
@@ -1327,44 +1327,38 @@ save(KEYS.rocks, rocksState);
 const BLOCKS = [
   { id:'prep', title:'Prep for Day', start:9.0, end:9.5, tasks:[
     { id:'t-meds', meds:true, text:'Meds', note:'Take with water' },
-    { id:'t-prep-cal', text:'Review calendar: Ben Relles 9:30, Steven 1:1 1 PM, DEFTEC intro 1:45 PM', note:'Comren rescheduled, hair appt cancelled. Day is open. Protect the DEFTEC prep window.' },
-    { id:'t-prep-slack', text:'Clear Slack + email', note:'Daniel asked for input on SimplaDocs mission statement and values Coda doc (group DM).' },
+    { id:'t-prep-cal', text:'Review calendar, email & Slack', note:'Urgent: Mike DM re Jocio PSA (Portugal holiday tomorrow, push today). Daniel Velho asked for mission statement/values input in group DM.' },
+    { id:'t-prep-hs', text:'HubSpot sequence sprint: clear task queue', note:'Multiple connection requests + HIGH follow-ups due today. Work through enrollment queues, action opens/clicks.' },
   ]},
-  { id:'ben-relles', title:'Ben Relles <> Scott', start:9.5, end:9.833, tasks:[
-    { id:'t-br-notes', text:'Listen and capture: Make Believe deal context', note:'Possible discovery or general conversation. Scott leads. Log in HubSpot after.' },
+  { id:'outreach', title:'Outreach Sprint', start:9.5, end:11.0, tasks:[
+    { id:'t-li-connect', hi:true, text:'LinkedIn connection requests: batch complete (x8 due today)', note:'All HIGH in HubSpot. Quality outreach note on each before sending. Bundle and move through them.' },
+    { id:'t-li-accepted', text:'Accepted LinkedIn connect: find outreach angle & send (overdue 5/20)', note:'Task overdue from 5/20. Find a relevant hook and send a warm message now.' },
+    { id:'t-followup-email', text:'Follow up on email (HIGH, due today)', note:'HIGH task due today in HubSpot. Check the associated deal record for context before sending.' },
+    { id:'t-outreach-pace', med:true, text:'Maintain outreach pace: 10+ companies/day', note:'Sequence sprint + LinkedIn connects count. Log all sends in HubSpot.' },
   ]},
-  { id:'deal-sprint', title:'Deal Work + Outreach Sprint', start:9.833, end:11.5, tasks:[
-    { id:'t-comren-hs', med:true, text:'Comren: update HubSpot with rescheduled date and new next step', note:'Rescheduled today. Log the new date and what triggered the reschedule.' },
-    { id:'t-alix-fu', med:true, text:'AlixPartners: send follow-up touch ($20K, blank since 5/22)', note:'Deal is going cold. Quick check-in before it fully stalls.' },
-    { id:'t-outreach', med:true, text:'Maintain outreach pace: 10+ companies/day', note:'Sequence sprint: closed-lost AI emails (x2) + connection requests (x2) all due today.' },
+  { id:'pipeline', title:'Pipeline Review: Wednesday Deep Dive', start:11.0, end:12.5, tasks:[
+    { id:'t-az-docusign', hi:true, text:'AstraZeneca: push Docusign SPA & DPA forward ($120K)', note:'Close date was 6/1, overdue. SPA/DPA must be signed before SOW goes to AZ. Check #astrazeneca-internal: Scott asked Jesus/Jordyn to facilitate an intro email from Rachel. What is the current blocker? Follow up with Scott today.' },
+    { id:'t-ihh-luke', hi:true, text:'IHH Healthcare: reach out to Luke TODAY, deadline ($24,750)', note:'Close date was 6/2. Notes say "give it til 6/3" and today is 6/3. Luke sent a meeting request. Respond or follow up now. Do not let this slip another day.' },
+    { id:'t-pipeline-sweep', hi:true, text:'Wednesday pipeline review: full MEDDPICC sweep', note:'Triage all open deals for MEDDPICC gaps, stale next steps, and close date risk. Key deals: Teladoc Fixed Scope (scope review date, close 6/30, $22.5K), Movement Strategy (email Brianne to reschedule, close 6/30), Comren (rescheduled to 6/9, $15K), nRhythm (blocked on Scott for training materials, $8.5K).' },
+    { id:'t-movement', text:'Movement Strategy: email Brianne to reschedule (last attempt 5/20)', note:'Close date 6/30. One ask, one proposed time. Keep it short.' },
   ]},
-  { id:'deftec-prep', title:'DEFTEC Call Prep', start:11.5, end:12.0, tasks:[
-    { id:'t-deftec-prep', hi:true, text:'Deep prep: DEFTEC Air Force Scheduling RFI intro (1:45 PM)', note:'Complex, competitive subcontracting deal. Review RFI requirements. Anticipate the competition angle and know your questions.' },
-    { id:'t-ravens-check', med:true, text:'Ravens: reach out to Asheesh Kinra (Jeremy intro already sent)', note:'Intro is done, go reach out directly now. 3 weeks behind in their consultant eval.' },
+  { id:'lunch', title:'Lunch', start:12.5, end:13.5, tasks:[], isBreak:true },
+  { id:'deal-work', title:'Deal Work + Rock 3', start:13.5, end:15.5, tasks:[
+    { id:'t-dragonfly-prep', med:true, text:'Dragonfly Therapy: build call prep for 6/8 discovery call ($15K)', note:'Discovery/implementation planning call is Monday 6/8. Build prep doc: BANT gaps to close, MEDDPICC questions, proposed agenda. Allow 30-45 min.' },
+    { id:'t-rock3-sops', med:true, text:'Rock 3: Sales playbook, deal strategy + objection handling section', note:'In progress, This Week priority. Pick up where you left off 5/7: deal strategy section, objection handling guide, proactive questions to surface objections.' },
+    { id:'t-chris-resources', text:'Send Chris Coda resources: video examples + 50hr vs 150hr screenshots (due 6/4)', note:'Two HubSpot tasks due tomorrow. Chris asked for videos and screenshots comparing simple vs complex Coda implementations. Prep and send today.' },
   ]},
-  { id:'lunch', title:'Lunch', start:12.0, end:13.0, tasks:[], isBreak:true },
-  { id:'steven-11', title:'Steven / Rachel 1:1', start:13.0, end:13.75, tasks:[
-    { id:'t-steven-outbound', text:'Outbound: what is landing, what is not, next experiment', note:'Tuesday focus. Known weak spot. One honest take and one concrete question.' },
-    { id:'t-steven-ai', text:'AI pipeline: Ravens outreach sent, nRhythm Scott blocker ($8,500)', note:'Ravens: reached out to Asheesh per Jeremy intro. nRhythm: still blocked on Scott for materials.' },
-    { id:'t-steven-content', text:'Mission statement + values input (Daniel ask), content strategy', note:'Daniel flagged in Slack. Good item for this 1:1.' },
-  ]},
-  { id:'deftec', title:'DEFTEC Intro Call', start:13.75, end:14.25, tasks:[] },
-  { id:'afternoon-sprint', title:'Post-DEFTEC Afternoon Sprint', start:14.25, end:16.0, tasks:[
-    { id:'t-deftec-email', hi:true, text:'DEFTEC: send post-call follow-up email right at 2:15', note:'Send while the call is fresh: what you heard, next steps, action items.' },
-    { id:'t-spring-sig', hi:true, text:'Spring Health: chase final signature ($52,200)', note:'IT security cleared. SOW sent. Expecting signature any day. Follow up.' },
-    { id:'t-deftec-hs', med:true, text:'Update HubSpot: DEFTEC notes + next step', note:'Complex deal. Log competition signals, requirements, who said what.' },
-    { id:'t-revmed-confirm', med:true, text:'RevMed: confirm 6/4 review call is still on ($48K)', note:'Proposal sent 6/1. Call unconfirmed. Quick note to Anthony.' },
-    { id:'t-ihh-email', med:true, text:'IHH Healthcare: draft and send 6/3 follow-up to Luke ($24,750)', note:'Per notes: give it til 6/3. That is tomorrow. Draft today, send tomorrow AM.' },
-    { id:'t-rocks-sops', text:'Rocks doc update or Sales SOPs deal strategy section (deep work, use the time)', note:'Freed afternoon. Capture note items. Pick one and make progress.' },
+  { id:'admin', title:'Admin + Tomorrow Prep', start:15.5, end:16.0, tasks:[
+    { id:'t-closed-lost-seq', text:'Send closed lost AI sequence email (due tomorrow 6/4)', note:'HIGH task in HubSpot due 6/4. Get ahead of it today while you have the window.' },
+    { id:'t-intro-call-prep', text:'Run intro call prep (overdue from 6/2)', note:'HIGH HubSpot task due 6/2, overdue. Check which deal this is attached to and complete prep.' },
+    { id:'t-mission-values', text:'Weigh in on SimplaDocs mission statement & values (Daniel Velho Slack ask)', note:'Daniel asked via Slack group DM on 6/2. Quick review of the Coda doc and drop your thoughts.' },
   ]},
   { id:'wrapup', title:'Daily Wrap Up', start:16.0, end:17.0, tasks:[
-    { id:'t-wu-hs', med:true, text:'HubSpot EOD: update all touched deals with next steps', note:'Every deal you touched today needs a next step logged before close.' },
+    { id:'t-wu-hs', med:true, text:'HubSpot EOD: update all touched deals with next steps', note:'AZ, IHH, Dragonfly, pipeline review deals: every deal you touched today needs a next step logged.' },
     { id:'t-wu-capture', text:'Update capture notes for tomorrow', note:'Log blockers, incomplete items, anything that surfaced today.' },
   ]},
-  { id:'gym', title:'Gym', start:18.5, end:20.0, tasks:[], isBreak:true },
+  { id:'gym', title:'Gym', start:17.0, end:18.5, tasks:[], isBreak:true },
 ]
-
-
 
 function getOrderedBlocks() {
   const order = todayState.blockOrder;
@@ -2380,7 +2374,7 @@ createPetals();
 // createGlitter(); // disabled
 
 // -- Auto-update check --
-const BUILD_DATE = '2026-06-02';
+const BUILD_DATE = '2026-06-03';
 const _REPO = 'racheloarnold-bot/simpladocs-sales';
 const _FILE = 'day-planner/simpladocs-day-plan.html';
 
