@@ -2466,12 +2466,43 @@ function loadCarryover() {
   try {
     const data = JSON.parse(localStorage.getItem('sd-carryover') || 'null');
     if (!data || data.date === BUILD_DATE || !data.items || !data.items.length) return;
+
+    // Build block title → block lookup
+    const titleToBlock = {};
+    getOrderedBlocks().forEach(b => { if (!b.isBreak) titleToBlock[b.title] = b; });
+
+    // Build set of all task IDs already in today's plan (avoid duplicates)
+    const existingIds = new Set();
+    getOrderedBlocks().forEach(b => allTasks(b).forEach(t => existingIds.add(t.id)));
+
+    // Inject items into their matching blocks; collect orphans for the banner
+    const orphans = [];
+    let injected = false;
+    data.items.forEach(item => {
+      if (existingIds.has(item.id)) return; // already in today's plan, skip
+      const block = item.block && titleToBlock[item.block];
+      if (block) {
+        if (!todayState.added) todayState.added = {};
+        const newId = 'co-' + item.id;
+        if (!todayState.added[newId]) {
+          todayState.added[newId] = { id: newId, text: item.text, blockId: block.id, hi: !!item.hi, med: !!item.med };
+          injected = true;
+        }
+      } else {
+        orphans.push(item); // no matching block — show in banner
+      }
+    });
+
+    if (injected) save(KEYS.today, todayState);
+
+    // Only show banner if there are orphaned items that couldn't be placed
+    if (!orphans.length) return;
     const banner = document.getElementById('carryover-banner');
     const list   = document.getElementById('carryover-list');
     const dateEl = document.getElementById('co-banner-date');
     if (!banner || !list) return;
     if (dateEl) dateEl.textContent = '(' + data.date + ')';
-    list.innerHTML = data.items.map(item =>
+    list.innerHTML = orphans.map(item =>
       '<div class="co-row" style="cursor:default">'
       + '<div class="co-cb"></div>'
       + '<span class="co-text" style="color:var(--text-2);text-decoration:none">'
