@@ -1331,6 +1331,12 @@ knownCheckedRocks.forEach(id => {
 });
 save(KEYS.rocks, rocksState);
 
+// Pre-seed completed backlog items so they stay checked across day resets
+['bl-t-map-guide','bl-t-mission-values'].forEach(id => {
+  todayState.checked[id] = true;
+});
+save(KEYS.today, todayState);
+
 // ─── Today blocks ───────────────────────────────────
 const BLOCKS = [
   { id:'prep', title:'Prep for Day', start:8.75, end:9.0, tasks:[
@@ -1644,7 +1650,7 @@ function toggleBl2(id, el) {
 loadCarryover();
 }
 function updateBlCounts() {
-  const todayIds = ['bl-t-rocks-update','bl-t-sops-deal','bl-t-sops-obj','bl-t-map-guide','bl-t-mission-values'];
+  const todayIds = ['bl-t-rocks-update','bl-t-sops-deal','bl-t-sops-obj'];
   const left = todayIds.filter(id => !todayState.checked[id]).length;
   const badge = document.getElementById('bl-today-badge');
   if(badge) badge.textContent = left;
@@ -2480,7 +2486,13 @@ function loadCarryover() {
     let injected = false;
     data.items.forEach(item => {
       if (existingIds.has(item.id)) return; // already in today's plan, skip
-      const block = item.block && titleToBlock[item.block];
+      const block = item.block && (
+        titleToBlock[item.block] ||
+        Object.values(titleToBlock).find(b =>
+          b.title.toLowerCase().includes(item.block.toLowerCase()) ||
+          item.block.toLowerCase().includes(b.title.toLowerCase())
+        )
+      );
       if (block) {
         if (!todayState.added) todayState.added = {};
         const newId = 'co-' + item.id;

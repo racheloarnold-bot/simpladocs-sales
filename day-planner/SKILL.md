@@ -147,11 +147,14 @@ If push is rejected (another process pushed first), run `git fetch origin main &
 
 ## Capture notes bridge
 
-The Notes tab stores capture notes in localStorage (`id="notes-general"`). At the start of a planning session:
+The Notes tab stores capture notes in the browser's localStorage — it cannot be read server-side. The `day-planner/capture-notes.md` file in this repo is the bridge between sessions.
 
-1. Prompt Rachel: *"Before we start — click the 'Copy capture notes' button in your day planner's Notes tab, then paste anything you want me to factor in."*
-2. If she pastes content, treat it as brain-dump input alongside calendar and HubSpot data
-3. If she skips, proceed without it
+**How to keep it in sync:**
+- At the end of each planning session, write any outstanding capture items (tasks not yet in the plan, things to remember tomorrow) to `capture-notes.md` and commit it.
+- When building the next day's plan, read `capture-notes.md` as a data source alongside Calendar, HubSpot, Granola, and Slack.
+- If running interactively, also prompt: *"Anything else on your plate I should factor in?"* — treat the answer as additional brain-dump input.
+
+**Important:** `capture-notes.md` is the source of truth for the automated morning run. If it's stale, capture notes won't be reflected. Keep it updated.
 
 ## Workflow
 
