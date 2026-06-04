@@ -180,3 +180,7 @@ Apply the 4 daily customizations (BLOCKS, today key, BUILD_DATE, header date), p
 - **Never re-check completed tasks.** If a task is known done, pre-seed it or leave it off.
 - **Carry over gracefully.** Unchecked tasks from yesterday surface automatically via the carryover banner if Rachel used "Save for tomorrow."
 - **Deal context in notes.** Every deal task should have a `note` field with enough context to act without opening HubSpot.
+- **Every external client call gets a follow-up block.** The block immediately after any external client call must always include three tasks: (1) send the follow-up email, (2) log next steps in HubSpot, (3) confirm call notes are saved in HubSpot. No exceptions.
+- **Deal scan is a single daily habit, not a task list.** One task in the Prep block: "Deal scan: review HubSpot, confirm next steps are current." Do not break this out deal-by-deal unless a specific deal has a genuine action item due today.
+- **Don't create tasks for things already done.** Check HubSpot next steps before adding any deal-related task. If it's already logged and actioned, leave it off.
+- **Pipeline review blocks don't need task lists.** If there's a weekly pipeline review on the calendar, don't populate it with deal-by-deal tasks — that's what the meeting is for. Only flag a deal in that block if there's something Rachel specifically needs to raise or decide.
