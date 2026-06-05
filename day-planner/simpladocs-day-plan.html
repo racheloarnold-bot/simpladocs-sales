@@ -1349,6 +1349,7 @@ const BLOCKS = [
   { id:'hs-sprint', title:'HubSpot Sequences Sprint', start:9.5, end:10.0, tasks:[
     { id:'t-hs-seq', hi:true, text:'Sequence sprint: clear queue + work opens/clicks', note:'Daily priority — front-load before meetings start at 10am.' },
     { id:'t-az-mike', med:true, text:'Email Mike: does AZ June 9 meeting proceed?', note:"Pedro\'s signature still outstanding. Training can\'t start until all parties sign. Clarify before Tue." },
+    { id:'t-nrhythm-scott', text:'Slack Scott: nRhythm AI training materials ready to send?', note:'Waiting on Scott for example training materials. Once confirmed, send to nRhythm team. Follow-up meeting July 16 @ 12pm PT.' },
   ]},
   { id:'jordyn-1on1', title:'Jordyn / Rachel 1:1', start:10.0, end:10.5, tasks:[
     { id:'t-jordyn-meet', text:'Jordyn / Rachel 1:1 — Google Meet', note:'meet.google.com/hvq-niqs-coe · recurring internal sync' },
@@ -1362,10 +1363,11 @@ const BLOCKS = [
     { id:'t-ai-sync-join', text:'AI Services Sync — Google Meet', note:'meet.google.com/yzp-itcx-vpn · Scott, Jordyn, Steven, Jesus' },
   ]},
   { id:'lunch', title:'Lunch', start:12.0, end:13.0, tasks:[], isBreak:true },
-  { id:'eow-wrap', title:'EOW Wrap + Teladoc Proposal', start:13.0, end:16.0, tasks:[
-    { id:'t-teladoc-proposal', hi:true, text:'Teladoc: revise proposal to <$16k — send before weekend', note:'Sync Monday 6/8 at 12:30pm PDT with Anchal + Kaley. Revise from $22.5k: define exact # discovery calls per deliverable, integrate QC into each line item (not separate), eliminate or minimize flexible hours bucket. Hard deadline: June 23 SOP monthly update for SVPs.' },
-    { id:'t-dragonfly-prep', med:true, text:'Dragonfly Therapy: prep for Monday 6/8 discovery/implementation call', note:'$15k deal, close 7/16. Prep BANT/MEDDPICC questions for discovery + implementation planning call. Confirmation email already sent.' },
-    { id:'t-photon-case-study', med:true, text:'Photon Commerce: get Documint case study for 6/10 meeting', note:'Rescheduled to 6/10. Chris waiting. Need Documint case study + SimplaDocs package info. Partnership angle: Coda Pack dev, $1K/mo API min.' },
+  { id:'eow-wrap', title:'EOW Wrap + Deliverables', start:13.0, end:16.0, tasks:[
+    { id:'t-referral-onepager', hi:true, text:'Referral program one-pager — DUE TODAY', note:"Steven reviews Monday 1:1. Referral = 5 hrs credit per closed deal. Audience: TCB (70-yr-old, gas/energy, old school) — present on a call, not as a PDF. Keep it simple and visual." },
+    { id:'t-teladoc-proposal', hi:true, text:'Teladoc: revise proposal to <$16k — send before weekend', note:'Sync Monday 6/8 at 12:30pm PDT with Anchal + Kaley. Revise from $22.5k: define exact # discovery calls per deliverable, integrate QC into each line item, eliminate or minimize flexible hours bucket. Hard deadline: June 23 SOP monthly update for SVPs.' },
+    { id:'t-photon-case-study', med:true, text:'Photon Commerce: source Documint case study + send to Chris', note:'Meeting rescheduled to 6/10. Overdue since 5/29 — Chris is waiting. Need Documint case study + SimplaDocs package info. Partnership angle: Coda Pack dev, $1K/mo API min. Get this out today.' },
+    { id:'t-dragonfly-prep', med:true, text:'Dragonfly Therapy: prep for Monday 6/8 discovery/implementation call', note:'$15k deal, close 7/16. Prep BANT/MEDDPICC questions. Confirmation email already sent.' },
     { id:'t-hs-pipeline-eow', text:'Pipeline EOW: update all open deal next steps in HubSpot', note:'Touch every deal from this week: RevMed, Teladoc, Dragonfly, Comren, Movement Strategy.' },
   ]},
   { id:'wrapup', title:'Daily Wrap Up', start:16.0, end:17.0, tasks:[
