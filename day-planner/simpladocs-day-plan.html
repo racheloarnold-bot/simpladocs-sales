@@ -977,7 +977,7 @@
     <div class="logo-mark">S</div>
     <div class="logo-text">SimplaDocs <span>· Day Planner</span></div>
     <div class="hdiv"></div>
-    <div class="header-date" id="header-date">Thursday, June 4</div>
+    <div class="header-date" id="header-date">Friday, June 5</div>
   </div>
   <div class="header-right">
     <div class="progress-stat" id="progress-stat"><strong>13</strong> of <strong>14</strong> tasks today</div>
@@ -1291,7 +1291,7 @@ e.g. AI services one-pager edits — waiting on direction" oninput="saveNotes()"
 // ─── Storage ───────────────────────────────────────
 const KEYS = {
   notes1on1: 'sd-1on1-notes-v1',
-  today: 'sd-today-jun04-v1',
+  today: 'sd-today-jun05-v1',
   tasks: 'sd-tasks-q2-v1',
   rocks: 'sd-rocks-q2-v1',
   water: 'sd-water-jun02-v1',
@@ -1339,48 +1339,47 @@ save(KEYS.today, todayState);
 
 // ─── Today blocks ───────────────────────────────────
 const BLOCKS = [
-  { id:'prep', title:'Prep for Day', start:8.75, end:9.0, tasks:[
+  { id:'prep', title:'Prep for Day', start:9.0, end:9.5, tasks:[
     { id:'t-meds', meds:true, text:'Meds', note:'Take with water' },
-    { id:'t-deal-scan', text:'Deal scan: HubSpot open deals, confirm next steps current', note:'Two client calls today -- Teladoc @ 12 (Scott leading), RevMed @ 3. Steven & Hugo OOO.' },
-    { id:'t-prep-slack', text:'Clear Slack + email', note:'Check for anything from Teladoc or RevMed before the day starts.' },
+    { id:'t-prep-cal', text:'Review calendar: Jordyn 1:1 10am · AI Sync 11:30am · AZ KT 1pm · EOW wrap 2pm · gym 5pm', note:'All internal today — no external client calls.' },
+    { id:'t-prep-slack', text:'Clear Slack + email', note:'Jordyn posted process brainstorm in #general-biz worth reading. Alberto OOO today (prepping for Saturday talk).' },
+    { id:'t-deal-scan', text:'Deal scan: HubSpot — confirm next steps are current', note:'Hot: Teladoc (proposal due today), RevMed (scope edits due EOD), Dragonfly (call Mon 6/8), Comren (call Tue 6/9).' },
+    { id:'t-client-updates', hi:true, text:'Submit weekly client updates — due noon today', note:"Required by noon PDT every Friday per Jordyn\'s recurring calendar reminder. Get this done during prep." },
   ]},
-  { id:'pipeline', title:'Weekly Pipeline Review', start:9.0, end:9.75, tasks:[] },
-  { id:'hs-sprint', title:'HubSpot Sprint', start:9.75, end:11.0, tasks:[
-    { id:'t-hs-seq', hi:true, text:'Sequence sprint -- clear queue, work opens/clicks', note:'Front-load before calls start.' },
-    { id:'t-photon', med:true, text:'Send Photon Commerce: Documint case study + SimplaDocs package info', note:'Overdue from 5/29. Chris is waiting. Partnership play -- Coda Pack dev, $1K/mo API minimum.' },
+  { id:'hs-sprint', title:'HubSpot Sequences Sprint', start:9.5, end:10.0, tasks:[
+    { id:'t-hs-seq', hi:true, text:'Sequence sprint: clear queue + work opens/clicks', note:'Daily priority — front-load before meetings start at 10am.' },
+    { id:'t-az-mike', med:true, text:'Email Mike: does AZ June 9 meeting proceed?', note:"Pedro\'s signature still outstanding. Training can\'t start until all parties sign. Clarify before Tue." },
+    { id:'t-ihh-luke', med:true, text:'Email Luke (IHH Healthcare): check in', note:'Close date 6/2 passed. Next step was to give til 6/3, then reach out. Past due — ping today.' },
   ]},
-  { id:'work-sprint', title:'Work Sprint', start:11.0, end:12.0, tasks:[
-    { id:'t-referral', med:true, text:'Referral program one-pager', note:"Due Friday. Steven reviews on Monday 1:1 (OOO today). TCB: 70-yr-old, gas/energy, old school. 5 hrs credit per closed referral. Present on a call, not as a PDF." },
-    { id:'t-nrhythm', text:"Check with Scott tomorrow: nRhythm AI training materials ready to send?", note:"Waiting on Scott. Once confirmed, send to Tre's team while he's traveling. Follow-up meeting July 16 @ 12 PM PT." },
+  { id:'jordyn-1on1', title:'Jordyn / Rachel 1:1', start:10.0, end:10.5, tasks:[
+    { id:'t-jordyn-meet', text:'Jordyn / Rachel 1:1 — Google Meet', note:'meet.google.com/hvq-niqs-coe · recurring internal sync' },
   ]},
-  { id:'teladoc-call', title:'Teladoc: Proposal Follow-up', start:12.0, end:12.5, tasks:[
-    { id:'t-tdoc-call', text:'SimplaDocs <> Teladoc | Proposal Follow-up', note:'12:00 PM -- Microsoft Teams. Scott is leading (re-did proposal/scope). Anchal Ahuja + Kaley Simon. $22.5K, close date 6/30.' },
+  { id:'revmed-scope', title:'RevMed Scope Edits', start:10.5, end:11.5, tasks:[
+    { id:'t-revmed-edits', hi:true, text:'RevMed scope doc edits — DUE EOD TODAY', note:"From yesterday\'s call: remove launch date refs → \'Aug 31 commercial data hub\'; update 100+ → 278+ users; reframe pain points around launch of commercial/medical info systems team + cohesive collaboration surface; add centralized data warehouse hub. Anthony gets VP Justin Ryan approval Mon, sync Tue 6/9 1–1:30pm." },
+    { id:'t-revmed-confirm', med:true, text:'Email Anthony: scope doc updated, ready for Mon review', note:'He meets VP on Monday — needs to see our edits first. Reference the hidden table page for his input.' },
+    { id:'t-ai-sync-prep', text:'Quick prep for AI Services Sync at 11:30am', note:'Internal all-hands. Anything from RevMed AI angle or DEFTEC worth raising?' },
   ]},
-  { id:'teladoc-fu', title:'Teladoc Follow-up', start:12.5, end:13.5, tasks:[
-    { id:'t-tdoc-email', hi:true, text:'Send Teladoc follow-up email', note:'Recap, confirm next steps and timeline. $22.5K, close date 6/30.' },
-    { id:'t-tdoc-hs-steps', text:'Log Teladoc next steps in HubSpot', note:'Update deal record with what was discussed and committed next step.' },
-    { id:'t-tdoc-notes', text:'Confirm Teladoc call notes saved in HubSpot', note:'HubSpot Notetaker or Granola -- push to HubSpot.' },
+  { id:'ai-sync', title:'AI Services Sync', start:11.5, end:12.0, tasks:[
+    { id:'t-ai-sync-join', text:'AI Services Sync — Google Meet', note:'meet.google.com/yzp-itcx-vpn · Scott, Jordyn, Steven, Jesus' },
   ]},
-  { id:'lunch', title:'Lunch', start:13.5, end:14.5, tasks:[], isBreak:true },
-  { id:'revmed-prep', title:'RevMed Prep', start:14.5, end:15.0, tasks:[
-    { id:'t-rm-prep', hi:true, text:'Prep for RevMed scope review (3 PM)', note:"Anthony Kopec (akopec@revmed.com). $48K over 4 months. August FDA launch for Daraxonrasib -- date is fixed. #1 priority: Databricks/Unity Catalog integration. Frame as what comes OFF Anthony's plate. Justin (boss) is watching." },
-    { id:'t-rm-scope', med:true, text:'Review RevMed MVP scope', note:'MVP: news/announcements, project dashboards, getting started page, Databricks data catalog, tech docs, PowerBI. Pre-Aug = lighter data governance site. CTO reviews SOW #2.' },
+  { id:'lunch', title:'Lunch', start:12.0, end:13.0, tasks:[], isBreak:true },
+  { id:'az-kt', title:'AZ Knowledge Transfer', start:13.0, end:14.0, tasks:[
+    { id:'t-az-kt-join', text:'AZ Knowledge Transfer — Google Meet', note:'meet.google.com/stx-vajq-nvo · Scott, Jordyn, Alberto, Jesus · internal team KT' },
+    { id:'t-az-kt-log', text:'Log AZ KT notes + any scope changes to HubSpot after', note:"Waiting on Pedro\'s signature. Note any blockers or updates surfaced in this session." },
   ]},
-  { id:'revmed-call', title:'RevMed: Scope Review', start:15.0, end:15.5, tasks:[
-    { id:'t-rm-call', text:'SimplaDocs <> RevMed | Scope Review (Anthony Kopec)', note:'3:00 PM -- Google Meet. Scott attending. $48K, close date 6/22.' },
-  ]},
-  { id:'revmed-fu', title:'RevMed Follow-up', start:15.5, end:16.0, tasks:[
-    { id:'t-rm-email', hi:true, text:'Send RevMed follow-up email', note:'Scope confirmation, next steps, SOW timeline. August is not moveable -- close date 6/22.' },
-    { id:'t-rm-hs-steps', text:'Log RevMed next steps in HubSpot', note:'Update deal record with scope decisions and committed next step.' },
-    { id:'t-rm-notes', text:'Confirm RevMed call notes saved in HubSpot', note:'HubSpot Notetaker or Granola -- push to HubSpot.' },
+  { id:'eow-wrap', title:'EOW Wrap + Teladoc Proposal', start:14.0, end:16.0, tasks:[
+    { id:'t-teladoc-proposal', hi:true, text:'Teladoc: revise proposal to <$16k — send before weekend', note:'Sync Monday 6/8 at 12:30pm PDT with Anchal + Kaley. Revise from $22.5k: define exact # discovery calls per deliverable, integrate QC into each line item (not separate), eliminate or minimize flexible hours bucket. Hard deadline: June 23 SOP monthly update for SVPs.' },
+    { id:'t-dragonfly-prep', med:true, text:'Dragonfly Therapy: prep for Monday 6/8 discovery/implementation call', note:'$15k deal, close 7/16. Prep BANT/MEDDPICC questions for discovery + implementation planning call. Confirmation email already sent.' },
+    { id:'t-photon-case-study', med:true, text:'Photon Commerce: get Documint case study for 6/10 meeting', note:'Rescheduled to 6/10. Chris waiting. Need Documint case study + SimplaDocs package info. Partnership angle: Coda Pack dev, $1K/mo API min.' },
+    { id:'t-hs-pipeline-eow', text:'Pipeline EOW: update all open deal next steps in HubSpot', note:'Touch every deal from this week: RevMed, Teladoc, Dragonfly, Comren, IHH Healthcare, Movement Strategy.' },
   ]},
   { id:'wrapup', title:'Daily Wrap Up', start:16.0, end:17.0, tasks:[
-    { id:'t-wu-hs', med:true, text:'HubSpot EOD: update all deals touched today', note:'Every deal touched today needs a next step logged before close.' },
-    { id:'t-wu-capture', text:'Update capture notes for tomorrow', note:'Log: Dragonfly prep (6/8 Monday call), referral one-pager status, open items from today.' },
+    { id:'t-wu-hs', med:true, text:'HubSpot EOD: update all touched deals with next steps', note:'Every deal you touched today needs a next step logged before close.' },
+    { id:'t-wu-monday', med:true, text:'Set up Monday: Teladoc proposal sent ✓ · Dragonfly prep ✓ · Comren 6/9 AI call note', note:'Confirm Teladoc revised proposal went out before weekend. Check Dragonfly confirmation in HubSpot. Flag Comren 6/9 for Mon planner.' },
+    { id:'t-wu-capture', text:'Update capture notes for next week', note:'Log blockers + incomplete items. Still pending from 5/28: Sales SOPs (deal strategy section, objection handling guide), MAP guide, Rocks doc Rock 4 SMART goals.' },
   ]},
   { id:'gym', title:'Gym', start:17.0, end:18.5, tasks:[], isBreak:true },
 ]
-
 
 function getOrderedBlocks() {
   const order = todayState.blockOrder;
@@ -2396,7 +2395,7 @@ createPetals();
 // createGlitter(); // disabled
 
 // -- Auto-update check --
-const BUILD_DATE = '2026-06-04';
+const BUILD_DATE = '2026-06-05';
 const _REPO = 'racheloarnold-bot/simpladocs-sales';
 const _FILE = 'day-planner/simpladocs-day-plan.html';
 
