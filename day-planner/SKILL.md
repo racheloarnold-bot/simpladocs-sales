@@ -131,15 +131,21 @@ Pull from these sources to populate today's BLOCKS:
 
 ## Pushing to GitHub / Vercel
 
+**Always push to `main`.** Vercel is wired to `main` — pushing to any other branch will NOT trigger a deploy and Rachel's URL will not update.
+
 After building, copy back to the repo and push:
 
 ```bash
 cp /tmp/simpladocs-day-plan.html /home/user/simpladocs-sales/day-planner/simpladocs-day-plan.html
 cd /home/user/simpladocs-sales
-git add day-planner/simpladocs-day-plan.html
+git add day-planner/simpladocs-day-plan.html day-planner/capture-notes.md
 git commit -m "Day planner — YYYY-MM-DD"
+git checkout main
+git merge <current-branch>   # if session is on a feature branch, merge to main first
 git push -u origin main
 ```
+
+If the session is on a feature branch (e.g. `claude/...`), always merge to `main` before pushing. Never leave the day planner only on a feature branch.
 
 Vercel auto-deploys within ~30 seconds of the push. Rachel's bookmarked URL updates automatically — no download needed.
 
