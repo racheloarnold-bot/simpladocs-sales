@@ -1341,7 +1341,7 @@ save(KEYS.today, todayState);
 const BLOCKS = [
   { id:'prep', title:'Prep for Day', start:9.0, end:9.5, tasks:[
     { id:'t-meds', meds:true, text:'Meds', note:'Take with water' },
-    { id:'t-prep-cal', text:'Review calendar: Jordyn 1:1 10am · AI Sync 11:30am · AZ KT 1pm · EOW wrap 2pm · gym 5pm', note:'All internal today — no external client calls.' },
+    { id:'t-prep-cal', text:'Review calendar: Jordyn 1:1 10am · AI Sync 11:30am · EOW wrap 1pm · gym 5pm', note:'AZ KT cancelled — 1pm slot is free. All internal today, no external client calls.' },
     { id:'t-prep-slack', text:'Clear Slack + email', note:'Jordyn posted process brainstorm in #general-biz worth reading. Alberto OOO today (prepping for Saturday talk).' },
     { id:'t-deal-scan', text:'Deal scan: HubSpot — confirm next steps are current', note:'Hot: Teladoc (proposal due today), RevMed (scope edits due EOD), Dragonfly (call Mon 6/8), Comren (call Tue 6/9).' },
     { id:'t-client-updates', hi:true, text:'Submit weekly client updates — due noon today', note:"Required by noon PDT every Friday per Jordyn\'s recurring calendar reminder. Get this done during prep." },
@@ -1349,7 +1349,6 @@ const BLOCKS = [
   { id:'hs-sprint', title:'HubSpot Sequences Sprint', start:9.5, end:10.0, tasks:[
     { id:'t-hs-seq', hi:true, text:'Sequence sprint: clear queue + work opens/clicks', note:'Daily priority — front-load before meetings start at 10am.' },
     { id:'t-az-mike', med:true, text:'Email Mike: does AZ June 9 meeting proceed?', note:"Pedro\'s signature still outstanding. Training can\'t start until all parties sign. Clarify before Tue." },
-    { id:'t-ihh-luke', med:true, text:'Email Luke (IHH Healthcare): check in', note:'Close date 6/2 passed. Next step was to give til 6/3, then reach out. Past due — ping today.' },
   ]},
   { id:'jordyn-1on1', title:'Jordyn / Rachel 1:1', start:10.0, end:10.5, tasks:[
     { id:'t-jordyn-meet', text:'Jordyn / Rachel 1:1 — Google Meet', note:'meet.google.com/hvq-niqs-coe · recurring internal sync' },
@@ -1363,15 +1362,11 @@ const BLOCKS = [
     { id:'t-ai-sync-join', text:'AI Services Sync — Google Meet', note:'meet.google.com/yzp-itcx-vpn · Scott, Jordyn, Steven, Jesus' },
   ]},
   { id:'lunch', title:'Lunch', start:12.0, end:13.0, tasks:[], isBreak:true },
-  { id:'az-kt', title:'AZ Knowledge Transfer', start:13.0, end:14.0, tasks:[
-    { id:'t-az-kt-join', text:'AZ Knowledge Transfer — Google Meet', note:'meet.google.com/stx-vajq-nvo · Scott, Jordyn, Alberto, Jesus · internal team KT' },
-    { id:'t-az-kt-log', text:'Log AZ KT notes + any scope changes to HubSpot after', note:"Waiting on Pedro\'s signature. Note any blockers or updates surfaced in this session." },
-  ]},
-  { id:'eow-wrap', title:'EOW Wrap + Teladoc Proposal', start:14.0, end:16.0, tasks:[
+  { id:'eow-wrap', title:'EOW Wrap + Teladoc Proposal', start:13.0, end:16.0, tasks:[
     { id:'t-teladoc-proposal', hi:true, text:'Teladoc: revise proposal to <$16k — send before weekend', note:'Sync Monday 6/8 at 12:30pm PDT with Anchal + Kaley. Revise from $22.5k: define exact # discovery calls per deliverable, integrate QC into each line item (not separate), eliminate or minimize flexible hours bucket. Hard deadline: June 23 SOP monthly update for SVPs.' },
     { id:'t-dragonfly-prep', med:true, text:'Dragonfly Therapy: prep for Monday 6/8 discovery/implementation call', note:'$15k deal, close 7/16. Prep BANT/MEDDPICC questions for discovery + implementation planning call. Confirmation email already sent.' },
     { id:'t-photon-case-study', med:true, text:'Photon Commerce: get Documint case study for 6/10 meeting', note:'Rescheduled to 6/10. Chris waiting. Need Documint case study + SimplaDocs package info. Partnership angle: Coda Pack dev, $1K/mo API min.' },
-    { id:'t-hs-pipeline-eow', text:'Pipeline EOW: update all open deal next steps in HubSpot', note:'Touch every deal from this week: RevMed, Teladoc, Dragonfly, Comren, IHH Healthcare, Movement Strategy.' },
+    { id:'t-hs-pipeline-eow', text:'Pipeline EOW: update all open deal next steps in HubSpot', note:'Touch every deal from this week: RevMed, Teladoc, Dragonfly, Comren, Movement Strategy.' },
   ]},
   { id:'wrapup', title:'Daily Wrap Up', start:16.0, end:17.0, tasks:[
     { id:'t-wu-hs', med:true, text:'HubSpot EOD: update all touched deals with next steps', note:'Every deal you touched today needs a next step logged before close.' },
