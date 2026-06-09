@@ -1,22 +1,24 @@
-# Capture Notes — June 8, 2026 (updated)
+# Capture Notes — June 9, 2026 (updated)
 
-## Today's deliverables
-- **Referral one-pager** — due TOMORROW 6/9. Steven reviews at 1:1. 5 hrs credit per closed deal. TCB audience: 70-yr-old gas/energy, old school. Present on a call, not PDF. Keep simple + visual.
-- **Teladoc revised proposal** — send today (call moved to 6/9). Under $16k, detailed specs. Hard deadline June 23 SOP for SVPs.
-- **RevMed scope edits** — finish today so Anthony can take to Justin Ryan (VP) for approval. Follow-up sync 6/9 1pm.
+## Today's calls (outcomes to log before EOD)
+- **AstraZeneca** — Landing Page Review 9am (Joao Corrêa + Jocio Morais). Pedro SPA/DPA signature still outstanding — check with Mike on status.
+- **Comren** — AI Discovery 11:15am with Kris Amstutz. $15k opp. Log MEDDPICC notes + next steps in HubSpot.
+- **Teladoc** — Regroup & Next Steps 12:30pm (Kaley Simon + Anchal Ahuja). Fixed scope <$16k. Close 6/19. SVP SOP deadline June 23.
+- **RevMed** — Proposal Regroup 1pm (Anthony Kopec). $48k, close 6/22. Anthony taking scope to Justin Ryan (VP) for signature.
 
-## Calls today
-- **Dragonfly Therapy** — intro call 10am with Danielle Haggerty ($15k, Quip→Coda + automation).
+## Carry into tomorrow (June 10)
+- **Photon Commerce** — call 6/10 with Chris. Need Documint case study + SimplaDocs package info. Close 6/27.
+- **TCB referral one-pager** — if not completed today, finish first thing. Share with Steven.
+- **AstraZeneca** — follow up with Jocio on Pedro contract/SPA+DPA status if not resolved today.
+- **Teladoc** — post-call: confirm close path to 6/19; what did Kaley/Anchal say on the regroup?
+- **RevMed** — post-call: confirm Anthony has what he needs; when does Justin sign?
+- **Comren** — post-call: what were MEDDPICC gaps? What's next step / timeline?
 
-## Deals to carry into tomorrow
-- **Teladoc** — proposal sent today, review call 6/9. Close 6/19. Hard deadline June 23 SOP for SVPs.
-- **RevMed** — 6/9 1pm sync with Anthony, $48k close 6/22. Justin Ryan signs.
-- **Comren (Kris)** — AI discovery call 6/9. $15k. Prep from today's capture.
-- **AZ (AstraZeneca)** — Pedro signature on SPA/DPA outstanding. June 9 meeting status unclear (check with Mike). $120k.
-- **Photon Commerce** — call 6/10. Need Documint case study + SimplaDocs package info for Chris.
-- **Movement Strategy** — Brianne ghosting. Scott may be able to unblock.
-- **nRhythm** — waiting on Scott for AI training materials. Next meeting July 16 @ 12pm PT.
-- **Baltimore Ravens (Asheesh)** — no response to 6/3 bump. Give more time.
+## Upcoming anchors
+- **Photon Commerce call** — 6/10 (tomorrow)
+- **Dragonfly technical discovery w/ Scott** — 6/15 at 1:00 PM ET (Microsoft Teams)
+- **Dragonfly proposal review** — 6/17 at 11:30 AM ET with Danielle & Amanda
+- **nRhythm** — next meeting July 16 @ 12pm PT. Waiting on Scott for AI training materials.
 
 ## Ongoing / In Progress
 - Sales SOPs doc: deal strategy section + objection handling guide
@@ -25,5 +27,11 @@
 - AI services slide deck (from 6/5 AI Sync): FOMO/implementation/expansion framework
 - Handoff template (from Jordyn 1:1): Aptitude Eight model, lives in Coda + HubSpot links
 
+## Deals on hold / monitoring
+- **Movement Strategy (Brianne)** — final reminder sent 6/8. Closing out if no response by EOW.
+- **Baltimore Ravens (Asheesh)** — no response to 6/3 bump. Give more time.
+- **Myodetox** — waiting on Sabrina; presented to senior mgmt, TBD.
+- **IHH Healthcare** — Luke sent meeting request 5/29. Close date passed. Monitor.
+
 ---
-_Last updated: June 8, 2026_
+_Last updated: June 9, 2026_
