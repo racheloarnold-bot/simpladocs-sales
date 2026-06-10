@@ -977,7 +977,7 @@
     <div class="logo-mark">S</div>
     <div class="logo-text">SimplaDocs <span>· Day Planner</span></div>
     <div class="hdiv"></div>
-    <div class="header-date" id="header-date">Thursday, June 4</div>
+    <div class="header-date" id="header-date">Wednesday, June 10</div>
   </div>
   <div class="header-right">
     <div class="progress-stat" id="progress-stat"><strong>13</strong> of <strong>14</strong> tasks today</div>
@@ -1291,7 +1291,7 @@ e.g. AI services one-pager edits — waiting on direction" oninput="saveNotes()"
 // ─── Storage ───────────────────────────────────────
 const KEYS = {
   notes1on1: 'sd-1on1-notes-v1',
-  today: 'sd-today-jun04-v1',
+  today: 'sd-today-jun10-v1',
   tasks: 'sd-tasks-q2-v1',
   rocks: 'sd-rocks-q2-v1',
   water: 'sd-water-jun02-v1',
@@ -1339,46 +1339,49 @@ save(KEYS.today, todayState);
 
 // ─── Today blocks ───────────────────────────────────
 const BLOCKS = [
-  { id:'prep', title:'Prep for Day', start:8.75, end:9.0, tasks:[
+  { id:'prep', title:'Prep for Day', start:9.0, end:9.25, tasks:[
     { id:'t-meds', meds:true, text:'Meds', note:'Take with water' },
-    { id:'t-deal-scan', text:'Deal scan: HubSpot open deals, confirm next steps current', note:'Two client calls today -- Teladoc @ 12 (Scott leading), RevMed @ 3. Steven & Hugo OOO.' },
-    { id:'t-prep-slack', text:'Clear Slack + email', note:'Check for anything from Teladoc or RevMed before the day starts.' },
+    { id:'t-prep-scan', text:'Deal scan: review HubSpot, confirm next steps current', note:'Teladoc, AZ, RevMed, Comren all active -- check for anything that moved overnight' },
+    { id:'t-prep-slack', text:'Clear Slack + email', note:'Jordyn OOO next week (Cotswolds) -- watch for coverage asks or handoffs' },
+    { id:'t-prep-cal', text:'Review calendar: Pipeline Review 9:15 then Photon Commerce partnerships at 11am', note:'Steven also on Photon call; confirm Meet links are working' },
   ]},
-  { id:'pipeline', title:'Weekly Pipeline Review', start:9.0, end:9.75, tasks:[] },
-  { id:'hs-sprint', title:'HubSpot Sprint', start:9.75, end:11.0, tasks:[
-    { id:'t-hs-seq', hi:true, text:'Sequence sprint -- clear queue, work opens/clicks', note:'Front-load before calls start.' },
-    { id:'t-photon', med:true, text:'Send Photon Commerce: Documint case study + SimplaDocs package info', note:'Overdue from 5/29. Chris is waiting. Partnership play -- Coda Pack dev, $1K/mo API minimum.' },
+  { id:'pipeline-review', title:'Weekly Pipeline Review', start:9.25, end:9.75, tasks:[
+    { id:'t-pr-teladoc', text:'Raise Teladoc: yes/no expected by Friday -- where does Scott think this lands?', note:'Revised to sub-$16K; Anchal reviewing with Kaley + Microsoft auth answer; June 23 SVP deadline is hard' },
+    { id:'t-pr-revmed', text:'Raise RevMed: Tuesday call moved -- is Scott free Friday to reschedule?', note:'$48K; call moved last minute 6/9; need to lock in before it drifts' },
   ]},
-  { id:'work-sprint', title:'Work Sprint', start:11.0, end:12.0, tasks:[
-    { id:'t-referral', med:true, text:'Referral program one-pager', note:"Due Friday. Steven reviews on Monday 1:1 (OOO today). TCB: 70-yr-old, gas/energy, old school. 5 hrs credit per closed referral. Present on a call, not as a PDF." },
-    { id:'t-nrhythm', text:"Check with Scott tomorrow: nRhythm AI training materials ready to send?", note:"Waiting on Scott. Once confirmed, send to Tre's team while he's traveling. Follow-up meeting July 16 @ 12 PM PT." },
+  { id:'seq-photon-prep', title:'Sequence Sprint + Photon Prep', start:9.75, end:11.0, tasks:[
+    { id:'t-seq-sprint', med:true, text:'HubSpot sequence sprint -- clear 7 overdue tasks: LinkedIn x4, email follow-ups x3', note:'Tasks due 6/9-6/10 from active sequences; work through queue in order' },
+    { id:'t-photon-prep', text:'Photon Commerce: pull Documint case study + build partnership talking points', note:"Chris @ photoncommerce.com + Steven on call; understand what partnership means to them and what mutual value looks like" },
+    { id:'t-ravens-bump', text:'Ravens: bump Asheesh Kinra -- short keep-in-touch note', note:'Last contact 6/3, no response; 7 consultants in active eval; stay top of mind without being pushy' },
   ]},
-  { id:'teladoc-call', title:'Teladoc: Proposal Follow-up', start:12.0, end:12.5, tasks:[
-    { id:'t-tdoc-call', text:'SimplaDocs <> Teladoc | Proposal Follow-up', note:'12:00 PM -- Microsoft Teams. Scott is leading (re-did proposal/scope). Anchal Ahuja + Kaley Simon. $22.5K, close date 6/30.' },
+  { id:'photon-call', title:'Photon Commerce | Partnerships Call', start:11.0, end:11.5, tasks:[
+    { id:'t-photon-call', text:'Photon Commerce partnerships call -- Chris + Steven, 11am-11:30am', note:'Explore partnership angle; reference Documint case study; clarify what they want from this relationship and what mutual value looks like' },
   ]},
-  { id:'teladoc-fu', title:'Teladoc Follow-up', start:12.5, end:13.5, tasks:[
-    { id:'t-tdoc-email', hi:true, text:'Send Teladoc follow-up email', note:'Recap, confirm next steps and timeline. $22.5K, close date 6/30.' },
-    { id:'t-tdoc-hs-steps', text:'Log Teladoc next steps in HubSpot', note:'Update deal record with what was discussed and committed next step.' },
-    { id:'t-tdoc-notes', text:'Confirm Teladoc call notes saved in HubSpot', note:'HubSpot Notetaker or Granola -- push to HubSpot.' },
+  { id:'photon-followup', title:'Photon Commerce Post-Call', start:11.5, end:12.0, tasks:[
+    { id:'t-photon-email', hi:true, text:'Send follow-up email to Chris @ Photon Commerce', note:'Recap call, confirm next steps, outline any partnership framework discussed' },
+    { id:'t-photon-hs', med:true, text:'Log next steps in HubSpot -- Photon Commerce deal', note:'Update deal stage, notes, and next step with timeline' },
+    { id:'t-photon-notes', text:'Confirm Granola notes are captured for HubSpot', note:'Standard post-call hygiene' },
   ]},
-  { id:'lunch', title:'Lunch', start:13.5, end:14.5, tasks:[], isBreak:true },
-  { id:'revmed-prep', title:'RevMed Prep', start:14.5, end:15.0, tasks:[
-    { id:'t-rm-prep', hi:true, text:'Prep for RevMed scope review (3 PM)', note:"Anthony Kopec (akopec@revmed.com). $48K over 4 months. August FDA launch for Daraxonrasib -- date is fixed. #1 priority: Databricks/Unity Catalog integration. Frame as what comes OFF Anthony's plate. Justin (boss) is watching." },
-    { id:'t-rm-scope', med:true, text:'Review RevMed MVP scope', note:'MVP: news/announcements, project dashboards, getting started page, Databricks data catalog, tech docs, PowerBI. Pre-Aug = lighter data governance site. CTO reviews SOW #2.' },
+  { id:'lunch', title:'Lunch', start:12.0, end:13.0, tasks:[], isBreak:true },
+  { id:'quick-deals', title:'Quick Deal Actions', start:13.0, end:14.0, tasks:[
+    { id:'t-revmed-reschedule', hi:true, text:'RevMed: send reschedule to Anthony -- target Friday', note:"$48K; Tuesday call moved last minute 6/9; confirm Scott is free; don't let this drift" },
+    { id:'t-teladoc-nudge', hi:true, text:'Teladoc: nudge Anchal -- confirm revised proposal received + yes/no by Friday', note:"$22.5K; revised to sub-$16K; June 23 deadline for SVP monthly update is hard; decision must happen this week" },
+    { id:'t-ihh-bump', text:'IHH: follow up with Luke -- one more nudge', note:"$24.75K; close date was 6/2; last update 5/29; either get a meeting or update the stage" },
   ]},
-  { id:'revmed-call', title:'RevMed: Scope Review', start:15.0, end:15.5, tasks:[
-    { id:'t-rm-call', text:'SimplaDocs <> RevMed | Scope Review (Anthony Kopec)', note:'3:00 PM -- Google Meet. Scott attending. $48K, close date 6/22.' },
+  { id:'comren-az', title:'Comren SOW + AZ Prep', start:14.0, end:15.5, tasks:[
+    { id:'t-comren-sow', hi:true, text:'Comren: build & send SOW to Kris + follow-up email', note:"Should have gone 6/9; AI strategy discovery on 6/19; $15K; include ask for Lars + Jose team emails; ~90 min" },
+    { id:'t-az-prep', hi:true, text:'AZ: build talking points for Friday call with Pedro & team', note:"$120K deal; PSA has not been executed -- understand why before the call; reopening; call Friday 6/13" },
   ]},
-  { id:'revmed-fu', title:'RevMed Follow-up', start:15.5, end:16.0, tasks:[
-    { id:'t-rm-email', hi:true, text:'Send RevMed follow-up email', note:'Scope confirmation, next steps, SOW timeline. August is not moveable -- close date 6/22.' },
-    { id:'t-rm-hs-steps', text:'Log RevMed next steps in HubSpot', note:'Update deal record with scope decisions and committed next step.' },
-    { id:'t-rm-notes', text:'Confirm RevMed call notes saved in HubSpot', note:'HubSpot Notetaker or Granola -- push to HubSpot.' },
+  { id:'content-sprint', title:'Content Sprint', start:15.5, end:16.0, tasks:[
+    { id:'t-ai-deck', med:true, text:'AI services slide deck -- first cut or outline', note:'Rachel owns this from AI Services Sync 6/5; same format as Coda deck; showcase results by use-case tier (FOMO to implementation to scale)' },
+    { id:'t-sop-deal', text:'Sales SOP: deal strategy section -- pick it up where you left off', note:'In capture notes since 5/28; objection handling guide also needed' },
   ]},
   { id:'wrapup', title:'Daily Wrap Up', start:16.0, end:17.0, tasks:[
-    { id:'t-wu-hs', med:true, text:'HubSpot EOD: update all deals touched today', note:'Every deal touched today needs a next step logged before close.' },
-    { id:'t-wu-capture', text:'Update capture notes for tomorrow', note:'Log: Dragonfly prep (6/8 Monday call), referral one-pager status, open items from today.' },
+    { id:'t-wu-hs', med:true, text:'HubSpot EOD: update all touched deals with next steps', note:'Photon Commerce, RevMed, Teladoc, Comren, AZ, IHH -- every deal you touched needs a next step logged before close.' },
+    { id:'t-wu-movement', text:"Movement Strategy: if still no Brianne by EOD -- mark to close Friday", note:'Final reminder sent 6/8; EOW is Fri 6/13; do not leave open indefinitely' },
+    { id:'t-wu-capture', text:'Update capture notes for tomorrow', note:'Log blockers, incomplete items; note Dragonfly Therapy prep needed before 6/15 tech discovery with Scott' },
   ]},
-  { id:'gym', title:'Gym', start:17.0, end:18.5, tasks:[], isBreak:true },
+  { id:'gym', title:'Gym', start:18.5, end:20.0, tasks:[], isBreak:true },
 ]
 
 
@@ -2396,7 +2399,7 @@ createPetals();
 // createGlitter(); // disabled
 
 // -- Auto-update check --
-const BUILD_DATE = '2026-06-04';
+const BUILD_DATE = '2026-06-10';
 const _REPO = 'racheloarnold-bot/simpladocs-sales';
 const _FILE = 'day-planner/simpladocs-day-plan.html';
 
