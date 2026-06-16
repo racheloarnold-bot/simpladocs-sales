@@ -977,7 +977,7 @@
     <div class="logo-mark">S</div>
     <div class="logo-text">SimplaDocs <span>· Day Planner</span></div>
     <div class="hdiv"></div>
-    <div class="header-date" id="header-date">Monday, June 15</div>
+    <div class="header-date" id="header-date">Tuesday, June 16</div>
   </div>
   <div class="header-right">
     <div class="progress-stat" id="progress-stat"><strong>13</strong> of <strong>14</strong> tasks today</div>
@@ -1291,7 +1291,7 @@ e.g. AI services one-pager edits — waiting on direction" oninput="saveNotes()"
 // ─── Storage ───────────────────────────────────────
 const KEYS = {
   notes1on1: 'sd-1on1-notes-v1',
-  today: 'sd-today-jun15-v1',
+  today: 'sd-today-jun16-v1',
   tasks: 'sd-tasks-q2-v1',
   rocks: 'sd-rocks-q2-v1',
   water: 'sd-water-jun02-v1',
@@ -1339,37 +1339,44 @@ save(KEYS.today, todayState);
 
 // ─── Today blocks ───────────────────────────────────
 const BLOCKS = [
-  { id:'prep', title:'Prep for Day', start:9.0, end:10.0, tasks:[
+  { id:'prep', title:'Prep for Day', start:9.0, end:9.25, tasks:[
     { id:'t-meds', meds:true, text:'Meds', note:'Take with water' },
-    { id:'t-deal-scan', med:true, text:'Deal scan: review HubSpot, confirm next steps are current', note:'AZ call tomorrow ($120k) - any weekend updates? Teladoc - any word from Anchal?' },
-    { id:'t-dfly-prep', hi:true, text:'Dragonfly prep (10am call): review 6/8 intro notes - confirm Scott has Quip doc access from Danielle', note:'MS Teams 1PM ET. Scope: HR tracker migration, position tracker forms, ~30-60hrs. Scott is on the call.' },
-    { id:'t-az-call-prep', hi:true, text:'AZ 6/16 prep: review Pedro/Gary PSA strategy (Granola 6/12 notes) - confirm attendees + agenda', note:'$120k close 6/19. Gary Rosenfeld needs to sign. Key angle: Pedro may think PSA covers all AZ teams - raise proactively.' },
-    { id:'t-slack-email', text:'Clear Slack + email', note:'Jordyn OOO all week - WhatsApp only for emergencies. Scott/Daniel/Steven covering.' },
+    { id:'t-nrhythm-fu', med:true, text:'nRhythm follow-up: send Donna recap email + log HubSpot next step + confirm Granola notes saved', note:'Call was 8:15\u201345am w/ Donna Chan (nrhrhythm.co) + Scott. Goal of meeting was unclear going in \u2014 check with Scott on outcome before logging next step.' },
+    { id:'t-deal-scan', med:true, text:'Deal scan: AZ, Teladoc, Dragonfly all flagged \u2014 confirm status before deep work', note:'AZ: Gary no longer at AZ, Jo\u00e3o is new POC. Teladoc: no Anchal response since 6/12. Dragonfly: 6/15 discovery cancelled, Wed call scope TBD.' },
+    { id:'t-slack-email', text:'Clear Slack + email', note:'Jordyn OOO all week (Cotswolds). Alberto OOO today. Check #sales-strategy for anything from Scott or Steven.' },
   ]},
-  { id:'dragonfly-disc', title:'Dragonfly - Technical Discovery', start:10.0, end:11.0, tasks:[], isBreak:true },
-  { id:'dragonfly-fu', title:'Dragonfly - Follow-Up', start:11.0, end:11.5, tasks:[
-    { id:'t-dfly-email', hi:true, text:'Send follow-up email to Danielle: confirm scope, action items, next steps to proposal review Wed 6/17', note:'One ask: confirm they can access shared Coda links before Wed. Reference 7/1 kickoff target.' },
-    { id:'t-dfly-hs', med:true, text:'Log call notes + next steps in HubSpot', note:'Confirmed scope, open questions, proposal timeline. Flag any hour-range changes from 30-60hr estimate.' },
-    { id:'t-dfly-granola', text:'Save Granola notes; flag key scope items for proposal build', note:'Anything that shifts scope or pricing goes straight into proposal outline.' },
+  { id:'dev-1on1s', title:'Dev 1:1s \u2014 Connor \u00b7 Mark \u00b7 Felipe', start:9.25, end:12.0, tasks:[
+    { id:'t-connor', text:'Connor @ 9:00 AM \u2014 current delivery + client context', note:'connor@simpladocs.com | Note starts at 9:00am (Prep block is the 8:45\u201359 gap after nRhythm). What is he building? Any client intel useful for pipeline?' },
+    { id:'t-mark', text:'Mark @ 10:00 AM \u2014 current delivery + client context', note:'mark@simpladocs.com | Same lens as Connor \u2014 delivery status, any enterprise account intel.' },
+    { id:'t-felipe', text:'Felipe @ 11:00 AM \u2014 context + priorities', note:'farnhold738@gmail.com | Not in HubSpot. Clarify relationship + role during call.' },
   ]},
-  { id:'grammarly-eval', title:'Partner Portal Evaluation - Grammarly', start:11.5, end:12.0, tasks:[], isBreak:true },
-  { id:'scott-1on1', title:'Scott / Rachel 1:1', start:12.0, end:12.75, tasks:[
-    { id:'t-az-align', hi:true, text:'AZ 6/16 strategy: Pedro/Gary - who escalates if Gary needs to sign?', note:'$120k close 6/19. Time-critical. PSA must move this week.' },
-    { id:'t-pipeline-inv', med:true, text:'Pipeline review invite: add Jordyn + Jesus - confirm mandatory attendance', note:'From 3-month review. Rachel owns pipeline review; team must attend.' },
-    { id:'t-revmed-timing', med:true, text:'RevMed: confirm if 6/16 call w/ Anthony is on or moved to 6/19', note:'Anthony at a conference. HubSpot note says scheduling 6/19 - clarify so tomorrow is accounted for.' },
-    { id:'t-nrhythm', text:'nRhythm: where are the AI training materials? Donna booked 6/16 - what is that call?', note:'$8.5k. Waiting on Scott for materials. Clarify Donna call goal before tomorrow.' },
+  { id:'hot-deals', title:'Deep Work \u2014 Hot Deals', start:12.0, end:13.5, tasks:[
+    { id:'t-az-triage', hi:true, text:'AstraZeneca: Gary no longer at AZ \u2014 determine path to 6/19 close', note:'HubSpot (6/15): Gary out, GBS restructuring. Jo\u00e3o = new POC (joao.correa@astrazeneca.com). Pedro call was supposed to happen today but not on calendar. Decide: email Jo\u00e3o directly? Surface "other teams" PSA concern with Pedro first? PSA signature is blocking the Vivu launch. $120k, close date 6/19 = 3 days.' },
+    { id:'t-teladoc-esc', hi:true, text:'Teladoc: text Anchal on cell \u2014 escalate via Kaley Simon if no reply by 2pm', note:'Anchal Ahuja has not responded since 6/12. Text cell number (pull from HubSpot contact record). If silent by 2pm, loop Kaley Simon (kaley.simon@teladochealth.com). $15,875, close date 6/19 = 3 days.' },
+    { id:'t-dragon-clarify', hi:true, text:'Dragonfly: email Danielle NOW \u2014 is Wed 6/17 call still proposal review or repurposed for discovery?', note:'6/15 tech discovery cancelled last-min. HubSpot: "asking if Wed call can be repurposed for discovery." Call is 8:30am PT Wed \u2014 need to know tonight to build the right thing. dhaggerty@dragonflytherapy.com. $13,750, SOW by 6/30.' },
+    { id:'t-gram-prep', med:true, text:'Grammarly Partner Portal Eval prep: Kristin Kernodle + Brent Seth context + talking points', note:'No deal in HubSpot yet \u2014 this is a partner channel opportunity. Kristin organized (kristin.kernodle@grammarly.com). Prep: SimplaDocs Grammarly delivery history, partner value prop. Call at 1:30pm.' },
+    { id:'t-comren-checkin', med:true, text:'Comren: nudge Kris \u2014 SOW review status, Thursday call still on?', note:'HubSpot (6/15): "Kris reviewing today." Quick Slack or email check-in. Discovery call 6/19 with Kris, Lars, Jose. $15k, close 7/3.' },
   ]},
-  { id:'wrapup', title:'Daily Wrap Up', start:13.0, end:14.0, tasks:[
-    { id:'t-wu-hs', med:true, text:'HubSpot EOD: update all touched deals with next steps', note:'Every deal you touched today needs a next step logged before close.' },
-    { id:'t-wu-grammarly', text:'Log Grammarly Partner Portal Eval notes - next steps?', note:'Capture key takeaways from 11:30am meeting while fresh.' },
-    { id:'t-wu-capture', text:'Update capture notes for tomorrow', note:'Log blockers, incomplete items, anything that surfaced today.' },
+  { id:'grammarly-call', title:'Grammarly \u2014 Partner Portal Evaluation', start:13.5, end:14.0, tasks:[
+    { id:'t-gram-call', hi:true, text:'CALL @ 1:30pm \u2014 Kristin Kernodle + Brent Seth + Scott (Google Meet)', note:'Kristin organized. Partner portal evaluation \u2014 evaluating SimplaDocs as a Grammarly partner. Lead with delivery track record + partner value prop.' },
+    { id:'t-gram-notes', text:'Live notes in Granola during call', note:'Enhance notes after the call and push to HubSpot.' },
   ]},
-  { id:'deal-push', title:'Deal Push + Deep Work', start:14.0, end:17.0, tasks:[
-    { id:'t-dfly-proposal', hi:true, text:'Build Dragonfly proposal in Coda: scope, hours, pricing (30-60hr range, $8k+)', note:'Allow 90+ min. Proposal review is Wed 6/17 at 8:30am PT. Use today discovery notes.' },
-    { id:'t-teladoc-fu', hi:true, text:'Teladoc: no word from Anchal - text cell now. Yes/no is overdue from Friday', note:'$15,875 close 6/19. If no response by EOD, escalate via Kaley Simon.' },
-    { id:'t-comren-sow', med:true, text:'Comren: confirm SOW was sent - follow up with Kris if no reply yet', note:'$15k close 7/3. Discovery call 6/19 with Kris, Lars, Jose. SOW should already be out.' },
-    { id:'t-photon-prep', med:true, text:'Photon Commerce 6/18 prep: pull Coda pack keyword search data + lead list for Chris', note:'Thursday follow-up. Chris needs search volume by keyword (e.g. "automated accounts payable") to present internally.' },
-    { id:'t-sales-post', text:'Weekly sales strategy post in internal channel', note:'From 3-month review. Publish for team visibility this week.' },
+  { id:'gram-fu-1on1', title:'Grammarly Follow-up + Scott 1:1', start:14.0, end:14.75, tasks:[
+    { id:'t-gram-email', hi:true, text:'Send Grammarly follow-up email to Kristin: recap + next steps', note:'Concise, headers, one clear ask. Send right at 2pm or immediately after Scott 1:1 \u2014 do not let this sit.' },
+    { id:'t-gram-hs', med:true, text:'Log Grammarly notes + next steps to HubSpot \u2014 open deal record if appropriate', note:'No deal in HubSpot yet. If this is moving, open one. Log all notes + next step before EOD.' },
+    { id:'t-gram-granola', text:'Confirm Granola notes saved for Grammarly call', note:'Check Granola and push enhanced notes to HubSpot deal record.' },
+    { id:'t-scott-1on1', med:true, text:'Scott 1:1 @ 2:00pm \u2014 Grammarly debrief, AZ deal triage, Dragonfly scope', note:'Agenda: (1) Grammarly: what did we learn, what next? (2) AZ: Gary out \u2014 Scott take on Jo\u00e3o path + PSA timing. (3) Dragonfly: Wed call confirmed as discovery or proposal review? (4) Jordyn OOO coverage check.' },
+  ]},
+  { id:'afternoon-sprint', title:'Afternoon Sprint', start:14.75, end:16.0, tasks:[
+    { id:'t-dragon-build', hi:true, text:'Dragonfly \u2014 build proposal or discovery prep based on Danielle reply', note:'Proposal review: 90+ min task, scope 30\u201360hrs $8k+, 4\u20135 doc buildouts (HR tracker, Position Tracker, Huddle tracker, Tactical tracker). Discovery: BANT/MEDDPICC questions + Quip migration context doc. Call is 8:30am PT TOMORROW \u2014 this must be done tonight.' },
+    { id:'t-az-joao', med:true, text:'AZ: draft email to Jo\u00e3o Correa \u2014 introduce as new POC, confirm PSA path', note:'joao.correa@astrazeneca.com. Reference Gary departure + GBS restructuring. Confirm next step on PSA/SOW. Keep Pedro in loop. Lean on Vivu launch dependency, not manufactured urgency.' },
+    { id:'t-movement-check', text:'Movement Strategy (Brianne): check for reply \u2014 close-lost if silent since 6/8', note:'Final bump sent 6/8. If no email response found, move to closed lost in HubSpot.' },
+    { id:'t-pipeline-admin', text:'Add Jordyn + Jesus to pipeline review calendar invite', note:'Carry-over admin. Do now so it is ready when Jordyn returns 6/23.' },
+  ]},
+  { id:'wrapup', title:'Daily Wrap Up', start:16.0, end:17.0, tasks:[
+    { id:'t-wu-hs', med:true, text:'HubSpot EOD: update all touched deals with next steps', note:'Every deal touched today needs a next step before close: AZ, Teladoc, Dragonfly, Grammarly, Comren.' },
+    { id:'t-wu-dragon', med:true, text:'Dragonfly: confirm proposal or discovery doc is finished \u2014 call is 8:30am PT tomorrow', note:'Do not start tomorrow without this ready. If not done in Afternoon Sprint, finish now before gym.' },
+    { id:'t-wu-capture', text:'Update capture-notes.md for tomorrow', note:'Log: AZ status (Jo\u00e3o engagement, Pedro call?), Teladoc escalation result, Dragonfly call outcome, Grammarly next step, Comren SOW status.' },
   ]},
   { id:'gym', title:'Gym', start:17.0, end:18.5, tasks:[], isBreak:true },
 ]
@@ -2388,7 +2395,7 @@ createPetals();
 // createGlitter(); // disabled
 
 // -- Auto-update check --
-const BUILD_DATE = '2026-06-15';
+const BUILD_DATE = '2026-06-16';
 const _REPO = 'racheloarnold-bot/simpladocs-sales';
 const _FILE = 'day-planner/simpladocs-day-plan.html';
 
