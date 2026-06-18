@@ -7,46 +7,38 @@
 
 Hi Scott,
 
-Wanted to send a written summary of our 1:1 yesterday to document what we covered & make sure we're aligned on next steps.
+Recap from yesterday so we have it in writing.
 
-**AstraZeneca**
-- Adding you to the AstraZeneca / Coda call — 1 pm ET / 10 am PT. Neither Mike nor I think the deal is dead; this is mostly so you're up to speed & can serve as backup.
+**AZ** — Adding you to the 1 pm ET / 10 am PT Coda call. Neither Mike nor I think it's dead.
 
-**Collin & Ben Ross**
-- Collin finally responded, said he's "taking a look." I'll follow up with him today before EOD. SOW isn't going out until I have his approval.
-- Ben Ross proposal is on hold pending your discovery with Steven on the agentic search/content piece and which databases are involved. You're handling that alongside the Arnold/SSM items.
+**Collin & Ben Ross** — Collin said he's "taking a look," following up with him EOD. Ben Ross is on hold until you do discovery with Steven on the agentic/database scope.
 
 **Steven**
-This is the part I most want documented.
 
-I raised a pattern of behavior that has crossed a line and is actively affecting my ability to show up and do my job. Here's what I walked you through:
+Pattern of behavior that's crossed a line & is affecting my ability to do my job:
 
-- **First AI strategy meeting:** Steven argued with me on the call. You acknowledged it and spoke to him after.
-- **Role conversation:** Steven told me he didn't think my role should exist and communicated a much shorter ramp timeline than what you and I had discussed.
-- **AI services offerings meeting:** I asked for example calls & resources. Steven later told me I had been argumentative in that meeting.
-- **Performance review:** Steven misrepresented the referral program ask to you — described having given me full instruction to build a business plan with ROI, interview developers, etc., within four days. His only in-person feedback to me that day was that the PDF could have been turned around slightly faster.
-- **AI services draft:** I built & shipped a first draft in the end-of-week update. No acknowledgment from anyone.
-- **Most recently:** Steven told me I wasn't taking initiative — despite the CRM buildout, sales SOPs, and pipeline tracking I've driven since day one.
+- First AI strategy call: he argued with me on the call. You spoke to him after.
+- Told me he didn't think my role should exist & gave me a much shorter ramp timeline than what you & I discussed.
+- AI services offerings meeting: I asked for example calls & resources. He later told me I'd been argumentative.
+- Performance review: he told you I'd been given full instruction to build a business plan with ROI, interview developers, etc. in four days. His actual feedback to me that day was that the PDF could've been turned around slightly faster.
+- AI services draft: I built & shipped it in the end-of-week update. No acknowledgment.
+- Most recently: told me I wasn't taking initiative — despite the CRM buildout, SOPs, and pipeline tracking.
 
-I canceled my 1:1 with Steven this week. I don't feel safe in unsupervised 1:1s with him.
+I canceled my 1:1 with him this week. I don't feel safe in unsupervised 1:1s with Steven.
 
-You validated that the situation is not okay and committed to a game plan. Here's what I'm asking for:
+You validated this isn't okay & committed to a plan. What I'm asking for:
 
-- End the standing 1:1 with Steven for the foreseeable future
-- Any future collaboration with Steven to be project-specific, with a clear agenda & a third party present
-- Feedback delivered directly & in a timely manner — not surfaced for the first time on a formal review
-- Inclusion in leadership & go-to-market planning meetings, given that GTM is my function
+- End the standing 1:1 with Steven
+- Future collaboration to be project-specific, with a clear agenda & a third party present
+- Feedback delivered directly & in real time — not surfaced for the first time on a formal review
+- Include me in leadership & GTM planning; that's my function
 
-I'm also going to draft a clearer role description — what I own autonomously vs. where I collaborate — to reduce ambiguity going forward.
+I'll draft a clearer role description on my end. Your action item: have the formal conversation with Steven & loop me in via Slack.
 
-On your end: have the formal conversation with Steven and loop me in on the outcome via Slack, not a 1:1.
-
-**Everything else**
-- Pipeline review is still on for Thursday — collaborative format, deal owners speak to their own deals
-- MEDDPICC training moved to Friday, June 26, same time
-- I'll check with Anthony on whether he's aware of Juneteenth & still on for the Friday RevMed call
-
-Let me know if I missed anything or if you want to add anything to the record.
+**Misc**
+- Pipeline review Thursday — deal owners speak to their own deals
+- MEDDPICC moved to Friday, June 26
+- I'll check with Anthony on Juneteenth / the Friday RevMed call
 
 best,
 -Rachel
