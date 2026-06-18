@@ -977,7 +977,7 @@
     <div class="logo-mark">S</div>
     <div class="logo-text">SimplaDocs <span>· Day Planner</span></div>
     <div class="hdiv"></div>
-    <div class="header-date" id="header-date">Wednesday, June 17</div>
+    <div class="header-date" id="header-date">Thursday, June 18</div>
   </div>
   <div class="header-right">
     <div class="progress-stat" id="progress-stat"><strong>13</strong> of <strong>14</strong> tasks today</div>
@@ -1291,7 +1291,7 @@ e.g. AI services one-pager edits — waiting on direction" oninput="saveNotes()"
 // ─── Storage ───────────────────────────────────────
 const KEYS = {
   notes1on1: 'sd-1on1-notes-v1',
-  today: 'sd-today-jun17-v1',
+  today: 'sd-today-jun18-v1',
   tasks: 'sd-tasks-q2-v1',
   rocks: 'sd-rocks-q2-v1',
   water: 'sd-water-jun02-v1',
@@ -1341,32 +1341,48 @@ save(KEYS.today, todayState);
 const BLOCKS = [
   { id:'prep', title:'Prep for Day', start:9.0, end:9.5, tasks:[
     { id:'t-meds', meds:true, text:'Meds', note:'Take with water' },
-    { id:'t-prep-cal', text:'Review calendar: OOO today - rafting. AZ sync 10am Scott covering. No Dragonfly call.', note:'Dragonfly CANCELLED - Danielle emailed 6/15: UKG has functionality that impacts project, pushing to August. No call today.' },
-    { id:'t-prep-slack', text:'Clear Slack + email', note:'Light scan - OOO today. Flag anything that cannot wait until tomorrow.' },
-    { id:'t-deal-scan', text:'Deal scan: Teladoc close 6/19 TOMORROW, Comren call 6/19', note:'Quick HubSpot sweep. Dragonfly needs close date pushed to Aug. Teladoc needs Anchal reply. AZ close date 6/19 needs extension post-debrief.' },
+    { id:'t-deal-scan', text:'Deal scan: review HubSpot, confirm next steps are current', note:'Hot closes: Teladoc 6/19 (TOMORROW = Juneteenth), AZ extension needed. Today is the last day to act.' },
+    { id:'t-slack-email', text:'Clear Slack + email', note:'Watch for: Anchal reply (Teladoc), Anthony confirmation (RevMed/Juneteenth), Kris status (Comren SOW)' },
   ]},
-  { id:'hot-sprint', title:'Hot Items Sprint', start:9.5, end:10.0, tasks:[
-    { id:'t-dragon-hs', hi:true, text:'Dragonfly: update HubSpot - push close date to August', note:'Danielle email 6/15: found UKG functionality that impacts project. Pushing to August, reaching out late July. Update dealstage + close date + next step in HubSpot. dragonflyls.com | dhaggerty@dragonflytherapy.com.' },
-    { id:'t-teladoc-text', hi:true, text:'Teladoc: text Anchal on cell NOW', note:'Close date 6/19 = TOMORROW. No contact since 6/12. If no reply by noon, escalate via Kaley Simon (kaley.simon@teladochealth.com). $15,875.' },
-    { id:'t-comren-nudge', med:true, text:'Comren: nudge Kris - any blockers on SOW before Thursday?', note:'Call 6/19 with Kris, Lars, Jose. Two line items: AI briefing $750 + Documint replacement 15hrs @ $250/hr. $15k, close 7/3.' },
+  { id:'pipeline-review', title:'Weekly Pipeline Review', start:9.0, end:9.75, tasks:[
+    { id:'t-pr-az', med:true, text:'Flag: AZ 6/19 close date \u2192 needs extension + debrief from 8am Joao call', note:'Gary out, new PS head not yet seated. This morning\u2019s 8am call w/ Joao + Mike Zerbato was the champion-building step. Update in HubSpot after review.' },
+    { id:'t-pr-teladoc', med:true, text:'Flag: Teladoc \u2014 Anchal silent, close date is TOMORROW', note:'$15,875. Close date 6/19 (Juneteenth). Escalation: Kaley Simon (kaley.simon@teladochealth.com). Decide: extend or escalate.' },
   ]},
-  { id:'az-gram-block', title:'AZ Debrief + Grammarly', start:10.0, end:11.0, tasks:[
-    { id:'t-az-sync', med:true, text:'AZ sync 10-10:30: Scott covering - get debrief after', note:'You declined OOO. Scott + Mike Zerbato + Grammarly team on call. After sync: (1) Joao call scheduled? (2) Pedro email hold still? (3) Signature clarity from Jocio? Close date 6/19 needs to slip - champion-building with Joao takes time. $120k.' },
-    { id:'t-gram-deal-open', hi:true, text:'Open Grammarly deal in HubSpot', note:'Partner Portal Evaluation met yesterday 4:30pm. Strong engagement from Kristin + Brent. Softr + Coda solution, ~$269/mo Softr + SimplaDocs build fee. 3-month build. Portal contract through end of 2026, target Sept/Oct launch.' },
-    { id:'t-gram-email', hi:true, text:'Send Grammarly follow-up to Kristin Kernodle + Brent Seth', note:'Recap Coda + Softr solution. Softr solves data isolation/permissions concern Brent raised. Propose scheduling end-to-end Softr+Coda walkthrough (Kristin ask). CC Scott. kristin.kernodle@grammarly.com + brent.seth@grammarly.com.' },
+  { id:'az-gram', title:'AZ + Grammarly Follow-Up', start:9.75, end:11.0, tasks:[
+    { id:'t-az-log', hi:true, text:'Log AZ Joao call in HubSpot \u2014 outcomes, updated close date + next steps', note:'8am call with Joao Correa + Mike Zerbato (Grammarly). Key: what did Joao say re: $28k spend + deprecation timeline? Strategy: hold on Pedro, brief new PS head once seated. joao.correa@astrazeneca.com' },
+    { id:'t-az-email', text:'Send Joao follow-up email \u2014 confirm next step', note:'Keep Pedro out. Land on concrete next action. Loop Mike Zerbato in. jocio.morais@astrazeneca.com was tentative on today\u2019s call \u2014 may need separate loop-in.' },
+    { id:'t-gram-email', hi:true, text:'Send Grammarly follow-up to Kristin + Brent', note:'Partner Portal Evaluation 6/16 \u2014 strong engagement. Kristin wants end-to-end Softr+Coda walkthrough. Softr $269/mo + build, 3-month timeline, Sept/Oct target. kristin.kernodle@grammarly.com, brent.seth@grammarly.com' },
+    { id:'t-gram-hs', text:'Open Grammarly Partner Portal deal in HubSpot if not yet done', note:'No deal logged per capture notes from 6/17. Strong buy signal from 6/16 meeting \u2014 log it now.' },
   ]},
-  { id:'lunch', title:'Lunch', start:11.0, end:12.0, tasks:[], isBreak:true },
-  { id:'pm-admin', title:'PM Admin', start:12.0, end:13.0, tasks:[
-    { id:'t-nrhythm-deck', med:true, text:'Send SimplaDocs deck to Donna Chan (nRhythm)', note:'Action item from nRhythm call yesterday. donna@nrhythm.co. CC training materials when ready before July 16 Trey meeting.' },
-    { id:'t-movement-check', text:'Movement Strategy: check email from Brianne - close-lost if no reply', note:'Final reminder sent 6/8 - 9+ days silence. If nothing, move to closed lost in HubSpot. Do not let it drag.' },
-    { id:'t-az-closedate', med:true, text:'AZ: extend close date in HubSpot after Scott debrief', note:'6/19 is unrealistic - Gary out, Joao champion-building needed, new head of Project Services not yet in seat. Discuss new close date with Scott. $120k.' },
-    { id:'t-thiago-fo', text:'Thiago: send one-pager + mission statement + HubSpot ICP links', note:'Action items from Rachel/Thiago meeting yesterday. Also: research Quip companies as cold outreach target list (Quip sunsets March 1 next year - perfect timing signal).' },
+  { id:'teladoc-cleanup', title:'Teladoc + Hot Deal Cleanup', start:11.0, end:12.5, tasks:[
+    { id:'t-teladoc', hi:true, text:'Text Anchal Ahuja \u2014 Teladoc close date is TOMORROW (6/19 Juneteenth)', note:'anchal.ahuja@teladochealth.com. $15,875. No reply = escalate to Kaley Simon (kaley.simon@teladochealth.com). Extend close date in HubSpot if no path forward by EOD.' },
+    { id:'t-dragonfly', med:true, text:'Update Dragonfly in HubSpot \u2014 push close date to August', note:'Danielle emailed 6/15: UKG has functionality that impacts project. Pushed to August, reaching out late July. Update dealstage + close date + next step. dhaggerty@dragonflytherapy.com' },
+    { id:'t-movement', med:true, text:'Movement Strategy: check for Brianne reply \u2014 close-lost if none', note:'Final reminder sent 6/8. Over a week of silence. No reply = close-lost in HubSpot.' },
+    { id:'t-hs-seq', text:'HubSpot sequence sprint: clear task queue + work enrollment queues', note:'Front-load this before afternoon deep work.' },
   ]},
-  { id:'wrapup', title:'Daily Wrap Up', start:13.0, end:14.0, tasks:[
-    { id:'t-wu-hs', med:true, text:'HubSpot EOD: update all touched deals with next steps', note:'Dragonfly (Aug push), Teladoc (Anchal status), Comren (SOW nudge), Grammarly (new deal opened), AZ (close date update post-debrief).' },
-    { id:'t-wu-capture', text:'Update capture notes for tomorrow (6/18)', note:'Flag: RevMed prep needed 6/18 for Friday call with Anthony. Photon Commerce materials due 6/18 for Chris. Comren + Teladoc close 6/19. MEDDPICC training moved to June 26.' },
+  { id:'lunch', title:'Lunch', start:12.5, end:13.0, tasks:[], isBreak:true },
+  { id:'photon', title:'Photon Commerce Materials', start:13.0, end:14.0, tasks:[
+    { id:'t-photon-call', med:true, text:'Confirm Photon follow-up call status \u2014 rescheduled or still today?', note:'Call was supposed to be 6/18 with Steven. Rachel was OOO yesterday. Check with Steven: did it happen or need reschedule? Chris at photoncommerce.com' },
+    { id:'t-photon-data', text:'Compile Coda pack keyword search data for Chris', note:'\u201cAutomated accounts payable\u201d as the key example. Keyword search volume is the ammo Chris needs for his internal team. photon-deck.vercel.app' },
+    { id:'t-photon-leads', text:'Build lead list for Photon Commerce', note:'If available: who searched the Coda pack marketplace. Ask Steven which doc-related integration requests he hears most from clients.' },
   ]},
-  { id:'gym', title:'Gym', start:18.5, end:20.0, tasks:[], isBreak:true },
+  { id:'call-prep', title:'RevMed + Comren Call Prep', start:14.0, end:15.5, tasks:[
+    { id:'t-revmed-confirm', hi:true, text:'Text/email Anthony (RevMed) \u2014 confirm Friday 6/19 call + Juneteenth check', note:'Anthony at a conference this week. $48k ongoing support deal, close 6/22. RevMed Kickoff w/ Ian already in flight (closed won 6/10). If call moves, find next slot ASAP.' },
+    { id:'t-revmed-prep', med:true, text:'RevMed prep: build agenda + talking points for Anthony', note:'Review HubSpot deal history + prior call notes. What\u2019s the goal of this call? Push to proposal or scope definition.' },
+    { id:'t-comren-confirm', med:true, text:'Comren: confirm 6/19 call still on (Juneteenth) + align with Scott on roles', note:'Call with Kris Amstutz, Lars, Jose. AI briefing $750 + Documint replacement 15hrs @ $250/hr = $15k total, close 7/3. Nudge Kris on SOW blockers.' },
+    { id:'t-comren-prep', text:'Comren AI discovery prep: review prior notes + define expected output', note:'What does this call produce? Proposal? Scope? Internal clarity before tomorrow even if call gets rescheduled.' },
+  ]},
+  { id:'admin', title:'Internal Actions', start:15.5, end:16.0, tasks:[
+    { id:'t-meddpicc', med:true, text:'Update MEDDPICC training calendar invite \u2192 Friday June 26 (same time)', note:'Moved per Scott/Rachel 1:1 on 6/16.' },
+    { id:'t-pipeline-inv', text:'Add Jordyn + Jesus (K6) to pipeline review calendar invite', note:'Collaborative format \u2014 each deal owner speaks to their own deals.' },
+    { id:'t-thiago', text:'Send Thiago one-pager + mission statement + HubSpot ICP/fit score links', note:'thiago@simpladocs.com. Offer HubSpot walkthrough incl. marketing dashboards.' },
+  ]},
+  { id:'wrapup', title:'Daily Wrap Up', start:16.0, end:17.0, tasks:[
+    { id:'t-wu-hs', med:true, text:'HubSpot EOD: update all touched deals with next steps', note:'Every deal touched today needs a logged next step. Teladoc, AZ, Grammarly, Dragonfly, RevMed, Comren \u2014 all of them.' },
+    { id:'t-wu-juneteenth', med:true, text:'Juneteenth check: everything actioned, tomorrow is OOO', note:'RevMed + Comren calls confirmed or rescheduled. Teladoc decision made. AZ strategy logged. Nothing burning that Monday can\u2019t handle.' },
+    { id:'t-wu-notes', text:'Update capture notes for next week', note:'Log blockers, deal status, anything that surfaced today. Monday morning starts here.' },
+  ]},
+  { id:'gym', title:'Gym', start:17.0, end:18.5, tasks:[], isBreak:true },
 ]
 
 
@@ -2384,7 +2400,7 @@ createPetals();
 // createGlitter(); // disabled
 
 // -- Auto-update check --
-const BUILD_DATE = '2026-06-17';
+const BUILD_DATE = '2026-06-18';
 const _REPO = 'racheloarnold-bot/simpladocs-sales';
 const _FILE = 'day-planner/simpladocs-day-plan.html';
 
