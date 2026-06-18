@@ -131,15 +131,21 @@ Pull from these sources to populate today's BLOCKS:
 
 ## Pushing to GitHub / Vercel
 
+**Always push to `main`.** Vercel is wired to `main` — pushing to any other branch will NOT trigger a deploy and Rachel's URL will not update.
+
 After building, copy back to the repo and push:
 
 ```bash
 cp /tmp/simpladocs-day-plan.html /home/user/simpladocs-sales/day-planner/simpladocs-day-plan.html
 cd /home/user/simpladocs-sales
-git add day-planner/simpladocs-day-plan.html
+git add day-planner/simpladocs-day-plan.html day-planner/capture-notes.md
 git commit -m "Day planner — YYYY-MM-DD"
+git checkout main
+git merge <current-branch>   # if session is on a feature branch, merge to main first
 git push -u origin main
 ```
+
+If the session is on a feature branch (e.g. `claude/...`), always merge to `main` before pushing. Never leave the day planner only on a feature branch.
 
 Vercel auto-deploys within ~30 seconds of the push. Rachel's bookmarked URL updates automatically — no download needed.
 
@@ -186,4 +192,5 @@ Apply the 4 daily customizations (BLOCKS, today key, BUILD_DATE, header date), p
 - **Every external client call gets a follow-up block.** The block immediately after any external client call must always include three tasks: (1) send the follow-up email, (2) log next steps in HubSpot, (3) confirm call notes are saved in HubSpot. No exceptions.
 - **Deal scan is a single daily habit, not a task list.** One task in the Prep block: "Deal scan: review HubSpot, confirm next steps are current." Do not break this out deal-by-deal unless a specific deal has a genuine action item due today.
 - **Don't create tasks for things already done.** Check HubSpot next steps before adding any deal-related task. If it's already logged and actioned, leave it off.
+- **Never create tasks for closed deals.** Any deal with `dealstage = closedwon` or `dealstage = closedlost` is off the table entirely — no tasks, no notes, no mentions. Filter these out before building any block content.
 - **Pipeline review blocks don't need task lists.** If there's a weekly pipeline review on the calendar, don't populate it with deal-by-deal tasks — that's what the meeting is for. Only flag a deal in that block if there's something Rachel specifically needs to raise or decide.
