@@ -977,7 +977,7 @@
     <div class="logo-mark">S</div>
     <div class="logo-text">SimplaDocs <span>· Day Planner</span></div>
     <div class="hdiv"></div>
-    <div class="header-date" id="header-date">Friday, June 19</div>
+    <div class="header-date" id="header-date">Monday, June 22</div>
   </div>
   <div class="header-right">
     <div class="progress-stat" id="progress-stat"><strong>13</strong> of <strong>14</strong> tasks today</div>
@@ -1291,7 +1291,7 @@ e.g. AI services one-pager edits — waiting on direction" oninput="saveNotes()"
 // ─── Storage ───────────────────────────────────────
 const KEYS = {
   notes1on1: 'sd-1on1-notes-v1',
-  today: 'sd-today-jun19-v1',
+  today: 'sd-today-jun22-v1',
   tasks: 'sd-tasks-q2-v1',
   rocks: 'sd-rocks-q2-v1',
   water: 'sd-water-jun02-v1',
@@ -1341,33 +1341,43 @@ save(KEYS.today, todayState);
 const BLOCKS = [
   { id:'prep', title:'Prep for Day', start:9.0, end:9.5, tasks:[
     { id:'t-meds', meds:true, text:'Meds', note:'Take with water' },
-    { id:'t-prep-cal', text:'Review calendar: OOO today (Juneteenth), Gym 5 PM — no client calls', note:'RevMed pushed to 6/26; Comren kickoff tentatively 6/26. Light day.' },
-    { id:'t-prep-slack', text:'Clear Slack + email', note:'Check for Anchal reply re: Teladoc SOW. Anything urgent from yesterday.' },
-    { id:'t-prep-dealscan', text:'Deal scan: AZ, Teladoc FS, Grammarly, Comren, RevMed — confirm next steps current', note:'Focus on cleanup: AZ close date, Comren amount, Baltimore Ravens + Movement Strategy close-out.' },
+    { id:'t-prep-cal', text:'Review calendar: AECOM intro @ 9:45 - Erin 1:1 @ 10:30 - Scott Q3 Goals @ noon - Gym @ 5 PM', note:'Scott flagged OOO all week in Slack - confirm noon 1:1 is still on before prepping.' },
+    { id:'t-prep-slack', text:'Clear Slack + email', note:'Jordyn back from PTO today. AZ leadership change posted in #sales-strategy this AM - new intel.' },
+    { id:'t-prep-hs', text:'Deal scan: HubSpot - confirm next steps current', note:'Focus: Baltimore Ravens + Movement Strategy (close-lost today), TSS change order (due today), AZ close date stale.' },
+    { id:'t-aecom-prep', hi:true, text:'AECOM pre-call prep: review Daniel Dias notes + HubSpot deal', note:'Daniel manages a Coda doc portfolio, wants ROM pricing on doc management + Supabase FE builds. Run BANT. Agenda sent 6/20.' },
   ]},
-  { id:'hs-cleanup', title:'HubSpot Cleanup Sprint', start:9.5, end:11.0, tasks:[
-    { id:'t-ravens-closelost', hi:true, text:'Close-lost Baltimore Ravens if no reply to breakup email', note:'Breakup email sent 6/18. Asheesh (VP IT) never engaged on intro from Jeremy. Close out today as committed.' },
-    { id:'t-movement-closelost', hi:true, text:'Close-lost Movement Strategy if no reply from Brianne', note:'Final reminder sent 6/8. Way overdue. Clean it off the board.' },
-    { id:'t-az-closedate', hi:true, text:'Update AstraZeneca: push close date to Aug/Sept + confirm Scoping stage', note:'Close date 6/19 is today and stale. Joao said ~2 months before decisions formalized. Scoping stage already set 6/18. Push close date to late Aug.' },
-    { id:'t-comren-amount', text:'Update Comren deal amount: $15K → ~$7,500', note:'SOW sent 6/18. Two line items: AI briefing $750 + Documint replacement ~15hrs @ $250. Next call 6/26.' },
-    { id:'t-grammarly-deal', med:true, text:'Create Grammarly — Partner Portal deal in HubSpot', note:'Partner Portal Evaluation 6/16. Kristin Kernodle + Brent Seth. Softr + Coda build, 3-month timeline, Sept/Oct target. ~$269/mo Softr + SimplaDocs build fee.' },
+  { id:'aecom-call', title:'AECOM <> SimplaDocs | Intro Call', start:9.75, end:10.25, tasks:[], isBreak:true },
+  { id:'aecom-fu', title:'AECOM Post-Call', start:10.25, end:10.5, tasks:[
+    { id:'t-aecom-email', hi:true, text:'Send follow-up email to Daniel Dias', note:'Recap discovery, next steps, offer to build MAP if call warranted it. Booked proactively - warm lead.' },
+    { id:'t-aecom-hs', text:'Log next steps + call notes in HubSpot (AECOM deal)', note:'Update deal stage if moved. Note BANT gaps uncovered on the call.' },
+    { id:'t-aecom-granola', text:'Confirm call notes in Granola - push to HubSpot', note:'Granola should auto-capture. Check and enhance notes.' },
   ]},
-  { id:'outreach', title:'Outreach Block', start:11.0, end:12.5, tasks:[
-    { id:'t-grammarly-fu', hi:true, text:'Send Grammarly follow-up email to Kristin + Brent', note:'Overdue from 6/18. Recap Partner Portal Evaluation. Offer walkthrough of Softr + Coda end-to-end. Warm deal — keep momentum. kristin.kernodle@grammarly.com, brent.seth@grammarly.com' },
-    { id:'t-az-joao-times', hi:true, text:'Email Joao: available times for AZ rescoping call early next week', note:'Loop Scott on same thread re: Friday landing page slot. Goal: narrow SOW to GBS scope only (resource allocation, PM, financial process migration from Smartsheet). joao.correa@astrazeneca.com' },
-    { id:'t-az-gustavo', med:true, text:'Find Gustavo (AZ) on LinkedIn + add to AZ deal in HubSpot', note:'Gustavo is above Pedro, newly onboarded, likely the final signer. Get him in the system before the rescoping call.' },
-    { id:'t-thiago-links', med:true, text:'Send Thiago: one-pager + mission statement + HubSpot ICP/fit score links', note:'Carry-over from 6/16 1:1 with Thiago. thiago@simpladocs.com' },
+  { id:'erin-1on1', title:'Rachel / Erin 1:1', start:10.5, end:11.25, tasks:[], isBreak:true },
+  { id:'closeouts', title:'Close-Outs + Grammarly', start:11.25, end:12.0, tasks:[
+    { id:'t-ravens-close', hi:true, text:'Close-lost Baltimore Ravens in HubSpot', note:'Breakup email sent 6/18 - Asheesh (VP of IT) never responded. Committed to close-out today.' },
+    { id:'t-mvmt-close', med:true, text:'Close-lost Movement Strategy in HubSpot', note:'Final reminder sent 6/8, no response. Committed to close-out today.' },
+    { id:'t-gram-followup', hi:true, text:'Send follow-up email to Kristin Kernodle + Brent Seth (Grammarly)', note:'OVERDUE from 6/18. Strong buy signal - Softr + Coda solution, ~$269/mo + build fee. They want an end-to-end walkthrough next.' },
+    { id:'t-gram-deal', med:true, text:'Create Grammarly Partner Portal deal in HubSpot if not done', note:'Check if deal exists from 6/16 call. If not, create it now.' },
   ]},
-  { id:'lunch', title:'Lunch', start:12.5, end:13.0, tasks:[], isBreak:true },
-  { id:'prep-next-week', title:'Prep for Next Week', start:13.0, end:15.0, tasks:[
-    { id:'t-quip-research', med:true, text:'Research Quip companies → build cold outreach target list', note:'Quip sunsets March 1 next year. Companies still on Quip = warm outbound targets. Build a list for next week.' },
-    { id:'t-pipeline-invite', text:'Add Jordyn + Jesus (K6) to pipeline review calendar invite', note:'Action from 6/18 pipeline review. Jordyn back Monday 6/22.' },
-    { id:'t-meddpic-cal', text:'Update MEDDPIC training calendar invite: confirmed June 26 (same time)', note:'Moved from original date per Scott/Rachel 1:1 6/16. Scott confirmed attending.' },
-    { id:'t-familiar-machines', text:"Ping Scott: Familiar Machines — confirm or close out", note:"No notes from last call; intern doing exploratory AI work. Scott's call to make — real opp or close-out?" },
+  { id:'scott-1on1', title:'Scott / Rachel 1:1 - Q3 Goal Setting', start:12.0, end:13.0, tasks:[], isBreak:true },
+  { id:'az-pipeline', title:'AZ Rescoping + Pipeline Admin', start:13.0, end:14.5, tasks:[
+    { id:'t-az-rescope', hi:true, text:'AZ: email re rescoping call this week - leadership change makes this urgent', note:'Original POC/champion gone + SOW signer no longer at org (per #sales-strategy update this AM). Email Joao with available times ASAP.' },
+    { id:'t-az-closedate', med:true, text:'Update AZ close date in HubSpot to Aug/Sept', note:'Was 6/19 (stale). Joao confirmed approx 2 months before decisions formalize.' },
+    { id:'t-az-gustavo', med:true, text:'Find Gustavo (AZ, above Pedro) on LinkedIn + add to HubSpot deal', note:'Newly onboarded above Pedro - likely final signer. Carry-forward from 6/18 pipeline review.' },
+    { id:'t-comren-amount', text:'Update Comren deal amount in HubSpot: $15K to ~$7,500', note:'SOW sent 6/18 reflects revised amount. Kickoff call 6/26.' },
+    { id:'t-tss-check', med:true, text:'Check TSS - Addtl. Hours Change Order (close date today)', note:'Proposal stage, due 6/22. Confirm status - needs a follow-up push or is it moving?' },
   ]},
-  { id:'wrapup', title:'Daily Wrap Up', start:15.5, end:16.5, tasks:[
-    { id:'t-wu-hs', med:true, text:'HubSpot EOD: log next steps on all touched deals', note:'AZ (rescoping timeline + Gustavo added), Baltimore Ravens + Movement Strategy (close-lost), Grammarly (deal created + email sent), Comren (amount updated).' },
-    { id:'t-wu-capture', text:'Update capture notes for next week', note:'Log unfinished items. Jordyn back 6/22. AZ rescoping call TBD, RevMed 6/26, Comren kickoff 6/26. MEDDPIC training 6/26.' },
+  { id:'outbound', title:'Sequences + Outbound Sprint', start:14.5, end:16.0, tasks:[
+    { id:'t-seq-sprint', text:'HubSpot sequence sprint: clear tasks, enrollment queues, follow up on opens/clicks', note:'Daily habit. Priority: any engaged contacts from last week.' },
+    { id:'t-thiago', text:'Send Thiago one-pager + mission statement + HubSpot ICP/fit score links', note:'Email: thiago@simpladocs.com. Carry-forward from 6/19.' },
+    { id:'t-myodetox', med:true, text:'Myodetox: check for reply from Sabrina or Jared to 6/18 float', note:'If no reply, leaning toward EOM close-out. Joe Carey also looped in.' },
+    { id:'t-quip', text:'Start Quip companies research - build cold outreach target list', note:'Quip sunsets March 1, 2027. Displacement opportunity - warm list for targeted outbound.' },
+    { id:'t-hs-email-fix', text:'Troubleshoot HubSpot email auto-logging issue', note:'Some outgoing emails not logging despite connected inbox. Carry-forward from 6/18 pipeline review.' },
+  ]},
+  { id:'wrapup', title:'Daily Wrap Up', start:16.0, end:17.0, tasks:[
+    { id:'t-wu-hs', med:true, text:'HubSpot EOD: update all touched deals with next steps', note:'Every deal you touched today needs a next step logged before close.' },
+    { id:'t-wu-friday', med:true, text:'Flag Thursday prep items for Friday 6/26: RevMed + Comren kickoff + MEDDPIC training', note:'Three things on Friday - prep the day before. Add prep tasks to Thursday plan.' },
+    { id:'t-wu-capture', text:'Update capture notes for tomorrow', note:'Log blockers, incomplete items, anything that surfaced today.' },
   ]},
   { id:'gym', title:'Gym', start:17.0, end:18.5, tasks:[], isBreak:true },
 ]
@@ -2387,7 +2397,7 @@ createPetals();
 // createGlitter(); // disabled
 
 // -- Auto-update check --
-const BUILD_DATE = '2026-06-19';
+const BUILD_DATE = '2026-06-22';
 const _REPO = 'racheloarnold-bot/simpladocs-sales';
 const _FILE = 'day-planner/simpladocs-day-plan.html';
 
