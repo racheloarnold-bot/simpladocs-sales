@@ -1339,35 +1339,14 @@ save(KEYS.today, todayState);
 
 // ─── Today blocks ───────────────────────────────────
 const BLOCKS = [
-  { id:'prep', title:'Prep for Day', start:8.5, end:9.0, tasks:[
+  { id:'prep', title:'Prep for Day', start:9.0, end:9.5, tasks:[
     { id:'t-meds', meds:true, text:'Meds', note:'Take with water' },
-    { id:'t-prep-cal', text:'Review calendar: Jon 1:1 @ 9 AM (phone only) · Hugo 1:1 @ 10 AM · Mark 1:1 @ 11 AM · Doctor\'s @ 3:30 PM · Gym @ 6 PM', note:'Scott OOO all week. 3 back-to-back internal calls this morning. Afternoon window 1–3:30 is the main work block.' },
-    { id:'t-prep-hs', text:'Deal scan: HubSpot audit, confirm next steps are current', note:'Priority: AZ GBS ($120k, leadership changes) · AECOM (post-call sends due today) · Grammarly (follow-up overdue) · Teladoc (SOW sent 6/18, waiting on Anchal).' },
-    { id:'t-prep-slack', text:'Clear Slack + email', note:'Jon lost laptop in Wales — call is phone-only today. Alberto OOO (giving a talk). Scott OOO all week.' },
+    { id:'t-prep-slack', text:'Quick Slack + email scan', note:'Eyes only — flag anything that absolutely cannot wait. Everything else is tomorrow.' },
   ]},
-  { id:'jon-11', title:'Rachel / Jon 1:1', start:9.0, end:9.75, tasks:[], isBreak:true },
-  { id:'hugo-11', title:'Rachel / Hugo 1:1', start:10.0, end:10.75, tasks:[], isBreak:true },
-  { id:'mark-11', title:'Rachel / Mark 1:1', start:11.0, end:11.75, tasks:[], isBreak:true },
-  { id:'lunch', title:'Lunch', start:12.0, end:13.0, tasks:[], isBreak:true },
-  { id:'az-gram', title:'AZ Rescue + Grammarly + AECOM Sends', start:13.0, end:14.5, tasks:[
-    { id:'t-az-joao', hi:true, text:'AstraZeneca GBS: email Joao — request rescoping call this week', note:'Major leadership change: original POC + SOW signer both gone. Stakeholders: Joao (GBS POC) → Pedro → Gustavo (new, likely final signer). Warm tone, forward-looking, keep deal alive. $120k.' },
-    { id:'t-az-gustavo', hi:true, text:'AstraZeneca GBS: find Gustavo on LinkedIn → add to HubSpot deal', note:'Gustavo is newly onboarded above Pedro. Likely the new final signer. Need him mapped before rescoping call.' },
-    { id:'t-az-closedate', text:'AstraZeneca GBS: update close date → Aug/Sept in HubSpot', note:'Current close is stale. Push to reflect leadership transition timeline.' },
-    { id:'t-gram-followup', hi:true, text:'Grammarly: send overdue follow-up to Kristin Kernodle + Brent Seth', note:'OVERDUE from 6/18. Strong buy signal from Partner Portal eval on 6/16. Softr + Coda solution, ~$269/mo + SimplaDocs build fee. 3-month timeline, Sept/Oct launch. No deal in HubSpot yet — create it first.' },
-    { id:'t-aecom-deck', hi:true, text:'AECOM: send intro deck + pricing + case studies to Daniel Dias', note:'Include 10–12K/month at ~40 hrs/month estimate. Supabase + custom Vercel-hosted app build examples. Daniel needs this to present to VPs at bi-weekly committee.' },
-  ]},
-  { id:'aecom-admin', title:'AECOM MAP + HubSpot Admin', start:14.5, end:15.5, tasks:[
-    { id:'t-aecom-map', med:true, text:'AECOM: send Coda MAP to Daniel Dias', note:'Light shared doc with upcoming conversations + resources. Daniel has edit access to share internally before 6/30 call.' },
-    { id:'t-aecom-sched', med:true, text:'AECOM: schedule 1-hr technical discovery for June 30 @ 2 PM ET — loop in Stephen', note:'Scott OOO — use Stephen (or Hugo) for technical coverage. Also confirm NDA approach: AECOM NDAs need VP sign-off, Daniel to advise.' },
-    { id:'t-gram-deal', text:'Grammarly: create HubSpot deal — Partner Portal', note:'Strong buy signal 6/16. Softr + Coda, ~$269/mo + build fee. Create deal, set close date, log Kristin + Brent as contacts.' },
-    { id:'t-closelost', text:'HubSpot: close-lost Baltimore Ravens + Movement Strategy', note:'Ravens: breakup email 6/18, no response from Asheesh. Movement Strategy: final reminder 6/8, no response from Brianne. Both committed close-outs.' },
-    { id:'t-comren-amt', text:'Update Comren deal amount → ~$7,500 in HubSpot', note:'Capture notes flagged $15K → ~$7,500 after rescoping. SOW under review, kickoff tentatively 6/26.' },
-  ]},
+  { id:'rest', title:'Rest', start:9.5, end:15.5, tasks:[], isBreak:true },
   { id:'doctors', title:"Doctor\'s Appointment", start:15.5, end:17.0, tasks:[], isBreak:true },
   { id:'wrapup', title:'Daily Wrap Up', start:17.0, end:18.0, tasks:[
-    { id:'t-wu-hs', med:true, text:'HubSpot EOD: update all touched deals with next steps', note:'AZ GBS, AECOM, Grammarly, Comren — every deal touched today needs a next step logged before close.' },
-    { id:'t-wu-spring', text:'Spring Health + IDC: check overdue HubSpot follow-up tasks (both due 6/22)', note:'Spring Health Renewal ($52k, Steven\'s deal, CPO change). IDC - Coda Build & AI Retainer. Both tasks overdue — review and either action or reschedule.' },
-    { id:'t-wu-capture', text:'Update capture notes for tomorrow + flag Thursday 6/25 prep items', note:'6/26 calls: RevMed ($48k), Comren kickoff, MEDDPIC training. Prep all three on Thursday. Also: Erin visual action plan template (send to Erin), Thiago one-pager, pipeline review invite (add Jordyn + Jesus).' },
+    { id:'t-wu-capture', text:'Note anything urgent that surfaced — carry to tomorrow', note:'Don\'t log or update anything unless it\'s on fire. Rest is the job today.' },
   ]},
   { id:'gym', title:'Gym', start:18.0, end:19.5, tasks:[], isBreak:true },
 ]

@@ -1,10 +1,9 @@
 # Capture Notes — June 23, 2026 (Tuesday)
 
 ## Today's context
-- Three back-to-back internal 1:1s this morning: Rachel/Jon @ 9 AM (phone only — Jon lost laptop in Wales), Rachel/Hugo @ 10 AM, Rachel/Mark @ 11 AM.
-- Scott OOO all week. Alberto OOO today (giving a talk).
-- Doctor's appointment 3:30–5:00 PM — hard stop. Daily wrap-up pushed to 5–6 PM.
-- Gym @ 6 PM.
+- **Rachel is sick — rest day.** No work tasks. Doctor's appointment 3:30–5 PM (already on calendar).
+- Three internal 1:1s were on the calendar this morning (Jon/Hugo/Mark) — outcomes unknown, check tomorrow.
+- Scott OOO all week. Jon lost laptop in Wales (phone-only). Alberto OOO today.
 - Company closed Friday July 3 (Independence Day weekend).
 
 ## AECOM — Action items from 6/22 intro call (Daniel Dias)
