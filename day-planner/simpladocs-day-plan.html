@@ -977,7 +977,7 @@
     <div class="logo-mark">S</div>
     <div class="logo-text">SimplaDocs <span>· Day Planner</span></div>
     <div class="hdiv"></div>
-    <div class="header-date" id="header-date">Tuesday, June 23</div>
+    <div class="header-date" id="header-date">Wednesday, June 24</div>
   </div>
   <div class="header-right">
     <div class="progress-stat" id="progress-stat"><strong>13</strong> of <strong>14</strong> tasks today</div>
@@ -1291,7 +1291,7 @@ e.g. AI services one-pager edits — waiting on direction" oninput="saveNotes()"
 // ─── Storage ───────────────────────────────────────
 const KEYS = {
   notes1on1: 'sd-1on1-notes-v1',
-  today: 'sd-today-jun23-v1',
+  today: 'sd-today-jun24-v1',
   tasks: 'sd-tasks-q2-v1',
   rocks: 'sd-rocks-q2-v1',
   water: 'sd-water-jun02-v1',
@@ -1341,14 +1341,43 @@ save(KEYS.today, todayState);
 const BLOCKS = [
   { id:'prep', title:'Prep for Day', start:9.0, end:9.5, tasks:[
     { id:'t-meds', meds:true, text:'Meds', note:'Take with water' },
-    { id:'t-prep-slack', text:'Quick Slack + email scan', note:'Eyes only — flag anything that absolutely cannot wait. Everything else is tomorrow.' },
+    { id:'t-prep-cal', text:'Review calendar: Photon call 11 AM, Mark 1:1 2 PM, Pipeline Review tomorrow', note:'Check for changes; Steven declined Photon call -- confirm Chris is still on.' },
+    { id:'t-prep-scan', text:'Deal scan: review HubSpot, confirm next steps are current', note:'Back from rest day -- scan what moved while you were out.' },
+    { id:'t-prep-slack', text:'Clear Slack + email', note:'Flag anything urgent from yesterday. Check for Jon/Hugo 1:1 outcomes.' },
   ]},
-  { id:'rest', title:'Rest', start:9.5, end:15.5, tasks:[], isBreak:true },
-  { id:'doctors', title:"Doctor\'s Appointment", start:15.5, end:17.0, tasks:[], isBreak:true },
-  { id:'wrapup', title:'Daily Wrap Up', start:17.0, end:18.0, tasks:[
-    { id:'t-wu-capture', text:'Note anything urgent that surfaced — carry to tomorrow', note:'Don\'t log or update anything unless it\'s on fire. Rest is the job today.' },
+  { id:'outreach', title:'Morning Outreach Sprint', start:9.5, end:11.0, tasks:[
+    { id:'t-az-joao', hi:true, text:'AZ GBS: Email Joao -- request rescoping call this week', note:'$120K -- original POC + SOW signer both gone. Rescoping needed. Stakeholders: Joao -> Pedro -> Gustavo (new, above Pedro). URGENT.' },
+    { id:'t-gram-followup', hi:true, text:'Grammarly: Send overdue follow-up to Kristin Kernodle + Brent Seth', note:'Overdue from 6/18. Partner Portal. Softr + Coda solution: ~$269/mo Softr + SimplaDocs build fee, 3-month timeline, Sept/Oct launch. kristin.kernodle@grammarly.com, brent.seth@grammarly.com' },
+    { id:'t-gram-deal', med:true, text:'Grammarly: Create HubSpot deal for Partner Portal', note:'New deal. Softr + Coda solution, 3-month build timeline, Sept/Oct target launch.' },
+    { id:'t-aecom-deck', hi:true, text:'AECOM: Send intro deck + pricing + case studies to Daniel Dias', note:'Include 10-12K/mo at ~40 hrs/mo. Supabase + custom Vercel app build examples. Daniel presenting to VPs at bi-weekly committee. Also send Coda MAP (light shared doc). daniel.dias@aecom.com' },
+    { id:'t-photon-prep', hi:true, text:'Photon call prep: review deal notes + confirm agenda', note:'Chris wants Coda customer references or real demand signals before committing. Call at 11 AM -- what can you show him?' },
   ]},
-  { id:'gym', title:'Gym', start:18.0, end:19.5, tasks:[], isBreak:true },
+  { id:'photon-call', title:'Photon + SimplaDocs: Partner Convo Regroup', start:11.0, end:11.5, tasks:[], isBreak:true },
+  { id:'photon-fu', title:'Photon Follow-Up', start:11.5, end:12.0, tasks:[
+    { id:'t-photon-email', text:'Send follow-up email to Chris (Photon Commerce)', note:'Recap call, confirm next steps, one clear ask.' },
+    { id:'t-photon-hs', text:'Log next steps in HubSpot -- Photon Commerce deal', note:'Update deal stage if needed. Capture what moves this forward.' },
+    { id:'t-photon-notes', text:'Confirm call notes saved in HubSpot', note:'Granola -> enhance -> push to HubSpot record.' },
+  ]},
+  { id:'lunch', title:'Lunch', start:12.0, end:13.0, tasks:[], isBreak:true },
+  { id:'pipeline-prep', title:'Pipeline Review Prep', start:13.0, end:14.0, tasks:[
+    { id:'t-pipe-pull', hi:true, text:'Pipeline Review prep: pull deal list + next steps, bring close plan example', note:'Meeting tomorrow (6/25). Check MEDDPICC gaps across active deals. Note what is at risk vs. on track.' },
+    { id:'t-pipe-invite', med:true, text:'Add Jordyn + Jesus to pipeline review calendar invite', note:'Still outstanding -- add both before EOD today.' },
+    { id:'t-comren-amt', med:true, text:'Update Comren deal amount to $7,500 in HubSpot', note:'Currently showing $4,500 -- correct to ~$7,500. SOW under review; kickoff 6/26.' },
+    { id:'t-erin-vap', text:'Send Erin visual action plan template for feedback', note:'Scott already reviewed it. Carry from last week.' },
+  ]},
+  { id:'mark-1on1', title:'Rachel / Mark 1:1', start:14.0, end:14.75, tasks:[], isBreak:true },
+  { id:'carryforward', title:'Carry-Forwards', start:14.75, end:16.0, tasks:[
+    { id:'t-az-gustavo', med:true, text:'AZ GBS: Find Gustavo on LinkedIn + add to HubSpot deal', note:'Likely new final signer (above Pedro, above Joao). Also update deal close date -> Aug/Sept in HubSpot.' },
+    { id:'t-spring-steven', med:true, text:'Ping Steven: Spring Health Renewal status', note:'His deal -- overdue HubSpot task from 6/22. Just a status check.' },
+    { id:'t-idc-action', text:'IDC - Coda Build & AI Retainer: action overdue task', note:'Overdue since 6/22. Schedule a call or send a reply -- just needs to move.' },
+    { id:'t-thiago', text:'Send Thiago one-pager + mission statement + HubSpot ICP links', note:'thiago@simpladocs.com -- carry-forward from prior week.' },
+    { id:'t-hs-logging', text:'HubSpot email auto-logging: flag to Steven or Connor', note:'Outgoing emails not logging automatically. Troubleshoot or delegate.' },
+  ]},
+  { id:'wrapup', title:'Daily Wrap Up', start:16.0, end:17.0, tasks:[
+    { id:'t-wu-hs', med:true, text:'HubSpot EOD: update all touched deals with next steps', note:'Every deal you touched today needs a next step logged before close.' },
+    { id:'t-wu-capture', text:'Update capture notes for tomorrow', note:'Log blockers, carry-overs, and Friday call prep notes (RevMed, Comren kickoff, MEDDPIC+BANT training).' },
+  ]},
+  { id:'gym', title:'Gym', start:18.5, end:20.0, tasks:[], isBreak:true },
 ]
 
 
@@ -2366,7 +2395,7 @@ createPetals();
 // createGlitter(); // disabled
 
 // -- Auto-update check --
-const BUILD_DATE = '2026-06-23';
+const BUILD_DATE = '2026-06-24';
 const _REPO = 'racheloarnold-bot/simpladocs-sales';
 const _FILE = 'day-planner/simpladocs-day-plan.html';
 
