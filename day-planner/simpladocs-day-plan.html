@@ -977,7 +977,7 @@
     <div class="logo-mark">S</div>
     <div class="logo-text">SimplaDocs <span>· Day Planner</span></div>
     <div class="hdiv"></div>
-    <div class="header-date" id="header-date">Monday, June 29</div>
+    <div class="header-date" id="header-date">Tuesday, June 30</div>
   </div>
   <div class="header-right">
     <div class="progress-stat" id="progress-stat"><strong>13</strong> of <strong>14</strong> tasks today</div>
@@ -1291,7 +1291,7 @@ e.g. AI services one-pager edits — waiting on direction" oninput="saveNotes()"
 // ─── Storage ───────────────────────────────────────
 const KEYS = {
   notes1on1: 'sd-1on1-notes-v1',
-  today: 'sd-today-jun29-v1',
+  today: 'sd-today-jun30-v1',
   tasks: 'sd-tasks-q2-v1',
   rocks: 'sd-rocks-q2-v1',
   water: 'sd-water-jun02-v1',
@@ -1341,45 +1341,35 @@ save(KEYS.today, todayState);
 const BLOCKS = [
   { id:'prep', title:'Prep for Day', start:9.0, end:9.5, tasks:[
     { id:'t-meds', meds:true, text:'Meds', note:'Take with water' },
-    { id:'t-prep-cal', text:'Review calendar: pipeline look-ahead 10 AM — Scott 1:1 noon (Q3 goal setting) — Mark 2 PM (Coda & AI)', note:'Jon meeting already done' },
-    { id:'t-prep-slack', text:'Clear Slack + email', note:'Scott is back from OOO — expect pings' },
-    { id:'t-prep-scan', text:'Deal scan: RevMed objection to isolate — Teladoc follow-up scheduled Wednesday', note:'RevMed $48k: Anthony emailed Friday to push to September — need to understand why before moving the date. Teladoc $15,875: Anchal said ~1 week on 6/24, follow up Wednesday 7/1.' },
+    { id:'t-prep-cal', text:'Review calendar: Q3 Planning 10am, no external calls today', note:'Content focus day — light on meetings' },
+    { id:'t-prep-slack', text:'Clear Slack + email', note:'Check #sales-strategy, DMs from Jon + Hugo' },
+    { id:'t-prep-teladoc', med:true, text:'Check Teladoc status', note:'Close date is today (6/30). Anchal confirmed \'processing on their end.\' Send a light nudge if nothing heard.' },
   ]},
-  { id:'hs-sprint', title:'HubSpot Morning Sprint', start:9.5, end:10.0, tasks:[
-    { id:'t-hs-comren', med:true, text:'Comren: kickoff didn’t happen — follow up with Chris to reschedule', note:'Chris never answered for the 6/26 kickoff. Reach out to reschedule and update HubSpot next step.' },
+  { id:'seq-sprint', title:'Sequence Sprint', start:9.5, end:10.0, tasks:[
+    { id:'t-seq-li', hi:true, text:'Work LinkedIn outbound queue', note:'9 \'Send LinkedIn message\' tasks in HubSpot due 7/1. Knock out before Q3 Planning.' },
+    { id:'t-seq-carryover', text:'Action carryover tasks from yesterday', note:'3 tasks rescued from yesterday — surface from carryover banner and clear them.' },
   ]},
-  { id:'pipeline', title:'Weekly Pipeline Look-Ahead & Admin', start:10.0, end:10.5, tasks:[
-    { id:'t-pipe-aecom', hi:true, text:'AECOM: prep for tech discovery TOMORROW 6/30 2 PM ET', note:'$33k. Review deck + MAP, confirm attendees and agenda. Stephen looping in for tech side.' },
-    { id:'t-pipe-scott', med:true, text:'Ping Scott: Familiar Machines + Ben Relles (website scope estimate) + Tre training examples (nRhythm)', note:'Scott back from OOO. Familiar Machines reconnect, Ben Relles scope estimate, AND Tre (nRhythm) explicitly asked for training examples — Scott is the blocker on that, due today.' },
+  { id:'q3-plan', title:'Q3 Planning', start:10.0, end:12.0, tasks:[
+    { id:'t-q3-exp', hi:true, text:'Define July sales experiments', note:'What are we actually testing this month? Channels, messaging, cadence. 45 min — capture decisions, don\'t just brainstorm.' },
+    { id:'t-q3-pipe', med:true, text:'Q3 pipeline health check', note:'Quick pass: what\'s live, what\'s at risk, what does net new need to look like? Save deep analysis for Thursday.' },
   ]},
-  { id:'close-block', title:'Revenue Close Block', start:10.5, end:11.0, tasks:[
+  { id:'lunch', title:'Lunch', start:12.0, end:13.0, tasks:[], isBreak:true },
+  { id:'content', title:'Content Planning', start:13.0, end:15.0, tasks:[
+    { id:'t-content-cal', hi:true, text:'Build July content calendar', note:'Map themes, formats, cadence. LinkedIn posts + any marketing assets.' },
+    { id:'t-content-ideas', hi:true, text:'Brain dump + prioritize content ideas', note:'Get everything out of your head. Pick the 3–5 best angles to execute on.' },
+    { id:'t-content-draft', med:true, text:'Draft 1–2 posts (if in the zone)', note:'While you\'re in content mode — even rough drafts count.' },
   ]},
-  { id:'sops', title:'Sales SOPs', start:11.0, end:12.0, tasks:[
-    { id:'t-sops-finish', hi:true, text:'Finish sales SOPs', note:'Pick up where you left off and get these done.' },
-  ]},
-  { id:'scott-11', title:'Scott / Rachel 1:1 — Q3 Goal Setting', start:12.0, end:13.0, tasks:[
-    { id:'t-scott-goals', text:'Q3 goal setting with Scott', note:'1:1 + Q3 Rocks conversation. Come prepped with your Q3 priorities.' },
-  ]},
-  { id:'lunch-prep', title:'Lunch + Mark Prep', start:13.0, end:14.0, tasks:[
-    { id:'t-lunch', text:'Lunch', note:'' },
-    { id:'t-revmed-call', hi:true, text:'RevMed: call Anthony if no reply to your email', note:'Email sent this morning. If no response by now, call to isolate the objection before moving the close date to September.' },
-    { id:'t-mark-prep', text:'Prep talking points for Mark meeting — Coda & AI use cases', note:'Learning session. What use cases do you want to explore or discuss?' },
-  ]},
-  { id:'mark-11', title:'Rachel / Mark — Coda & AI', start:14.0, end:14.75, tasks:[
-    { id:'t-mark-mtg', text:'Coda & AI use cases meeting with Mark', note:'Same format as Jon this morning.' },
-  ]},
-  { id:'prospecting', title:'Prospecting Sprint', start:14.75, end:16.0, tasks:[
-    { id:'t-pro-li-connects', hi:true, text:'HubSpot sequence queue: 10 overdue LinkedIn connection requests (due 6/24)', note:'Open HubSpot task queue — batch these out. All are “Send Connection request” tasks.' },
-    { id:'t-pro-inmails', hi:true, text:'HubSpot sequence queue: 11 overdue LinkedIn InMails (due 6/26)', note:'Kailyn, Aaron, Chris, David, Douglas, Lauren, Nicholas, Rocky, Jane, Maegan, Robina. Sequence message is ready — just execute.' },
-    { id:'t-pro-enroll', hi:true, text:'Enroll 10 new companies in sequences', note:'Find 10 new targets, enroll them. Build the top of the funnel.' },
+  { id:'deck', title:'Training Deck Prep', start:15.0, end:16.0, tasks:[
+    { id:'t-deck-build', med:true, text:'Review & tighten BANT/MEDDPICC training deck', note:'Training is tomorrow (7/1). Deck from 6/26 is your base — review, update, tighten. Even 30–45 min makes it better.' },
+    { id:'t-deck-agenda', text:'Confirm training agenda + attendees', note:'Scott is back today. Make sure timing and attendee list are confirmed.' },
   ]},
   { id:'wrapup', title:'Daily Wrap Up', start:16.0, end:17.0, tasks:[
     { id:'t-wu-hs', med:true, text:'HubSpot EOD: update all touched deals with next steps', note:'Every deal you touched today needs a next step logged before close.' },
     { id:'t-wu-capture', text:'Update capture notes for tomorrow', note:'Log blockers, incomplete items, anything that surfaced today.' },
   ]},
-  { id:'gym', title:'Gym', start:18.0, end:19.5, tasks:[], isBreak:true },
+  { id:'gym', title:'Gym', start:17.0, end:18.5, tasks:[], isBreak:true },
+  { id:'dance', title:'Dance Class', start:18.5, end:20.5, tasks:[], isBreak:true },
 ]
-
 
 function getOrderedBlocks() {
   const order = todayState.blockOrder;
@@ -2395,7 +2385,7 @@ createPetals();
 // createGlitter(); // disabled
 
 // -- Auto-update check --
-const BUILD_DATE = '2026-06-29';
+const BUILD_DATE = '2026-06-30';
 const _REPO = 'racheloarnold-bot/simpladocs-sales';
 const _FILE = 'day-planner/simpladocs-day-plan.html';
 
