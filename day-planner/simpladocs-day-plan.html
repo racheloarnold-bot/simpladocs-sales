@@ -977,7 +977,7 @@
     <div class="logo-mark">S</div>
     <div class="logo-text">SimplaDocs <span>· Day Planner</span></div>
     <div class="hdiv"></div>
-    <div class="header-date" id="header-date">Tuesday, June 30</div>
+    <div class="header-date" id="header-date">Wednesday, July 1</div>
   </div>
   <div class="header-right">
     <div class="progress-stat" id="progress-stat"><strong>13</strong> of <strong>14</strong> tasks today</div>
@@ -1291,7 +1291,7 @@ e.g. AI services one-pager edits — waiting on direction" oninput="saveNotes()"
 // ─── Storage ───────────────────────────────────────
 const KEYS = {
   notes1on1: 'sd-1on1-notes-v1',
-  today: 'sd-today-jun30-v1',
+  today: 'sd-today-jul1-v1',
   tasks: 'sd-tasks-q2-v1',
   rocks: 'sd-rocks-q2-v1',
   water: 'sd-water-jun02-v1',
@@ -1341,34 +1341,42 @@ save(KEYS.today, todayState);
 const BLOCKS = [
   { id:'prep', title:'Prep for Day', start:9.0, end:9.5, tasks:[
     { id:'t-meds', meds:true, text:'Meds', note:'Take with water' },
-    { id:'t-prep-cal', text:'Review calendar: Q3 Planning 10am, no external calls today', note:'Content focus day — light on meetings' },
-    { id:'t-prep-slack', text:'Clear Slack + email', note:'Check #sales-strategy, DMs from Jon + Hugo' },
-    { id:'t-prep-teladoc', med:true, text:'Check Teladoc status', note:'Close date is today (6/30). Anchal confirmed \'processing on their end.\' Send a light nudge if nothing heard.' },
+    { id:'t-prep-cal', text:'Review calendar: Training deck 9-10:30, Demo prep 2-2:30, Cowork Wednesday', note:'Scott OOO (Tahoe), Jon OOO (traveling), Erin OOO. Light on internal reach-outs today.' },
+    { id:'t-prep-slack', text:'Clear Slack + email', note:'Check #general-biz and DMs.' },
+    { id:'t-prep-scan', text:'Deal scan: review HubSpot, confirm next steps are current', note:'Focus: Humand (7/5 close!), Comren (overdue), Teladoc (awaiting sig).' },
   ]},
-  { id:'seq-sprint', title:'Sequence Sprint', start:9.5, end:10.0, tasks:[
-    { id:'t-seq-li', hi:true, text:'Work LinkedIn outbound queue', note:'9 \'Send LinkedIn message\' tasks in HubSpot due 7/1. Knock out before Q3 Planning.' },
-    { id:'t-seq-carryover', text:'Action carryover tasks from yesterday', note:'3 tasks rescued from yesterday — surface from carryover banner and clear them.' },
+  { id:'training-deck', title:'Training Deck', start:9.5, end:10.5, tasks:[
+    { id:'t-deck-build', hi:true, text:'Build / finalize BANT + MEDDPICC training deck', note:'Calendar block. Get it to a state you\'d be comfortable presenting.' },
+    { id:'t-deck-confirm', text:'Confirm training logistics (date, attendees)', note:'Scott OOO today -- confirm training is still scheduled and who\'s attending.' },
   ]},
-  { id:'q3-plan', title:'Q3 Planning', start:10.0, end:12.0, tasks:[
-    { id:'t-q3-exp', hi:true, text:'Define July sales experiments', note:'What are we actually testing this month? Channels, messaging, cadence. 45 min — capture decisions, don\'t just brainstorm.' },
-    { id:'t-q3-pipe', med:true, text:'Q3 pipeline health check', note:'Quick pass: what\'s live, what\'s at risk, what does net new need to look like? Save deep analysis for Thursday.' },
+  { id:'pipeline', title:'Pipeline & Follow-Up Sprint', start:10.5, end:12.0, tasks:[
+    { id:'t-seq', hi:true, text:'HubSpot sequence sprint: work today\'s tasks', note:'Clear the queue -- LinkedIn + email follow-up tasks due today.' },
+    { id:'t-humand', hi:true, text:'Humand (Gavin): schedule a call -- close date is July 5', note:'That\'s tomorrow. Gavin reached out on LinkedIn 5/21 and it\'s been sitting. Find a time and send it now.' },
+    { id:'t-comren', hi:true, text:'Comren: follow up on SOW -- 6/26 call never happened', note:'No SOW, no response, close date already passed. Direct check-in: do we still have an opp?' },
+    { id:'t-teladoc', med:true, text:'Teladoc Fixed Scope: nudge on signature', note:'Legal approved 6/30. Awaiting signature. Light check-in -- any ETA on the signed agreement?' },
+    { id:'t-closeout', med:true, text:'Close out Baltimore Ravens + Movement Strategy in HubSpot', note:'Both confirmed closed-lost. Update stage, log reason, done.' },
   ]},
   { id:'lunch', title:'Lunch', start:12.0, end:13.0, tasks:[], isBreak:true },
-  { id:'content', title:'Content Planning', start:13.0, end:15.0, tasks:[
-    { id:'t-content-cal', hi:true, text:'Build July content calendar', note:'Map themes, formats, cadence. LinkedIn posts + any marketing assets.' },
-    { id:'t-content-ideas', hi:true, text:'Brain dump + prioritize content ideas', note:'Get everything out of your head. Pick the 3–5 best angles to execute on.' },
-    { id:'t-content-draft', med:true, text:'Draft 1–2 posts (if in the zone)', note:'While you\'re in content mode — even rough drafts count.' },
+  { id:'carry', title:'Carry-Forward Sprint', start:13.0, end:14.0, tasks:[
+    { id:'t-az-gustavo', med:true, text:'AZ GBS: find Gustavo on LinkedIn and add to HubSpot deal', note:'Likely new signer above Pedro. Get his profile, add as contact on the AZ deal.' },
+    { id:'t-photon', text:'Photon Commerce: log 6/24 call outcome in HubSpot', note:'Chris wants Coda customer references before committing. Log what was discussed + the ask.' },
+    { id:'t-thiago', text:'Send Thiago one-pager + mission statement + HubSpot ICP links', note:'thiago@simpladocs.com. Long-standing carry-forward -- get it out today.' },
+    { id:'t-idc', text:'IDC - Coda Build & AI Retainer: action overdue HubSpot task', note:'Overdue since 6/22. Schedule next step or reach out.' },
   ]},
-  { id:'deck', title:'Training Deck Prep', start:15.0, end:16.0, tasks:[
-    { id:'t-deck-build', med:true, text:'Review & tighten BANT/MEDDPICC training deck', note:'Training is tomorrow (7/1). Deck from 6/26 is your base — review, update, tighten. Even 30–45 min makes it better.' },
-    { id:'t-deck-agenda', text:'Confirm training agenda + attendees', note:'Scott is back today. Make sure timing and attendee list are confirmed.' },
+  { id:'demo-prep', title:'Demo Prep', start:14.0, end:14.5, tasks:[
+    { id:'t-demo', med:true, text:'Demo prep: finalize for upcoming call', note:'Calendar block. Know your flow, confirm assets, anticipate questions.' },
+  ]},
+  { id:'outreach', title:'Outreach & Admin', start:14.5, end:16.0, tasks:[
+    { id:'t-erin-vap', text:'Send Erin visual action plan template', note:'She\'s OOO -- send now so it\'s waiting when she\'s back. Scott already reviewed.' },
+    { id:'t-quip', text:'Quip research: cold outreach target list', note:'Quip sunsets March 1, 2027. Build a list of companies using Quip as migration prospects.' },
+    { id:'t-cookie', text:'Flag cookie consent pop-up to Steven', note:'New visitors are hitting it -- flag in Slack.' },
+    { id:'t-hs-logging', text:'Troubleshoot HubSpot email auto-logging', note:'Outgoing emails not logging. Test, document, fix or escalate.' },
   ]},
   { id:'wrapup', title:'Daily Wrap Up', start:16.0, end:17.0, tasks:[
     { id:'t-wu-hs', med:true, text:'HubSpot EOD: update all touched deals with next steps', note:'Every deal you touched today needs a next step logged before close.' },
     { id:'t-wu-capture', text:'Update capture notes for tomorrow', note:'Log blockers, incomplete items, anything that surfaced today.' },
   ]},
   { id:'gym', title:'Gym', start:17.0, end:18.5, tasks:[], isBreak:true },
-  { id:'dance', title:'Dance Class', start:18.5, end:20.5, tasks:[], isBreak:true },
 ]
 
 function getOrderedBlocks() {
@@ -2385,7 +2393,7 @@ createPetals();
 // createGlitter(); // disabled
 
 // -- Auto-update check --
-const BUILD_DATE = '2026-06-30';
+const BUILD_DATE = '2026-07-01';
 const _REPO = 'racheloarnold-bot/simpladocs-sales';
 const _FILE = 'day-planner/simpladocs-day-plan.html';
 
