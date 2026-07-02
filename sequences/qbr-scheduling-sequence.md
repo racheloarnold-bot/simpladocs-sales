@@ -29,21 +29,19 @@
 
 Hi {{First Name}},
 
-I recently joined the SimplaDocs team as Head of Sales & I'm making it a priority to actually meet the people we work with — [account-specific note — e.g. "and I've heard great things about what your team has been building together" / "including folks on accounts like yours that have been in motion for a while"].
+I joined the SimplaDocs team as Head of Sales this March and I'm making it a priority to actually meet all of our awesome clients — [account-specific note — e.g. "and I've heard great things about what your team has been building together" / "including folks on accounts like yours that have been in motion for a while"].
 
-As we head into Q3, I want to make sure we're carving out time for a real conversation — not just a status update.
+As we head into Q3, I'm scheduling Quarterly Business Reviews with all of our accounts. I'd be joining alongside [placeholder: whoever they work with/account owner], so you'll have the full team in the room. Here's what we'd cover:
 
-I'm scheduling Quarterly Business Reviews with all of our accounts right now. I'd be joining alongside your PM here at SimplaDocs so you have the full team in the room. Here's what we'd cover:
+- What we've accomplished together this quarter - a look back at what actually got built & shipped
+- Where things stand today - current state of your ops & anything that's shifted
+- Your strategic priorities - what matters most heading into Q3 & beyond
+- Areas of opportunity - personalized recommendations based on where you are now
+- Open floor - your space to ask questions, raise anything about how things have been going, or bring whatever's on your radar
 
-- **What we've accomplished together this quarter** — a look back at what actually got built & shipped
-- **Where things stand today** — current state of your ops & anything that's shifted
-- **Your strategic priorities** — what matters most heading into Q3 & beyond
-- **Where we see opportunity** — personalized recommendations based on where you are now
-- **Open floor** — your space to ask questions, raise anything about how things have been going, or bring whatever's on your radar
+These typically run 45–60 minutes, and we will prepare the agenda and a report - all you need to do is show up!
 
-These typically run 45–60 minutes. I'll have the agenda ready & your PM will come prepared — all you need to do is show up.
-
-Does {{scheduling link placeholder}} work for grabbing time, or want me to send a few options?
+Does {{scheduling link placeholder}} work for scheduling, or would you like me to send a few options?
 
 best,  
 -Rachel
@@ -59,9 +57,9 @@ best,
 
 Hi {{First Name}},
 
-Just bumping this up — I know things get buried.
+Just bumping this up — I know things get buried!
 
-Still want to get our QBR on the calendar before Q3 gets away from us. Even 45 minutes goes a long way when we use it well.
+Still want to get our QBR on the calendar before Q3 gets away from us. Even 45 minutes goes a long way when we use it well, and we'll come fully prepared with a report & agenda so your time is well spent.
 
 {{scheduling link placeholder}} is the easiest path, or just reply with what works & I'll make it happen.
 
@@ -79,13 +77,13 @@ best,
 
 Hi {{First Name}},
 
-I'll make this one quick.
+I'll make this one quick!
 
-I've been pulling together notes ahead of these QBRs & I have specific things I want to share with you — wins from this quarter, where I see opportunities based on where your team is now, & some recommendations I think are actually worth your time.
+I've been pulling together notes ahead of these QBRs & I have specific things I want to share with you — wins from this quarter, where we see opportunities based on where your team is now, & some personalized recommendations I think are actually worth your time.
 
-I don't want to put it in an email — it lands better in conversation where we can actually talk through it together.
+I don't want to bury it in an email — it lands better in conversation where we can actually talk through it together. We'll have a report & agenda ready to go so you get the most out of the time.
 
-30–45 minutes, your calendar. Want me to send a few times?
+30–45 minutes, your calendar. Would you like me to send a few options?
 
 best,  
 -Rachel
@@ -101,9 +99,9 @@ best,
 
 Hi {{First Name}},
 
-Short one — still hoping to find time for our QBR this quarter.
+Short one — still hoping to find time for our QBR this quarter!
 
-If scheduling is the friction point, I'm happy to work around whatever's easiest on your end. Just say the word.
+I'm flexible on format & timing, so if scheduling has been the hold-up, just let me know what works best on your end and I'll make it happen.
 
 best,  
 -Rachel
@@ -119,11 +117,11 @@ best,
 
 Hi {{First Name}},
 
-I don't want to keep cluttering your inbox, so I'll make this my last nudge.
+I don't want to keep cluttering your inbox, so I'll make this my last nudge!
 
-If a Q3 QBR doesn't make sense right now, no worries at all — I'll plan to reach back out when Q4 is closer. But if there's a better time or format that works for you, I'm flexible & happy to make it easy.
+If a Q3 QBR doesn't make sense right now, no worries at all — I'll plan to reach back out when Q4 is closer. But if there's a better time or format that works for you, I'm totally flexible & happy to make it easy.
 
-Either way, I'm here when you need us.
+Either way, we're here when you need us!
 
 best,  
 -Rachel
