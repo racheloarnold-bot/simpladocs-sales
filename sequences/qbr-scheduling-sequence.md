@@ -29,7 +29,7 @@
 
 Hi {{First Name}},
 
-[Account-specific note — e.g. "Loved seeing the Coda build go live last month" / "Really proud of what the team got across the finish line in Q2."]
+I recently joined the SimplaDocs team as Head of Sales & I'm making it a priority to actually meet the people we work with — [account-specific note — e.g. "and I've heard great things about what your team has been building together" / "including folks on accounts like yours that have been in motion for a while"].
 
 As we head into Q3, I want to make sure we're carving out time for a real conversation — not just a status update.
 
