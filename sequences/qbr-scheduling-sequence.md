@@ -23,21 +23,25 @@
 **Send day:** Day 1  
 **Subject:** Q3 QBR — let's get something on the calendar
 
+> **Personalization note:** Fill in `[account-specific note]` before enrolling — one sentence referencing something specific to this account (a deliverable shipped, a milestone hit, a project wrapping up). The rest of the email can stay as-is.
+
 ---
 
 Hi {{First Name}},
 
-As we head into Q3, I want to make sure we're carving out time for a proper check-in — not just a status update, but a real conversation.
+[Account-specific note — e.g. "Loved seeing the Coda build go live last month" / "Really proud of what the team got across the finish line in Q2."]
 
-I'm scheduling Quarterly Business Reviews with all of our accounts right now. Here's what I'd want to cover with you:
+As we head into Q3, I want to make sure we're carving out time for a real conversation — not just a status update.
+
+I'm scheduling Quarterly Business Reviews with all of our accounts right now. I'd be joining alongside your PM here at SimplaDocs so you have the full team in the room. Here's what we'd cover:
 
 - **What we've accomplished together this quarter** — a look back at what actually got built & shipped
 - **Where things stand today** — current state of your ops & anything that's shifted
-- **Your strategic priorities** — what matters most heading into the next quarter
-- **Personalized recommendations** — what we think makes sense for you next based on all of the above
-- **Open floor** — your space to ask questions, share feedback, or bring anything on your radar
+- **Your strategic priorities** — what matters most heading into Q3 & beyond
+- **Where we see opportunity** — personalized recommendations based on where you are now
+- **Open floor** — your space to ask questions, raise anything about how things have been going, or bring whatever's on your radar
 
-These typically run 45–60 minutes. I'll have the agenda ready & come prepared — all you need to do is show up.
+These typically run 45–60 minutes. I'll have the agenda ready & your PM will come prepared — all you need to do is show up.
 
 Does {{scheduling link placeholder}} work for grabbing time, or want me to send a few options?
 
